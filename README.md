@@ -42,3 +42,19 @@ ionic cordova plugin add https://github.com/apache/cordova-plugin-statusbar.git
 If cordova and/or ionic is not updated properly, you will get build errors.
 
 Also, prod builds might see issues because of a webpack update https://github.com/ionic-team/ionic-app-scripts/releases/tag/v3.0.0
+
+## Build development app for Phonegap
+
+1. Run `npm run build`
+2. Copy the www/build/* folder to phonegap/funkmaster-flex/build/
+3. Zip the funkmaster-flex folder
+4. Upload funkmaster-flex.zip to https://build.phonegap.com/
+5. Scan the QR code to install on your device.
+
+## Build production app for Phonegap
+
+1. Run `npm run build --prod`
+2. Copy the www/build/* folder to phonegap/funkmaster-flex/build/
+3. Zip the funkmaster-flex folder
+4. Upload funkmaster-flex.zip to https://build.phonegap.com/
+5. Scan the QR code to install on your device.
