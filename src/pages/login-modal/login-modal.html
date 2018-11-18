@@ -1,0 +1,168 @@
+<ion-header class="{{customClasses}}">
+
+  <ion-toolbar>
+  
+    <ion-title>{{ title | translate }}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button *ngIf="!force_login && !login_data || login_data || (is_preview && force_login)" (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="{{customClasses}}">
+
+	<form (ngSubmit)="doLogin()" padding *ngIf="!login_data && !show_registration && !show_pw_reset" class="fade-in">
+
+      <ion-item>
+        <ion-label stacked>{{ 'Username' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="login.user" name="user" autocomplete="on" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>{{ 'Password' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="login.pass" name="pass" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>
+      </ion-item>
+      
+      <div padding>
+      <button ion-button type="submit" block>{{ 'Submit' | translate }}</button>
+      </div>
+
+      <div class="appforgotpassword">
+        <button type="button" (click)="showResetPassword()">
+          <span class="forgot-password-text">{{ 'Forgot password?' | translate }}</span>
+        </button>
+      </div>
+
+      <div *ngIf="fb_login">
+
+          <div class="login-div-wrap">
+            <div><div class="login-div"></div><div class="login-div-text">{{ 'or' | translate }}</div><div class="login-div"></div></div>
+          </div>
+
+          <div class="appfbconnectlogin">
+            <button type="button" (click)="doFBLogin()">
+              <span class="fb-icon"></span>
+              <span class="fb-login-text">{{ 'Login with Facebook' | translate }}</span>
+            </button>
+          </div>
+
+      </div>
+
+  </form>
+
+  <div *ngIf="show_registration && !login_data" id="registration-form" class="fade-in">
+
+  <form (ngSubmit)="doApiRegistration()" padding>
+
+    <p [hidden]="show_verification_field">{{ 'Enter your details to register.' | translate }}</p>
+    
+    <ion-item [hidden]="show_verification_field">
+      <ion-label stacked>{{ 'First name' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="user_data.first_name" name="first_name" autocomplete="off" autocorrect="on" autocapitalize="on" spellcheck="false"></ion-input>
+    </ion-item>
+    <ion-item [hidden]="show_verification_field">
+      <ion-label stacked>{{ 'Last name' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="user_data.last_name" name="last_name" autocomplete="on" autocorrect="off" autocapitalize="on" spellcheck="false"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>{{ 'Email' | translate }}</ion-label>
+      <ion-input type="email" [(ngModel)]="user_data.email" name="email" autocomplete="on" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>{{ 'Create a username' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="user_data.username" name="username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>
+    </ion-item>
+    <ion-item [hidden]="show_verification_field">
+      <ion-label stacked>{{ 'Create a password' | translate }}</ion-label>
+      <ion-input type="password" [(ngModel)]="user_data.password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>
+    </ion-item>
+
+  <div *ngIf="show_verification_field" class="fade-in">
+    
+    <p>{{ 'Check your email for your verification code to complete registration.' | translate }}</p>
+
+    <ion-item>
+      <ion-label stacked>{{ 'Enter Verification Code' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="user_data.verification" name="verification" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>
+    </ion-item>
+
+  </div>
+    
+    <div padding>
+    <button ion-button type="submit" block>{{ 'Submit' | translate }}</button>
+    </div>
+
+  </form>
+
+  <p text-center *ngIf="!show_verification_field" (tap)="showVerificationField()" class="gray-text">{{ 'I have a verification code' | translate }}</p>
+
+  <p text-center *ngIf="show_verification_field" (tap)="resendCode()" class="gray-text">{{ 'Re-send verification code' | translate }}</p>
+
+  </div>
+
+  <div *ngIf="show_pw_reset && !login_data && !show_registration" class="fade-in">
+
+      <form (ngSubmit)="doResetPassword()" padding>
+    
+        <p [hidden]="show_reset_code">{{ 'Enter your email to retrieve your reset code.' | translate }}</p>
+
+        <p [hidden]="!show_reset_code">{{ 'Check your email for your verification code, then enter it here along with your new password.' | translate }}</p>
+
+        <ion-item [hidden]="show_reset_code">
+          <ion-label stacked>{{ 'Email' | translate }}</ion-label>
+          <ion-input type="email" [(ngModel)]="pw_reset.email" name="email" autocomplete="on" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>
+        </ion-item>
+        <ion-item [hidden]="!show_reset_code">
+          <ion-label stacked>{{ 'Verification code' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="pw_reset.code" name="code" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>
+        </ion-item>
+        <ion-item [hidden]="!show_reset_code">
+          <ion-label stacked>{{ 'Enter a new password' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="pw_reset.password" name="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>
+        </ion-item>
+        
+        <div padding>
+        <button ion-button type="submit" block>{{ 'Submit' | translate }}</button>
+        </div>
+    
+      </form>
+    
+  </div>
+
+	<div padding *ngIf="login_data">
+		<p>{{login_data.message}}</p>
+    	<button ion-button block (click)="doLogout()">{{ 'Click here to logout' | translate }}</button>
+  </div>
+
+  <ion-grid class="modal-footer" *ngIf="!login_data">
+    <ion-row>
+
+      <ion-col *ngIf="api_register_setting && !show_registration">
+
+        <button type="button" ion-button color="light" class="register-link" full (click)="register( $event )">{{ 'Sign Up' | translate }}</button>
+
+      </ion-col>
+
+      <ion-col *ngIf="api_register_setting && show_registration || show_pw_reset">
+
+        <button type="button" ion-button color="light" class="register-link" full (click)="showLoginForm()">{{ 'Log In' | translate }}</button>
+
+      </ion-col>
+
+      <ion-col *ngIf="api_register_setting && show_registration && show_verification_field">
+
+        <button type="button" ion-button color="light" class="register-link" full (click)="resetRegistration()">{{ 'Start Over' | translate }}</button>
+
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+  <iframe [src]="iframeUrl" id="loginIframe"></iframe>
+
+</ion-content>

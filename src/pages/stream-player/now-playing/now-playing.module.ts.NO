@@ -1,0 +1,18 @@
+import { NgModule } from '@angular/core';
+import { IonicPageModule } from 'ionic-angular';
+import { TranslateModule } from '@ngx-translate/core';
+import { NowPlayingComponent } from "./now-playing.component";
+
+@NgModule({
+  declarations: [
+    NowPlayingComponent,
+  ],
+  imports: [
+    // IonicPageModule.forChild(NowPlayingComponent),
+    // TranslateModule.forChild()
+  ],
+  exports: [
+    NowPlayingComponent
+  ]
+})
+export class NowPlayingComponentModule {}

@@ -1,0 +1,79 @@
+<ion-grid>
+	<img src="assets/FLEXLOGO.png">
+		<ion-row>
+		  <ion-col col-12>
+	
+			  <ion-card *ngIf="!platform.is('ios')&&!platform.is('android')" (click)="openPage( {url:'https://www.messenger.com/t/funkflex', target:'_blank', extra_classes:'system'} )" class="menu-card">
+				<div class="card-title"><ion-icon name="chatboxes"></ion-icon></div>
+				<div class="card-subtitle">Messenger</div>
+			  </ion-card>
+	
+			  <ion-card *ngIf="platform.is('ios')" (click)="openPage( { url:'fb-messenger://user-thread/63447391760', target:'_blank', extra_classes:'system'} )" class="menu-card">
+				<div class="card-title"><ion-icon name="chatboxes"></ion-icon></div>
+				<div class="card-subtitle">Messenger</div>
+			  </ion-card>
+	
+			  <ion-card *ngIf="platform.is('android')" (click)="openPage({'url':'fb-messenger://user/63447391760',target:'_blank', extra_classes:'system'})" class="menu-card">
+				<div class="card-title"><ion-icon name="chatboxes"></ion-icon></div>
+				<div class="card-subtitle">Messenger</div>
+			  </ion-card>
+	
+		  </ion-col>
+		</ion-row>
+	</ion-grid>
+	
+	<ion-content id="audio-mpeg" padding>
+		<!-- <app-main-player></app-main-player> -->
+	</ion-content>
+
+<main [@routerTransition]="getState(o)">
+	<router-outlet #o="outlet"></router-outlet>
+</main>
+
+	<div>
+		<!-- <header class="main-header">
+				<div class="inner">
+						<div class="logo">
+								 <a [routerLink]="['/player']">
+										<img src="./assets/img/main-logo.png" alt="Logo">
+								</a>
+						</div>
+				</div>
+		</header> -->
+	
+		<div class="notifications" *ngIf="notifications.stack">
+				<div *ngFor="let notification of notifications.stack" class="msg {{ notification.type }}">
+						{{ notification.message }}
+				</div>
+		</div>
+	
+	
+		
+	
+		<footer class="main-footer">
+				<div class="inner">
+						<ul class="footer-nav">
+								<li>
+										<a [routerLink]="['/player']">
+										<!-- <a href="#"> -->
+												<i class="fas fa-volume-up"></i> Player
+										</a>
+								</li>
+								<li class="play-btn" (click)="toggleStreamingPlayer($event)">
+										<a [routerLink]="['/player']">
+										<!-- <a href="#" (click)="showPlayer($event)"> -->
+												<i class="fas fa-play" *ngIf="!streaming.isPlaying() && !streaming.isLoading()"></i>
+												<i class="fas fa-pause" *ngIf="streaming.isPlaying() && !streaming.isLoading()"></i>
+												<i class="fas fa-spinner fa-pulse" *ngIf="streaming.isLoading()"></i>
+										</a>
+								</li>
+								<li>
+										<a [routerLink]="['/playlist']">
+										<!-- <a href="#" (click)="showPlaylist($event)">   -->
+												<i class="fas fa-clock"></i> Playlist
+										</a>
+								</li>
+						</ul>
+				</div>
+		</footer>
+	</div>

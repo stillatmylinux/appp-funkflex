@@ -1,0 +1,82 @@
+<ion-header>
+	<ion-navbar>
+
+		<ion-buttons start>
+			<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">
+			    <ion-icon name="arrow-back"></ion-icon>
+			    {{'Back' | translate }}
+			</button>
+
+			<button ion-button menuToggle>
+				<ion-icon name="menu"></ion-icon>
+			</button>
+
+		</ion-buttons>
+
+		<ion-title *ngIf="userData">{{ userData.name }}</ion-title>
+
+		<ion-buttons end *ngIf="isMyProfile">
+			<button ion-button (click)="openLoginModal()"><ion-icon name="log-in"></ion-icon> <!-- <span *ngIf="login_data">{{ 'Logout' | translate }}</span><span *ngIf="!login_data">{{ 'Login' | translate }}</span> --></button>
+		</ion-buttons>
+		
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<div *ngIf="userData && userData.appp && userData.appp.above_content" [innerHTML]="userData.appp.above_content | sanitizeHtml"></div>
+
+	<img class="cover-image" *ngIf="userData && userData.cover_image" [src]="userData.cover_image" />
+
+	<ion-card *ngIf="userData">
+
+		<ion-item>
+			<ion-avatar item-start *ngIf="userData.avatar_urls">
+				<img *ngIf="userData.avatar_urls && userData.avatar_urls.full" [src]="formatUrl( userData.avatar_urls.full )">
+				<img *ngIf="!userData.avatar_urls.full" [src]="formatUrl( userData.avatar_urls.thumb )">
+			</ion-avatar>
+			<p class="user-name" *ngIf="userData.name" [innerHTML]="userData.name"></p>
+			<p class="mention-name" *ngIf="userData.mention_name" [innerHTML]="'@' + userData.mention_name"></p>
+			<button ion-button block (click)="iabLink(userData.link )" color="light">{{ 'View Full Profile' | translate }}</button>
+			
+		</ion-item>
+
+		<ion-row *ngIf="!isMyProfile">
+			<ion-col text-center>
+				<button ion-button icon-start small clear (click)="message( userData )"><ion-icon name="chatbubbles"></ion-icon> {{ 'Message' | translate }}</button>
+			</ion-col>
+			<ion-col text-center>
+				<button ion-button icon-start small clear (click)="userActivity(userData )"><ion-icon name="list"></ion-icon> {{ 'Activity' | translate }}</button>
+			</ion-col>
+			<ion-col text-center>
+				<button *ngIf="!userData.check_friendship" ion-button icon-start small clear (click)="doFriend(userData.id, false)"><ion-icon name="add"></ion-icon> {{ 'Friend' | translate }}</button>
+				<button *ngIf="userData.check_friendship" ion-button icon-start small clear (click)="doFriend(userData.id, true)"><ion-icon name="remove-circle"></ion-icon> {{ 'Unfriend' | translate }}</button>
+			</ion-col>
+		</ion-row>
+
+		<ion-row *ngIf="isMyProfile">
+    		<ion-col text-center>
+				<button ion-button icon-start small clear *ngIf="isMyProfile" block (click)="showMessages()"><ion-icon name="chatbubbles"></ion-icon> {{ 'Messages' | translate }}</button>
+			</ion-col>
+			<ion-col text-center>
+
+				<button id="notification-button" ion-button icon-start small clear (click)="notificationsPage()"><ion-icon name="notifications"></ion-icon> {{ 'Notifications' | translate }} <ion-badge color="danger" *ngIf="notificationCount && notificationCount != 0"> {{ notificationCount }}</ion-badge></button>
+
+			</ion-col>
+		</ion-row>
+
+	</ion-card>
+
+	<ion-card class="last-activity" *ngIf="userData && userData.last_activity" (click)="userActivity( userData )">
+		<span class="last-update-header">{{ 'Last update' | translate }}</span>
+		<ion-card-content [innerHTML]="userData.last_activity.content"></ion-card-content>
+	</ion-card>
+
+	<div *ngIf="userData && userData.appp && userData.appp.below_content" [innerHTML]="userData.appp.below_content | sanitizeHtml"></div>
+	
+	<div *ngIf="isError" padding>
+		<p>{{ 'There is a problem displaying this profile. You may need to login, or log out then log back in.' | translate }}</p>
+		<button ion-button icon-start small clear (click)="openLoginModal()"><ion-icon name="log-in"></ion-icon> {{ 'Please login' | translate }}</button>
+	</div>
+
+</ion-content>

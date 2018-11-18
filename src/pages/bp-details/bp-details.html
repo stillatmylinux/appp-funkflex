@@ -1,0 +1,82 @@
+<ion-header>
+	<ion-navbar>
+
+		<ion-buttons start>
+			<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">
+			    <ion-icon name="arrow-back"></ion-icon>
+			    {{'Back' | translate }}
+			</button>
+
+			<button ion-button menuToggle *ngIf="!selectedItem">
+			  <ion-icon name="menu"></ion-icon>
+			</button>
+
+		</ion-buttons>
+
+		<ion-title></ion-title>
+
+		<ion-buttons end>
+			<button ion-button *ngIf="selectedItem" (click)="comment()">
+			<ion-icon name="text"></ion-icon>
+			</button>
+		</ion-buttons>
+		
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-card *ngIf="selectedItem">
+
+		<ion-item>
+			<ion-avatar item-start *ngIf="selectedItem.user_avatar" (click)="openMember()">
+				<img *ngIf="selectedItem.user_avatar.thumb" [src]="formatUrl( selectedItem.user_avatar.thumb )">
+		  		<img *ngIf="!selectedItem.user_avatar.thumb" src="assets/default.png">
+			</ion-avatar>
+			<span class="comment-name" *ngIf="selectedItem.display_name" [innerHTML]="selectedItem.display_name"></span>
+		</ion-item>
+
+		<ion-card-content *ngIf="selectedItem.content">
+
+			<div class="item-content" [innerHTML]="selectedItem.content | doLinks"></div>
+
+		</ion-card-content>
+
+		<ion-row>
+			<ion-col>
+			  <button ion-button icon-start clear small (click)="comment()">
+			    <ion-icon name="text"></ion-icon>
+			    <div>{{ 'Reply' | translate }}</div>
+			  </button>
+			</ion-col>
+			<ion-col text-right>
+			  <button ion-button [ngClass]="selectedItem.flagged ? 'item-flagged' : ''" icon-start clear small (click)="flag()">
+			    <ion-icon name="flag"></ion-icon>
+			    <div>{{ 'Flag' | translate }}</div>
+			  </button>
+			</ion-col>
+		</ion-row>
+
+	</ion-card>
+
+	<ion-list class="activity-comments" *ngIf="activityComments">
+
+		<ion-card *ngFor="let comment of activityComments">
+
+			<ion-card-content *ngIf="comment.content">
+
+				<span class="comment-name" [innerHTML]="comment.display_name" *ngIf="comment.display_name"></span>
+
+				<span class="comment-name" [innerHTML]="comment.title" *ngIf="comment.title && !comment.display_name"></span>
+
+				<span class="comment-content" [innerHTML]="comment.content"></span>
+
+			</ion-card-content>
+
+		</ion-card>
+
+	</ion-list>
+
+	<ion-spinner class="comments-spinner" *ngIf="!commentsLoaded"></ion-spinner>
+
+</ion-content>

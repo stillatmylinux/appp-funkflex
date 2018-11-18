@@ -1,0 +1,77 @@
+bp-list {
+
+	.group-name {
+		margin-top: 10px;
+		font-size: 12px;
+		color: #999;
+	}
+
+	.card {
+		box-shadow: none;
+		border: none;
+		border-bottom: 1px solid #eee;
+		overflow: visible;
+	}
+
+	.card .item + .card-content {
+		padding-top: 13px;
+	}
+
+	.comment-name {
+		font-weight: 500;
+		margin-right:8px;
+		font-size: 1.4rem;
+	}
+
+	.card .card-content img {
+		margin: 10px -28px;
+		width: auto;
+		min-width: calc( 100% + 56px);
+	}
+
+	@media only screen 
+	and (min-width : 768px) {
+		.card .card-content img {
+			margin: 10px auto;
+			width: 100%;
+			min-width: auto;
+			max-width: 100%;
+		}
+	}
+
+	ion-select {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.select-text {
+		color: #777;
+	}
+
+	div ion-icon[name=text] {
+		position: relative;
+		top: 3px;
+	}
+
+}
+
+.toolbar #notification-button {            
+	position: relative;
+	width: 42px;
+	top:1px;
+	right: 1px;
+	overflow: visible!important;
+
+	.badge {
+		background-color: red !important;
+	    position: absolute;
+	    top: -2px;
+	    right: -2px;
+	    border-radius: 100%;
+	    font-size: 12px;
+	    height: 20px;
+	    width: 20px;
+	    text-align: center;
+	    padding: 4px;
+	}
+}

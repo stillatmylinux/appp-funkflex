@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ title | translate }}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <img [src]="source" *ngIf="!showVideoPlayer && !isPdf" class="media-modal-full-image" />
+
+    <pdf-viewer *ngIf="isPdf" [src]="pdfSrc" [original-size]="false" [render-text]="false" style="display: block;max-width:100%"></pdf-viewer>
+
+    <vg-player *ngIf="showVideoPlayer">
+        <vg-overlay-play [ngStyle]="{'background-image': 'url(' + image + ')'}"></vg-overlay-play>
+        <vg-buffering></vg-buffering>
+
+        <vg-scrub-bar>
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+        </vg-scrub-bar>
+
+        <vg-controls>
+            <vg-play-pause></vg-play-pause>
+            <vg-playback-button></vg-playback-button>
+
+            <vg-time-display property="current" format="mm:ss"></vg-time-display>
+
+            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+
+            <!-- <vg-time-display property="left" format="mm:ss"></vg-time-display> -->
+            <vg-time-display property="total" format="mm:ss"></vg-time-display>
+
+            <!-- <vg-track-selector></vg-track-selector>
+            <vg-mute></vg-mute> -->
+            <vg-volume></vg-volume>
+
+            <vg-fullscreen></vg-fullscreen>
+        </vg-controls>
+
+        <video [vgMedia]="media" #media preload="auto" crossorigin autoplay>
+            <source [src]="source">
+        </video>
+    </vg-player>
+
+</ion-content>

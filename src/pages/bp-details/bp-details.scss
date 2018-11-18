@@ -1,0 +1,48 @@
+bp-details {
+	.comment-name {
+		font-weight: 500;
+		margin-right:8px;
+		font-size: 1.4rem;
+	}
+
+	.list-md.activity-comments {
+		border-top: 1px solid #eee;
+	}
+
+	.comments-spinner {
+		width: 100%;
+    	opacity: .3;
+    	margin-top: 15px;
+	}
+
+	.card {
+		box-shadow: none;
+		border: none;
+		overflow: visible;
+	}
+
+	.card .item + .card-content {
+		padding-top: 13px;
+	}
+
+	.card .card-content img {
+		margin: 10px -28px;
+		width: auto;
+		min-width: calc( 100% + 56px);
+	}
+
+	.button.item-flagged {
+		color: white;
+		background: red;
+	}
+
+	@media only screen 
+	and (min-width : 768px) {
+		.card .card-content img {
+			margin: 10px auto;
+			width: 100%;
+			min-width: auto;
+			max-width: 100%;
+		}
+	}
+}

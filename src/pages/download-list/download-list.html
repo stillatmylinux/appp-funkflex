@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ title | translate }}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-list>
+
+  <ion-item-sliding *ngFor="let download of downloads" #slidingItem>
+
+    <button ion-item (click)="mediaModal(download)">
+
+      <h2>{{download.title}}</h2>
+
+    </button>
+
+    <ion-item-options side="right">
+      <button ion-button color="danger" (click)="removeDownload(download)">
+        <ion-icon name="remove-circle"></ion-icon>
+        {{ 'Delete' | translate }}
+      </button>
+    </ion-item-options>
+
+  </ion-item-sliding>
+
+  <ion-item *ngIf="!downloads">{{ 'No Downloads available.' | translate }}</ion-item>
+
+</ion-list>
+
+</ion-content>

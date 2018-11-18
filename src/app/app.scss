@@ -1,0 +1,576 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+// Custom
+// --------------------------------------------------
+
+@import "../pages/iframe/iframe";
+
+@import "../pages/media-player/media-player";
+@import "../pages/stream-player/stream-player";
+@import "../theme/templates";
+
+$border-color: rgba(0,0,0,.1);
+
+.content img {
+	height: auto;
+}
+
+ion-content {
+	background-color: #fff;
+}
+
+.content .wp-caption {
+	max-width: 100%;
+	height: auto;
+}
+
+.content ul li {
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+
+.toolbar button.activated, .tab-button {
+	opacity: .8;
+}
+
+.bar-button ion-icon {
+	font-size: 2.4rem;
+}
+
+.tabs .tabbar {
+	background-color: #387ef5;
+}
+
+.tab-button[aria-selected=true] {
+	opacity: 1;
+}
+
+// prevents card text from disappearing if body text is white
+ion-content ion-card-content {
+	color: #000;
+}
+
+.item h2 {
+	white-space: normal;
+}
+
+.post-featured-wrap {
+	width: auto;
+    max-height: 250px;
+    overflow: hidden;
+    margin: -20px -20px 20px -20px;
+
+	img.post-featured {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.menu-inner ion-list > .item:first-child, .menu-inner ion-list > .item-wrapper:first-child .item {
+	border-top: none;
+}
+
+.menu-inner {
+
+	.item-md.activated, .item-ios.activated {
+		background-color: rgba(135,135,135,.2);
+	}
+
+	.content-md, .content-ios, ion-list .item {
+		background-color: #444;
+	}
+
+	ion-list {
+
+		 .item-md, .item-ios, p {
+		    color: #eee;
+		}
+
+		.item-block .item-inner, .item-block, ion-list-header, ion-item-divider {
+			border: none;
+		}
+
+		.item, &> .item:last-child, &> .item-wrapper:last-child .item {
+			border-bottom: 1px solid $border-color;
+		}
+
+		ion-icon {
+			color: #999;
+		}
+	
+
+		ion-list-header {
+			text-align: center;
+			padding-left: 0;
+			border-bottom: 1px solid $border-color;
+			margin-bottom: 0;
+
+			ion-avatar img {
+				margin: 0 auto;
+				max-width: 6rem;
+			    max-height: 6rem;
+			    border-radius: 6rem;
+			}
+		}
+
+		.menu-login-button {
+			margin: 15px;
+			width: 90%;
+		}
+
+		.item.divider {
+			background-color: rgba(0,0,0,.2);
+			min-height: 3rem;
+			ion-label {
+				font-size: 1.4rem;
+				margin-top:8px;
+				margin-bottom: 8px;
+				text-transform: uppercase;
+				font-weight: bold;
+				opacity: .8
+			}
+		}
+
+	}
+
+	.loggedin-msg {
+		text-transform: none;
+		letter-spacing: normal;
+		margin-top:10px;
+	}
+
+}
+
+/**
+ * hides the homepage buttons with loggedin extra_class
+ */
+body ion-col.loggedin {
+	display: none;
+}
+body.loggedin ion-col.loggedin {
+	display: block;
+}
+
+
+.selection p {
+	font-size: 16px;
+	line-height: 1.3;
+}
+
+.toolbar .segment-button, .tabbar .tab-button, .tabbar .tab-button .tab-button-icon, .tabbar .tab-button[aria-selected=true], .tabbar .tab-button[aria-selected=true] .tab-button-icon, .custom-back-button {
+	color: #fff;
+}
+
+#favorites-toolbar {
+    padding: 0;
+    max-height: 40px;
+    min-height: 0;
+}
+
+#favorites-toolbar .toolbar-content {
+	display: flex;
+}
+
+#favorites-toolbar .toolbar-content .button-clear {
+	flex: 1;
+	color: #fff;
+	margin: 0;
+	font-size: 1.2rem;
+}
+
+#favorites-toolbar .toolbar-background {
+	background-color: #444;
+}
+
+/** Slides **/
+
+.icon-hero ion-icon {
+	font-size: 9em;
+}
+
+.swiper-slide .slide-zoom {
+	padding: 0 10px;
+}
+
+#audio-progress {
+	width: 100%;
+	position: relative;
+	top: 10px;
+}
+
+/*** Lists ***/
+
+.card-featured-wrap {
+	max-height:250px;
+	overflow: hidden;
+}
+.card-md h2, .card-ios h2 {
+	font-weight: 500;
+}
+
+.post-list ion-slides {
+	height:200px;
+
+	ion-slide {
+		background-size: cover;
+	}
+
+	.slide-zoom {
+		padding: 0 !important;
+	}
+
+	.slide-title {
+		background: rgba(0,0,0,.5);
+	    width: 100%;
+	    color: #ccc;
+	    font-size: 14px;
+	    padding: 8px 0;
+	    position: absolute;
+	    top: 0;
+	    margin: 0;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.post-list ion-slides {
+		height:250px;
+	}
+}
+
+.item.loggedin {
+	display: none;
+	&.show {
+		display: flex;
+	}
+}
+
+.custom-back-button .icon {
+	margin-left:5px;
+	position: relative;
+	top: 1px;
+}
+
+.bar-buttons-md[start] { order: 0; }
+
+.selection {
+  font-size: 22px;
+  display: block;
+  text-align: left;
+  padding: 20px;
+}
+
+iframe {
+ height: 100%;
+ width: 100%;
+ border: 0;
+}
+
+.header-logo {
+	display: block;
+	width: auto;
+	height: 30px;
+}
+
+.toolbar-content-ios {
+	.header-logo {
+		margin: 0 auto;
+	    position: absolute;
+	    bottom: 7px;
+	    left: 0;
+	    right: 0;
+	}
+}
+
+/* Moved over from custom-page.scss */
+
+.custom-page {
+
+	ion-slides {
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		background-color: #fff;
+	}
+
+	.menu-card {
+		position: relative;
+		text-align: center;
+		min-height: 100px;
+		min-height: 30vw;
+		background-color: #387ef5;
+		color: #fff;
+	
+		.card-title {
+			position: absolute;
+			top: 20%;
+			font-size: 3em;
+			font-size: 10vw;
+			width: 100%;
+			font-weight: bold;
+			opacity: .7;
+		}
+
+		.card-subtitle {
+			font-size: 1em;
+			font-size: 3vw;
+			position: absolute;
+			top: 70%;
+			width: 100%;
+		}
+
+	}
+
+	ion-col {
+		padding: 0;
+	}
+}
+	
+.swiper-container-horizontal > .swiper-pagination {
+	bottom: 0;
+}
+
+.custom-logo {
+	padding: 20px;
+	margin: 0 auto;
+	display: block;
+}
+
+.dark-content {
+	background-color: #444;
+	color: #fff;
+	height: auto;
+	min-height: 100%;
+	width: 100%;
+
+	ion-card.card-md, ion-card.card-ios {
+	  background-color: transparent;
+	}
+
+	ion-card.menu-card {
+	  background-color: #387ef5;
+	}
+
+	ion-card-content, ion-card-title, ion-card-header {
+	  color: #fff !important;
+	}
+
+}
+
+.button-primary {
+    border-color: #b2b2b2;
+    background-color: #f8f8f8;
+    color: #444;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0 12px;
+    min-width: 52px;
+    min-height: 47px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    vertical-align: top;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    line-height: 42px;
+    cursor: pointer;
+}
+
+button.item-ios.divider .item-inner, button.item-ios.submenu-parent .item-inner {
+	background: none !important;
+}
+
+/*
+ * Submenus
+ */
+
+.menu-inner .submenu-child {
+	min-height:0px;
+	height:0px;
+	border-bottom:none !important;
+	transition:all 0.2s;
+	opacity: 0;
+	background-color: rgba(0,0,0,.1) !important;
+}
+
+.menu-inner .submenu-parent::after {
+	content: "\f3d0";
+	font-family: "Ionicons";
+	margin-right: 15px;
+	transform: rotate(0turn);
+	transition:all 0.2s;
+	font-size: 18px;
+}
+
+.menu-inner .item-ios.submenu-parent::after {
+	height: 22px;
+    position: absolute;
+    right: 0;
+    top: 12px;
+}
+
+.menu-inner .submenu-parent.open-menu::after {
+	transform: rotate(.5turn);
+}
+
+/* Sets height of .item-inner element inside closed subitems to 0. */
+.menu-inner .submenu-child .item-inner {
+	height:0px;
+	max-height:0px;
+	min-height:0px;
+	overflow-y:hidden;
+	border:none;
+	transition:all 0.2s;
+	opacity: 0;
+}
+
+.menu-inner .submenu-child.open, .menu-inner .submenu-child.open .item-inner {
+	min-height: 44px;
+	height: 44px;
+	opacity: 1;
+}
+
+.modal-footer {
+	display: block;
+    margin-left: -15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.modal-footer.grid, .modal-footer .col {
+	padding: 0;
+}
+
+.modal-footer .button {
+	box-shadow: none;
+	margin: 0;
+	color: #555;
+}
+
+.modal-footer .col:nth-child(2) .button {
+	border-left: 1px solid #ccc;
+}
+
+.media-list ion-icon[item-end] {
+	color: #ccc;
+	padding-left: 10px;
+}
+
+.media-list ion-icon[item-start] {
+	float:left;
+	min-width: 24px;
+}
+
+.media-list ion-icon[name="remove-circle"] {
+	color: red
+}
+
+.media-list .label {
+	margin: 0;
+}
+
+.media-list .media-click-area {
+    min-height: 3rem;
+    overflow: hidden;
+    width: auto;
+    padding: 13px 8px 13px 0;
+}
+
+.media-list .downloaded-text {
+	background-color: green;
+	font-size: 10px;
+	padding: 3px 5px;
+	border-radius: 3px;
+	margin-right: 5px;
+	color: #fff;
+	float: left;
+	font-weight: bold;
+}
+
+.media-list .item-ios[detail-push] .item-inner, .media-list button.item-ios:not([detail-none]) .item-inner, .media-list a.item-ios:not([detail-none]) .item-inner {
+	background: none;
+}
+
+.progress-outer {
+    width: 96%;
+    margin: 10px 2%;
+    padding: 3px;
+    text-align: center;
+    background-color: #f4f4f4;
+    border: 1px solid #dcdcdc;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.progress-inner {
+    min-width: 15%;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: map-get($colors, primary);
+}
+
+#image-status {
+	
+	img {
+		width: 100%;
+		margin-top: 14px;
+	}
+}
+
+// hack for iphonex status bar. Should be deprecated eventually.
+.iphoneX-portrait .toolbar.statusbar-padding:first-child, .iphoneX-portrait .menu-inner > .toolbar.statusbar-padding:first-child { 
+	padding-top: 44px !important;
+	min-height: 80px !important;
+}
+
+.iphoneX-portrait .menu-inner .toolbar.statusbar-padding:first-child {
+	min-height: 80px !important;
+}
+
+.iphoneX-portrait .toolbar.statusbar-padding:first-child ion-title { 
+	padding-top: 44px !important; 
+	height: 80px !important;
+	min-height: 80px !important;
+}
+
+.iphoneX-portrait ion-content.statusbar-padding .fixed-content, .iphoneX-portrait ion-content.statusbar-padding .scroll-content, ion-modal ion-content.statusbar-padding.iphoneX-portrait .fixed-content, ion-modal ion-content.statusbar-padding.iphoneX-portrait .scroll-content {
+	margin-top: 80px !important;
+}
+
+.iphoneX-landscape .toolbar.statusbar-padding:first-child ion-title, .iphoneX-landscape .toolbar.statusbar-padding:first-child {
+	padding-top: 0 !important;
+	height: 44px !important;
+	min-height: 44px !important;
+}
+
+.iphoneX-portrait ion-content.statusbar-padding.has-favorites .scroll-content {
+	margin-top: 113px !important;
+}
+
+// Fix post-list favorite when using RTL
+ion-item-sliding.active-slide.active-options-left ion-item-options[side=left],
+ion-item-sliding.active-slide.active-options-right ion-item-options:not([side=left]),
+ion-item-sliding.active-slide.active-options-left ion-item-options[ng-reflect-side=left],
+ion-item-sliding.active-slide.active-options-right ion-item-options:not([ng-reflect-side=left]) {
+	width: 100%;
+    visibility: visible;
+	justify-content: flex-end;
+}

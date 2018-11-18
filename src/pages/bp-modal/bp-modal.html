@@ -1,0 +1,74 @@
+<ion-header class="{{customClasses}}">
+
+  <ion-toolbar>
+  
+    <ion-title>{{ title | translate }}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="{{customClasses}}">
+
+  <form (ngSubmit)="submitForm()" padding *ngIf="login_data">
+
+    <ion-item *ngIf="isMessage && !navParams.data.recipients" class="message-recipients">
+
+      <ion-label *ngIf="!recipientArr?.length">To:</ion-label>
+
+      <ion-select *ngIf="recipientArr?.length" [(ngModel)]="recipients" (ionChange)="recipientSelected()" name="recipients" placeholder="To:">
+
+        <ion-option *ngFor="let recipient of recipientArr" [value]="recipient.id">{{recipient.mention_name}}</ion-option>
+
+      </ion-select>
+
+    </ion-item>
+
+    <ion-item *ngIf="isMessage">
+      <ion-input type="text" [(ngModel)]="activity.subject" name="subject" placeholder="Subject"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+
+      <ion-thumbnail item-start *ngIf="uploadedImage">
+        <img class="uploaded-image" [src]="uploadedImage">
+      </ion-thumbnail>
+
+      <ion-textarea class="activity-texarea" placeholder="{{ 'Your message' | translate }}" autocorrect="on" name="content" [(ngModel)]="activity.content"></ion-textarea>
+    </ion-item>
+
+    
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button type="submit" block>{{ isReply ? 'Post comment' : isMessage ? 'Send message' : 'Post update' | translate }}</button>
+        </ion-col>
+
+        <ion-col *ngIf="!isReply && !isMessage">
+
+          <ion-item class="fake-button" icon-start color="light" (tap)="imageSheet()">
+            <ion-icon name="camera"></ion-icon>
+            {{ 'Add Image' | translate }}
+          </ion-item>
+
+        </ion-col>
+
+      </ion-row>
+
+    </ion-grid>
+
+  </form>
+
+	<div padding *ngIf="!login_data || !login_data.user_id">
+    	{{ 'Login to post a reply.' | translate }}
+      <button ion-button (click)="loginModal()">{{ 'Login' | translate }}</button>
+  </div>
+
+</ion-content>

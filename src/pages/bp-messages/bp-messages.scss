@@ -1,0 +1,138 @@
+bp-messages {
+
+	.message-preview span img {
+		max-height: 30px;
+	}
+
+	.message-date {
+		font-size: 10px;
+		color: #999;
+		font-style: italic;
+		margin-top: 5px;
+	}
+
+	.footer .toolbar {
+
+		border-top: 1px solid #eee;
+		padding: 0;
+
+		ion-grid {
+			padding: 0;
+		}
+
+		.toolbar-background {
+			background: #fafafa;
+		}
+
+		.button {
+			border-radius: 44px;
+		    width: 44px;
+		    max-width: 44px;
+		    height: 44px;
+		    margin: 0 auto;
+		}
+
+		.input[type=text] {
+			border: 1px solid #eee;
+		    border-radius: 20px;
+		    padding: 0 15px;
+		    background-color: #fff !important;
+		    color: #333 !important;
+		}
+
+	}
+
+	.message-header-sender {
+		display: block;
+	    margin: 0 auto;
+	    max-height: 50px;
+	    text-align: center;
+	}
+
+	.message-header-avatar {
+		display: block;
+	    margin: 0 auto;
+	    width: 25px;
+	    height: 25px;
+	    border-radius: 25px;
+	}
+
+	.message-header-name {
+		font-size: 10px;
+		color: #eee;
+	}
+
+	.single-message-thread {
+
+		clear: both;
+		overflow: hidden;
+		padding-top: 10px;
+		padding-bottom: 50px;
+
+		.item {
+			margin: 3px 100px 3px 15px;
+			width: auto;
+			display: flex;
+			float: left;
+			clear: both;
+			min-height: 10px;
+			padding-left: 0;
+		}
+
+		.item-inner {
+			background-color: #eee;
+			border-radius: 10px;
+			padding: 0 10px;
+			flex: inherit;
+		}
+
+		ion-avatar {
+			margin: 0 5px 0 0 !important;
+			max-width: 50px;
+		}
+
+		ion-avatar img {
+			height: 25px;
+			width: 25px;
+			display: block;
+			margin: auto;
+		}
+
+		.sender-name {
+			font-size: 10px;
+			opacity: .7;
+			text-align: center;
+			white-space: nowrap;
+    		overflow: hidden;
+    		text-overflow: ellipsis;
+		}
+
+		.my-reply {
+
+			&.item {
+				margin-right: 15px;
+				margin-left: 100px;
+				display: block;
+				float: right;
+			}
+
+			ion-avatar, .sender-name {
+				display: none;
+			}
+
+			.item-inner {
+				background-color: #3AA6FC;
+
+				.input-wrapper, label, p {
+					color: #fff;
+				}
+
+			}
+		}
+	}
+}
+
+.iphoneX-portrait .footer .toolbar.statusbar-padding:first-child {
+	min-height: 10px !important;
+	padding: 0 !important;
+}
