@@ -1,4 +1,6 @@
-# Ionic app files for AppPresser 3
+# Ionic app files for the Funkflex app using AppPresser 3
+
+Forked from [AppPresser 3](https://github.com/apppresser/ap3)
 
 These are the files used to compile mobile apps using [AppPresser](https://apppresser.com). They are based on [Ionic 3](http://ionicframework.com/), and use Angular 6 and Typescript.
 
