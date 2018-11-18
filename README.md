@@ -17,15 +17,7 @@ First, make sure you have node and npm installed.
 
 `sudo npm install -g ionic`
 
-2. Change src/providers/globalvars/globalvars.ts to your myapppresser.com account information. For example:
-
-```
-appid: string = '12';
-apiurl: string = 'https://myapppresser.com/site-slug/'
-endpoint: string = 'wp-json/ap3/v1/app/12';
-```
-
-3. Run `ionic serve` to preview the app in your browser
+3. Run `npm run serve` to preview the app in your browser
 
 Consult the [Ionic documentation](https://ionicframework.com/docs/cli/) for cli commands, custom components, and more.
 
