@@ -1645,7 +1645,7 @@ export class MyApp {
 
     console.log('getPageType page', page)
 
-    if(page.url == 'https://myapppresser.com/funkflex/apppages/home/') {
+    if(page.url == 'https://myapppresser.com/funkflex/apppages/radio/') {
       return StreamPlayerComponent;
     }
 
