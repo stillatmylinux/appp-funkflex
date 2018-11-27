@@ -6,14 +6,14 @@ export const environment = {
 	production: false,
 	now_playing: {
 		provider: 1,
-		data_url: 'http://np.tritondigital.com/public/nowplaying?mountName=WQHTAAC&numberToFetch={{limit}}&eventType=track',
+		data_url: 'https://np.tritondigital.com/public/nowplaying?mountName=WQHTAAC&numberToFetch={{limit}}&eventType=track',
 		generic_cover: './assets/img/Hot-97-NYC-Logo-1.jpg',
 		format_tracks: true,
 		default_title: 'Unknown Title',
 		default_artist: 'Unknown Artist'
 	},
 	streaming: {
-		url: 'http://playerservices.streamtheworld.com/pls/WQHTAAC.pls',
+		url: 'https://playerservices.streamtheworld.com/pls/WQHTAAC.pls',
 		format: ['aac', 'mp3'],
 		html5: true,
 		autoplay: true
