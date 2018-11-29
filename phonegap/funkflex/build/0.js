@@ -515,7 +515,7 @@ var MediaPlayer = /** @class */ (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var vg_utils_1 = __webpack_require__(635);
-var Observable_1 = __webpack_require__(45);
+var Observable_1 = __webpack_require__(42);
 var VgFullscreenAPI = (function () {
     function VgFullscreenAPI() {
         this.nativeFullscreen = true;
@@ -854,7 +854,7 @@ exports.setTyped(TYPED_OK);
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var Observable_1 = __webpack_require__(45);
+var Observable_1 = __webpack_require__(42);
 var TimerObservable_1 = __webpack_require__(672);
 var vg_states_1 = __webpack_require__(625);
 var vg_api_1 = __webpack_require__(615);
@@ -1460,7 +1460,7 @@ exports.VgPlayer = VgPlayer;
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var vg_events_1 = __webpack_require__(638);
-var Observable_1 = __webpack_require__(45);
+var Observable_1 = __webpack_require__(42);
 __webpack_require__(639);
 var VgCuePoints = (function () {
     function VgCuePoints(ref) {
@@ -19180,7 +19180,7 @@ exports.NetworkManager = NetworkManager;
 /******/ ]);
 });
 //# sourceMappingURL=pdf.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(122).Buffer, __webpack_require__(37), __webpack_require__(84)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(122).Buffer, __webpack_require__(41), __webpack_require__(84)))
 
 /***/ }),
 
@@ -19679,7 +19679,7 @@ var objectKeys = Object.keys || function (obj) {
   return keys;
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(37)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(41)))
 
 /***/ }),
 
@@ -20273,7 +20273,7 @@ function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(37), __webpack_require__(84)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(41), __webpack_require__(84)))
 
 /***/ }),
 
@@ -20672,7 +20672,7 @@ exports.VgControlsModule = VgControlsModule;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var Observable_1 = __webpack_require__(45);
+var Observable_1 = __webpack_require__(42);
 var vg_api_1 = __webpack_require__(615);
 var vg_controls_hidden_1 = __webpack_require__(626);
 __webpack_require__(639);
@@ -22825,7 +22825,7 @@ PdfViewerModule.ctorParameters = function () { return []; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var Buffer = __webpack_require__(122).Buffer;
-var Transform = __webpack_require__(367).Transform;
+var Transform = __webpack_require__(368).Transform;
 var binding = __webpack_require__(699);
 var util = __webpack_require__(648);
 var assert = __webpack_require__(647).ok;
@@ -30710,7 +30710,7 @@ Url.prototype.parseHost = function() {
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(714)(module), __webpack_require__(37)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(714)(module), __webpack_require__(41)))
 
 /***/ }),
 

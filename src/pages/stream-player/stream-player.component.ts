@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-import { StreamingService } from './_services/streaming.service';
+import { TritonDigitalService } from "./_services/tritondigital.service";
 import { NotificationsService } from './_services/notifications.service';
 import { FBMessengerService } from "../../providers/facebook/messenger/fb-messenger.service";
 
@@ -16,11 +16,13 @@ export class StreamPlayerComponent implements OnInit {
 	public show_stream_logo: string = '';
 	public stream_logo_url: string = '';
 	public logo_exists: boolean;
+	public playing: string;
 
 	constructor(
+		private zone: NgZone,
 		private http: Http,
 		private fbMsg: FBMessengerService,
-		private streaming: StreamingService,
+		public streaming: TritonDigitalService,
     	private notifications: NotificationsService
 	) {
 		this.stream_logo_url = 'assets/stream-logo.png';
@@ -43,12 +45,17 @@ export class StreamPlayerComponent implements OnInit {
 	 *
 	 * @return     void
 	 */
-	toggleStreamingPlayer(): void{
-		if(this.streaming.player.playing()){
-			this.streaming.pause();
-		} else{
-			this.streaming.play();
-		}
+	toggleStreamingPlayer(): void {
+
+		console.log('toggleStreamingPlayer');
+
+		this.zone.run( () => {
+			if(this.streaming.playing()){
+				this.streaming.pause();
+			} else{
+				this.streaming.resume();
+			}
+		});
 	}
 	
 	/**
@@ -62,11 +69,21 @@ export class StreamPlayerComponent implements OnInit {
 	}
 	  
 	showPlayer(event) {
-		this.radioState = 'player';
+
+		console.log('showPlayer');
+
+		this.zone.run(() => {
+			this.radioState = 'player';
+		});
 	}
 	
 	showPlaylist(event) {
-		this.radioState = 'playlist';
+
+		console.log('showPlaylist');
+
+		this.zone.run(() => {
+			this.radioState = 'playlist';
+		});
 	}
 
 	openFBMessenger() {

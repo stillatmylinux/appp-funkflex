@@ -25,6 +25,7 @@ import { Push } from "@ionic-native/push";
 import { Dialogs } from "@ionic-native/dialogs";
 import { Geolocation } from "@ionic-native/geolocation";
 import { InAppPurchase } from '@ionic-native/in-app-purchase';
+import { Media } from "@ionic-native/media";
 
 /* Providers */
 import {AppCamera} from '../providers/camera/app-camera';
@@ -56,6 +57,7 @@ import { MainPlayerComponent } from '../pages/stream-player/main-player/main-pla
 import { NowPlayingComponent } from '../pages/stream-player/now-playing/now-playing.component';
 import { PlaylistComponent } from '../pages/stream-player/playlist/playlist.component';
 import { FBMessengerService } from "../providers/facebook/messenger/fb-messenger.service";
+
 
 import {Iframe} from "../pages/iframe/iframe";
 
@@ -150,6 +152,7 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
     VideoUtils,
     IAP,
     InAppPurchase,
+    Media,
     Download,
     BpProvider,
     MenuService,

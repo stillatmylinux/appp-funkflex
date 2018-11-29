@@ -792,8 +792,8 @@ exports.default = default_1;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__media_player_media_player__ = __webpack_require__(627);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_video_video_utils__ = __webpack_require__(361);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_buddypress_bp_provider__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_video_video_utils__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_buddypress_bp_provider__ = __webpack_require__(360);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_analytics_analytics_service__ = __webpack_require__(83);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;

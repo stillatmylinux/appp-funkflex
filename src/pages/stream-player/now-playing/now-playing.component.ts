@@ -6,7 +6,7 @@ import { NotificationsService } from '../_services/notifications.service';
 
 import { Track } from '../_models/track.model';
 
-import { StreamingService } from '../_services/streaming.service';
+import { TritonDigitalService } from "../_services/tritondigital.service";
 
 import { trigger,state,style,transition,animate,keyframes } from '@angular/animations';
 
@@ -32,7 +32,7 @@ export class NowPlayingComponent implements OnInit {
 
 	trackLoaded: boolean = false;
 
-	constructor(private npService: NowPlayingService, private streaming: StreamingService, private notifications: NotificationsService) {
+	constructor(private npService: NowPlayingService, private streaming: TritonDigitalService, private notifications: NotificationsService) {
 
 	}
 
@@ -102,11 +102,12 @@ export class NowPlayingComponent implements OnInit {
 
 	ngOnInit() {
 		//Load current track onInit
-		// this.getCurrentTrack();
+		this.getCurrentTrack();
 
 		//Watch when streaming is played to keep now playing up-to-date
 		this.streaming.played.subscribe(() => {
 			//Set current track
+			console.log('Set current track');
 			this.getCurrentTrack();
 		});
 	}
