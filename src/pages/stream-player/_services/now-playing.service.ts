@@ -20,6 +20,9 @@ export class NowPlayingService {
 	public searchedItunes: Track[] = [];
 
 	public npUpdate: EventEmitter<boolean> = new EventEmitter();
+	public count_streaming_played_subscribe = 0;
+	public lastFetchTime: number = 0;
+	public tracksList: Track[] = [];
 
 	constructor(private http: HttpClient) { }
 
@@ -33,8 +36,9 @@ export class NowPlayingService {
 		return new Track({
 			title: environment.now_playing.default_title,
 			artist: environment.now_playing.default_artist,
-			played_at: dateObj.getTime(),
-			duration: 10000
+			// string otherwise you'll "trim is not a function"
+			played_at: dateObj.getTime().toString(),
+			duration: '00:00:10'
 		});
 	}
 
@@ -101,7 +105,7 @@ export class NowPlayingService {
 
 		if(existingTrack) {
 
-			console.log('old search iTunes', existingTrack);
+			// console.log('old search iTunes', existingTrack);
 
 			return Observable.create( observer => {
 				observer.next(existingTrack);
@@ -109,7 +113,7 @@ export class NowPlayingService {
 			});
 		} else {
 
-			console.log('search iTunes');
+			// console.log('search iTunes');
 
 			if(track.title == 'CAMILO COMMERCIAL FREE MIX') {
 				// track.cover_art = 'https://i1.sndcdn.com/avatars-000069594518-o46d51-t200x200.jpg';
@@ -124,7 +128,7 @@ export class NowPlayingService {
 			return this.http.get(searchUrl).pipe(
 				map((results: any) => {
 	
-					console.log(results);
+					// console.log(results);
 					if(results.resultCount >= 1){
 						results.results.map((result: any) => {
 							track.title = result.trackCensoredName;
@@ -143,6 +147,28 @@ export class NowPlayingService {
 
 	}
 
+	stopRepeatFetch() {
+		let now: any = new Date();
+		let currentFetchTime = Math.ceil(now / 1000);
+
+		// console.log('currentFetchTime', currentFetchTime)
+		// console.log('this.lastFetchTime', this.lastFetchTime)
+
+		if(this.lastFetchTime + 5 > currentFetchTime) {
+			// console.log('stopRepeatFetch stop')
+			return true;
+		} else {
+			// console.log('stopRepeatFetch allow')
+			return false;
+		}
+	}
+
+	setLastFetchTime() {
+		let date: any = new Date();
+		this.lastFetchTime = Math.ceil(date / 1000);
+		// console.log('setLastFetchTime', this.lastFetchTime)
+	}
+
 	/**
 	 * Fetches tracks from now playing service provider
 	 *
@@ -152,7 +178,16 @@ export class NowPlayingService {
 	fetch(limit): Observable<Track[]> {
 		let dataUrl = environment.now_playing.data_url.replace('{{limit}}', limit);
 
-		console.log('fetching', dataUrl);
+		if(this.stopRepeatFetch()) {
+			return Observable.create( observer => {
+				observer.next(this.tracksList);
+				observer.complete();
+			});
+		}
+		
+		this.setLastFetchTime();
+
+		// console.log('fetching', dataUrl);
 
 		return this.http.get(dataUrl, {
 			responseType: 'text'
@@ -160,7 +195,7 @@ export class NowPlayingService {
 		    map((data: any) => {
 		        const results: any = [];
 
-		        let tracksList = [];
+		        this.tracksList = [];
 
 		        if(environment.now_playing.provider == 1){
 		        	// Triton Digital
@@ -197,9 +232,9 @@ export class NowPlayingService {
 			        			}
 
 			        			// Push new Track to tracksList
-								tracksList.push(new Track(trackData));
+								this.tracksList.push(new Track(trackData));
 								
-								console.log('Track', tracksList[0]);
+								// console.log('Track', this.tracksList[0]);
 			        		}
 			        	}
 			        });
@@ -210,12 +245,12 @@ export class NowPlayingService {
 		        	let trackData = JSON.parse(data);
 
 		        	// Push new track to tracksList
-	        		tracksList.push(new Track(trackData));
+	        		this.tracksList.push(new Track(trackData));
 
 		        }
 
 		       	// Return formatted tracksList 
-		        return tracksList;
+		        return this.tracksList;
 		    }
 		    )
 		);

@@ -125,7 +125,7 @@ export class StreamingService {
 	 */
 	initPlayer(sources){
 
-		console.log('initPlayer sources', sources)
+		// console.log('initPlayer sources', sources)
 
 		this.player = new Howl({
 			src: sources,

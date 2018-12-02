@@ -17,6 +17,12 @@ export const environment = {
 		format: ['mp3'],
 		html5: true,
 		autoplay: true
+	},
+	aac_streaming: {
+		url: 'https://playerservices.streamtheworld.com/pls/WQHTAAC.pls',
+		format: ['aac','mp3'],
+		html5: true,
+		autoplay: true
 	}
 };
 

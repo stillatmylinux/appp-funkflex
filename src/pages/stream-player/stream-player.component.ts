@@ -47,7 +47,7 @@ export class StreamPlayerComponent implements OnInit {
 	 */
 	toggleStreamingPlayer(): void {
 
-		console.log('toggleStreamingPlayer');
+		// console.log('toggleStreamingPlayer');
 
 		this.zone.run( () => {
 			if(this.streaming.playing()){
@@ -70,7 +70,7 @@ export class StreamPlayerComponent implements OnInit {
 	  
 	showPlayer(event) {
 
-		console.log('showPlayer');
+		// console.log('showPlayer');
 
 		this.zone.run(() => {
 			this.radioState = 'player';
@@ -79,7 +79,7 @@ export class StreamPlayerComponent implements OnInit {
 	
 	showPlaylist(event) {
 
-		console.log('showPlaylist');
+		// console.log('showPlaylist');
 
 		this.zone.run(() => {
 			this.radioState = 'playlist';

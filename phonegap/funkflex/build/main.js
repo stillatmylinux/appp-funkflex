@@ -803,6 +803,12 @@ var environment = {
         format: ['mp3'],
         html5: true,
         autoplay: true
+    },
+    aac_streaming: {
+        url: 'https://playerservices.streamtheworld.com/pls/WQHTAAC.pls',
+        format: ['aac', 'mp3'],
+        html5: true,
+        autoplay: true
     }
 };
 /*
@@ -1403,23 +1409,23 @@ var map = {
 		2
 	],
 	"../pages/bp-modal/bp-modal.module": [
-		602,
+		606,
 		16
 	],
 	"../pages/bp-notifications/bp-notifications.module": [
-		603,
+		602,
 		15
 	],
 	"../pages/bp-profile/bp-profile.module": [
-		604,
+		603,
 		7
 	],
 	"../pages/custom-pages/custom-page.module": [
-		605,
+		604,
 		4
 	],
 	"../pages/download-list/download-list.module": [
-		606,
+		605,
 		14
 	],
 	"../pages/language-settings/language-settings.module": [
@@ -2556,6 +2562,7 @@ var TritonDigitalService = /** @class */ (function () {
         this.is_playing = true;
         this.currentSourceIndex = 0;
         this.sources = [];
+        this.count_streaming_played_subscribe = 0;
         this.played = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.error = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.play();
@@ -2593,7 +2600,7 @@ var TritonDigitalService = /** @class */ (function () {
         return promise;
     };
     TritonDigitalService.prototype.resetDelay = function () {
-        console.log('resetDelay');
+        // console.log('resetDelay');
         this.reconnectionDelay = 5; // seconds
     };
     TritonDigitalService.prototype.nextDelay = function () {
@@ -2602,11 +2609,19 @@ var TritonDigitalService = /** @class */ (function () {
         if (this.reconnectionDelay > 60) {
             this.reconnectionDelay = 60;
         }
-        console.log('nextDelay', this.reconnectionDelay);
+        // console.log('nextDelay', this.reconnectionDelay);
         return this.reconnectionDelay;
     };
     TritonDigitalService.prototype.playing = function () {
         return this.is_playing;
+    };
+    TritonDigitalService.prototype.tickTime = function () {
+        var _this = this;
+        var date = new Date();
+        // console.log(date.getTime())
+        setTimeout(function () {
+            _this.tickTime();
+        }, 1000);
     };
     /**
      * Initalizes/loads player
@@ -2614,11 +2629,22 @@ var TritonDigitalService = /** @class */ (function () {
      * @return     Promise
      */
     TritonDigitalService.prototype.initPlayer = function () {
+        // this.tickTime();
         var _this = this;
-        console.log('initPlayer sources', this.sources);
+        // local dev only because cordova is missing
+        if (window.location.href.indexOf('localhost') > 0) {
+            // local dev only
+            // console.log('running locally skip initPlayer');
+            // fake the rest
+            this.is_playing = true;
+            this.status = 'playing';
+            this.played.emit();
+            return;
+        }
+        // console.log('initPlayer sources', this.sources);
         this.resetDelay();
         var source = this.nextSource();
-        console.log('nextSource', source);
+        // console.log('nextSource', source)
         this.player = this.media.create(source);
         this.player.successCallback = function () {
             console.log('successCallback');
@@ -2634,6 +2660,7 @@ var TritonDigitalService = /** @class */ (function () {
         this.player.onError.subscribe(function (error) {
             console.log('Error!', error);
             _this.is_playing = false;
+            _this.status = null;
             setTimeout(function () {
                 _this.initPlayer();
             }, _this.nextDelay());
@@ -2866,6 +2893,9 @@ var NowPlayingService = /** @class */ (function () {
         this.recentlyPlayed = [];
         this.searchedItunes = [];
         this.npUpdate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.count_streaming_played_subscribe = 0;
+        this.lastFetchTime = 0;
+        this.tracksList = [];
     }
     /**
      * Returns a dummy track using default title & artist from environment
@@ -2877,8 +2907,9 @@ var NowPlayingService = /** @class */ (function () {
         return new __WEBPACK_IMPORTED_MODULE_6__models_track_model__["a" /* Track */]({
             title: __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.default_title,
             artist: __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.default_artist,
-            played_at: dateObj.getTime(),
-            duration: 10000
+            // string otherwise you'll "trim is not a function"
+            played_at: dateObj.getTime().toString(),
+            duration: '00:00:10'
         });
     };
     /**
@@ -2931,14 +2962,14 @@ var NowPlayingService = /** @class */ (function () {
         searchUrl += "&limit=1&entity=song";
         var existingTrack = this.searchedItunes.find(function (obj) { return (obj['title'] == track['title']) && (obj['artist'] == track['artist']); });
         if (existingTrack) {
-            console.log('old search iTunes', existingTrack);
+            // console.log('old search iTunes', existingTrack);
             return __WEBPACK_IMPORTED_MODULE_4_rxjs__["Observable"].create(function (observer) {
                 observer.next(existingTrack);
                 observer.complete();
             });
         }
         else {
-            console.log('search iTunes');
+            // console.log('search iTunes');
             if (track.title == 'CAMILO COMMERCIAL FREE MIX') {
                 // track.cover_art = 'https://i1.sndcdn.com/avatars-000069594518-o46d51-t200x200.jpg';
                 track.duration = 600000;
@@ -2949,7 +2980,7 @@ var NowPlayingService = /** @class */ (function () {
                 });
             }
             return this.http.get(searchUrl).pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators__["map"])(function (results) {
-                console.log(results);
+                // console.log(results);
                 if (results.resultCount >= 1) {
                     results.results.map(function (result) {
                         track.title = result.trackCensoredName;
@@ -2963,6 +2994,25 @@ var NowPlayingService = /** @class */ (function () {
             }));
         }
     };
+    NowPlayingService.prototype.stopRepeatFetch = function () {
+        var now = new Date();
+        var currentFetchTime = Math.ceil(now / 1000);
+        console.log('currentFetchTime', currentFetchTime);
+        console.log('this.lastFetchTime', this.lastFetchTime);
+        if (this.lastFetchTime + 10 > currentFetchTime) {
+            console.log('stopRepeatFetch stop');
+            return true;
+        }
+        else {
+            console.log('stopRepeatFetch allow');
+            return false;
+        }
+    };
+    NowPlayingService.prototype.setLastFetchTime = function () {
+        var date = new Date();
+        this.lastFetchTime = Math.ceil(date / 1000);
+        console.log('setLastFetchTime', this.lastFetchTime);
+    };
     /**
      * Fetches tracks from now playing service provider
      *
@@ -2970,13 +3020,21 @@ var NowPlayingService = /** @class */ (function () {
      * @return     array   Array of tracks
      */
     NowPlayingService.prototype.fetch = function (limit) {
+        var _this = this;
         var dataUrl = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.data_url.replace('{{limit}}', limit);
+        if (this.stopRepeatFetch()) {
+            return __WEBPACK_IMPORTED_MODULE_4_rxjs__["Observable"].create(function (observer) {
+                observer.next(_this.tracksList);
+                observer.complete();
+            });
+        }
+        this.setLastFetchTime();
         console.log('fetching', dataUrl);
         return this.http.get(dataUrl, {
             responseType: 'text'
         }).pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators__["map"])(function (data) {
             var results = [];
-            var tracksList = [];
+            _this.tracksList = [];
             if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.provider == 1) {
                 // Triton Digital
                 // Parse XML to JSON
@@ -3008,8 +3066,8 @@ var NowPlayingService = /** @class */ (function () {
                                 trackData['played_at'] = track['$']['timestamp'] * 1000;
                             }
                             // Push new Track to tracksList
-                            tracksList.push(new __WEBPACK_IMPORTED_MODULE_6__models_track_model__["a" /* Track */](trackData));
-                            console.log('Track', tracksList[0]);
+                            _this.tracksList.push(new __WEBPACK_IMPORTED_MODULE_6__models_track_model__["a" /* Track */](trackData));
+                            console.log('Track', _this.tracksList[0]);
                         };
                         //Loop through track properties and populate trackData
                         for (var _i = 0, _a = parsed['nowplaying-info-list']['nowplaying-info']; _i < _a.length; _i++) {
@@ -3024,10 +3082,10 @@ var NowPlayingService = /** @class */ (function () {
                 // Parse JSON
                 var trackData = JSON.parse(data);
                 // Push new track to tracksList
-                tracksList.push(new __WEBPACK_IMPORTED_MODULE_6__models_track_model__["a" /* Track */](trackData));
+                _this.tracksList.push(new __WEBPACK_IMPORTED_MODULE_6__models_track_model__["a" /* Track */](trackData));
             }
             // Return formatted tracksList 
-            return tracksList;
+            return _this.tracksList;
         }));
     };
     NowPlayingService = __decorate([
@@ -4381,11 +4439,11 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/bp-group/bp-group.module#BpGroupPageModule', name: 'BpGroupPage', segment: 'bp-group', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-list/bp-list.module#BpListModule', name: 'BpList', segment: 'bp-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-messages/bp-messages.module#BpMessagesModule', name: 'BpMessages', segment: 'bp-messages', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/bp-modal/bp-modal.module#BpModalModule', name: 'BpModal', segment: 'bp-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-notifications/bp-notifications.module#BpNotificationsModule', name: 'BpNotifications', segment: 'bp-notifications', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-profile/bp-profile.module#BpProfilePageModule', name: 'BpProfilePage', segment: 'bp-profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/custom-pages/custom-page.module#CustomPageModule', name: 'CustomPage', segment: 'custom-page', priority: 'high', defaultHistory: [] },
                         { loadChildren: '../pages/download-list/download-list.module#DownloadListModule', name: 'DownloadList', segment: 'download-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/bp-modal/bp-modal.module#BpModalModule', name: 'BpModal', segment: 'bp-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/language-settings/language-settings.module#LanguageSettingsModule', name: 'LanguageSettings', segment: 'language-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login-modal/login-modal.module#LoginModalModule', name: 'LoginModal', segment: 'login-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/media-player/media-player.module#MediaPlayerModule', name: 'MediaPlayer', segment: 'media-player', priority: 'low', defaultHistory: [] },
@@ -6072,9 +6130,10 @@ var NowPlayingComponent = /** @class */ (function () {
      * @return     void
      */
     NowPlayingComponent.prototype.getCurrentTrack = function () {
+        var _this = this;
+        console.log('getCurrentTrack');
         //Set trackLoaded to false
         // this.trackLoaded = false;
-        var _this = this;
         //Retrieve current track
         this.npService.fetch(1).subscribe(function (response) {
             if (response && response.length === 0)
@@ -6086,7 +6145,7 @@ var NowPlayingComponent = /** @class */ (function () {
                     //Push current track to recentlyPlayed if is different that latest
                     if (response && !_this.npService.hasTrackHasBeenRecentlyPlayed(response)) {
                         _this.npService.addRecentlyPlayed(response);
-                        //Emith npUpdate event
+                        //Emit npUpdate event
                         _this.npService.npUpdate.next(true);
                     }
                     //Update currentTrack
@@ -6096,7 +6155,11 @@ var NowPlayingComponent = /** @class */ (function () {
                     console.log('timeUntilEnds', _this.currentTrack, _this.currentTrack.timeUntilEnds());
                     //Set timeout until next expected track
                     setTimeout(function () {
+                        console.log('setTimeout timeup', _this.currentTrack.timeUntilEnds());
                         _this.getCurrentTrack();
+                    }, _this.currentTrack.timeUntilEnds());
+                    setTimeout(function () {
+                        console.log('', _this.currentTrack.timeUntilEnds());
                     }, _this.currentTrack.timeUntilEnds());
                 });
             }, 500);
@@ -6117,12 +6180,12 @@ var NowPlayingComponent = /** @class */ (function () {
     };
     NowPlayingComponent.prototype.ngOnInit = function () {
         var _this = this;
+        console.log('NowPlayingComponent ngOnInit ONLY ONCE!!!!!!!');
         //Load current track onInit
         this.getCurrentTrack();
         //Watch when streaming is played to keep now playing up-to-date
         this.streaming.played.subscribe(function () {
             //Set current track
-            console.log('Set current track');
             _this.getCurrentTrack();
         });
     };
@@ -6159,7 +6222,52 @@ var NowPlayingComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__environments_environment__ = __webpack_require__(199);
 
 var Track = /** @class */ (function () {
+    /**
+     *
+        <?xml version="1.0" encoding="UTF-8"?>
+        <nowplaying-info-list>
+            <nowplaying-info mountName="WQHTAAC" timestamp="1543777744" type="track">
+                <property name="cue_time_duration">
+                    <![CDATA[00:04:02]]>
+                </property>
+                <property name="cue_time_start">
+                    <![CDATA[1543777699424]]>
+                </property>
+                <property name="cue_title">
+                    <![CDATA[Walk It Talk It (feat. Drake)]]>
+                </property>
+                <property name="program_id">
+                    <![CDATA[{cartNumber}]]>
+                </property>
+                <property name="track_album_name">
+                    <![CDATA[Finessed Flow]]>
+                </property>
+                <property name="track_artist_name">
+                    <![CDATA[Migos]]>
+                </property>
+                <property name="track_nowplaying_url">
+                    <![CDATA[https://metadata.listenlive.co/metadata/song/d3/1a98fa04cdbf5e706007df5505d686f1.json]]>
+                </property>
+            </nowplaying-info>
+        </nowplaying-info-list>
+
+
+        track['property'].map((prop) => {
+            if(prop['$']['name'] == "cue_title"){
+                trackData['title'] = prop['_'];
+            }else if(prop['$']['name'] == "track_artist_name"){
+                trackData['artist'] = prop['_'];
+            }else if(prop['$']['name'] == "track_album_name"){
+                trackData['album'] = prop['_'];
+            }else if(prop['$']['name'] == "cue_time_start"){
+                trackData['played_at'] = prop['_'];
+            }else if(prop['$']['name'] == "cue_time_duration"){
+                trackData['duration'] = prop['_'];
+            }
+        });
+     */
     function Track(data) {
+        console.log(data);
         this.title = (data['title']) ? data['title'].trim() : '';
         this.artist = (data['artist']) ? data['artist'].trim() : '';
         this.album = (data['album']) ? data['album'].trim() : '';
@@ -6167,6 +6275,17 @@ var Track = /** @class */ (function () {
         this.purchase_link = (data['purchase_link']) ? data['purchase_link'].trim() : '';
         this.duration = (data['duration']) ? data['duration'].trim() : '';
         this.played_at = (data['played_at']) ? data['played_at'].trim() : '';
+        var date = new Date();
+        console.log('now', date, this.played_at);
+        var played_at = new Date((this.played_at / 1000) * 1000);
+        console.log('played at', played_at);
+        if (this.played_at && this.duration) {
+            var duration = this.formatDurationTime(this.duration);
+            this.ends_at = ((this.played_at / 1000) + (duration / 1000)) * 1000;
+            console.log('ends_at', this.ends_at);
+        }
+        var ends_in = this.ends_at - date.getTime();
+        console.log('timeUntilEnds ends_in', ends_in);
         if (!this.cover_art && __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].now_playing.generic_cover) {
             this.cover_art = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].now_playing.generic_cover;
         }
@@ -6184,6 +6303,7 @@ var Track = /** @class */ (function () {
      * @param time string
      */
     Track.prototype.formatDurationTime = function (time) {
+        console.log('formatDurationTime time', time);
         return (Number(time.split(':')[0]) * 3600 + Number(time.split(':')[1]) * 60 + Number(time.split(':')[2])) * 1000;
     };
     /**
@@ -6203,8 +6323,7 @@ var Track = /** @class */ (function () {
     Track.prototype.timeUntilEnds = function () {
         var date = new Date();
         var ends_in = this.ends_at - date.getTime();
-        console.log('timeUntilEnds ends_in', ends_in);
-        return (ends_in < 0) ? 30000 : ends_in;
+        return (ends_in < 0) ? 10000 : ends_in;
     };
     /**
      * Returns played_at Date object

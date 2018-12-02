@@ -18,7 +18,9 @@ export class TritonDigitalService {
 	
 	sources: string[] = [];
     
-    reconnectionDelay: number; // seconds
+	reconnectionDelay: number; // seconds
+	public count_streaming_played_subscribe = 0;
+	public lastFetchTime: any;
 
 	@Output() played: EventEmitter<any> = new EventEmitter();
 
@@ -71,7 +73,7 @@ export class TritonDigitalService {
 
     resetDelay() {
 
-		console.log('resetDelay');
+		// console.log('resetDelay');
         this.reconnectionDelay = 5;  // seconds
 	}
 
@@ -83,7 +85,7 @@ export class TritonDigitalService {
 			this.reconnectionDelay = 60;
 		}
 
-		console.log('nextDelay', this.reconnectionDelay);
+		// console.log('nextDelay', this.reconnectionDelay);
 		return this.reconnectionDelay;
 	}
 	
@@ -98,12 +100,28 @@ export class TritonDigitalService {
 	 */
 	initPlayer() {
 
-		console.log('initPlayer sources', this.sources);
+		// local dev only because cordova is missing
+		if(window.location.href.indexOf('localhost') > 0) {
+
+			// local dev only
+
+			// console.log('running locally skip initPlayer');
+			// fake the rest
+			this.is_playing = true;
+			this.status = 'playing';
+			this.played.emit();
+			return;
+		}
+
+
+		// console.log('initPlayer sources', this.sources);
 
 		this.resetDelay();
 
 		let source = this.nextSource();
-		console.log('nextSource', source)
+		// console.log('nextSource', source)
+
+		
 
 		this.player = this.media.create(source);
 		
@@ -126,6 +144,7 @@ export class TritonDigitalService {
         this.player.onError.subscribe(error => {
 			console.log('Error!', error);
 			this.is_playing = false;
+			this.status = null;
 			setTimeout(() => {
 				this.initPlayer();
 			}, this.nextDelay());

@@ -32,8 +32,7 @@ export class NowPlayingComponent implements OnInit {
 
 	trackLoaded: boolean = false;
 
-	constructor(private npService: NowPlayingService, private streaming: TritonDigitalService, private notifications: NotificationsService) {
-
+	constructor(private npService: NowPlayingService, private streaming: TritonDigitalService, private notifications: NotificationsService) {		
 	}
 
 	/**
@@ -43,6 +42,8 @@ export class NowPlayingComponent implements OnInit {
 	 */
 	getCurrentTrack(): void{
 
+		// console.log('getCurrentTrack');
+		
 		//Set trackLoaded to false
 		// this.trackLoaded = false;
 
@@ -63,7 +64,7 @@ export class NowPlayingComponent implements OnInit {
 					if(response && !this.npService.hasTrackHasBeenRecentlyPlayed(response)){
 						this.npService.addRecentlyPlayed(response);
 
-						//Emith npUpdate event
+						//Emit npUpdate event
 						this.npService.npUpdate.next(true);
 					}
 
@@ -73,10 +74,11 @@ export class NowPlayingComponent implements OnInit {
 					//Set trackLoaded
 					this.trackLoaded = true;
 
-					console.log('timeUntilEnds', this.currentTrack, this.currentTrack.timeUntilEnds())
+					// console.log('timeUntilEnds', this.currentTrack, this.currentTrack.timeUntilEnds())
 
 					//Set timeout until next expected track
 					setTimeout(() => {
+						// console.log('setTimeout timeup', this.currentTrack.timeUntilEnds());
 						this.getCurrentTrack();
 					}, this.currentTrack.timeUntilEnds());
 				});
@@ -101,13 +103,15 @@ export class NowPlayingComponent implements OnInit {
 	}
 
 	ngOnInit() {
+
+		// console.log('NowPlayingComponent ngOnInit ONLY ONCE!!!!!!!')
+
 		//Load current track onInit
 		this.getCurrentTrack();
 
 		//Watch when streaming is played to keep now playing up-to-date
 		this.streaming.played.subscribe(() => {
 			//Set current track
-			console.log('Set current track');
 			this.getCurrentTrack();
 		});
 	}

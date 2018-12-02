@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 605:
+/***/ 604:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,9 +9,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index__ = __webpack_require__(658);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index__ = __webpack_require__(657);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__custom_page__ = __webpack_require__(664);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__custom_page__ = __webpack_require__(663);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ap_list_ap_list_module__ = __webpack_require__(642);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_ap_slider_ap_slider_module__ = __webpack_require__(643);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -65,8 +65,8 @@ var CustomPageModule = /** @class */ (function () {
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(53);
 var http_1 = __webpack_require__(16);
-var index_1 = __webpack_require__(659);
-var Utils_1 = __webpack_require__(662);
+var index_1 = __webpack_require__(658);
+var Utils_1 = __webpack_require__(661);
 var DYNAMIC_SELECTOR = 'DynamicComponent';
 var DynamicComponentMetadata = (function () {
     function DynamicComponentMetadata(selector, template) {
@@ -287,7 +287,7 @@ exports.PropertyAnnotationFactory = PropertyAnnotationFactory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ap_list__ = __webpack_require__(665);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ap_list__ = __webpack_require__(664);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -330,7 +330,7 @@ var ApListComponentModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ap_slider__ = __webpack_require__(666);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ap_slider__ = __webpack_require__(665);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -365,7 +365,7 @@ var ApSliderComponentModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 658:
+/***/ 657:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -373,8 +373,21 @@ var ApSliderComponentModule = /** @class */ (function () {
 var DynamicComponent_1 = __webpack_require__(640);
 exports.DynamicComponent = DynamicComponent_1.DynamicComponent;
 exports.DynamicComponentMetadata = DynamicComponent_1.DynamicComponentMetadata;
-var DynamicComponentModule_1 = __webpack_require__(663);
+var DynamicComponentModule_1 = __webpack_require__(662);
 exports.DynamicComponentModule = DynamicComponentModule_1.DynamicComponentModule;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 658:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var MetadataHelper_1 = __webpack_require__(659);
+exports.MetadataHelper = MetadataHelper_1.MetadataHelper;
+var MetadataFactory_1 = __webpack_require__(641);
+exports.PropertyAnnotationFactory = MetadataFactory_1.PropertyAnnotationFactory;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -384,20 +397,7 @@ exports.DynamicComponentModule = DynamicComponentModule_1.DynamicComponentModule
 
 "use strict";
 
-var MetadataHelper_1 = __webpack_require__(660);
-exports.MetadataHelper = MetadataHelper_1.MetadataHelper;
-var MetadataFactory_1 = __webpack_require__(641);
-exports.PropertyAnnotationFactory = MetadataFactory_1.PropertyAnnotationFactory;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 660:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Utils_1 = __webpack_require__(661);
+var Utils_1 = __webpack_require__(660);
 var MetadataFactory_1 = __webpack_require__(641);
 var MetadataHelper = (function () {
     function MetadataHelper() {
@@ -439,6 +439,36 @@ exports.MetadataHelper = MetadataHelper;
 
 /***/ }),
 
+/***/ 660:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Utils = (function () {
+    function Utils() {
+    }
+    Utils.isPresent = function (obj) {
+        return obj !== undefined && obj !== null;
+    };
+    Utils.isUndefined = function (obj) {
+        return obj === undefined;
+    };
+    Utils.isString = function (obj) {
+        return typeof obj === 'string';
+    };
+    Utils.isFunction = function (obj) {
+        return typeof obj === 'function';
+    };
+    Utils.isArray = function (obj) {
+        return Array.isArray(obj);
+    };
+    return Utils;
+}());
+exports.Utils = Utils;
+//# sourceMappingURL=Utils.js.map
+
+/***/ }),
+
 /***/ 661:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -474,36 +504,6 @@ exports.Utils = Utils;
 
 "use strict";
 
-var Utils = (function () {
-    function Utils() {
-    }
-    Utils.isPresent = function (obj) {
-        return obj !== undefined && obj !== null;
-    };
-    Utils.isUndefined = function (obj) {
-        return obj === undefined;
-    };
-    Utils.isString = function (obj) {
-        return typeof obj === 'string';
-    };
-    Utils.isFunction = function (obj) {
-        return typeof obj === 'function';
-    };
-    Utils.isArray = function (obj) {
-        return Array.isArray(obj);
-    };
-    return Utils;
-}());
-exports.Utils = Utils;
-//# sourceMappingURL=Utils.js.map
-
-/***/ }),
-
-/***/ 663:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 var core_1 = __webpack_require__(0);
 var DynamicComponent_1 = __webpack_require__(640);
 var DynamicComponentModule = (function () {
@@ -528,7 +528,7 @@ exports.DynamicComponentModule = DynamicComponentModule;
 
 /***/ }),
 
-/***/ 664:
+/***/ 663:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1159,7 +1159,7 @@ var CustomPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 665:
+/***/ 664:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1435,7 +1435,7 @@ var ApListComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 666:
+/***/ 665:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
