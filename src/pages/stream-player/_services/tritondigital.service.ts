@@ -101,7 +101,7 @@ export class TritonDigitalService {
 	initPlayer() {
 
 		// local dev only because cordova is missing
-		if(window.location.href.indexOf('localhost') > 0) {
+		if(window.location.href.indexOf('localhost') > 0 || window.location.href.indexOf('myapppresser') > 0) {
 
 			// local dev only
 

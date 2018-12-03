@@ -187,7 +187,7 @@ export class NowPlayingService {
 		
 		this.setLastFetchTime();
 
-		// console.log('fetching', dataUrl);
+		console.log('fetching', dataUrl);
 
 		return this.http.get(dataUrl, {
 			responseType: 'text'
@@ -234,7 +234,7 @@ export class NowPlayingService {
 			        			// Push new Track to tracksList
 								this.tracksList.push(new Track(trackData));
 								
-								// console.log('Track', this.tracksList[0]);
+								console.log('Track', this.tracksList[0]);
 			        		}
 			        	}
 			        });
