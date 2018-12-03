@@ -17,6 +17,7 @@ export class StreamPlayerComponent implements OnInit {
 	public stream_logo_url: string = '';
 	public logo_exists: boolean;
 	public playing: string;
+	public initShowSpinner: boolean = true;
 
 	constructor(
 		private zone: NgZone,
@@ -27,6 +28,13 @@ export class StreamPlayerComponent implements OnInit {
 	) {
 		this.stream_logo_url = 'assets/stream-logo.png';
 		this.addLogo();
+
+		// allow 10 seconds for the buffer to fill
+		setTimeout(()=>{
+			this.zone.run(() => {
+				this.initShowSpinner = false;
+			})
+		}, 10000);
 	}
 
 	ngOnInit() {
@@ -74,6 +82,7 @@ export class StreamPlayerComponent implements OnInit {
 
 		this.zone.run(() => {
 			this.radioState = 'player';
+			this.initShowSpinner = false;
 		});
 	}
 	

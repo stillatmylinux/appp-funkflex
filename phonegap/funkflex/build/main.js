@@ -11,7 +11,7 @@ webpackJsonp([17],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_keyboard__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_social_sharing__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_social_sharing__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_header_logo_header_logo__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_language_language_service__ = __webpack_require__(126);
@@ -1393,35 +1393,35 @@ webpackEmptyAsyncContext.id = 241;
 
 var map = {
 	"../pages/bp-details/bp-details.module": [
-		598,
+		599,
 		1
 	],
 	"../pages/bp-group/bp-group.module": [
-		599,
+		598,
 		8
 	],
 	"../pages/bp-list/bp-list.module": [
-		600,
+		601,
 		3
 	],
 	"../pages/bp-messages/bp-messages.module": [
-		601,
+		600,
 		2
 	],
 	"../pages/bp-modal/bp-modal.module": [
-		606,
+		602,
 		16
 	],
 	"../pages/bp-notifications/bp-notifications.module": [
-		602,
+		603,
 		15
 	],
 	"../pages/bp-profile/bp-profile.module": [
-		603,
+		604,
 		7
 	],
 	"../pages/custom-pages/custom-page.module": [
-		604,
+		606,
 		4
 	],
 	"../pages/download-list/download-list.module": [
@@ -1483,9 +1483,9 @@ module.exports = webpackAsyncContext;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppCamera; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_camera__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_transfer__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_file__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_camera__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_transfer__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_file__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_action_sheet__ = __webpack_require__(127);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2417,6 +2417,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var StreamPlayerComponent = /** @class */ (function () {
     function StreamPlayerComponent(zone, http, fbMsg, streaming, notifications) {
+        var _this = this;
         this.zone = zone;
         this.http = http;
         this.fbMsg = fbMsg;
@@ -2425,8 +2426,15 @@ var StreamPlayerComponent = /** @class */ (function () {
         this.radioState = 'player';
         this.show_stream_logo = '';
         this.stream_logo_url = '';
+        this.initShowSpinner = true;
         this.stream_logo_url = 'assets/stream-logo.png';
         this.addLogo();
+        // allow 10 seconds for the buffer to fill
+        setTimeout(function () {
+            _this.zone.run(function () {
+                _this.initShowSpinner = false;
+            });
+        }, 10000);
     }
     StreamPlayerComponent.prototype.ngOnInit = function () {
     };
@@ -2441,8 +2449,8 @@ var StreamPlayerComponent = /** @class */ (function () {
      * @return     void
      */
     StreamPlayerComponent.prototype.toggleStreamingPlayer = function () {
+        // console.log('toggleStreamingPlayer');
         var _this = this;
-        console.log('toggleStreamingPlayer');
         this.zone.run(function () {
             if (_this.streaming.playing()) {
                 _this.streaming.pause();
@@ -2462,15 +2470,16 @@ var StreamPlayerComponent = /** @class */ (function () {
         this.notifications.remove(id);
     };
     StreamPlayerComponent.prototype.showPlayer = function (event) {
+        // console.log('showPlayer');
         var _this = this;
-        console.log('showPlayer');
         this.zone.run(function () {
             _this.radioState = 'player';
+            _this.initShowSpinner = false;
         });
     };
     StreamPlayerComponent.prototype.showPlaylist = function (event) {
+        // console.log('showPlaylist');
         var _this = this;
-        console.log('showPlaylist');
         this.zone.run(function () {
             _this.radioState = 'playlist';
         });
@@ -2514,7 +2523,7 @@ var StreamPlayerComponent = /** @class */ (function () {
     };
     StreamPlayerComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-stream-player',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/'<ion-header>\n\n	<ion-navbar>\n		\n		<ion-buttons start>\n		<button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n		    <ion-icon name="arrow-back"></ion-icon>\n		    {{ \'Back\' | translate }}\n		</button>\n\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n		</ion-buttons>\n\n	    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    	<ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n	    <ion-buttons end>\n            <button ion-button (click)="openFBMessenger()">\n                <ion-icon name="fa-comments"></ion-icon>\n            </button>\n		</ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content>\n    <div class="streaming-logo">\n        <img *ngIf="logo_exists" [src]="stream_logo_url" />\n    </div>\n    <app-main-player [radioState]="radioState"></app-main-player>\n</ion-content>\n\n\n<div>\n  \n  <div class="notifications" *ngIf="notifications.stack">\n      <div *ngFor="let notification of notifications.stack" class="msg {{ notification.type }}">\n          {{ notification.message }}\n      </div>\n  </div>\n\n  <footer class="main-footer">\n      <div class="inner">\n          <ul class="footer-nav">\n              <li>\n                  <a href="#" (click)="showPlayer($event)">\n                      <i class="fas fa-volume-up"></i> Player\n                  </a>\n              </li>\n              <li class="play-btn" (click)="toggleStreamingPlayer($event)">\n                  <a href="#">\n                      <i class="fas fa-play" *ngIf="!streaming.isPlaying() && !streaming.isLoading()"></i>\n                      <i class="fas fa-pause" *ngIf="streaming.isPlaying() && !streaming.isLoading()"></i>\n                      <i class="fas fa-spinner fa-pulse" *ngIf="streaming.isLoading()"></i>\n                  </a>\n              </li>\n              <li>\n                  <a href="#" (click)="loadPlaylist($event)">  \n                      <i class="fas fa-clock"></i> Playlist\n                  </a>\n              </li>\n          </ul>\n      </div>\n  </footer>\n</div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/
+            selector: 'app-stream-player',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/'<ion-header>\n\n	<ion-navbar>\n		\n		<ion-buttons start>\n		<button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n		    <ion-icon name="arrow-back"></ion-icon>\n		    {{ \'Back\' | translate }}\n		</button>\n\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n		</ion-buttons>\n\n	    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    	<ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n	    <ion-buttons end>\n            <button ion-button (click)="openFBMessenger()">\n                <ion-icon name="fa-comments"></ion-icon>\n            </button>\n		</ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content>\n    <div class="streaming-logo">\n        <img *ngIf="logo_exists" [src]="stream_logo_url" />\n    </div>\n    <app-main-player [radioState]="radioState"></app-main-player>\n</ion-content>\n\n\n<div>\n  \n  <div class="notifications" *ngIf="notifications.stack">\n      <div *ngFor="let notification of notifications.stack" class="msg {{ notification.type }}">\n          {{ notification.message }}\n      </div>\n  </div>\n\n  <footer class="main-footer">\n      <div class="inner">\n          <ul class="footer-nav">\n              <li>\n                  <a href="#" (click)="showPlayer($event)">\n                      <i class="fas fa-volume-up"></i> Player\n                  </a>\n              </li>\n              <li class="play-btn" (click)="toggleStreamingPlayer($event)">\n                  <a href="#">\n                      <i class="fas fa-play" *ngIf="!initShowSpinner && !streaming.isPlaying() && !streaming.isLoading()"></i>\n                      <i class="fas fa-pause" *ngIf="!initShowSpinner && streaming.isPlaying() && !streaming.isLoading()"></i>\n                      <i class="fas fa-spinner fa-pulse" *ngIf="streaming.isLoading() || initShowSpinner"></i>\n                  </a>\n              </li>\n              <li>\n                  <a href="#" (click)="loadPlaylist($event)">  \n                      <i class="fas fa-clock"></i> Playlist\n                  </a>\n              </li>\n          </ul>\n      </div>\n  </footer>\n</div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"],
             __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"],
@@ -2615,21 +2624,12 @@ var TritonDigitalService = /** @class */ (function () {
     TritonDigitalService.prototype.playing = function () {
         return this.is_playing;
     };
-    TritonDigitalService.prototype.tickTime = function () {
-        var _this = this;
-        var date = new Date();
-        // console.log(date.getTime())
-        setTimeout(function () {
-            _this.tickTime();
-        }, 1000);
-    };
     /**
      * Initalizes/loads player
      *
      * @return     Promise
      */
     TritonDigitalService.prototype.initPlayer = function () {
-        // this.tickTime();
         var _this = this;
         // local dev only because cordova is missing
         if (window.location.href.indexOf('localhost') > 0) {
@@ -2997,21 +2997,21 @@ var NowPlayingService = /** @class */ (function () {
     NowPlayingService.prototype.stopRepeatFetch = function () {
         var now = new Date();
         var currentFetchTime = Math.ceil(now / 1000);
-        console.log('currentFetchTime', currentFetchTime);
-        console.log('this.lastFetchTime', this.lastFetchTime);
-        if (this.lastFetchTime + 10 > currentFetchTime) {
-            console.log('stopRepeatFetch stop');
+        // console.log('currentFetchTime', currentFetchTime)
+        // console.log('this.lastFetchTime', this.lastFetchTime)
+        if (this.lastFetchTime + 5 > currentFetchTime) {
+            // console.log('stopRepeatFetch stop')
             return true;
         }
         else {
-            console.log('stopRepeatFetch allow');
+            // console.log('stopRepeatFetch allow')
             return false;
         }
     };
     NowPlayingService.prototype.setLastFetchTime = function () {
         var date = new Date();
         this.lastFetchTime = Math.ceil(date / 1000);
-        console.log('setLastFetchTime', this.lastFetchTime);
+        // console.log('setLastFetchTime', this.lastFetchTime)
     };
     /**
      * Fetches tracks from now playing service provider
@@ -3029,7 +3029,7 @@ var NowPlayingService = /** @class */ (function () {
             });
         }
         this.setLastFetchTime();
-        console.log('fetching', dataUrl);
+        // console.log('fetching', dataUrl);
         return this.http.get(dataUrl, {
             responseType: 'text'
         }).pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators__["map"])(function (data) {
@@ -3067,7 +3067,7 @@ var NowPlayingService = /** @class */ (function () {
                             }
                             // Push new Track to tracksList
                             _this.tracksList.push(new __WEBPACK_IMPORTED_MODULE_6__models_track_model__["a" /* Track */](trackData));
-                            console.log('Track', _this.tracksList[0]);
+                            // console.log('Track', this.tracksList[0]);
                         };
                         //Loop through track properties and populate trackData
                         for (var _i = 0, _a = parsed['nowplaying-info-list']['nowplaying-info']; _i < _a.length; _i++) {
@@ -3110,9 +3110,9 @@ var NowPlayingService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_transfer__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_transfer__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_action_sheet__ = __webpack_require__(127);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -4283,11 +4283,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngx_translate_core__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_http_loader__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_action_sheet__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_device__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_transfer__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_transfer__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_admob_free__ = __webpack_require__(294);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_facebook__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_in_app_browser__ = __webpack_require__(344);
@@ -4295,7 +4295,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_splash_screen__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__ = __webpack_require__(347);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_network__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_social_sharing__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_social_sharing__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_push__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_dialogs__ = __webpack_require__(350);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_geolocation__ = __webpack_require__(172);
@@ -4435,15 +4435,15 @@ var AppModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/bp-details/bp-details.module#BpDetailsPageModule', name: 'BpDetailsPage', segment: 'bp-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-group/bp-group.module#BpGroupPageModule', name: 'BpGroupPage', segment: 'bp-group', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/bp-list/bp-list.module#BpListModule', name: 'BpList', segment: 'bp-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/bp-details/bp-details.module#BpDetailsPageModule', name: 'BpDetailsPage', segment: 'bp-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-messages/bp-messages.module#BpMessagesModule', name: 'BpMessages', segment: 'bp-messages', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/bp-list/bp-list.module#BpListModule', name: 'BpList', segment: 'bp-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/bp-modal/bp-modal.module#BpModalModule', name: 'BpModal', segment: 'bp-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-notifications/bp-notifications.module#BpNotificationsModule', name: 'BpNotifications', segment: 'bp-notifications', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-profile/bp-profile.module#BpProfilePageModule', name: 'BpProfilePage', segment: 'bp-profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/custom-pages/custom-page.module#CustomPageModule', name: 'CustomPage', segment: 'custom-page', priority: 'high', defaultHistory: [] },
                         { loadChildren: '../pages/download-list/download-list.module#DownloadListModule', name: 'DownloadList', segment: 'download-list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/bp-modal/bp-modal.module#BpModalModule', name: 'BpModal', segment: 'bp-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/custom-pages/custom-page.module#CustomPageModule', name: 'CustomPage', segment: 'custom-page', priority: 'high', defaultHistory: [] },
                         { loadChildren: '../pages/language-settings/language-settings.module#LanguageSettingsModule', name: 'LanguageSettings', segment: 'language-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login-modal/login-modal.module#LoginModalModule', name: 'LoginModal', segment: 'login-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/media-player/media-player.module#MediaPlayerModule', name: 'MediaPlayer', segment: 'media-player', priority: 'low', defaultHistory: [] },
@@ -4670,7 +4670,7 @@ var LoginService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_download_download__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_analytics_analytics_service__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_status_bar__ = __webpack_require__(347);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_social_sharing__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_social_sharing__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_push__ = __webpack_require__(349);
@@ -6118,7 +6118,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var NowPlayingComponent = /** @class */ (function () {
-    function NowPlayingComponent(npService, streaming, notifications) {
+    function NowPlayingComponent(zone, npService, streaming, notifications) {
+        this.zone = zone;
         this.npService = npService;
         this.streaming = streaming;
         this.notifications = notifications;
@@ -6130,8 +6131,8 @@ var NowPlayingComponent = /** @class */ (function () {
      * @return     void
      */
     NowPlayingComponent.prototype.getCurrentTrack = function () {
+        // console.log('getCurrentTrack');
         var _this = this;
-        console.log('getCurrentTrack');
         //Set trackLoaded to false
         // this.trackLoaded = false;
         //Retrieve current track
@@ -6152,14 +6153,11 @@ var NowPlayingComponent = /** @class */ (function () {
                     _this.currentTrack = response;
                     //Set trackLoaded
                     _this.trackLoaded = true;
-                    console.log('timeUntilEnds', _this.currentTrack, _this.currentTrack.timeUntilEnds());
+                    // console.log('timeUntilEnds', this.currentTrack, this.currentTrack.timeUntilEnds())
                     //Set timeout until next expected track
                     setTimeout(function () {
-                        console.log('setTimeout timeup', _this.currentTrack.timeUntilEnds());
+                        // console.log('setTimeout timeup', this.currentTrack.timeUntilEnds());
                         _this.getCurrentTrack();
-                    }, _this.currentTrack.timeUntilEnds());
-                    setTimeout(function () {
-                        console.log('', _this.currentTrack.timeUntilEnds());
                     }, _this.currentTrack.timeUntilEnds());
                 });
             }, 500);
@@ -6167,7 +6165,7 @@ var NowPlayingComponent = /** @class */ (function () {
             setTimeout(function () {
                 //Add error notification
                 _this.notifications.create('error', 'Unable to load now playing information.');
-                //Set track with dummy track
+                //Set track with dummy track				
                 _this.currentTrack = _this.npService.dummyTrack();
                 //Set trackLoaded to true
                 _this.trackLoaded = true;
@@ -6179,8 +6177,8 @@ var NowPlayingComponent = /** @class */ (function () {
         });
     };
     NowPlayingComponent.prototype.ngOnInit = function () {
+        // console.log('NowPlayingComponent ngOnInit ONLY ONCE!!!!!!!')
         var _this = this;
-        console.log('NowPlayingComponent ngOnInit ONLY ONCE!!!!!!!');
         //Load current track onInit
         this.getCurrentTrack();
         //Watch when streaming is played to keep now playing up-to-date
@@ -6205,7 +6203,10 @@ var NowPlayingComponent = /** @class */ (function () {
                 ])
             ]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_now_playing_service__["a" /* NowPlayingService */], __WEBPACK_IMPORTED_MODULE_3__services_tritondigital_service__["a" /* TritonDigitalService */], __WEBPACK_IMPORTED_MODULE_2__services_notifications_service__["a" /* NotificationsService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"],
+            __WEBPACK_IMPORTED_MODULE_1__services_now_playing_service__["a" /* NowPlayingService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_tritondigital_service__["a" /* TritonDigitalService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_notifications_service__["a" /* NotificationsService */]])
     ], NowPlayingComponent);
     return NowPlayingComponent;
 }());
@@ -6267,7 +6268,7 @@ var Track = /** @class */ (function () {
         });
      */
     function Track(data) {
-        console.log(data);
+        // console.log(data);
         this.title = (data['title']) ? data['title'].trim() : '';
         this.artist = (data['artist']) ? data['artist'].trim() : '';
         this.album = (data['album']) ? data['album'].trim() : '';
@@ -6276,16 +6277,16 @@ var Track = /** @class */ (function () {
         this.duration = (data['duration']) ? data['duration'].trim() : '';
         this.played_at = (data['played_at']) ? data['played_at'].trim() : '';
         var date = new Date();
-        console.log('now', date, this.played_at);
+        // console.log('now', date, this.played_at);
         var played_at = new Date((this.played_at / 1000) * 1000);
-        console.log('played at', played_at);
+        // console.log('played at', played_at);
         if (this.played_at && this.duration) {
             var duration = this.formatDurationTime(this.duration);
             this.ends_at = ((this.played_at / 1000) + (duration / 1000)) * 1000;
-            console.log('ends_at', this.ends_at);
+            // console.log('ends_at', this.ends_at);
         }
         var ends_in = this.ends_at - date.getTime();
-        console.log('timeUntilEnds ends_in', ends_in);
+        // console.log('timeUntilEnds ends_in', ends_in);
         if (!this.cover_art && __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].now_playing.generic_cover) {
             this.cover_art = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].now_playing.generic_cover;
         }
@@ -6303,7 +6304,7 @@ var Track = /** @class */ (function () {
      * @param time string
      */
     Track.prototype.formatDurationTime = function (time) {
-        console.log('formatDurationTime time', time);
+        // console.log('formatDurationTime time', time)
         return (Number(time.split(':')[0]) * 3600 + Number(time.split(':')[1]) * 60 + Number(time.split(':')[2])) * 1000;
     };
     /**
@@ -6685,7 +6686,7 @@ var FBConnectAppSettings = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnalyticsService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angulartics2_ga__ = __webpack_require__(292);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angulartics2__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angulartics2__ = __webpack_require__(171);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
