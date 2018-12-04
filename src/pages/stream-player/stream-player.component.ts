@@ -16,29 +16,37 @@ export class StreamPlayerComponent implements OnInit {
 	public show_stream_logo: string = '';
 	public stream_logo_url: string = '';
 	public logo_exists: boolean;
-	public playing: string;
-	public initShowSpinner: boolean = true;
+	public isPlaying: boolean = false;
+	public isLoading: boolean = true;
 
 	constructor(
-		private zone: NgZone,
 		private http: Http,
+		private ngZone: NgZone,
 		private fbMsg: FBMessengerService,
 		public streaming: TritonDigitalService,
     	private notifications: NotificationsService
 	) {
 		this.stream_logo_url = 'assets/stream-logo.png';
 		this.addLogo();
-
-		// allow 10 seconds for the buffer to fill
-		setTimeout(()=>{
-			this.zone.run(() => {
-				this.initShowSpinner = false;
-			})
-		}, 10000);
 	}
 
 	ngOnInit() {
-		
+		console.log('StreamPlayerComponent ngOnInit')
+		this.streaming.isPlaying().subscribe(isPlaying => {
+			let msg = 'StreamPlayerComponent stream-player is ' + ((isPlaying) ? 'playing' : 'stopped');
+			console.log(msg);
+			this.ngZone.run(() => {
+				this.isPlaying = isPlaying;
+			});
+		});
+
+		this.streaming.isLoading().subscribe(isLoading => {
+			let msg = 'StreamPlayerComponent stream-player is ' + ((isLoading) ? 'loading' : 'loaded');
+			console.log(msg);
+			this.ngZone.run(() => {
+				this.isLoading = isLoading;
+			});
+		})
 	}
 
 	loadPlaylist($event) {
@@ -55,15 +63,13 @@ export class StreamPlayerComponent implements OnInit {
 	 */
 	toggleStreamingPlayer(): void {
 
-		// console.log('toggleStreamingPlayer');
+		this.isLoading = false;
 
-		this.zone.run( () => {
-			if(this.streaming.playing()){
-				this.streaming.pause();
-			} else{
-				this.streaming.resume();
-			}
-		});
+		if(this.streaming.playing()){
+			this.streaming.pause();
+		} else{
+			this.streaming.resume();
+		}
 	}
 	
 	/**
@@ -77,22 +83,15 @@ export class StreamPlayerComponent implements OnInit {
 	}
 	  
 	showPlayer(event) {
-
-		// console.log('showPlayer');
-
-		this.zone.run(() => {
-			this.radioState = 'player';
-			this.initShowSpinner = false;
-		});
+		console.log('showPlayer');
+		this.radioState = 'player';
+		this.isLoading = false;
 	}
 	
 	showPlaylist(event) {
-
-		// console.log('showPlaylist');
-
-		this.zone.run(() => {
-			this.radioState = 'playlist';
-		});
+		console.log('showPlaylist');
+		this.radioState = 'playlist';
+		this.isLoading = false;
 	}
 
 	openFBMessenger() {

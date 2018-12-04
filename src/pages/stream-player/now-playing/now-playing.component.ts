@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { NowPlayingService } from '../_services/now-playing.service';
 
@@ -32,8 +32,11 @@ export class NowPlayingComponent implements OnInit {
 
 	trackLoaded: boolean = false;
 
-	constructor(private npService: NowPlayingService, private streaming: TritonDigitalService, private notifications: NotificationsService) {		
-	}
+	constructor(
+		private npService: NowPlayingService,
+		private streaming: TritonDigitalService,
+		private notifications: NotificationsService
+	) {}
 
 	/**
 	 * Gets and sets the current track.

@@ -31,6 +31,7 @@
     <plugin name="cordova-plugin-network-information" source="npm" spec="2.0.1" />
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="5.0.1" />
     <plugin name="cordova-plugin-actionsheet" source="npm" spec="2.3.3" />
+    <plugin name="cordova-plugin-streaming-media" spec="^2.2.0" />
     <plugin name="cordova-plugin-media" source="npm" />
     <plugin source="git" spec="https://github.com/litehelpers/Cordova-sqlite-evcore-extbuild-free.git" />
     <!-- <plugin source="git" spec="https://github.com/AlexisCaffa/cordova-plugin-mediaac.git" /> -->

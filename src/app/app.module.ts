@@ -26,6 +26,7 @@ import { Dialogs } from "@ionic-native/dialogs";
 import { Geolocation } from "@ionic-native/geolocation";
 import { InAppPurchase } from '@ionic-native/in-app-purchase';
 import { Media } from "@ionic-native/media";
+import { StreamingMedia } from "@ionic-native/streaming-media";
 
 /* Providers */
 import {AppCamera} from '../providers/camera/app-camera';
@@ -153,6 +154,7 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
     IAP,
     InAppPurchase,
     Media,
+    StreamingMedia,
     Download,
     BpProvider,
     MenuService,

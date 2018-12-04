@@ -30,7 +30,11 @@
     <div class="streaming-logo">
         <img *ngIf="logo_exists" [src]="stream_logo_url" />
     </div>
-    <app-main-player [radioState]="radioState"></app-main-player>
+    
+    <div class="main-player">
+        <app-now-playing *ngIf="radioState=='player'"></app-now-playing>
+        <app-playlist *ngIf="radioState=='playlist'"></app-playlist>
+    </div>
 </ion-content>
 
 
@@ -52,9 +56,9 @@
               </li>
               <li class="play-btn" (click)="toggleStreamingPlayer($event)">
                   <a href="#">
-                      <i class="fas fa-play" *ngIf="!initShowSpinner && !streaming.isPlaying() && !streaming.isLoading()"></i>
-                      <i class="fas fa-pause" *ngIf="!initShowSpinner && streaming.isPlaying() && !streaming.isLoading()"></i>
-                      <i class="fas fa-spinner fa-pulse" *ngIf="streaming.isLoading() || initShowSpinner"></i>
+                      <i class="fas fa-play" *ngIf="!isPlaying && !isLoading"></i>
+                      <i class="fas fa-pause" *ngIf="isPlaying && !isLoading"></i>
+                      <i class="fas fa-spinner fa-pulse" *ngIf="isLoading"></i>
                   </a>
               </li>
               <li>

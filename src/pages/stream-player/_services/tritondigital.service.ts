@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { NotificationsService } from '../_services/notifications.service';
 import { Media, MediaObject } from "@ionic-native/media";
+import { Observable } from "rxjs/Observable";
+import { Subject } from "rxjs/Subject";
 
 // declare var Mediaac;
 
@@ -13,6 +15,9 @@ export class TritonDigitalService {
 	player: MediaObject;
 	is_playing: boolean = true;
 	currentSourceIndex = 0;
+
+	isPlayingObs = new Subject<boolean>();
+	isLoadingObs = new Subject<boolean>();
 
 	status: string;
 	
@@ -113,32 +118,42 @@ export class TritonDigitalService {
 			return;
 		}
 
-
-		// console.log('initPlayer sources', this.sources);
-
 		this.resetDelay();
 
 		let source = this.nextSource();
-		// console.log('nextSource', source)
-
 		
-
 		this.player = this.media.create(source);
-		
-		this.player.successCallback = function() {
-			console.log('successCallback');
-		}
 
-		this.player.errorCallback = function() {
-			console.log('errorCallback');
-		}
-
-		this.player.onSuccess.subscribe(() => {
-
-			console.log('this.player.play()');
-
-			this.resetDelay();
-			this.is_playing = true;
+		this.player.onStatusUpdate.subscribe(status => {
+			console.log('onStatusUpdate status', status);
+			switch(status) {
+				case this.media.MEDIA_STARTING: // 1
+					console.log('media is starting');
+					this.isPlayingObs.next(false);
+					this.isLoadingObs.next(true);
+					break;
+				case this.media.MEDIA_RUNNING: // 2
+					console.log('media is running');
+					this.is_playing = true;
+					this.status = 'playing';
+					this.isPlayingObs.next(true);
+					this.isLoadingObs.next(false);
+					break;
+				case this.media.MEDIA_PAUSED: // 3
+					console.log('media is paused');
+					this.isPlayingObs.next(false);
+					this.is_playing = false;
+					this.status = 'paused';
+					this.played.emit();
+					break;
+				case this.media.MEDIA_STOPPED: // 4
+					console.log('media is stopped');
+					this.is_playing = false;
+					this.status = 'stopped';
+					this.isPlayingObs.next(false);
+					break;
+			}
+			
 		});
 		
         this.player.onError.subscribe(error => {
@@ -151,9 +166,6 @@ export class TritonDigitalService {
 		});
 
 		this.player.play();
-		this.is_playing = true;
-		this.status = 'playing';
-		this.played.emit();
 		
 	}
 
@@ -219,17 +231,17 @@ export class TritonDigitalService {
 	 *
 	 * @return     boolean  True if playing, False otherwise.
 	 */
-	isPlaying(): boolean{
-		return (this.player && this.is_playing);
-    }
+	isPlaying(): Observable<boolean> {
+		return this.isPlayingObs;
+	}
     
     /**
 	 * Determines if player loading/buffering.
 	 *
 	 * @return     boolean  True if loading, False otherwise.
 	 */
-	isLoading(): boolean{
-		return (this.status == undefined) ? true : false;
+	isLoading(): Observable<boolean> {
+		return this.isLoadingObs;
 	}
 
 	/**
