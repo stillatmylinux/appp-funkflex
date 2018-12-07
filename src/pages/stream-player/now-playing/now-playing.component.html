@@ -1,4 +1,4 @@
-<div class="now-playing"  *ngIf="trackLoaded">
+<div [ngClass]="{'show-now-playing':trackLoaded, 'hide-now-playing':!trackLoaded}">
 	<div class="cover-art">
 		<img src="{{ currentTrack.cover_art }}" *ngIf="currentTrack?.cover_art">
 	</div>
@@ -8,4 +8,4 @@
 		<div class="artist" *ngIf="currentTrack?.artist"> by {{ currentTrack.artist }}</div>
 	</div>
 </div>
-<div class="circle-loader now-playing-loading gray" *ngIf="!trackLoaded"></div>
+<div [ngClass]="{'show-now-playing':!trackLoaded, 'hide-now-playing':trackLoaded, 'circle-loader now-playing-loading gray': true}"></div>

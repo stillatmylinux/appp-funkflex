@@ -39100,6 +39100,10 @@ a:hover {
   color: #0094d5;
 }
 
+.main-player {
+  text-align: center;
+}
+
 /* Notifications */
 .notifications {
   padding: 15px;
@@ -39464,6 +39468,11 @@ main {
 .playlist ul li .data .played-at {
   color: #7c7c7c;
   font-size: 0.70em;
+}
+
+.hide-now-player,
+.hide-play-list {
+  display: none;
 }
 
 /* Loader */
@@ -40891,6 +40900,10 @@ a:hover {
   color: #0094d5;
 }
 
+.main-player {
+  text-align: center;
+}
+
 /* Notifications */
 .notifications {
   padding: 15px;
@@ -41257,6 +41270,11 @@ main {
   font-size: 0.70em;
 }
 
+.hide-now-player,
+.hide-play-list {
+  display: none;
+}
+
 /* Loader */
 .circle-loader,
 .circle-loader:after {
@@ -41318,4 +41336,12 @@ main {
 .streaming-logo img {
   width: 69%;
   margin: auto;
+}
+
+.hide-now-playing {
+  display: none;
+}
+
+.playlist .data {
+  text-align: left;
 }

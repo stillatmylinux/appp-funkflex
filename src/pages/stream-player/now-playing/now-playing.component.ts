@@ -1,42 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, NgZone } from '@angular/core';
 import { NowPlayingService } from '../_services/now-playing.service';
-
 import { NotificationsService } from '../_services/notifications.service';
-
 import { Track } from '../_models/track.model';
-
 import { TritonDigitalService } from "../_services/tritondigital.service";
-
-import { trigger,state,style,transition,animate,keyframes } from '@angular/animations';
 
 @Component({
 	selector: 'app-now-playing',
 	templateUrl: './now-playing.component.html',
-	styles: ['now-playing.component.scss'],
-	animations: [
-		trigger('slideInOut', [
-			transition(':enter', [
-				style({transform: 'translateX(-100%)'}),
-				animate('300ms ease-in', style({transform: 'translateX(0%)'}))
-			]),
-			transition(':leave', [
-				animate('300ms ease-in', style({transform: 'translateX(100%)'}))
-			])
-		])
-  	]
+	styles: ['now-playing.component.scss']
 })
 export class NowPlayingComponent implements OnInit {
 	
-	currentTrack: any;
-
-	trackLoaded: boolean = false;
+	currentTrack: Track;
+	trackLoaded: boolean;
 
 	constructor(
+		private ngZone: NgZone,
 		private npService: NowPlayingService,
 		private streaming: TritonDigitalService,
 		private notifications: NotificationsService
 	) {}
+
+	ngOnInit() {
+
+		this.trackLoaded = false;
+		this.currentTrack = this.npService.dummyTrack();
+
+		//Load current track onInit
+		this.getCurrentTrack();
+
+		//Watch when streaming is played to keep now playing up-to-date
+		this.streaming.played.subscribe(() => {
+			//Set current track
+			this.getCurrentTrack();
+		});
+	}
 
 	/**
 	 * Gets and sets the current track.
@@ -46,7 +44,6 @@ export class NowPlayingComponent implements OnInit {
 	getCurrentTrack(): void{
 
 		// console.log('getCurrentTrack');
-		
 		//Set trackLoaded to false
 		// this.trackLoaded = false;
 
@@ -57,11 +54,21 @@ export class NowPlayingComponent implements OnInit {
 			if(response && response.length === 0)
 				return;
 
-			//Set timeout to avoid CSS animation glitch, probably not the correct way to solve the issue, but it works
-			setTimeout(() => {
+			//Format current track with iTunes
+			this.npService.formatItunes(response[0]).subscribe((response) => {
 
-				//Format current track with iTunes
-				this.npService.formatItunes(response[0]).subscribe((response) => {
+					//Update currentTrack
+					this.currentTrack = response;
+
+					//Set trackLoaded
+					this.trackLoaded = true;
+
+					//Set timeout until next expected track
+					this.ngZone.runOutsideAngular(()=>{
+						setTimeout(() => {
+							this.getCurrentTrack();
+						}, this.currentTrack.timeUntilEnds());
+					})
 
 					//Push current track to recentlyPlayed if is different that latest
 					if(response && !this.npService.hasTrackHasBeenRecentlyPlayed(response)){
@@ -71,21 +78,8 @@ export class NowPlayingComponent implements OnInit {
 						this.npService.npUpdate.next(true);
 					}
 
-					//Update currentTrack
-					this.currentTrack = response;
-
-					//Set trackLoaded
-					this.trackLoaded = true;
-
-					// console.log('timeUntilEnds', this.currentTrack, this.currentTrack.timeUntilEnds())
-
-					//Set timeout until next expected track
-					setTimeout(() => {
-						// console.log('setTimeout timeup', this.currentTrack.timeUntilEnds());
-						this.getCurrentTrack();
-					}, this.currentTrack.timeUntilEnds());
-				});
-			}, 500);
+			});
+			
 		}, (error) => {
 			setTimeout(() => {
 				//Add error notification
@@ -102,20 +96,6 @@ export class NowPlayingComponent implements OnInit {
 					this.getCurrentTrack();
 				}, 30000);
 			}, 500);
-		});
-	}
-
-	ngOnInit() {
-
-		// console.log('NowPlayingComponent ngOnInit ONLY ONCE!!!!!!!')
-
-		//Load current track onInit
-		this.getCurrentTrack();
-
-		//Watch when streaming is played to keep now playing up-to-date
-		this.streaming.played.subscribe(() => {
-			//Set current track
-			this.getCurrentTrack();
 		});
 	}
 

@@ -114,6 +114,10 @@ a{
 	}
 }
 
+.main-player {
+	text-align: center;
+}
+
 /* Notifications */
 .notifications{
 	padding:15px;
@@ -367,6 +371,11 @@ main {
 			}
 		}
 	}
+}
+
+.hide-now-player,
+.hide-play-list {
+	display: none;
 }
 
 /* Loader */

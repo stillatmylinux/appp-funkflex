@@ -12,12 +12,13 @@ import { FBMessengerService } from "../../providers/facebook/messenger/fb-messen
 })
 export class StreamPlayerComponent implements OnInit {
 
-	public radioState: string = 'player';
 	public show_stream_logo: string = '';
-	public stream_logo_url: string = '';
+	// public stream_logo_url: string = '';
 	public logo_exists: boolean;
 	public isPlaying: boolean = false;
 	public isLoading: boolean = true;
+	public playeractive: boolean;
+	public playlistactive: boolean;
 
 	constructor(
 		private http: Http,
@@ -25,13 +26,12 @@ export class StreamPlayerComponent implements OnInit {
 		private fbMsg: FBMessengerService,
 		public streaming: TritonDigitalService,
     	private notifications: NotificationsService
-	) {
-		this.stream_logo_url = 'assets/stream-logo.png';
-		this.addLogo();
-	}
+	) { }
 
 	ngOnInit() {
-		console.log('StreamPlayerComponent ngOnInit')
+		console.log('StreamPlayerComponent ngOnInit');
+		this.playeractive = true;
+		this.playlistactive = false;
 		this.streaming.isPlaying().subscribe(isPlaying => {
 			let msg = 'StreamPlayerComponent stream-player is ' + ((isPlaying) ? 'playing' : 'stopped');
 			console.log(msg);
@@ -47,13 +47,6 @@ export class StreamPlayerComponent implements OnInit {
 				this.isLoading = isLoading;
 			});
 		})
-	}
-
-	loadPlaylist($event) {
-		$event.preventDefault();
-		$event.stopPropagation();
-	
-		this.radioState = 'playlist';
 	}
 	
 	/**
@@ -84,62 +77,24 @@ export class StreamPlayerComponent implements OnInit {
 	  
 	showPlayer(event) {
 		console.log('showPlayer');
-		this.radioState = 'player';
-		this.isLoading = false;
+		this.ngZone.run(() => {
+			this.playeractive = true;
+			this.playlistactive = false;
+			this.isLoading = false;
+		});
 	}
 	
 	showPlaylist(event) {
 		console.log('showPlaylist');
-		this.radioState = 'playlist';
-		this.isLoading = false;
+		this.ngZone.run(() => {
+			this.playeractive = false;
+			this.playlistactive = true;
+			this.isLoading = false;
+		});
 	}
 
 	openFBMessenger() {
 		this.fbMsg.openMessenger();
 	}
-
-	addLogo() {
-		// check if logo file exists. If so, show it
-		this.checkLogo().then( data => {
-			
-		}).catch( e => {
-			// no logo, do nothing
-			// console.log(e)
-		})
-	}
-
-	checkLogo() {
-
-		return new Promise( (resolve, reject) => {
-	
-				if(this.logo_exists) {
-					// logo exists, we already checked
-					resolve(this.stream_logo_url);
-				} else if(this.logo_exists === false) {
-					// logo does not exists, we already checked
-					reject();
-				} else {
-	
-					// not sure if logo exists, check please
-	
-					this.http.get( './' + this.stream_logo_url )
-							.subscribe(data => {
-
-								this.logo_exists = true;
-		
-								// logo file exists, return url 
-								resolve(this.stream_logo_url);
-							},
-							error => {
-	
-								this.logo_exists = false;
-		
-								// logo file does not exist
-								reject(error);
-							});
-				}
-	
-			});
-	  }
 
 }

@@ -1394,35 +1394,35 @@ webpackEmptyAsyncContext.id = 241;
 
 var map = {
 	"../pages/bp-details/bp-details.module": [
-		599,
+		598,
 		1
 	],
 	"../pages/bp-group/bp-group.module": [
-		600,
+		599,
 		8
 	],
 	"../pages/bp-list/bp-list.module": [
-		601,
+		600,
 		3
 	],
 	"../pages/bp-messages/bp-messages.module": [
-		602,
+		601,
 		2
 	],
 	"../pages/bp-modal/bp-modal.module": [
-		603,
+		602,
 		16
 	],
 	"../pages/bp-notifications/bp-notifications.module": [
-		604,
+		603,
 		15
 	],
 	"../pages/bp-profile/bp-profile.module": [
-		605,
+		604,
 		7
 	],
 	"../pages/custom-pages/custom-page.module": [
-		607,
+		605,
 		4
 	],
 	"../pages/download-list/download-list.module": [
@@ -1430,7 +1430,7 @@ var map = {
 		14
 	],
 	"../pages/language-settings/language-settings.module": [
-		610,
+		607,
 		13
 	],
 	"../pages/login-modal/login-modal.module": [
@@ -1442,23 +1442,23 @@ var map = {
 		11
 	],
 	"../pages/media-player/media-player.module": [
-		611,
+		610,
 		0
 	],
 	"../pages/post-details/post-details.module": [
-		613,
+		612,
 		5
 	],
 	"../pages/post-list/post-list.module": [
-		612,
+		611,
 		6
 	],
 	"../pages/push-settings/push-settings.module": [
-		614,
+		613,
 		10
 	],
 	"../pages/tabs/tabs.module": [
-		615,
+		614,
 		9
 	]
 };
@@ -2423,17 +2423,15 @@ var StreamPlayerComponent = /** @class */ (function () {
         this.fbMsg = fbMsg;
         this.streaming = streaming;
         this.notifications = notifications;
-        this.radioState = 'player';
         this.show_stream_logo = '';
-        this.stream_logo_url = '';
         this.isPlaying = false;
         this.isLoading = true;
-        this.stream_logo_url = 'assets/stream-logo.png';
-        this.addLogo();
     }
     StreamPlayerComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.log('StreamPlayerComponent ngOnInit');
+        this.playeractive = true;
+        this.playlistactive = false;
         this.streaming.isPlaying().subscribe(function (isPlaying) {
             var msg = 'StreamPlayerComponent stream-player is ' + ((isPlaying) ? 'playing' : 'stopped');
             console.log(msg);
@@ -2448,11 +2446,6 @@ var StreamPlayerComponent = /** @class */ (function () {
                 _this.isLoading = isLoading;
             });
         });
-    };
-    StreamPlayerComponent.prototype.loadPlaylist = function ($event) {
-        $event.preventDefault();
-        $event.stopPropagation();
-        this.radioState = 'playlist';
     };
     /**
      * Plays/pauses audio streaming
@@ -2478,54 +2471,29 @@ var StreamPlayerComponent = /** @class */ (function () {
         this.notifications.remove(id);
     };
     StreamPlayerComponent.prototype.showPlayer = function (event) {
+        var _this = this;
         console.log('showPlayer');
-        this.radioState = 'player';
-        this.isLoading = false;
+        this.ngZone.run(function () {
+            _this.playeractive = true;
+            _this.playlistactive = false;
+            _this.isLoading = false;
+        });
     };
     StreamPlayerComponent.prototype.showPlaylist = function (event) {
+        var _this = this;
         console.log('showPlaylist');
-        this.radioState = 'playlist';
+        this.ngZone.run(function () {
+            _this.playeractive = false;
+            _this.playlistactive = true;
+            _this.isLoading = false;
+        });
     };
     StreamPlayerComponent.prototype.openFBMessenger = function () {
         this.fbMsg.openMessenger();
     };
-    StreamPlayerComponent.prototype.addLogo = function () {
-        // check if logo file exists. If so, show it
-        this.checkLogo().then(function (data) {
-        }).catch(function (e) {
-            // no logo, do nothing
-            // console.log(e)
-        });
-    };
-    StreamPlayerComponent.prototype.checkLogo = function () {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            if (_this.logo_exists) {
-                // logo exists, we already checked
-                resolve(_this.stream_logo_url);
-            }
-            else if (_this.logo_exists === false) {
-                // logo does not exists, we already checked
-                reject();
-            }
-            else {
-                // not sure if logo exists, check please
-                _this.http.get('./' + _this.stream_logo_url)
-                    .subscribe(function (data) {
-                    _this.logo_exists = true;
-                    // logo file exists, return url 
-                    resolve(_this.stream_logo_url);
-                }, function (error) {
-                    _this.logo_exists = false;
-                    // logo file does not exist
-                    reject(error);
-                });
-            }
-        });
-    };
     StreamPlayerComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-stream-player',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/'<ion-header>\n\n	<ion-navbar>\n		\n		<ion-buttons start>\n		<button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n		    <ion-icon name="arrow-back"></ion-icon>\n		    {{ \'Back\' | translate }}\n		</button>\n\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n		</ion-buttons>\n\n	    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    	<ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n	    <ion-buttons end>\n            <button ion-button (click)="openFBMessenger()">\n                <ion-icon name="fa-comments"></ion-icon>\n            </button>\n		</ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content>\n    <div class="streaming-logo">\n        <img *ngIf="logo_exists" [src]="stream_logo_url" />\n    </div>\n    \n    <div class="main-player">\n        <app-now-playing *ngIf="radioState==\'player\'"></app-now-playing>\n        <app-playlist *ngIf="radioState==\'playlist\'"></app-playlist>\n    </div>\n</ion-content>\n\n\n<div>\n  \n  <div class="notifications" *ngIf="notifications.stack">\n      <div *ngFor="let notification of notifications.stack" class="msg {{ notification.type }}">\n          {{ notification.message }}\n      </div>\n  </div>\n\n  <footer class="main-footer">\n      <div class="inner">\n          <ul class="footer-nav">\n              <li>\n                  <a href="#" (click)="showPlayer($event)">\n                      <i class="fas fa-volume-up"></i> Player\n                  </a>\n              </li>\n              <li class="play-btn" (click)="toggleStreamingPlayer($event)">\n                  <a href="#">\n                      <i class="fas fa-play" *ngIf="!isPlaying && !isLoading"></i>\n                      <i class="fas fa-pause" *ngIf="isPlaying && !isLoading"></i>\n                      <i class="fas fa-spinner fa-pulse" *ngIf="isLoading"></i>\n                  </a>\n              </li>\n              <li>\n                  <a href="#" (click)="loadPlaylist($event)">  \n                      <i class="fas fa-clock"></i> Playlist\n                  </a>\n              </li>\n          </ul>\n      </div>\n  </footer>\n</div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/
+            selector: 'app-stream-player',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/'<ion-header>\n\n	<ion-navbar>\n		\n		<ion-buttons start>\n		<button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n		    <ion-icon name="arrow-back"></ion-icon>\n		    {{ \'Back\' | translate }}\n		</button>\n\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n		</ion-buttons>\n\n	    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    	<ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n	    <ion-buttons end>\n            <button ion-button (click)="openFBMessenger()">\n                <ion-icon name="fa-comments"></ion-icon>\n            </button>\n		</ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content>\n    <div class="streaming-logo">\n        <img src="assets/stream-logo.png" />\n    </div>\n    \n    <div class="main-player">\n        <app-now-playing [class]="playeractive?\'show-now-player\':\'hide-now-player\'"></app-now-playing>\n        <app-playlist [class]="playlistactive?\'show-play-list\':\'hide-play-list\'"></app-playlist>\n    </div>\n</ion-content>\n\n\n<div>\n  \n  <div class="notifications" *ngIf="notifications.stack">\n      <div *ngFor="let notification of notifications.stack" class="msg {{ notification.type }}">\n          {{ notification.message }}\n      </div>\n  </div>\n\n  <footer class="main-footer">\n      <div class="inner">\n          <ul class="footer-nav">\n              <li>\n                  <a href="#" (click)="showPlayer($event)">\n                      <i class="fas fa-volume-up"></i> Player\n                  </a>\n              </li>\n              <li class="play-btn" (click)="toggleStreamingPlayer($event)">\n                  <a href="#">\n                      <i class="fas fa-play" *ngIf="!isPlaying && !isLoading"></i>\n                      <i class="fas fa-pause" *ngIf="isPlaying && !isLoading"></i>\n                      <i class="fas fa-spinner fa-pulse" *ngIf="isLoading"></i>\n                  </a>\n              </li>\n              <li>\n                  <a href="#" (click)="showPlaylist($event)">  \n                      <i class="fas fa-clock"></i> Playlist\n                  </a>\n              </li>\n          </ul>\n      </div>\n  </footer>\n</div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"],
@@ -3913,7 +3881,7 @@ var NetworkStatusService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 365:
+/***/ 366:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4095,7 +4063,7 @@ var WPlogin = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 366:
+/***/ 367:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4302,7 +4270,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(581);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngx_translate_core__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_http_loader__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_http_loader__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_action_sheet__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_device__ = __webpack_require__(45);
@@ -4329,12 +4297,12 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_appads_appads__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_logins_logins__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_facebook_login_iframe__ = __webpack_require__(342);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_facebook_login_app__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_facebook_login_app__ = __webpack_require__(367);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__providers_facebook_fbconnect_settings__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__providers_push_push__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__providers_appwoo_appwoo__ = __webpack_require__(343);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__providers_appdata_appdata__ = __webpack_require__(345);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_wplogin_wplogin__ = __webpack_require__(365);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_wplogin_wplogin__ = __webpack_require__(366);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__providers_logins_login_service__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__providers_language_language_service__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__providers_header_logo_header_logo__ = __webpack_require__(203);
@@ -4350,7 +4318,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__providers_analytics_analytics_service__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pages_stream_player_main_player_main_player_component__ = __webpack_require__(585);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__pages_stream_player_now_playing_now_playing_component__ = __webpack_require__(586);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__pages_stream_player_playlist_playlist_component__ = __webpack_require__(598);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__pages_stream_player_playlist_playlist_component__ = __webpack_require__(597);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__providers_facebook_messenger_fb_messenger_service__ = __webpack_require__(354);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__pages_iframe_iframe__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__ionic_storage__ = __webpack_require__(35);
@@ -4465,11 +4433,11 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/bp-modal/bp-modal.module#BpModalModule', name: 'BpModal', segment: 'bp-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-notifications/bp-notifications.module#BpNotificationsModule', name: 'BpNotifications', segment: 'bp-notifications', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-profile/bp-profile.module#BpProfilePageModule', name: 'BpProfilePage', segment: 'bp-profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/download-list/download-list.module#DownloadListModule', name: 'DownloadList', segment: 'download-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/custom-pages/custom-page.module#CustomPageModule', name: 'CustomPage', segment: 'custom-page', priority: 'high', defaultHistory: [] },
+                        { loadChildren: '../pages/download-list/download-list.module#DownloadListModule', name: 'DownloadList', segment: 'download-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/language-settings/language-settings.module#LanguageSettingsModule', name: 'LanguageSettings', segment: 'language-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login-modal/login-modal.module#LoginModalModule', name: 'LoginModal', segment: 'login-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/media-list/media-list.module#MediaListModule', name: 'MediaList', segment: 'media-list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/language-settings/language-settings.module#LanguageSettingsModule', name: 'LanguageSettings', segment: 'language-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/media-player/media-player.module#MediaPlayerModule', name: 'MediaPlayer', segment: 'media-player', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post-list/post-list.module#PostListModule', name: 'PostList', segment: 'post-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post-details/post-details.module#PostDetailsPageModule', name: 'PostDetailsPage', segment: 'post-details', priority: 'low', defaultHistory: [] },
@@ -6126,7 +6094,6 @@ var MainPlayerComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_now_playing_service__ = __webpack_require__(355);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_notifications_service__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_tritondigital_service__ = __webpack_require__(352);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_animations__ = __webpack_require__(597);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6140,14 +6107,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var NowPlayingComponent = /** @class */ (function () {
-    function NowPlayingComponent(npService, streaming, notifications) {
+    function NowPlayingComponent(ngZone, npService, streaming, notifications) {
+        this.ngZone = ngZone;
         this.npService = npService;
         this.streaming = streaming;
         this.notifications = notifications;
-        this.trackLoaded = false;
     }
+    NowPlayingComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.trackLoaded = false;
+        this.currentTrack = this.npService.dummyTrack();
+        //Load current track onInit
+        this.getCurrentTrack();
+        //Watch when streaming is played to keep now playing up-to-date
+        this.streaming.played.subscribe(function () {
+            //Set current track
+            _this.getCurrentTrack();
+        });
+    };
     /**
      * Gets and sets the current track.
      *
@@ -6155,35 +6133,32 @@ var NowPlayingComponent = /** @class */ (function () {
      */
     NowPlayingComponent.prototype.getCurrentTrack = function () {
         // console.log('getCurrentTrack');
-        var _this = this;
         //Set trackLoaded to false
         // this.trackLoaded = false;
+        var _this = this;
         //Retrieve current track
         this.npService.fetch(1).subscribe(function (response) {
             if (response && response.length === 0)
                 return;
-            //Set timeout to avoid CSS animation glitch, probably not the correct way to solve the issue, but it works
-            setTimeout(function () {
-                //Format current track with iTunes
-                _this.npService.formatItunes(response[0]).subscribe(function (response) {
-                    //Push current track to recentlyPlayed if is different that latest
-                    if (response && !_this.npService.hasTrackHasBeenRecentlyPlayed(response)) {
-                        _this.npService.addRecentlyPlayed(response);
-                        //Emit npUpdate event
-                        _this.npService.npUpdate.next(true);
-                    }
-                    //Update currentTrack
-                    _this.currentTrack = response;
-                    //Set trackLoaded
-                    _this.trackLoaded = true;
-                    // console.log('timeUntilEnds', this.currentTrack, this.currentTrack.timeUntilEnds())
-                    //Set timeout until next expected track
+            //Format current track with iTunes
+            _this.npService.formatItunes(response[0]).subscribe(function (response) {
+                //Update currentTrack
+                _this.currentTrack = response;
+                //Set trackLoaded
+                _this.trackLoaded = true;
+                //Set timeout until next expected track
+                _this.ngZone.runOutsideAngular(function () {
                     setTimeout(function () {
-                        // console.log('setTimeout timeup', this.currentTrack.timeUntilEnds());
                         _this.getCurrentTrack();
                     }, _this.currentTrack.timeUntilEnds());
                 });
-            }, 500);
+                //Push current track to recentlyPlayed if is different that latest
+                if (response && !_this.npService.hasTrackHasBeenRecentlyPlayed(response)) {
+                    _this.npService.addRecentlyPlayed(response);
+                    //Emit npUpdate event
+                    _this.npService.npUpdate.next(true);
+                }
+            });
         }, function (error) {
             setTimeout(function () {
                 //Add error notification
@@ -6199,34 +6174,13 @@ var NowPlayingComponent = /** @class */ (function () {
             }, 500);
         });
     };
-    NowPlayingComponent.prototype.ngOnInit = function () {
-        // console.log('NowPlayingComponent ngOnInit ONLY ONCE!!!!!!!')
-        var _this = this;
-        //Load current track onInit
-        this.getCurrentTrack();
-        //Watch when streaming is played to keep now playing up-to-date
-        this.streaming.played.subscribe(function () {
-            //Set current track
-            _this.getCurrentTrack();
-        });
-    };
     NowPlayingComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-now-playing',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/now-playing/now-playing.component.html"*/'<div class="now-playing"  *ngIf="trackLoaded">\n	<div class="cover-art">\n		<img src="{{ currentTrack.cover_art }}" *ngIf="currentTrack?.cover_art">\n	</div>\n\n	<div class="text">\n		<div class="title" *ngIf="currentTrack?.title">{{ currentTrack.title }}</div>\n		<div class="artist" *ngIf="currentTrack?.artist"> by {{ currentTrack.artist }}</div>\n	</div>\n</div>\n<div class="circle-loader now-playing-loading gray" *ngIf="!trackLoaded"></div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/now-playing/now-playing.component.html"*/,
-            styles: ['now-playing.component.scss'],
-            animations: [
-                Object(__WEBPACK_IMPORTED_MODULE_4__angular_animations__["d" /* trigger */])('slideInOut', [
-                    Object(__WEBPACK_IMPORTED_MODULE_4__angular_animations__["c" /* transition */])(':enter', [
-                        Object(__WEBPACK_IMPORTED_MODULE_4__angular_animations__["b" /* style */])({ transform: 'translateX(-100%)' }),
-                        Object(__WEBPACK_IMPORTED_MODULE_4__angular_animations__["a" /* animate */])('300ms ease-in', Object(__WEBPACK_IMPORTED_MODULE_4__angular_animations__["b" /* style */])({ transform: 'translateX(0%)' }))
-                    ]),
-                    Object(__WEBPACK_IMPORTED_MODULE_4__angular_animations__["c" /* transition */])(':leave', [
-                        Object(__WEBPACK_IMPORTED_MODULE_4__angular_animations__["a" /* animate */])('300ms ease-in', Object(__WEBPACK_IMPORTED_MODULE_4__angular_animations__["b" /* style */])({ transform: 'translateX(100%)' }))
-                    ])
-                ])
-            ]
+            selector: 'app-now-playing',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/now-playing/now-playing.component.html"*/'<div [ngClass]="{\'show-now-playing\':trackLoaded, \'hide-now-playing\':!trackLoaded}">\n	<div class="cover-art">\n		<img src="{{ currentTrack.cover_art }}" *ngIf="currentTrack?.cover_art">\n	</div>\n\n	<div class="text">\n		<div class="title" *ngIf="currentTrack?.title">{{ currentTrack.title }}</div>\n		<div class="artist" *ngIf="currentTrack?.artist"> by {{ currentTrack.artist }}</div>\n	</div>\n</div>\n<div [ngClass]="{\'show-now-playing\':!trackLoaded, \'hide-now-playing\':trackLoaded, \'circle-loader now-playing-loading gray\': true}"></div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/now-playing/now-playing.component.html"*/,
+            styles: ['now-playing.component.scss']
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_now_playing_service__["a" /* NowPlayingService */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"],
+            __WEBPACK_IMPORTED_MODULE_1__services_now_playing_service__["a" /* NowPlayingService */],
             __WEBPACK_IMPORTED_MODULE_3__services_tritondigital_service__["a" /* TritonDigitalService */],
             __WEBPACK_IMPORTED_MODULE_2__services_notifications_service__["a" /* NotificationsService */]])
     ], NowPlayingComponent);
@@ -6363,7 +6317,7 @@ var Track = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 598:
+/***/ 597:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

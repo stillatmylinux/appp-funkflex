@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 602:
+/***/ 601:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,8 +9,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_messages__ = __webpack_require__(655);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_do_links_do_links_module__ = __webpack_require__(629);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_messages__ = __webpack_require__(654);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_do_links_do_links_module__ = __webpack_require__(628);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -47,7 +47,7 @@ var BpMessagesModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 617:
+/***/ 616:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109,7 +109,7 @@ exports.isPort = isPort;
 
 /***/ }),
 
-/***/ 618:
+/***/ 617:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -121,13 +121,13 @@ exports.htmlAttrs = ["src=", "data=", "href=", "cite=", "formaction=", "icon=", 
 
 /***/ }),
 
-/***/ 621:
+/***/ 620:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var lists_1 = __webpack_require__(618);
+var lists_1 = __webpack_require__(617);
 // pattern that an emails MUST have
 var pattern = /^[a-z0-9!#$%&'*+\-/=?^_`{|}~.]+@([a-z0-9%\-]+\.){1,}([a-z0-9\-]+)?$/i;
 // patterns that an email can not have
@@ -159,13 +159,13 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 622:
+/***/ 621:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(617);
+var util_1 = __webpack_require__(616);
 // general IP pattern https://regex101.com/r/rzUcJ4/1
 var pattern = /^(\d{1,3}\.){3}\d{1,3}(:\d{1,5})?(\/([a-z0-9\-._~:\/\?#\[\]@!$&'\(\)\*\+,;=%]+)?)?$/i;
 function default_1(str) {
@@ -199,14 +199,14 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 623:
+/***/ 622:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(617);
-var lists_1 = __webpack_require__(618);
+var util_1 = __webpack_require__(616);
+var lists_1 = __webpack_require__(617);
 var pattern = /^(https?:\/\/|ftps?:\/\/)?([a-z0-9%\-]+\.){1,}([a-z0-9\-]+)?(:(\d{1,5}))?(\/([a-z0-9\-._~:\/\?#\[\]@!$&'\(\)\*\+,;=%]+)?)?$/i;
 function default_1(str) {
     // general pattern recognition https://regex101.com/r/RgKTA4/2
@@ -228,13 +228,13 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 624:
+/***/ 623:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var fix_1 = __webpack_require__(633);
+var fix_1 = __webpack_require__(632);
 /**
  *
  * Split the string with word separators
@@ -263,7 +263,7 @@ exports.deSeparate = deSeparate;
 
 /***/ }),
 
-/***/ 625:
+/***/ 624:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -291,13 +291,13 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 629:
+/***/ 628:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinksModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__do_links__ = __webpack_require__(630);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__do_links__ = __webpack_require__(629);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -322,14 +322,14 @@ var DoLinksModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 630:
+/***/ 629:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinks; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme__ = __webpack_require__(631);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme__ = __webpack_require__(630);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_anchorme__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -370,18 +370,18 @@ var DoLinks = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 631:
+/***/ 630:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(617);
-var email_1 = __webpack_require__(621);
-var ip_1 = __webpack_require__(622);
-var url_1 = __webpack_require__(623);
-var transform_1 = __webpack_require__(632);
-var hasprotocol_1 = __webpack_require__(625);
+var util_1 = __webpack_require__(616);
+var email_1 = __webpack_require__(620);
+var ip_1 = __webpack_require__(621);
+var url_1 = __webpack_require__(622);
+var transform_1 = __webpack_require__(631);
+var hasprotocol_1 = __webpack_require__(624);
 var anchorme = function (str, options) {
     options = util_1.defaultOptions(options);
     var result = transform_1.default(str, options);
@@ -405,15 +405,15 @@ exports.default = anchorme;
 
 /***/ }),
 
-/***/ 632:
+/***/ 631:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var separate_1 = __webpack_require__(624);
-var identify_1 = __webpack_require__(634);
-var separate_2 = __webpack_require__(624);
+var separate_1 = __webpack_require__(623);
+var identify_1 = __webpack_require__(633);
+var separate_2 = __webpack_require__(623);
 function default_1(str, options) {
     var arr = separate_2.separate(str);
     var identified = identify_1.default(arr, options);
@@ -475,7 +475,7 @@ function url2tag(fragment, options) {
 
 /***/ }),
 
-/***/ 633:
+/***/ 632:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -543,17 +543,17 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 634:
+/***/ 633:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var email_1 = __webpack_require__(621);
-var hasprotocol_1 = __webpack_require__(625);
-var lists_1 = __webpack_require__(618);
-var ip_1 = __webpack_require__(622);
-var url_1 = __webpack_require__(623);
+var email_1 = __webpack_require__(620);
+var hasprotocol_1 = __webpack_require__(624);
+var lists_1 = __webpack_require__(617);
+var ip_1 = __webpack_require__(621);
+var url_1 = __webpack_require__(622);
 function default_1(inputArr, options) {
     return inputArr.map(function (fragment, index) {
         var encoded = encodeURI(fragment);
@@ -616,7 +616,7 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 655:
+/***/ 654:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
