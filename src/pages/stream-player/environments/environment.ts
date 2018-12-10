@@ -10,8 +10,8 @@ export const environment = {
 		data_aac_url: 'https://np.tritondigital.com/public/nowplaying?mountName=WQHTAAC&numberToFetch={{limit}}&eventType=track',
 		generic_cover: './assets/img/Hot-97-NYC-Logo-1.jpg',
 		format_tracks: true,
-		default_title: 'Unknown Title',
-		default_artist: 'Unknown Artist'
+		default_title: '',
+		default_artist: ''
 	},
 	streaming: {
 		url: 'https://playerservices.streamtheworld.com/pls/WQHT.pls',

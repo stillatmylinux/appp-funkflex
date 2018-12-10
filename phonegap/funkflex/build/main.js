@@ -546,7 +546,7 @@ var Iframe = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_language_model__ = __webpack_require__(205);
@@ -796,8 +796,8 @@ var environment = {
         data_aac_url: 'https://np.tritondigital.com/public/nowplaying?mountName=WQHTAAC&numberToFetch={{limit}}&eventType=track',
         generic_cover: './assets/img/Hot-97-NYC-Logo-1.jpg',
         format_tracks: true,
-        default_title: 'Unknown Title',
-        default_artist: 'Unknown Artist'
+        default_title: '',
+        default_artist: ''
     },
     streaming: {
         url: 'https://playerservices.streamtheworld.com/pls/WQHT.pls',
@@ -886,7 +886,7 @@ var NotificationsService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderLogo; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1189,11 +1189,11 @@ var Logins = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Download; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer__ = __webpack_require__(301);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1266,7 +1266,7 @@ var Download = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PushService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__globalvars_globalvars__ = __webpack_require__(64);
@@ -1406,51 +1406,51 @@ var map = {
 		3
 	],
 	"../pages/bp-messages/bp-messages.module": [
-		601,
+		606,
 		2
 	],
 	"../pages/bp-modal/bp-modal.module": [
-		602,
+		601,
 		16
 	],
 	"../pages/bp-notifications/bp-notifications.module": [
-		603,
+		602,
 		15
 	],
 	"../pages/bp-profile/bp-profile.module": [
-		604,
+		603,
 		7
 	],
 	"../pages/custom-pages/custom-page.module": [
-		605,
+		608,
 		4
 	],
 	"../pages/download-list/download-list.module": [
-		606,
+		604,
 		14
 	],
 	"../pages/language-settings/language-settings.module": [
-		607,
+		605,
 		13
 	],
 	"../pages/login-modal/login-modal.module": [
-		608,
+		607,
 		12
 	],
 	"../pages/media-list/media-list.module": [
-		609,
+		610,
 		11
 	],
 	"../pages/media-player/media-player.module": [
-		610,
+		609,
 		0
 	],
 	"../pages/post-details/post-details.module": [
-		612,
+		611,
 		5
 	],
 	"../pages/post-list/post-list.module": [
-		611,
+		612,
 		6
 	],
 	"../pages/push-settings/push-settings.module": [
@@ -1806,7 +1806,7 @@ var AppCamera = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FbConnectIframe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
@@ -2075,7 +2075,7 @@ var AppWoo = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppData; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_device__ = __webpack_require__(45);
@@ -2239,7 +2239,7 @@ var AppData = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppGeo; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_geolocation__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(17);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2395,7 +2395,7 @@ var AppGeo = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StreamPlayerComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_tritondigital_service__ = __webpack_require__(352);
@@ -2633,13 +2633,13 @@ var TritonDigitalService = /** @class */ (function () {
                     _this.status = 'playing';
                     _this.isPlayingObs.next(true);
                     _this.isLoadingObs.next(false);
+                    _this.played.emit();
                     break;
                 case _this.media.MEDIA_PAUSED: // 3
                     console.log('media is paused');
                     _this.isPlayingObs.next(false);
                     _this.is_playing = false;
                     _this.status = 'paused';
-                    _this.played.emit();
                     break;
                 case _this.media.MEDIA_STOPPED: // 4
                     console.log('media is stopped');
@@ -2855,7 +2855,7 @@ var FBMessengerService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_xml2js__ = __webpack_require__(587);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_xml2js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_xml2js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_track_model__ = __webpack_require__(596);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3096,7 +3096,7 @@ var NowPlayingService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BpProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(170);
@@ -3481,7 +3481,7 @@ var BpProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Posts; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
@@ -3613,7 +3613,368 @@ var VideoUtils = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 363:
+/***/ 364:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WPlogin; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__logins_login_service__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_user_model__ = __webpack_require__(99);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/*
+ * Login to WordPress from the app
+*/
+var WPlogin = /** @class */ (function () {
+    function WPlogin(loginservice, http) {
+        this.loginservice = loginservice;
+        this.http = http;
+        this.data = null;
+        var item = window.localStorage.getItem('myappp');
+        this.url = JSON.parse(item).wordpress_url;
+    }
+    /* Returns promise.
+     * Usage:
+     */
+    WPlogin.prototype.login = function (form) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            if (!_this.url)
+                reject({ data: { message: "No WordPress URL set. " } });
+            var url = _this.url + 'wp-json/appp/v1/login';
+            var formData = new FormData();
+            formData.append("username", form.user);
+            formData.append("password", form.pass);
+            var request = new XMLHttpRequest();
+            request.open("POST", url);
+            request.send(formData);
+            request.onload = function (e) {
+                if (request.readyState === 4) {
+                    if (request.status === 200) {
+                        console.log(request.responseText);
+                        try {
+                            var login_data = JSON.parse(request.responseText);
+                            login_data = (login_data.data) ? login_data.data : login_data;
+                            if (typeof login_data.username !== 'undefined') {
+                                _this.loginservice.setLoginStatus(new __WEBPACK_IMPORTED_MODULE_4__models_user_model__["a" /* User */](login_data));
+                            }
+                        }
+                        catch (error) {
+                            console.log(error);
+                        }
+                        resolve(JSON.parse(request.responseText));
+                    }
+                    else {
+                        if (request.statusText) {
+                            reject(request.statusText);
+                        }
+                        else {
+                            reject('Failed, with no response from server');
+                        }
+                    }
+                }
+            };
+        });
+    };
+    WPlogin.prototype.logout = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var url = _this.url + 'wp-json/appp/v1/logout';
+            _this.http.get(url)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                console.log(data);
+                if (data.success == true)
+                    resolve(data);
+                reject(data);
+            }, function (error) {
+                reject(error);
+            });
+        });
+    };
+    WPlogin.prototype.register = function (data) {
+        var _this = this;
+        var url = this.url + 'wp-json/appp/v1/register';
+        var params = Object.keys(data).map(function (k) {
+            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+        }).join('&');
+        console.log(url + '?' + params);
+        return new Promise(function (resolve, reject) {
+            _this.http.post(url + '?' + params, null)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                resolve(data);
+            }, function (error) {
+                console.log(error);
+                reject(error);
+            });
+        }); // end promise
+    };
+    WPlogin.prototype.verifyUser = function (data) {
+        var _this = this;
+        var url = this.url + 'wp-json/appp/v1/verify';
+        var params = Object.keys(data).map(function (k) {
+            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+        }).join('&');
+        console.log(url + '?' + params);
+        return new Promise(function (resolve, reject) {
+            _this.http.post(url + '?' + params, null)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                resolve(data);
+            }, function (error) {
+                console.log(error);
+                reject(error);
+            });
+        }); // end promise
+    };
+    WPlogin.prototype.resendCode = function (data) {
+        var _this = this;
+        var url = this.url + 'wp-json/appp/v1/verify-resend';
+        var params = Object.keys(data).map(function (k) {
+            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+        }).join('&');
+        console.log(url + '?' + params);
+        return new Promise(function (resolve, reject) {
+            _this.http.post(url + '?' + params, null)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                resolve(data);
+            }, function (error) {
+                console.log(error);
+                reject(error);
+            });
+        }); // end promise
+    };
+    WPlogin.prototype.resetPassword = function (data) {
+        var _this = this;
+        var url = this.url + 'wp-json/appp/v1/reset-password';
+        var params = Object.keys(data).map(function (k) {
+            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+        }).join('&');
+        console.log(url + '?' + params);
+        return new Promise(function (resolve, reject) {
+            _this.http.post(url + '?' + params, null)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                resolve(data);
+            }, function (error) {
+                console.log(error);
+                reject(error);
+            });
+        }); // end promise
+    };
+    WPlogin.prototype.handleError = function (err) {
+        console.warn(err);
+    };
+    WPlogin = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__logins_login_service__["a" /* LoginService */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]])
+    ], WPlogin);
+    return WPlogin;
+}());
+
+//# sourceMappingURL=wplogin.js.map
+
+/***/ }),
+
+/***/ 365:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FbConnectApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fbconnect_settings__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_device__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ngx_translate_core__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__logins_login_service__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__models_user_model__ = __webpack_require__(99);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+
+/*
+  Facebook Connect
+
+  Used when the login is directly in the app
+
+  See http://ionicframework.com/docs/v2/native/facebook/
+*/
+var FbConnectApp = /** @class */ (function () {
+    function FbConnectApp(http, storage, events, fbconnectvars, Facebook, Device, toastCtrl, loginservice, translate) {
+        this.http = http;
+        this.storage = storage;
+        this.events = events;
+        this.fbconnectvars = fbconnectvars;
+        this.Facebook = Facebook;
+        this.Device = Device;
+        this.toastCtrl = toastCtrl;
+        this.loginservice = loginservice;
+        this.translate = translate;
+    }
+    FbConnectApp.prototype.login = function () {
+        var _this = this;
+        console.log('this.fbconnectvars.login_scope', this.fbconnectvars.login_scope);
+        if (typeof this.Device.platform != 'string' && location.port != '8100') {
+            this.translate.get('Please try from a device.').subscribe(function (text) {
+                alert(text);
+            });
+            return;
+        }
+        this.Facebook.login(this.fbconnectvars.login_scope).then(function (result) {
+            // we get back an auth response here, should save it or something
+            _this.statusChangeCallback(result);
+        });
+    };
+    // This is called with the results from from FB.getLoginStatus().
+    FbConnectApp.prototype.statusChangeCallback = function (response) {
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            this.fbMe(response);
+        }
+        else if (response.status === 'not_authorized') {
+            // The person is logged into Facebook, but not your app.
+            // @TODO - Handle not authorized message
+            console.log(this.fbconnectvars.l10n.not_authorized);
+        }
+        else {
+            // The person is not logged into Facebook, so we're not sure if
+            // they are logged into this app or not.
+            // @TODO - Handle not loggedin message
+            console.log(this.fbconnectvars.l10n.fb_not_logged_in);
+        }
+    };
+    FbConnectApp.prototype.fbMe = function (response) {
+        var _this = this;
+        this.Facebook.api("/me?fields=" + this.fbconnectvars.me_fields, null).then(function (response) {
+            _this.fetchUser_Callback(response);
+        });
+    };
+    FbConnectApp.prototype.fetchUser_Callback = function (response) {
+        var _this = this;
+        // Send user info to WordPress login function
+        if (typeof response.name != 'undefined' && typeof response.email != 'undefined') {
+            var login_msg = this.fbconnectvars.l10n.login_msg.replace('{{USERNAME}}', response.name);
+            var redirect_url = void 0;
+            this.fbconnectvars.set_avatar(response);
+            this.events.publish('fb:login', response);
+            this.wplogin(response.name, response.email).then(function (data) {
+                if (typeof (data) == 'number') {
+                    // WP login failure
+                    console.warn('WPLogin response was ' + data.toString() + '.  AppFBConnect plugin might not be active');
+                    _this.fbconnectvars.loggout().then(function (fb_logout_response) {
+                        console.log(fb_logout_response);
+                        console.warn('Since WPLogin failed, loggedout() of Facebook now occurred');
+                    });
+                    _this.translate.get('Login failed').subscribe(function (text) {
+                        _this.presentToast(text);
+                    });
+                    return false;
+                }
+                _this.loginservice.setLoginStatus(new __WEBPACK_IMPORTED_MODULE_10__models_user_model__["a" /* User */](data));
+                console.log('After Facebook and WPLogin, wplogin response', data);
+                _this.storage.set('user_login', data);
+                // hide/show menu items in main app component
+                _this.events.publish('user:login', data);
+            });
+        }
+        else {
+            console.log(response);
+        }
+    };
+    FbConnectApp.prototype.wplogin = function (name, email) {
+        var _this = this;
+        var nameStripped = name.replace(/\s+/g, '');
+        var fb_security = this.fbconnectvars.get_nonce();
+        var ajaxurl = this.fbconnectvars.get_ajaxurl();
+        var params = '?appp=3&action=appp_wp_fblogin&user_email=' + email + '&full_name=' + nameStripped + '&security=' + fb_security;
+        return new Promise(function (resolve, reject) {
+            console.log('attempt wplogin using fb_nonce: %s', ajaxurl + params);
+            _this.http.post(ajaxurl + params, null).map(function (res) { return res.json(); }).subscribe(function (data) {
+                resolve(data);
+            }, function (error) {
+                // WPLogin failed, let's try to logout, just in case
+                console.log('wplogin failed; try to logout, just in case', error);
+                var url = ajaxurl + '?action=apppajaxlogout';
+                _this.http.get(url)
+                    .map(function (res) { return res.json(); })
+                    .subscribe(function (data) { return console.log('wplogout successful', data); });
+                alert(_this.fbconnectvars.l10n.wp_login_error);
+                reject(error);
+            });
+        });
+    };
+    FbConnectApp.prototype.presentToast = function (msg) {
+        var toast = this.toastCtrl.create({
+            message: msg,
+            duration: 5000,
+            position: 'bottom'
+        });
+        toast.present();
+    };
+    FbConnectApp = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
+            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["c" /* Events */],
+            __WEBPACK_IMPORTED_MODULE_5__fbconnect_settings__["a" /* FBConnectAppSettings */],
+            __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__["a" /* Facebook */],
+            __WEBPACK_IMPORTED_MODULE_7__ionic_native_device__["a" /* Device */],
+            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["p" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_9__logins_login_service__["a" /* LoginService */],
+            __WEBPACK_IMPORTED_MODULE_8__ngx_translate_core__["d" /* TranslateService */]])
+    ], FbConnectApp);
+    return FbConnectApp;
+}());
+
+//# sourceMappingURL=login-app.js.map
+
+/***/ }),
+
+/***/ 366:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3792,7 +4153,7 @@ var IAP = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 364:
+/***/ 367:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3881,367 +4242,6 @@ var NetworkStatusService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 366:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WPlogin; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__logins_login_service__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_user_model__ = __webpack_require__(99);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/*
- * Login to WordPress from the app
-*/
-var WPlogin = /** @class */ (function () {
-    function WPlogin(loginservice, http) {
-        this.loginservice = loginservice;
-        this.http = http;
-        this.data = null;
-        var item = window.localStorage.getItem('myappp');
-        this.url = JSON.parse(item).wordpress_url;
-    }
-    /* Returns promise.
-     * Usage:
-     */
-    WPlogin.prototype.login = function (form) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            if (!_this.url)
-                reject({ data: { message: "No WordPress URL set. " } });
-            var url = _this.url + 'wp-json/appp/v1/login';
-            var formData = new FormData();
-            formData.append("username", form.user);
-            formData.append("password", form.pass);
-            var request = new XMLHttpRequest();
-            request.open("POST", url);
-            request.send(formData);
-            request.onload = function (e) {
-                if (request.readyState === 4) {
-                    if (request.status === 200) {
-                        console.log(request.responseText);
-                        try {
-                            var login_data = JSON.parse(request.responseText);
-                            login_data = (login_data.data) ? login_data.data : login_data;
-                            if (typeof login_data.username !== 'undefined') {
-                                _this.loginservice.setLoginStatus(new __WEBPACK_IMPORTED_MODULE_4__models_user_model__["a" /* User */](login_data));
-                            }
-                        }
-                        catch (error) {
-                            console.log(error);
-                        }
-                        resolve(JSON.parse(request.responseText));
-                    }
-                    else {
-                        if (request.statusText) {
-                            reject(request.statusText);
-                        }
-                        else {
-                            reject('Failed, with no response from server');
-                        }
-                    }
-                }
-            };
-        });
-    };
-    WPlogin.prototype.logout = function () {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            var url = _this.url + 'wp-json/appp/v1/logout';
-            _this.http.get(url)
-                .map(function (res) { return res.json(); })
-                .subscribe(function (data) {
-                console.log(data);
-                if (data.success == true)
-                    resolve(data);
-                reject(data);
-            }, function (error) {
-                reject(error);
-            });
-        });
-    };
-    WPlogin.prototype.register = function (data) {
-        var _this = this;
-        var url = this.url + 'wp-json/appp/v1/register';
-        var params = Object.keys(data).map(function (k) {
-            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-        }).join('&');
-        console.log(url + '?' + params);
-        return new Promise(function (resolve, reject) {
-            _this.http.post(url + '?' + params, null)
-                .map(function (res) { return res.json(); })
-                .subscribe(function (data) {
-                resolve(data);
-            }, function (error) {
-                console.log(error);
-                reject(error);
-            });
-        }); // end promise
-    };
-    WPlogin.prototype.verifyUser = function (data) {
-        var _this = this;
-        var url = this.url + 'wp-json/appp/v1/verify';
-        var params = Object.keys(data).map(function (k) {
-            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-        }).join('&');
-        console.log(url + '?' + params);
-        return new Promise(function (resolve, reject) {
-            _this.http.post(url + '?' + params, null)
-                .map(function (res) { return res.json(); })
-                .subscribe(function (data) {
-                resolve(data);
-            }, function (error) {
-                console.log(error);
-                reject(error);
-            });
-        }); // end promise
-    };
-    WPlogin.prototype.resendCode = function (data) {
-        var _this = this;
-        var url = this.url + 'wp-json/appp/v1/verify-resend';
-        var params = Object.keys(data).map(function (k) {
-            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-        }).join('&');
-        console.log(url + '?' + params);
-        return new Promise(function (resolve, reject) {
-            _this.http.post(url + '?' + params, null)
-                .map(function (res) { return res.json(); })
-                .subscribe(function (data) {
-                resolve(data);
-            }, function (error) {
-                console.log(error);
-                reject(error);
-            });
-        }); // end promise
-    };
-    WPlogin.prototype.resetPassword = function (data) {
-        var _this = this;
-        var url = this.url + 'wp-json/appp/v1/reset-password';
-        var params = Object.keys(data).map(function (k) {
-            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-        }).join('&');
-        console.log(url + '?' + params);
-        return new Promise(function (resolve, reject) {
-            _this.http.post(url + '?' + params, null)
-                .map(function (res) { return res.json(); })
-                .subscribe(function (data) {
-                resolve(data);
-            }, function (error) {
-                console.log(error);
-                reject(error);
-            });
-        }); // end promise
-    };
-    WPlogin.prototype.handleError = function (err) {
-        console.warn(err);
-    };
-    WPlogin = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__logins_login_service__["a" /* LoginService */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]])
-    ], WPlogin);
-    return WPlogin;
-}());
-
-//# sourceMappingURL=wplogin.js.map
-
-/***/ }),
-
-/***/ 367:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FbConnectApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fbconnect_settings__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_device__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ngx_translate_core__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__logins_login_service__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__models_user_model__ = __webpack_require__(99);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-
-
-/*
-  Facebook Connect
-
-  Used when the login is directly in the app
-
-  See http://ionicframework.com/docs/v2/native/facebook/
-*/
-var FbConnectApp = /** @class */ (function () {
-    function FbConnectApp(http, storage, events, fbconnectvars, Facebook, Device, toastCtrl, loginservice, translate) {
-        this.http = http;
-        this.storage = storage;
-        this.events = events;
-        this.fbconnectvars = fbconnectvars;
-        this.Facebook = Facebook;
-        this.Device = Device;
-        this.toastCtrl = toastCtrl;
-        this.loginservice = loginservice;
-        this.translate = translate;
-    }
-    FbConnectApp.prototype.login = function () {
-        var _this = this;
-        console.log('this.fbconnectvars.login_scope', this.fbconnectvars.login_scope);
-        if (typeof this.Device.platform != 'string' && location.port != '8100') {
-            this.translate.get('Please try from a device.').subscribe(function (text) {
-                alert(text);
-            });
-            return;
-        }
-        this.Facebook.login(this.fbconnectvars.login_scope).then(function (result) {
-            // we get back an auth response here, should save it or something
-            _this.statusChangeCallback(result);
-        });
-    };
-    // This is called with the results from from FB.getLoginStatus().
-    FbConnectApp.prototype.statusChangeCallback = function (response) {
-        // The response object is returned with a status field that lets the
-        // app know the current login status of the person.
-        // Full docs on the response object can be found in the documentation
-        // for FB.getLoginStatus().
-        if (response.status === 'connected') {
-            // Logged into your app and Facebook.
-            this.fbMe(response);
-        }
-        else if (response.status === 'not_authorized') {
-            // The person is logged into Facebook, but not your app.
-            // @TODO - Handle not authorized message
-            console.log(this.fbconnectvars.l10n.not_authorized);
-        }
-        else {
-            // The person is not logged into Facebook, so we're not sure if
-            // they are logged into this app or not.
-            // @TODO - Handle not loggedin message
-            console.log(this.fbconnectvars.l10n.fb_not_logged_in);
-        }
-    };
-    FbConnectApp.prototype.fbMe = function (response) {
-        var _this = this;
-        this.Facebook.api("/me?fields=" + this.fbconnectvars.me_fields, null).then(function (response) {
-            _this.fetchUser_Callback(response);
-        });
-    };
-    FbConnectApp.prototype.fetchUser_Callback = function (response) {
-        var _this = this;
-        // Send user info to WordPress login function
-        if (typeof response.name != 'undefined' && typeof response.email != 'undefined') {
-            var login_msg = this.fbconnectvars.l10n.login_msg.replace('{{USERNAME}}', response.name);
-            var redirect_url = void 0;
-            this.fbconnectvars.set_avatar(response);
-            this.events.publish('fb:login', response);
-            this.wplogin(response.name, response.email).then(function (data) {
-                if (typeof (data) == 'number') {
-                    // WP login failure
-                    console.warn('WPLogin response was ' + data.toString() + '.  AppFBConnect plugin might not be active');
-                    _this.fbconnectvars.loggout().then(function (fb_logout_response) {
-                        console.log(fb_logout_response);
-                        console.warn('Since WPLogin failed, loggedout() of Facebook now occurred');
-                    });
-                    _this.translate.get('Login failed').subscribe(function (text) {
-                        _this.presentToast(text);
-                    });
-                    return false;
-                }
-                _this.loginservice.setLoginStatus(new __WEBPACK_IMPORTED_MODULE_10__models_user_model__["a" /* User */](data));
-                console.log('After Facebook and WPLogin, wplogin response', data);
-                _this.storage.set('user_login', data);
-                // hide/show menu items in main app component
-                _this.events.publish('user:login', data);
-            });
-        }
-        else {
-            console.log(response);
-        }
-    };
-    FbConnectApp.prototype.wplogin = function (name, email) {
-        var _this = this;
-        var nameStripped = name.replace(/\s+/g, '');
-        var fb_security = this.fbconnectvars.get_nonce();
-        var ajaxurl = this.fbconnectvars.get_ajaxurl();
-        var params = '?appp=3&action=appp_wp_fblogin&user_email=' + email + '&full_name=' + nameStripped + '&security=' + fb_security;
-        return new Promise(function (resolve, reject) {
-            console.log('attempt wplogin using fb_nonce: %s', ajaxurl + params);
-            _this.http.post(ajaxurl + params, null).map(function (res) { return res.json(); }).subscribe(function (data) {
-                resolve(data);
-            }, function (error) {
-                // WPLogin failed, let's try to logout, just in case
-                console.log('wplogin failed; try to logout, just in case', error);
-                var url = ajaxurl + '?action=apppajaxlogout';
-                _this.http.get(url)
-                    .map(function (res) { return res.json(); })
-                    .subscribe(function (data) { return console.log('wplogout successful', data); });
-                alert(_this.fbconnectvars.l10n.wp_login_error);
-                reject(error);
-            });
-        });
-    };
-    FbConnectApp.prototype.presentToast = function (msg) {
-        var toast = this.toastCtrl.create({
-            message: msg,
-            duration: 5000,
-            position: 'bottom'
-        });
-        toast.present();
-    };
-    FbConnectApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["c" /* Events */],
-            __WEBPACK_IMPORTED_MODULE_5__fbconnect_settings__["a" /* FBConnectAppSettings */],
-            __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__["a" /* Facebook */],
-            __WEBPACK_IMPORTED_MODULE_7__ionic_native_device__["a" /* Device */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["p" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_9__logins_login_service__["a" /* LoginService */],
-            __WEBPACK_IMPORTED_MODULE_8__ngx_translate_core__["d" /* TranslateService */]])
-    ], FbConnectApp);
-    return FbConnectApp;
-}());
-
-//# sourceMappingURL=login-app.js.map
-
-/***/ }),
-
 /***/ 369:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4265,17 +4265,17 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(581);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngx_translate_core__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_http_loader__ = __webpack_require__(365);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_http_loader__ = __webpack_require__(363);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_action_sheet__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_transfer__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__ = __webpack_require__(301);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_admob_free__ = __webpack_require__(294);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_facebook__ = __webpack_require__(100);
@@ -4297,22 +4297,22 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_appads_appads__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_logins_logins__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_facebook_login_iframe__ = __webpack_require__(342);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_facebook_login_app__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_facebook_login_app__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__providers_facebook_fbconnect_settings__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__providers_push_push__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__providers_appwoo_appwoo__ = __webpack_require__(343);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__providers_appdata_appdata__ = __webpack_require__(345);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_wplogin_wplogin__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_wplogin_wplogin__ = __webpack_require__(364);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__providers_logins_login_service__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__providers_language_language_service__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__providers_header_logo_header_logo__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__providers_video_video_utils__ = __webpack_require__(362);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__providers_appgeo_appgeo__ = __webpack_require__(346);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__providers_inapppurchase_inapppurchase__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__providers_inapppurchase_inapppurchase__ = __webpack_require__(366);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__providers_download_download__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__providers_buddypress_bp_provider__ = __webpack_require__(360);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__providers_menus_menu_service__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__providers_network_network_status_service__ = __webpack_require__(364);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__providers_network_network_status_service__ = __webpack_require__(367);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_50_angulartics2_ga__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_51_angulartics2_routerlessmodule__ = __webpack_require__(584);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__providers_analytics_analytics_service__ = __webpack_require__(83);
@@ -4429,18 +4429,18 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/bp-details/bp-details.module#BpDetailsPageModule', name: 'BpDetailsPage', segment: 'bp-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-group/bp-group.module#BpGroupPageModule', name: 'BpGroupPage', segment: 'bp-group', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-list/bp-list.module#BpListModule', name: 'BpList', segment: 'bp-list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/bp-messages/bp-messages.module#BpMessagesModule', name: 'BpMessages', segment: 'bp-messages', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-modal/bp-modal.module#BpModalModule', name: 'BpModal', segment: 'bp-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-notifications/bp-notifications.module#BpNotificationsModule', name: 'BpNotifications', segment: 'bp-notifications', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-profile/bp-profile.module#BpProfilePageModule', name: 'BpProfilePage', segment: 'bp-profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/custom-pages/custom-page.module#CustomPageModule', name: 'CustomPage', segment: 'custom-page', priority: 'high', defaultHistory: [] },
                         { loadChildren: '../pages/download-list/download-list.module#DownloadListModule', name: 'DownloadList', segment: 'download-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/language-settings/language-settings.module#LanguageSettingsModule', name: 'LanguageSettings', segment: 'language-settings', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/bp-messages/bp-messages.module#BpMessagesModule', name: 'BpMessages', segment: 'bp-messages', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login-modal/login-modal.module#LoginModalModule', name: 'LoginModal', segment: 'login-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/media-list/media-list.module#MediaListModule', name: 'MediaList', segment: 'media-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/custom-pages/custom-page.module#CustomPageModule', name: 'CustomPage', segment: 'custom-page', priority: 'high', defaultHistory: [] },
                         { loadChildren: '../pages/media-player/media-player.module#MediaPlayerModule', name: 'MediaPlayer', segment: 'media-player', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/post-list/post-list.module#PostListModule', name: 'PostList', segment: 'post-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/media-list/media-list.module#MediaListModule', name: 'MediaList', segment: 'media-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post-details/post-details.module#PostDetailsPageModule', name: 'PostDetailsPage', segment: 'post-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/post-list/post-list.module#PostListModule', name: 'PostList', segment: 'post-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/push-settings/push-settings.module#PushSettingsModule', name: 'PushSettings', segment: 'push-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
                     ]
@@ -4648,7 +4648,7 @@ var LoginService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_app_camera__ = __webpack_require__(341);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_globalvars_globalvars__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_appads_appads__ = __webpack_require__(174);
@@ -6094,6 +6094,7 @@ var MainPlayerComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_now_playing_service__ = __webpack_require__(355);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_notifications_service__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_tritondigital_service__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs__ = __webpack_require__(16);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6107,9 +6108,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var NowPlayingComponent = /** @class */ (function () {
-    function NowPlayingComponent(ngZone, npService, streaming, notifications) {
-        this.ngZone = ngZone;
+    function NowPlayingComponent(npService, streaming, notifications) {
         this.npService = npService;
         this.streaming = streaming;
         this.notifications = notifications;
@@ -6117,12 +6118,47 @@ var NowPlayingComponent = /** @class */ (function () {
     NowPlayingComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.trackLoaded = false;
-        this.currentTrack = this.npService.dummyTrack();
+        this.lastTrackCount = 0;
         //Load current track onInit
-        this.getCurrentTrack();
+        this.trackObs = this.getCurrentTrackObs();
+        this.trackObs.subscribe(function (track) {
+            _this.trackLoaded = true;
+            if (!_this.lastTrack || _this.lastTrack.title != track.title) {
+                _this.lastTrack = track;
+                _this.lastTrackCount = 0;
+                // Only change the playing now if there are two.
+                // This ensures that the feed is updating and we are 
+                // displaying the correct image
+                if (_this.npService.tracksList.length && _this.npService.tracksList.length > 1) {
+                    _this.currentTrack = track;
+                }
+                else {
+                    _this.currentTrack = _this.npService.dummyTrack();
+                }
+            }
+            if (_this.lastTrack.title == track.title) {
+                _this.lastTrackCount++;
+                console.log('lastTrackCount', _this.lastTrackCount);
+                if (_this.lastTrackCount > 30) {
+                    // using the dummy track if the feed doesn't update
+                    _this.currentTrack = _this.npService.dummyTrack();
+                }
+            }
+        });
         //Watch when streaming is played to keep now playing up-to-date
         this.streaming.played.subscribe(function () {
             //Set current track
+            console.log('streaming.played');
+            console.log('Set current track');
+            // this.getCurrentTrack();
+        });
+    };
+    NowPlayingComponent.prototype.getCurrentTrackObs = function () {
+        var _this = this;
+        return __WEBPACK_IMPORTED_MODULE_4_rxjs__["Observable"].create(function (observer) {
+            _this.observer = observer;
+            observer.next(_this.npService.dummyTrack());
+            // start the recursive function looping
             _this.getCurrentTrack();
         });
     };
@@ -6132,55 +6168,55 @@ var NowPlayingComponent = /** @class */ (function () {
      * @return     void
      */
     NowPlayingComponent.prototype.getCurrentTrack = function () {
-        // console.log('getCurrentTrack');
-        //Set trackLoaded to false
-        // this.trackLoaded = false;
         var _this = this;
-        //Retrieve current track
         this.npService.fetch(1).subscribe(function (response) {
             if (response && response.length === 0)
                 return;
             //Format current track with iTunes
-            _this.npService.formatItunes(response[0]).subscribe(function (response) {
-                //Update currentTrack
-                _this.currentTrack = response;
-                //Set trackLoaded
+            _this.npService.formatItunes(response[0]).subscribe(function (track) {
                 _this.trackLoaded = true;
-                //Set timeout until next expected track
-                _this.ngZone.runOutsideAngular(function () {
-                    setTimeout(function () {
-                        _this.getCurrentTrack();
-                    }, _this.currentTrack.timeUntilEnds());
-                });
+                _this.observer.next(track);
                 //Push current track to recentlyPlayed if is different that latest
-                if (response && !_this.npService.hasTrackHasBeenRecentlyPlayed(response)) {
-                    _this.npService.addRecentlyPlayed(response);
+                if (track && !_this.npService.hasTrackHasBeenRecentlyPlayed(track)) {
+                    _this.npService.addRecentlyPlayed(track);
                     //Emit npUpdate event
                     _this.npService.npUpdate.next(true);
                 }
-            });
-        }, function (error) {
-            setTimeout(function () {
-                //Add error notification
-                _this.notifications.create('error', 'Unable to load now playing information.');
-                //Set track with dummy track
-                _this.currentTrack = _this.npService.dummyTrack();
-                //Set trackLoaded to true
-                _this.trackLoaded = true;
-                //Set 10 second timeout and check for track again
-                setTimeout(function () {
+                var timeout = track.timeUntilEnds();
+                if (_this.lastTrackCount > 30) {
+                    // the feed hasn't updated in a while, check every 30 seconds instead
+                    timeout = 30000;
+                }
+                _this.timeoutId = setTimeout(function () {
                     _this.getCurrentTrack();
-                }, 30000);
-            }, 500);
+                }, timeout);
+            }, function (error) {
+                setTimeout(function () {
+                    //Add error notification
+                    _this.notifications.create('error', 'Unable to load now playing information.');
+                    //Set track with dummy track
+                    _this.currentTrack = _this.npService.dummyTrack();
+                    //Set trackLoaded to true
+                    if (!_this.trackLoaded) {
+                        _this.trackLoaded = true;
+                    }
+                    //Set 10 second timeout and check for track again
+                    setTimeout(function () {
+                        _this.getCurrentTrack();
+                    }, 30000);
+                }, 500);
+            });
         });
+    };
+    NowPlayingComponent.prototype.ngOnDestroy = function () {
+        clearTimeout(this.timeoutId);
     };
     NowPlayingComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-now-playing',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/now-playing/now-playing.component.html"*/'<div [ngClass]="{\'show-now-playing\':trackLoaded, \'hide-now-playing\':!trackLoaded}">\n	<div class="cover-art">\n		<img src="{{ currentTrack.cover_art }}" *ngIf="currentTrack?.cover_art">\n	</div>\n\n	<div class="text">\n		<div class="title" *ngIf="currentTrack?.title">{{ currentTrack.title }}</div>\n		<div class="artist" *ngIf="currentTrack?.artist"> by {{ currentTrack.artist }}</div>\n	</div>\n</div>\n<div [ngClass]="{\'show-now-playing\':!trackLoaded, \'hide-now-playing\':trackLoaded, \'circle-loader now-playing-loading gray\': true}"></div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/now-playing/now-playing.component.html"*/,
             styles: ['now-playing.component.scss']
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"],
-            __WEBPACK_IMPORTED_MODULE_1__services_now_playing_service__["a" /* NowPlayingService */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_now_playing_service__["a" /* NowPlayingService */],
             __WEBPACK_IMPORTED_MODULE_3__services_tritondigital_service__["a" /* TritonDigitalService */],
             __WEBPACK_IMPORTED_MODULE_2__services_notifications_service__["a" /* NotificationsService */]])
     ], NowPlayingComponent);
@@ -6386,7 +6422,7 @@ var PlaylistComponent = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalVars; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -6452,7 +6488,7 @@ var GlobalVars = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBConnectAppSettings; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__globalvars_globalvars__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_facebook__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__logins_login_service__ = __webpack_require__(57);

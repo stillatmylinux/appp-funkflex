@@ -138,13 +138,13 @@ export class TritonDigitalService {
 					this.status = 'playing';
 					this.isPlayingObs.next(true);
 					this.isLoadingObs.next(false);
+					this.played.emit();
 					break;
 				case this.media.MEDIA_PAUSED: // 3
 					console.log('media is paused');
 					this.isPlayingObs.next(false);
 					this.is_playing = false;
 					this.status = 'paused';
-					this.played.emit();
 					break;
 				case this.media.MEDIA_STOPPED: // 4
 					console.log('media is stopped');
