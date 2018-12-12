@@ -1,11 +1,11 @@
 <div [ngClass]="{'show-now-playing':trackLoaded, 'hide-now-playing':!trackLoaded}">
 	<div class="cover-art">
-		<img src="{{ currentTrack.cover_art }}" *ngIf="currentTrack?.cover_art">
+		<img src="{{ currentTrack.cover_art }}">
 	</div>
 
 	<div class="text">
-		<div class="title" *ngIf="currentTrack?.title">{{ currentTrack.title }}</div>
-		<div class="artist" *ngIf="currentTrack?.artist"> by {{ currentTrack.artist }}</div>
+		<div class="title">{{ currentTrack.title }}</div>
+		<div class="artist" *ngIf="currentTrack.artist"> by {{ currentTrack.artist }}</div>
 	</div>
 </div>
 <div [ngClass]="{'show-now-playing':!trackLoaded, 'hide-now-playing':trackLoaded, 'circle-loader now-playing-loading gray': true}"></div>

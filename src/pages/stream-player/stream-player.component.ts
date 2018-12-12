@@ -5,6 +5,8 @@ import 'rxjs/add/operator/map';
 import { TritonDigitalService } from "./_services/tritondigital.service";
 import { NotificationsService } from './_services/notifications.service';
 import { FBMessengerService } from "../../providers/facebook/messenger/fb-messenger.service";
+import { Track } from './_models/track.model';
+import { NowPlayingService } from './_services/now-playing.service';
 
 @Component({
   selector: 'app-stream-player',
@@ -19,19 +21,24 @@ export class StreamPlayerComponent implements OnInit {
 	public isLoading: boolean = true;
 	public playeractive: boolean;
 	public playlistactive: boolean;
+	public currentTrack: Track;
+	public trackLoaded: boolean;
 
 	constructor(
 		private http: Http,
 		private ngZone: NgZone,
 		private fbMsg: FBMessengerService,
 		public streaming: TritonDigitalService,
+		private npService: NowPlayingService,
     	private notifications: NotificationsService
-	) { }
+	) {}
 
 	ngOnInit() {
-		console.log('StreamPlayerComponent ngOnInit');
-		this.playeractive = true;
 		this.playlistactive = false;
+		this.playeractive = true;
+		this.currentTrack = this.npService.dummyTrack();
+		this.trackLoaded = true;
+		console.log('StreamPlayerComponent ngOnInit');
 		this.streaming.isPlaying().subscribe(isPlaying => {
 			let msg = 'StreamPlayerComponent stream-player is ' + ((isPlaying) ? 'playing' : 'stopped');
 			console.log(msg);
@@ -39,6 +46,13 @@ export class StreamPlayerComponent implements OnInit {
 				this.isPlaying = isPlaying;
 			});
 		});
+
+		this.npService.getCurrentTrackObs().subscribe(track => {
+			this.ngZone.run(()=>{
+				this.currentTrack = track;
+				this.trackLoaded = true;
+			});
+		})
 
 		this.streaming.isLoading().subscribe(isLoading => {
 			let msg = 'StreamPlayerComponent stream-player is ' + ((isLoading) ? 'loading' : 'loaded');

@@ -10,6 +10,8 @@ import { Observable, Subject, pipe } from 'rxjs';
 import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 
 import { Track } from '../_models/track.model';
+import { TritonDigitalService } from './tritondigital.service';
+import { NotificationsService } from './notifications.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -23,8 +25,38 @@ export class NowPlayingService {
 	public count_streaming_played_subscribe = 0;
 	public lastFetchTime: number = 0;
 	public tracksList: Track[] = [];
+	private observer: any;
+	public trackLoaded: boolean;
+	public lastTrackCount: number;
+	public trackObs: Observable<Track>;
+	public lastTrack: Track;
+	public currentTrack: Track;
 
-	constructor(private http: HttpClient) { }
+	constructor(
+		private http: HttpClient,
+		private streaming: TritonDigitalService,
+		private notifications: NotificationsService
+	) {
+		this.trackLoaded = false;
+		this.lastTrackCount = 0;
+		this.currentTrack = this.dummyTrack();
+
+		//Load current track onInit
+		this.trackObs = this.getCurrentTrackObs();
+		this.trackObs.subscribe(track => {
+
+			this.trackLoaded = true;
+
+		});
+		
+		//Watch when streaming is played to keep now playing up-to-date
+		this.streaming.played.subscribe(() => {
+			//Set current track
+			console.log('streaming.played');
+			console.log('Set current track');
+			// this.getCurrentTrack();
+		});
+	}
 
 	/**
 	 * Returns a dummy track using default title & artist from environment
@@ -234,7 +266,7 @@ export class NowPlayingService {
 			        			// Push new Track to tracksList
 								this.tracksList.push(new Track(trackData));
 								
-								console.log('Track', this.tracksList[0]);
+								console.log('NowPlayingService fetch Track', this.tracksList[0]);
 			        		}
 			        	}
 			        });
@@ -254,5 +286,125 @@ export class NowPlayingService {
 		    }
 		    )
 		);
+	}
+
+	getCurrentTrackObs(): Observable<Track> {
+		return Observable.create( observer => {
+			this.observer = observer;
+			observer.next(this.dummyTrack());
+			
+			// start the recursive function looping
+			this.getCurrentTrack();
+		});
+	}
+
+	/**
+	 * Gets and sets the current track.
+	 *
+	 * @return     void
+	 */
+	getCurrentTrack() {
+
+		console.log('NowPlayingService getCurrentTrack()')
+
+		this.fetch(1).subscribe((tracks) => {
+			if(tracks && tracks.length === 0)
+				return;
+
+			let hasCoverArt = false;
+			let _track = tracks[0];
+			let timeout = _track.timeUntilEnds();
+			
+			if(!this.lastTrack || this.lastTrack.title != _track.title) {
+				
+				this.lastTrack = _track;
+				this.lastTrackCount = 0;
+
+				// Only change the playing now if there are two.
+				// This ensures that the feed is updating and we are 
+				// displaying the correct image
+
+				if(this.tracksList.length && this.tracksList.length > 1 ) {
+					this.currentTrack = _track;
+				} else {
+					hasCoverArt = true;
+					this.currentTrack = this.dummyTrack();
+					this.observer.next(this.currentTrack);
+					setTimeout(() => {
+						this.getCurrentTrack();
+					}, 30000);
+
+					return;
+				}
+			}
+
+			console.log('lastTrack track', this.lastTrack, _track);
+			console.log('lastTrack track titles', this.lastTrack.title, _track.title);
+
+			if(this.lastTrack.title == _track.title) {
+				this.lastTrackCount++;
+				console.log('lastTrackCount', this.lastTrackCount);
+				if(this.lastTrackCount > 30) {
+					// using the dummy track if the feed doesn't update
+					hasCoverArt = true;
+					this.currentTrack = this.dummyTrack();
+					this.observer.next(this.currentTrack);
+					setTimeout(() => {
+						this.getCurrentTrack();
+					}, 30000);
+					
+					return;
+				}
+			}
+
+			if(!hasCoverArt) {
+				//Format current track with iTunes
+				this.formatItunes(_track).subscribe((track) => {
+
+					this.trackLoaded = true;
+					this.observer.next(track);
+
+					//Push current track to recentlyPlayed if is different that latest
+					if(track && !this.hasTrackHasBeenRecentlyPlayed(track)){
+						this.addRecentlyPlayed(track);
+
+						//Emit npUpdate event
+						this.npUpdate.next(true);
+					}
+
+					
+					if(this.lastTrackCount > 30) {
+						// the feed hasn't updated in a while, check every 30 seconds instead
+						timeout = 30000;
+					}
+
+					setTimeout(() => {
+						this.getCurrentTrack();
+					}, timeout);
+				}, (error) => {
+					setTimeout(() => {
+						//Add error notification
+						this.notifications.create('error', 'Unable to load now playing information.');
+
+						//Set track with dummy track
+						this.currentTrack = this.dummyTrack();
+						this.observer.next(this.currentTrack);
+
+						//Set trackLoaded to true
+						if(!this.trackLoaded) {
+							this.trackLoaded = true;
+						}
+
+						//Set 10 second timeout and check for track again
+						setTimeout(() => {
+							this.getCurrentTrack();
+						}, 30000);
+					}, 500);
+				});
+			}
+			
+		});
+
+		
 	}
 }
