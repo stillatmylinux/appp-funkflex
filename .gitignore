@@ -52,3 +52,4 @@ UserInterfaceState.xcuserstate
 /package-lock.json
 resources/
 /phonegap/funkflex.zip
+/src/pages/stream-player/environments/environment.dev.ts

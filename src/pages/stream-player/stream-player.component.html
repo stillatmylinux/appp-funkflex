@@ -33,7 +33,7 @@
     
     <div class="main-player">
         <app-now-playing [currentTrack]="currentTrack" [trackLoaded]="trackLoaded" [class]="playeractive?'show-now-player':'hide-now-player'"></app-now-playing>
-        <app-playlist [class]="playlistactive?'show-play-list':'hide-play-list'"></app-playlist>
+        <app-playlist [class]="playlistactive?'show-play-list':'hide-play-list'" [tracks]="tracks" [tracksLoading]="tracksLoading"></app-playlist>
     </div>
 </ion-content>
 

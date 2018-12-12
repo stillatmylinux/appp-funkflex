@@ -23,6 +23,8 @@ export class StreamPlayerComponent implements OnInit {
 	public playlistactive: boolean;
 	public currentTrack: Track;
 	public trackLoaded: boolean;
+	public tracks: Track[] = [];
+	public tracksLoading: boolean;
 
 	constructor(
 		private http: Http,
@@ -38,6 +40,7 @@ export class StreamPlayerComponent implements OnInit {
 		this.playeractive = true;
 		this.currentTrack = this.npService.dummyTrack();
 		this.trackLoaded = true;
+		this.tracksLoading = false;
 		console.log('StreamPlayerComponent ngOnInit');
 		this.streaming.isPlaying().subscribe(isPlaying => {
 			let msg = 'StreamPlayerComponent stream-player is ' + ((isPlaying) ? 'playing' : 'stopped');
@@ -52,7 +55,7 @@ export class StreamPlayerComponent implements OnInit {
 				this.currentTrack = track;
 				this.trackLoaded = true;
 			});
-		})
+		});
 
 		this.streaming.isLoading().subscribe(isLoading => {
 			let msg = 'StreamPlayerComponent stream-player is ' + ((isLoading) ? 'loading' : 'loaded');
@@ -60,7 +63,9 @@ export class StreamPlayerComponent implements OnInit {
 			this.ngZone.run(() => {
 				this.isLoading = isLoading;
 			});
-		})
+		});
+
+		this.initTrackList();
 	}
 	
 	/**
@@ -109,6 +114,36 @@ export class StreamPlayerComponent implements OnInit {
 
 	openFBMessenger() {
 		this.fbMsg.openMessenger();
+	}
+
+	/**
+	 * Sets the tracks for the tracklist
+	 *
+	 * @return     void
+	 */
+	setTracks(): void{
+		//Clone npService's recentlyPlayed array and then reverse newly created one
+		this.tracks = Object.assign([], this.npService.recentlyPlayed).reverse();
+	}
+	
+	initTrackList() {
+
+		//Set tracksLoading variable
+		this.tracksLoading = true;
+
+		//If iTunes formatting enabled, format all tracks
+		if(this.npService.shouldFormatTracks() && this.npService.recentlyPlayed.length){
+			//Set tracks
+			this.setTracks();
+		}
+
+		//Watch npService npUpdate event
+		this.npService.npUpdate.subscribe((updated) => {
+			this.setTracks();
+		});
+
+		//Set tracksLoading to false
+		this.tracksLoading = false;
 	}
 
 }

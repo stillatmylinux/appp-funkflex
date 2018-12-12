@@ -305,9 +305,8 @@ export class NowPlayingService {
 	 */
 	getCurrentTrack() {
 
-		console.log('NowPlayingService getCurrentTrack()')
-
 		this.fetch(1).subscribe((tracks) => {
+
 			if(tracks && tracks.length === 0)
 				return;
 
@@ -324,22 +323,22 @@ export class NowPlayingService {
 				// This ensures that the feed is updating and we are 
 				// displaying the correct image
 
-				if(this.tracksList.length && this.tracksList.length > 1 ) {
-					this.currentTrack = _track;
-				} else {
-					hasCoverArt = true;
-					this.currentTrack = this.dummyTrack();
-					this.observer.next(this.currentTrack);
-					setTimeout(() => {
-						this.getCurrentTrack();
-					}, 30000);
+				// if(this.tracksList.length && this.tracksList.length > 1 ) {
+				// 	this.currentTrack = _track;
+				// } else {
+				// 	hasCoverArt = true;
+				// 	this.currentTrack = this.dummyTrack();
+				// 	this.observer.next(this.currentTrack);
+				// 	setTimeout(() => {
+				// 		this.getCurrentTrack();
+				// 	}, 30000);
 
-					return;
-				}
+				// 	return;
+				// }
 			}
 
-			console.log('lastTrack track', this.lastTrack, _track);
-			console.log('lastTrack track titles', this.lastTrack.title, _track.title);
+			// console.log('lastTrack track', this.lastTrack, _track);
+			// console.log('lastTrack track titles', this.lastTrack.title, _track.title);
 
 			if(this.lastTrack.title == _track.title) {
 				this.lastTrackCount++;
