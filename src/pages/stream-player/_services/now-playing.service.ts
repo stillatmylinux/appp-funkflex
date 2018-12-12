@@ -163,9 +163,9 @@ export class NowPlayingService {
 					// console.log(results);
 					if(results.resultCount >= 1){
 						results.results.map((result: any) => {
-							track.title = result.trackCensoredName;
+							// track.title = result.trackCensoredName;
 							track.album = result.collectionCensoredName;
-							track.artist = result.artistName;
+							// track.artist = result.artistName;
 							track.cover_art = result.artworkUrl100.replace('100x100', '256x256');
 						})
 					}

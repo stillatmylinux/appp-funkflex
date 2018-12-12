@@ -546,7 +546,7 @@ var Iframe = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_language_model__ = __webpack_require__(205);
@@ -886,7 +886,7 @@ var NotificationsService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderLogo; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1189,7 +1189,7 @@ var Logins = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Download; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(25);
@@ -1266,7 +1266,7 @@ var Download = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PushService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__globalvars_globalvars__ = __webpack_require__(64);
@@ -1430,11 +1430,11 @@ var map = {
 		14
 	],
 	"../pages/language-settings/language-settings.module": [
-		608,
+		607,
 		13
 	],
 	"../pages/login-modal/login-modal.module": [
-		607,
+		608,
 		12
 	],
 	"../pages/media-list/media-list.module": [
@@ -1450,11 +1450,11 @@ var map = {
 		5
 	],
 	"../pages/post-list/post-list.module": [
-		612,
+		613,
 		6
 	],
 	"../pages/push-settings/push-settings.module": [
-		613,
+		612,
 		10
 	],
 	"../pages/tabs/tabs.module": [
@@ -1806,7 +1806,7 @@ var AppCamera = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FbConnectIframe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
@@ -2075,7 +2075,7 @@ var AppWoo = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppData; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_device__ = __webpack_require__(45);
@@ -2239,7 +2239,7 @@ var AppData = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppGeo; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_geolocation__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(16);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2395,12 +2395,13 @@ var AppGeo = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StreamPlayerComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_tritondigital_service__ = __webpack_require__(352);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_notifications_service__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_facebook_messenger_fb_messenger_service__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_now_playing_service__ = __webpack_require__(583);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2416,27 +2417,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var StreamPlayerComponent = /** @class */ (function () {
-    function StreamPlayerComponent(http, ngZone, fbMsg, streaming, notifications) {
+    function StreamPlayerComponent(http, ngZone, fbMsg, streaming, npService, notifications) {
         this.http = http;
         this.ngZone = ngZone;
         this.fbMsg = fbMsg;
         this.streaming = streaming;
+        this.npService = npService;
         this.notifications = notifications;
         this.show_stream_logo = '';
         this.isPlaying = false;
         this.isLoading = true;
+        this.tracks = [];
     }
     StreamPlayerComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log('StreamPlayerComponent ngOnInit');
-        this.playeractive = true;
         this.playlistactive = false;
+        this.playeractive = true;
+        this.currentTrack = this.npService.dummyTrack();
+        this.trackLoaded = true;
+        this.tracksLoading = false;
+        console.log('StreamPlayerComponent ngOnInit');
         this.streaming.isPlaying().subscribe(function (isPlaying) {
             var msg = 'StreamPlayerComponent stream-player is ' + ((isPlaying) ? 'playing' : 'stopped');
             console.log(msg);
             _this.ngZone.run(function () {
                 _this.isPlaying = isPlaying;
+            });
+        });
+        this.npService.getCurrentTrackObs().subscribe(function (track) {
+            _this.ngZone.run(function () {
+                _this.currentTrack = track;
+                _this.trackLoaded = true;
             });
         });
         this.streaming.isLoading().subscribe(function (isLoading) {
@@ -2446,6 +2459,7 @@ var StreamPlayerComponent = /** @class */ (function () {
                 _this.isLoading = isLoading;
             });
         });
+        this.initTrackList();
     };
     /**
      * Plays/pauses audio streaming
@@ -2453,6 +2467,10 @@ var StreamPlayerComponent = /** @class */ (function () {
      * @return     void
      */
     StreamPlayerComponent.prototype.toggleStreamingPlayer = function () {
+        console.log('streaming.status', this.streaming.status);
+        if (this.streaming.status == 'loading') {
+            return;
+        }
         this.isLoading = false;
         if (this.streaming.playing()) {
             this.streaming.pause();
@@ -2491,14 +2509,40 @@ var StreamPlayerComponent = /** @class */ (function () {
     StreamPlayerComponent.prototype.openFBMessenger = function () {
         this.fbMsg.openMessenger();
     };
+    /**
+     * Sets the tracks for the tracklist
+     *
+     * @return     void
+     */
+    StreamPlayerComponent.prototype.setTracks = function () {
+        //Clone npService's recentlyPlayed array and then reverse newly created one
+        this.tracks = Object.assign([], this.npService.recentlyPlayed).reverse();
+    };
+    StreamPlayerComponent.prototype.initTrackList = function () {
+        var _this = this;
+        //Set tracksLoading variable
+        this.tracksLoading = true;
+        //If iTunes formatting enabled, format all tracks
+        if (this.npService.shouldFormatTracks() && this.npService.recentlyPlayed.length) {
+            //Set tracks
+            this.setTracks();
+        }
+        //Watch npService npUpdate event
+        this.npService.npUpdate.subscribe(function (updated) {
+            _this.setTracks();
+        });
+        //Set tracksLoading to false
+        this.tracksLoading = false;
+    };
     StreamPlayerComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-stream-player',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/'<ion-header>\n\n	<ion-navbar>\n		\n		<ion-buttons start>\n		<button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n		    <ion-icon name="arrow-back"></ion-icon>\n		    {{ \'Back\' | translate }}\n		</button>\n\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n		</ion-buttons>\n\n	    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    	<ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n	    <ion-buttons end>\n            <button ion-button (click)="openFBMessenger()">\n                <ion-icon name="fa-comments"></ion-icon>\n            </button>\n		</ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content>\n    <div class="streaming-logo">\n        <img src="assets/stream-logo.png" />\n    </div>\n    \n    <div class="main-player">\n        <app-now-playing [class]="playeractive?\'show-now-player\':\'hide-now-player\'"></app-now-playing>\n        <app-playlist [class]="playlistactive?\'show-play-list\':\'hide-play-list\'"></app-playlist>\n    </div>\n</ion-content>\n\n\n<div>\n  \n  <div class="notifications" *ngIf="notifications.stack">\n      <div *ngFor="let notification of notifications.stack" class="msg {{ notification.type }}">\n          {{ notification.message }}\n      </div>\n  </div>\n\n  <footer class="main-footer">\n      <div class="inner">\n          <ul class="footer-nav">\n              <li>\n                  <a href="#" (click)="showPlayer($event)">\n                      <i class="fas fa-volume-up"></i> Player\n                  </a>\n              </li>\n              <li class="play-btn" (click)="toggleStreamingPlayer($event)">\n                  <a href="#">\n                      <i class="fas fa-play" *ngIf="!isPlaying && !isLoading"></i>\n                      <i class="fas fa-pause" *ngIf="isPlaying && !isLoading"></i>\n                      <i class="fas fa-spinner fa-pulse" *ngIf="isLoading"></i>\n                  </a>\n              </li>\n              <li>\n                  <a href="#" (click)="showPlaylist($event)">  \n                      <i class="fas fa-clock"></i> Playlist\n                  </a>\n              </li>\n          </ul>\n      </div>\n  </footer>\n</div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/
+            selector: 'app-stream-player',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/'<ion-header>\n\n	<ion-navbar>\n		\n		<ion-buttons start>\n		<button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n		    <ion-icon name="arrow-back"></ion-icon>\n		    {{ \'Back\' | translate }}\n		</button>\n\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n		</ion-buttons>\n\n	    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    	<ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n	    <ion-buttons end>\n            <button ion-button (click)="openFBMessenger()">\n                <ion-icon name="fa-comments"></ion-icon>\n            </button>\n		</ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content>\n    <div class="streaming-logo">\n        <img src="assets/stream-logo.png" />\n    </div>\n    \n    <div class="main-player">\n        <app-now-playing [currentTrack]="currentTrack" [trackLoaded]="trackLoaded" [class]="playeractive?\'show-now-player\':\'hide-now-player\'"></app-now-playing>\n        <app-playlist [class]="playlistactive?\'show-play-list\':\'hide-play-list\'" [tracks]="tracks" [tracksLoading]="tracksLoading"></app-playlist>\n    </div>\n</ion-content>\n\n\n<div>\n  \n  <div class="notifications" *ngIf="notifications.stack">\n      <div *ngFor="let notification of notifications.stack" class="msg {{ notification.type }}">\n          {{ notification.message }}\n      </div>\n  </div>\n\n  <footer class="main-footer">\n      <div class="inner">\n          <ul class="footer-nav">\n              <li>\n                  <a href="#" (click)="showPlayer($event)">\n                      <i class="fas fa-volume-up"></i> Player\n                  </a>\n              </li>\n              <li class="play-btn" (click)="toggleStreamingPlayer($event)">\n                  <a href="#">\n                      <i class="fas fa-play" *ngIf="!isPlaying && !isLoading"></i>\n                      <i class="fas fa-pause" *ngIf="isPlaying && !isLoading"></i>\n                      <i class="fas fa-spinner fa-pulse" *ngIf="isLoading"></i>\n                  </a>\n              </li>\n              <li>\n                  <a href="#" (click)="showPlaylist($event)">  \n                      <i class="fas fa-clock"></i> Playlist\n                  </a>\n              </li>\n          </ul>\n      </div>\n  </footer>\n</div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"],
             __WEBPACK_IMPORTED_MODULE_5__providers_facebook_messenger_fb_messenger_service__["a" /* FBMessengerService */],
             __WEBPACK_IMPORTED_MODULE_3__services_tritondigital_service__["a" /* TritonDigitalService */],
+            __WEBPACK_IMPORTED_MODULE_6__services_now_playing_service__["a" /* NowPlayingService */],
             __WEBPACK_IMPORTED_MODULE_4__services_notifications_service__["a" /* NotificationsService */]])
     ], StreamPlayerComponent);
     return StreamPlayerComponent;
@@ -2550,6 +2594,7 @@ var TritonDigitalService = /** @class */ (function () {
         this.played = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.error = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.play();
+        this.status = 'loading';
     }
     /**
      * Generates sources array from PLS playlist file.
@@ -2612,7 +2657,7 @@ var TritonDigitalService = /** @class */ (function () {
             // console.log('running locally skip initPlayer');
             // fake the rest
             this.is_playing = true;
-            this.status = 'playing';
+            this.status = 'loading';
             this.played.emit();
             return;
         }
@@ -2845,248 +2890,129 @@ var FBMessengerService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 355:
+/***/ 359:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NowPlayingService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_xml2js__ = __webpack_require__(587);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_xml2js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_xml2js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_track_model__ = __webpack_require__(596);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Track; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__environments_environment__ = __webpack_require__(199);
+
+var Track = /** @class */ (function () {
+    /**
+     *
+        <?xml version="1.0" encoding="UTF-8"?>
+        <nowplaying-info-list>
+            <nowplaying-info mountName="WQHTAAC" timestamp="1543777744" type="track">
+                <property name="cue_time_duration">
+                    <![CDATA[00:04:02]]>
+                </property>
+                <property name="cue_time_start">
+                    <![CDATA[1543777699424]]>
+                </property>
+                <property name="cue_title">
+                    <![CDATA[Walk It Talk It (feat. Drake)]]>
+                </property>
+                <property name="program_id">
+                    <![CDATA[{cartNumber}]]>
+                </property>
+                <property name="track_album_name">
+                    <![CDATA[Finessed Flow]]>
+                </property>
+                <property name="track_artist_name">
+                    <![CDATA[Migos]]>
+                </property>
+                <property name="track_nowplaying_url">
+                    <![CDATA[https://metadata.listenlive.co/metadata/song/d3/1a98fa04cdbf5e706007df5505d686f1.json]]>
+                </property>
+            </nowplaying-info>
+        </nowplaying-info-list>
 
 
-
-
-// creation and utility methods
-
-// operators all come from `rxjs/operators`
-
-
-var NowPlayingService = /** @class */ (function () {
-    function NowPlayingService(http) {
-        this.http = http;
-        this.recentlyPlayed = [];
-        this.searchedItunes = [];
-        this.npUpdate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.count_streaming_played_subscribe = 0;
-        this.lastFetchTime = 0;
-        this.tracksList = [];
+        track['property'].map((prop) => {
+            if(prop['$']['name'] == "cue_title"){
+                trackData['title'] = prop['_'];
+            }else if(prop['$']['name'] == "track_artist_name"){
+                trackData['artist'] = prop['_'];
+            }else if(prop['$']['name'] == "track_album_name"){
+                trackData['album'] = prop['_'];
+            }else if(prop['$']['name'] == "cue_time_start"){
+                trackData['played_at'] = prop['_'];
+            }else if(prop['$']['name'] == "cue_time_duration"){
+                trackData['duration'] = prop['_'];
+            }
+        });
+     */
+    function Track(data) {
+        // console.log(data);
+        this.title = (data['title']) ? data['title'].trim() : '';
+        this.artist = (data['artist']) ? data['artist'].trim() : '';
+        this.album = (data['album']) ? data['album'].trim() : '';
+        this.cover_art = (data['cover_art']) ? data['cover_art'].trim() : '';
+        this.purchase_link = (data['purchase_link']) ? data['purchase_link'].trim() : '';
+        this.duration = (data['duration']) ? data['duration'].trim() : '';
+        this.played_at = (data['played_at']) ? data['played_at'].trim() : '';
+        var date = new Date();
+        // console.log('now', date, this.played_at);
+        var played_at = new Date((this.played_at / 1000) * 1000);
+        // console.log('played at', played_at);
+        if (this.played_at && this.duration) {
+            var duration = this.formatDurationTime(this.duration);
+            this.ends_at = ((this.played_at / 1000) + (duration / 1000)) * 1000;
+            // console.log('ends_at', this.ends_at);
+        }
+        var ends_in = this.ends_at - date.getTime();
+        // console.log('timeUntilEnds ends_in', ends_in);
+        if (!this.cover_art && __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].now_playing.generic_cover) {
+            this.cover_art = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].now_playing.generic_cover;
+        }
+        if (this.played_at && this.duration) {
+            this.duration = this.formatDurationTime(this.duration);
+            this.ends_at = ((this.played_at / 1000) + (this.duration / 1000)) * 1000;
+        }
+        else {
+            this.ends_at = (new Date).getTime() + 30000;
+        }
     }
     /**
-     * Returns a dummy track using default title & artist from environment
-     *
-     * @return     Track  Dummy track object
+     * Turns 00:03:12
+     * Into 192000
+     * @param time string
      */
-    NowPlayingService.prototype.dummyTrack = function () {
-        var dateObj = new Date();
-        return new __WEBPACK_IMPORTED_MODULE_6__models_track_model__["a" /* Track */]({
-            title: __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.default_title,
-            artist: __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.default_artist,
-            // string otherwise you'll "trim is not a function"
-            played_at: dateObj.getTime().toString(),
-            duration: '00:00:10'
-        });
+    Track.prototype.formatDurationTime = function (time) {
+        // console.log('formatDurationTime time', time)
+        return (Number(time.split(':')[0]) * 3600 + Number(time.split(':')[1]) * 60 + Number(time.split(':')[2])) * 1000;
     };
     /**
-     * Determines if track has been recently played.
+     * Determines if track has ended.
      *
-     * @param      Track   track   The track
-     * @return     boolean  True if has track has been recently played, False otherwise.
+     * @return     boolean  True if has ended, False otherwise.
      */
-    NowPlayingService.prototype.hasTrackHasBeenRecentlyPlayed = function (track) {
-        return this.recentlyPlayed.find(function (obj) { return obj['played_at'] == track['played_at']; }) !== undefined;
-    };
-    /**
-     * Gets the recently played list in reverse
-     *
-     * @return     Track[]  The reversed recently played list.
-     */
-    NowPlayingService.prototype.getRecentlyPlayed = function () {
-        return this.recentlyPlayed.reverse();
-    };
-    /**
-     * Adds a track to recentlyPlayed array.
-     *
-     * @param      Track  track   The track
-     */
-    NowPlayingService.prototype.addRecentlyPlayed = function (track) {
-        if (track) {
-            var nextIndex = this.recentlyPlayed.length;
-            this.recentlyPlayed[nextIndex] = track;
-        }
-    };
-    /**
-     * Returns environment variable to determine if formatting with iTunes
-     * should be attempted
-     *
-     * @return     boolean  True, False otherwise
-     */
-    NowPlayingService.prototype.shouldFormatTracks = function () {
-        return __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.format_tracks;
-    };
-    /**
-     * Formats a track using iTunes Search API
-     *
-     * @param      Track  track   The track
-     * @return     Track  The formatted track object
-     */
-    NowPlayingService.prototype.formatItunes = function (track) {
-        var _this = this;
-        var searchUrl = 'https://itunes.apple.com/search?term=';
-        searchUrl += encodeURI(track.title + ' by ' + track.artist);
-        searchUrl += "&limit=1&entity=song";
-        var existingTrack = this.searchedItunes.find(function (obj) { return (obj['title'] == track['title']) && (obj['artist'] == track['artist']); });
-        if (existingTrack) {
-            // console.log('old search iTunes', existingTrack);
-            return __WEBPACK_IMPORTED_MODULE_4_rxjs__["Observable"].create(function (observer) {
-                observer.next(existingTrack);
-                observer.complete();
-            });
-        }
-        else {
-            // console.log('search iTunes');
-            if (track.title == 'CAMILO COMMERCIAL FREE MIX') {
-                // track.cover_art = 'https://i1.sndcdn.com/avatars-000069594518-o46d51-t200x200.jpg';
-                track.duration = 600000;
-                this.searchedItunes.push(track);
-                return __WEBPACK_IMPORTED_MODULE_4_rxjs__["Observable"].create(function (observer) {
-                    observer.next(track);
-                    observer.complete();
-                });
-            }
-            return this.http.get(searchUrl).pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators__["map"])(function (results) {
-                // console.log(results);
-                if (results.resultCount >= 1) {
-                    results.results.map(function (result) {
-                        track.title = result.trackCensoredName;
-                        track.album = result.collectionCensoredName;
-                        track.artist = result.artistName;
-                        track.cover_art = result.artworkUrl100.replace('100x100', '256x256');
-                    });
-                }
-                _this.searchedItunes.push(track);
-                return track;
-            }));
-        }
-    };
-    NowPlayingService.prototype.stopRepeatFetch = function () {
-        var now = new Date();
-        var currentFetchTime = Math.ceil(now / 1000);
-        // console.log('currentFetchTime', currentFetchTime)
-        // console.log('this.lastFetchTime', this.lastFetchTime)
-        if (this.lastFetchTime + 5 > currentFetchTime) {
-            // console.log('stopRepeatFetch stop')
-            return true;
-        }
-        else {
-            // console.log('stopRepeatFetch allow')
-            return false;
-        }
-    };
-    NowPlayingService.prototype.setLastFetchTime = function () {
+    Track.prototype.hasEnded = function () {
         var date = new Date();
-        this.lastFetchTime = Math.ceil(date / 1000);
-        // console.log('setLastFetchTime', this.lastFetchTime)
+        return date.getTime() >= this.ends_at;
     };
     /**
-     * Fetches tracks from now playing service provider
+     * Returns time until track ends
      *
-     * @param      number  limit   The limit
-     * @return     array   Array of tracks
+     * @return     number  Milliseconds until track ends
      */
-    NowPlayingService.prototype.fetch = function (limit) {
-        var _this = this;
-        var dataUrl = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.data_url.replace('{{limit}}', limit);
-        if (this.stopRepeatFetch()) {
-            return __WEBPACK_IMPORTED_MODULE_4_rxjs__["Observable"].create(function (observer) {
-                observer.next(_this.tracksList);
-                observer.complete();
-            });
-        }
-        this.setLastFetchTime();
-        console.log('fetching', dataUrl);
-        return this.http.get(dataUrl, {
-            responseType: 'text'
-        }).pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators__["map"])(function (data) {
-            var results = [];
-            _this.tracksList = [];
-            if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.provider == 1) {
-                // Triton Digital
-                // Parse XML to JSON
-                __WEBPACK_IMPORTED_MODULE_3_xml2js__["parseString"](data, function (error, parsed) {
-                    //If list of tracks is found, begin loop
-                    if (parsed['nowplaying-info-list'] && parsed['nowplaying-info-list']['nowplaying-info']) {
-                        var _loop_1 = function (track) {
-                            //Create track data for later use
-                            var trackData = {};
-                            track['property'].map(function (prop) {
-                                if (prop['$']['name'] == "cue_title") {
-                                    trackData['title'] = prop['_'];
-                                }
-                                else if (prop['$']['name'] == "track_artist_name") {
-                                    trackData['artist'] = prop['_'];
-                                }
-                                else if (prop['$']['name'] == "track_album_name") {
-                                    trackData['album'] = prop['_'];
-                                }
-                                else if (prop['$']['name'] == "cue_time_start") {
-                                    trackData['played_at'] = prop['_'];
-                                }
-                                else if (prop['$']['name'] == "cue_time_duration") {
-                                    trackData['duration'] = prop['_'];
-                                }
-                            });
-                            // If track doesn't have played_at grab it from timestamp attribute
-                            if (trackData['played_at'] == undefined) {
-                                trackData['played_at'] = track['$']['timestamp'] * 1000;
-                            }
-                            // Push new Track to tracksList
-                            _this.tracksList.push(new __WEBPACK_IMPORTED_MODULE_6__models_track_model__["a" /* Track */](trackData));
-                            console.log('Track', _this.tracksList[0]);
-                        };
-                        //Loop through track properties and populate trackData
-                        for (var _i = 0, _a = parsed['nowplaying-info-list']['nowplaying-info']; _i < _a.length; _i++) {
-                            var track = _a[_i];
-                            _loop_1(track);
-                        }
-                    }
-                });
-            }
-            else if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.provider == 2) {
-                // RadioDJ
-                // Parse JSON
-                var trackData = JSON.parse(data);
-                // Push new track to tracksList
-                _this.tracksList.push(new __WEBPACK_IMPORTED_MODULE_6__models_track_model__["a" /* Track */](trackData));
-            }
-            // Return formatted tracksList 
-            return _this.tracksList;
-        }));
+    Track.prototype.timeUntilEnds = function () {
+        var date = new Date();
+        var ends_in = this.ends_at - date.getTime();
+        return (ends_in < 0) ? 10000 : ends_in;
     };
-    NowPlayingService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])({
-            providedIn: 'root'
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
-    ], NowPlayingService);
-    return NowPlayingService;
+    /**
+     * Returns played_at Date object
+     *
+     * @return     Date  Played_at date object
+     */
+    Track.prototype.playedAtDate = function () {
+        return new Date(this.played_at);
+    };
+    return Track;
 }());
 
-//# sourceMappingURL=now-playing.service.js.map
+//# sourceMappingURL=track.model.js.map
 
 /***/ }),
 
@@ -3096,7 +3022,7 @@ var NowPlayingService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BpProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(170);
@@ -3481,7 +3407,7 @@ var BpProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Posts; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
@@ -3881,13 +3807,13 @@ var NetworkStatusService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 365:
+/***/ 366:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WPlogin; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__logins_login_service__ = __webpack_require__(57);
@@ -4063,13 +3989,13 @@ var WPlogin = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 366:
+/***/ 367:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FbConnectApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
@@ -4265,12 +4191,12 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(581);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngx_translate_core__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_http_loader__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_http_loader__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_action_sheet__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_device__ = __webpack_require__(45);
@@ -4290,19 +4216,19 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_geolocation__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_in_app_purchase__ = __webpack_require__(293);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ionic_native_media__ = __webpack_require__(353);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_native_streaming_media__ = __webpack_require__(583);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_native_streaming_media__ = __webpack_require__(593);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_camera_app_camera__ = __webpack_require__(341);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_posts_posts__ = __webpack_require__(361);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_globalvars_globalvars__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_appads_appads__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_logins_logins__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_facebook_login_iframe__ = __webpack_require__(342);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_facebook_login_app__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_facebook_login_app__ = __webpack_require__(367);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__providers_facebook_fbconnect_settings__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__providers_push_push__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__providers_appwoo_appwoo__ = __webpack_require__(343);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__providers_appdata_appdata__ = __webpack_require__(345);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_wplogin_wplogin__ = __webpack_require__(365);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_wplogin_wplogin__ = __webpack_require__(366);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__providers_logins_login_service__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__providers_language_language_service__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__providers_header_logo_header_logo__ = __webpack_require__(203);
@@ -4314,10 +4240,10 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__providers_menus_menu_service__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__providers_network_network_status_service__ = __webpack_require__(364);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_50_angulartics2_ga__ = __webpack_require__(292);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51_angulartics2_routerlessmodule__ = __webpack_require__(584);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51_angulartics2_routerlessmodule__ = __webpack_require__(594);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__providers_analytics_analytics_service__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pages_stream_player_main_player_main_player_component__ = __webpack_require__(585);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__pages_stream_player_now_playing_now_playing_component__ = __webpack_require__(586);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pages_stream_player_main_player_main_player_component__ = __webpack_require__(595);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__pages_stream_player_now_playing_now_playing_component__ = __webpack_require__(596);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__pages_stream_player_playlist_playlist_component__ = __webpack_require__(597);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__providers_facebook_messenger_fb_messenger_service__ = __webpack_require__(354);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__pages_iframe_iframe__ = __webpack_require__(123);
@@ -4435,13 +4361,13 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/bp-profile/bp-profile.module#BpProfilePageModule', name: 'BpProfilePage', segment: 'bp-profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/custom-pages/custom-page.module#CustomPageModule', name: 'CustomPage', segment: 'custom-page', priority: 'high', defaultHistory: [] },
                         { loadChildren: '../pages/download-list/download-list.module#DownloadListModule', name: 'DownloadList', segment: 'download-list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login-modal/login-modal.module#LoginModalModule', name: 'LoginModal', segment: 'login-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/language-settings/language-settings.module#LanguageSettingsModule', name: 'LanguageSettings', segment: 'language-settings', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login-modal/login-modal.module#LoginModalModule', name: 'LoginModal', segment: 'login-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/media-list/media-list.module#MediaListModule', name: 'MediaList', segment: 'media-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/media-player/media-player.module#MediaPlayerModule', name: 'MediaPlayer', segment: 'media-player', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post-details/post-details.module#PostDetailsPageModule', name: 'PostDetailsPage', segment: 'post-details', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/post-list/post-list.module#PostListModule', name: 'PostList', segment: 'post-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/push-settings/push-settings.module#PushSettingsModule', name: 'PushSettings', segment: 'push-settings', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/post-list/post-list.module#PostListModule', name: 'PostList', segment: 'post-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -4648,7 +4574,7 @@ var LoginService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_app_camera__ = __webpack_require__(341);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_globalvars_globalvars__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_appads_appads__ = __webpack_require__(174);
@@ -6046,7 +5972,370 @@ var Notification = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 585:
+/***/ 583:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NowPlayingService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_xml2js__ = __webpack_require__(584);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_xml2js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_xml2js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_track_model__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__tritondigital_service__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__notifications_service__ = __webpack_require__(200);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+// creation and utility methods
+
+// operators all come from `rxjs/operators`
+
+
+
+
+var NowPlayingService = /** @class */ (function () {
+    function NowPlayingService(http, streaming, notifications) {
+        var _this = this;
+        this.http = http;
+        this.streaming = streaming;
+        this.notifications = notifications;
+        this.recentlyPlayed = [];
+        this.searchedItunes = [];
+        this.npUpdate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.count_streaming_played_subscribe = 0;
+        this.lastFetchTime = 0;
+        this.tracksList = [];
+        this.trackLoaded = false;
+        this.lastTrackCount = 0;
+        this.currentTrack = this.dummyTrack();
+        //Load current track onInit
+        this.trackObs = this.getCurrentTrackObs();
+        this.trackObs.subscribe(function (track) {
+            _this.trackLoaded = true;
+        });
+        //Watch when streaming is played to keep now playing up-to-date
+        this.streaming.played.subscribe(function () {
+            //Set current track
+            console.log('streaming.played');
+            console.log('Set current track');
+            // this.getCurrentTrack();
+        });
+    }
+    /**
+     * Returns a dummy track using default title & artist from environment
+     *
+     * @return     Track  Dummy track object
+     */
+    NowPlayingService.prototype.dummyTrack = function () {
+        var dateObj = new Date();
+        return new __WEBPACK_IMPORTED_MODULE_6__models_track_model__["a" /* Track */]({
+            title: __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.default_title,
+            artist: __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.default_artist,
+            // string otherwise you'll "trim is not a function"
+            played_at: dateObj.getTime().toString(),
+            duration: '00:00:10'
+        });
+    };
+    /**
+     * Determines if track has been recently played.
+     *
+     * @param      Track   track   The track
+     * @return     boolean  True if has track has been recently played, False otherwise.
+     */
+    NowPlayingService.prototype.hasTrackHasBeenRecentlyPlayed = function (track) {
+        return this.recentlyPlayed.find(function (obj) { return obj['played_at'] == track['played_at']; }) !== undefined;
+    };
+    /**
+     * Gets the recently played list in reverse
+     *
+     * @return     Track[]  The reversed recently played list.
+     */
+    NowPlayingService.prototype.getRecentlyPlayed = function () {
+        return this.recentlyPlayed.reverse();
+    };
+    /**
+     * Adds a track to recentlyPlayed array.
+     *
+     * @param      Track  track   The track
+     */
+    NowPlayingService.prototype.addRecentlyPlayed = function (track) {
+        if (track) {
+            var nextIndex = this.recentlyPlayed.length;
+            this.recentlyPlayed[nextIndex] = track;
+        }
+    };
+    /**
+     * Returns environment variable to determine if formatting with iTunes
+     * should be attempted
+     *
+     * @return     boolean  True, False otherwise
+     */
+    NowPlayingService.prototype.shouldFormatTracks = function () {
+        return __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.format_tracks;
+    };
+    /**
+     * Formats a track using iTunes Search API
+     *
+     * @param      Track  track   The track
+     * @return     Track  The formatted track object
+     */
+    NowPlayingService.prototype.formatItunes = function (track) {
+        var _this = this;
+        var searchUrl = 'https://itunes.apple.com/search?term=';
+        searchUrl += encodeURI(track.title + ' by ' + track.artist);
+        searchUrl += "&limit=1&entity=song";
+        var existingTrack = this.searchedItunes.find(function (obj) { return (obj['title'] == track['title']) && (obj['artist'] == track['artist']); });
+        if (existingTrack) {
+            // console.log('old search iTunes', existingTrack);
+            return __WEBPACK_IMPORTED_MODULE_4_rxjs__["Observable"].create(function (observer) {
+                observer.next(existingTrack);
+                observer.complete();
+            });
+        }
+        else {
+            // console.log('search iTunes');
+            if (track.title == 'CAMILO COMMERCIAL FREE MIX') {
+                // track.cover_art = 'https://i1.sndcdn.com/avatars-000069594518-o46d51-t200x200.jpg';
+                track.duration = 600000;
+                this.searchedItunes.push(track);
+                return __WEBPACK_IMPORTED_MODULE_4_rxjs__["Observable"].create(function (observer) {
+                    observer.next(track);
+                    observer.complete();
+                });
+            }
+            return this.http.get(searchUrl).pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators__["map"])(function (results) {
+                // console.log(results);
+                if (results.resultCount >= 1) {
+                    results.results.map(function (result) {
+                        // track.title = result.trackCensoredName;
+                        track.album = result.collectionCensoredName;
+                        // track.artist = result.artistName;
+                        track.cover_art = result.artworkUrl100.replace('100x100', '256x256');
+                    });
+                }
+                _this.searchedItunes.push(track);
+                return track;
+            }));
+        }
+    };
+    NowPlayingService.prototype.stopRepeatFetch = function () {
+        var now = new Date();
+        var currentFetchTime = Math.ceil(now / 1000);
+        // console.log('currentFetchTime', currentFetchTime)
+        // console.log('this.lastFetchTime', this.lastFetchTime)
+        if (this.lastFetchTime + 5 > currentFetchTime) {
+            // console.log('stopRepeatFetch stop')
+            return true;
+        }
+        else {
+            // console.log('stopRepeatFetch allow')
+            return false;
+        }
+    };
+    NowPlayingService.prototype.setLastFetchTime = function () {
+        var date = new Date();
+        this.lastFetchTime = Math.ceil(date / 1000);
+        // console.log('setLastFetchTime', this.lastFetchTime)
+    };
+    /**
+     * Fetches tracks from now playing service provider
+     *
+     * @param      number  limit   The limit
+     * @return     array   Array of tracks
+     */
+    NowPlayingService.prototype.fetch = function (limit) {
+        var _this = this;
+        var dataUrl = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.data_url.replace('{{limit}}', limit);
+        if (this.stopRepeatFetch()) {
+            return __WEBPACK_IMPORTED_MODULE_4_rxjs__["Observable"].create(function (observer) {
+                observer.next(_this.tracksList);
+                observer.complete();
+            });
+        }
+        this.setLastFetchTime();
+        console.log('fetching', dataUrl);
+        return this.http.get(dataUrl, {
+            responseType: 'text'
+        }).pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators__["map"])(function (data) {
+            var results = [];
+            _this.tracksList = [];
+            if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.provider == 1) {
+                // Triton Digital
+                // Parse XML to JSON
+                __WEBPACK_IMPORTED_MODULE_3_xml2js__["parseString"](data, function (error, parsed) {
+                    //If list of tracks is found, begin loop
+                    if (parsed['nowplaying-info-list'] && parsed['nowplaying-info-list']['nowplaying-info']) {
+                        var _loop_1 = function (track) {
+                            //Create track data for later use
+                            var trackData = {};
+                            track['property'].map(function (prop) {
+                                if (prop['$']['name'] == "cue_title") {
+                                    trackData['title'] = prop['_'];
+                                }
+                                else if (prop['$']['name'] == "track_artist_name") {
+                                    trackData['artist'] = prop['_'];
+                                }
+                                else if (prop['$']['name'] == "track_album_name") {
+                                    trackData['album'] = prop['_'];
+                                }
+                                else if (prop['$']['name'] == "cue_time_start") {
+                                    trackData['played_at'] = prop['_'];
+                                }
+                                else if (prop['$']['name'] == "cue_time_duration") {
+                                    trackData['duration'] = prop['_'];
+                                }
+                            });
+                            // If track doesn't have played_at grab it from timestamp attribute
+                            if (trackData['played_at'] == undefined) {
+                                trackData['played_at'] = track['$']['timestamp'] * 1000;
+                            }
+                            // Push new Track to tracksList
+                            _this.tracksList.push(new __WEBPACK_IMPORTED_MODULE_6__models_track_model__["a" /* Track */](trackData));
+                            console.log('NowPlayingService fetch Track', _this.tracksList[0]);
+                        };
+                        //Loop through track properties and populate trackData
+                        for (var _i = 0, _a = parsed['nowplaying-info-list']['nowplaying-info']; _i < _a.length; _i++) {
+                            var track = _a[_i];
+                            _loop_1(track);
+                        }
+                    }
+                });
+            }
+            else if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.provider == 2) {
+                // RadioDJ
+                // Parse JSON
+                var trackData = JSON.parse(data);
+                // Push new track to tracksList
+                _this.tracksList.push(new __WEBPACK_IMPORTED_MODULE_6__models_track_model__["a" /* Track */](trackData));
+            }
+            // Return formatted tracksList 
+            return _this.tracksList;
+        }));
+    };
+    NowPlayingService.prototype.getCurrentTrackObs = function () {
+        var _this = this;
+        return __WEBPACK_IMPORTED_MODULE_4_rxjs__["Observable"].create(function (observer) {
+            _this.observer = observer;
+            observer.next(_this.dummyTrack());
+            // start the recursive function looping
+            _this.getCurrentTrack();
+        });
+    };
+    /**
+     * Gets and sets the current track.
+     *
+     * @return     void
+     */
+    NowPlayingService.prototype.getCurrentTrack = function () {
+        var _this = this;
+        this.fetch(1).subscribe(function (tracks) {
+            if (tracks && tracks.length === 0)
+                return;
+            var hasCoverArt = false;
+            var _track = tracks[0];
+            var timeout = _track.timeUntilEnds();
+            if (!_this.lastTrack || _this.lastTrack.title != _track.title) {
+                _this.lastTrack = _track;
+                _this.lastTrackCount = 0;
+                // Only change the playing now if there are two.
+                // This ensures that the feed is updating and we are 
+                // displaying the correct image
+                // if(this.tracksList.length && this.tracksList.length > 1 ) {
+                // 	this.currentTrack = _track;
+                // } else {
+                // 	hasCoverArt = true;
+                // 	this.currentTrack = this.dummyTrack();
+                // 	this.observer.next(this.currentTrack);
+                // 	setTimeout(() => {
+                // 		this.getCurrentTrack();
+                // 	}, 30000);
+                // 	return;
+                // }
+            }
+            // console.log('lastTrack track', this.lastTrack, _track);
+            // console.log('lastTrack track titles', this.lastTrack.title, _track.title);
+            if (_this.lastTrack.title == _track.title) {
+                _this.lastTrackCount++;
+                console.log('lastTrackCount', _this.lastTrackCount);
+                if (_this.lastTrackCount > 30) {
+                    // using the dummy track if the feed doesn't update
+                    hasCoverArt = true;
+                    _this.currentTrack = _this.dummyTrack();
+                    _this.observer.next(_this.currentTrack);
+                    setTimeout(function () {
+                        _this.getCurrentTrack();
+                    }, 30000);
+                    return;
+                }
+            }
+            if (!hasCoverArt) {
+                //Format current track with iTunes
+                _this.formatItunes(_track).subscribe(function (track) {
+                    _this.trackLoaded = true;
+                    _this.observer.next(track);
+                    //Push current track to recentlyPlayed if is different that latest
+                    if (track && !_this.hasTrackHasBeenRecentlyPlayed(track)) {
+                        _this.addRecentlyPlayed(track);
+                        //Emit npUpdate event
+                        _this.npUpdate.next(true);
+                    }
+                    if (_this.lastTrackCount > 30) {
+                        // the feed hasn't updated in a while, check every 30 seconds instead
+                        timeout = 30000;
+                    }
+                    setTimeout(function () {
+                        _this.getCurrentTrack();
+                    }, timeout);
+                }, function (error) {
+                    setTimeout(function () {
+                        //Add error notification
+                        _this.notifications.create('error', 'Unable to load now playing information.');
+                        //Set track with dummy track
+                        _this.currentTrack = _this.dummyTrack();
+                        _this.observer.next(_this.currentTrack);
+                        //Set trackLoaded to true
+                        if (!_this.trackLoaded) {
+                            _this.trackLoaded = true;
+                        }
+                        //Set 10 second timeout and check for track again
+                        setTimeout(function () {
+                            _this.getCurrentTrack();
+                        }, 30000);
+                    }, 500);
+                });
+            }
+        });
+    };
+    NowPlayingService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_7__tritondigital_service__["a" /* TritonDigitalService */],
+            __WEBPACK_IMPORTED_MODULE_8__notifications_service__["a" /* NotificationsService */]])
+    ], NowPlayingService);
+    return NowPlayingService;
+}());
+
+//# sourceMappingURL=now-playing.service.js.map
+
+/***/ }),
+
+/***/ 595:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6085,16 +6374,13 @@ var MainPlayerComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 586:
+/***/ 596:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NowPlayingComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_now_playing_service__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_notifications_service__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_tritondigital_service__ = __webpack_require__(352);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_track_model__ = __webpack_require__(359);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6106,251 +6392,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-
 var NowPlayingComponent = /** @class */ (function () {
-    function NowPlayingComponent(npService, streaming, notifications) {
-        this.npService = npService;
-        this.streaming = streaming;
-        this.notifications = notifications;
+    function NowPlayingComponent() {
     }
-    NowPlayingComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.trackLoaded = false;
-        this.lastTrackCount = 0;
-        //Load current track onInit
-        this.trackObs = this.getCurrentTrackObs();
-        this.trackObs.subscribe(function (track) {
-            _this.trackLoaded = true;
-            if (!_this.lastTrack || _this.lastTrack.title != track.title) {
-                _this.lastTrack = track;
-                _this.lastTrackCount = 0;
-                // Only change the playing now if there are two.
-                // This ensures that the feed is updating and we are 
-                // displaying the correct image
-                _this.currentTrack = null;
-                if (_this.npService.tracksList.length && _this.npService.tracksList.length > 1) {
-                    _this.currentTrack = track;
-                }
-                else {
-                    _this.currentTrack = _this.npService.dummyTrack();
-                }
-            }
-            if (_this.lastTrack.title == track.title) {
-                _this.lastTrackCount++;
-                console.log('lastTrackCount', _this.lastTrackCount);
-                if (_this.lastTrackCount > 30) {
-                    // using the dummy track if the feed doesn't update
-                    _this.currentTrack = _this.npService.dummyTrack();
-                }
-            }
-        });
-        //Watch when streaming is played to keep now playing up-to-date
-        this.streaming.played.subscribe(function () {
-            //Set current track
-            console.log('streaming.played');
-            console.log('Set current track');
-            // this.getCurrentTrack();
-        });
-    };
-    NowPlayingComponent.prototype.getCurrentTrackObs = function () {
-        var _this = this;
-        return __WEBPACK_IMPORTED_MODULE_4_rxjs__["Observable"].create(function (observer) {
-            _this.observer = observer;
-            observer.next(_this.npService.dummyTrack());
-            // start the recursive function looping
-            _this.getCurrentTrack();
-        });
-    };
-    /**
-     * Gets and sets the current track.
-     *
-     * @return     void
-     */
-    NowPlayingComponent.prototype.getCurrentTrack = function () {
-        var _this = this;
-        this.npService.fetch(1).subscribe(function (response) {
-            if (response && response.length === 0)
-                return;
-            //Format current track with iTunes
-            _this.npService.formatItunes(response[0]).subscribe(function (track) {
-                _this.trackLoaded = true;
-                _this.observer.next(track);
-                //Push current track to recentlyPlayed if is different that latest
-                if (track && !_this.npService.hasTrackHasBeenRecentlyPlayed(track)) {
-                    _this.npService.addRecentlyPlayed(track);
-                    //Emit npUpdate event
-                    _this.npService.npUpdate.next(true);
-                }
-                var timeout = track.timeUntilEnds();
-                if (_this.lastTrackCount > 30) {
-                    // the feed hasn't updated in a while, check every 30 seconds instead
-                    timeout = 30000;
-                }
-                _this.timeoutId = setTimeout(function () {
-                    _this.getCurrentTrack();
-                }, timeout);
-            }, function (error) {
-                setTimeout(function () {
-                    //Add error notification
-                    _this.notifications.create('error', 'Unable to load now playing information.');
-                    //Set track with dummy track
-                    _this.currentTrack = _this.npService.dummyTrack();
-                    //Set trackLoaded to true
-                    if (!_this.trackLoaded) {
-                        _this.trackLoaded = true;
-                    }
-                    //Set 10 second timeout and check for track again
-                    setTimeout(function () {
-                        _this.getCurrentTrack();
-                    }, 30000);
-                }, 500);
-            });
-        });
-    };
-    NowPlayingComponent.prototype.ngOnDestroy = function () {
-        clearTimeout(this.timeoutId);
-    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__models_track_model__["a" /* Track */])
+    ], NowPlayingComponent.prototype, "currentTrack", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], NowPlayingComponent.prototype, "trackLoaded", void 0);
     NowPlayingComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-now-playing',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/now-playing/now-playing.component.html"*/'<div [ngClass]="{\'show-now-playing\':trackLoaded, \'hide-now-playing\':!trackLoaded}">\n	<div class="cover-art">\n		<img src="{{ currentTrack.cover_art }}" *ngIf="currentTrack?.cover_art">\n	</div>\n\n	<div class="text">\n		<div class="title" *ngIf="currentTrack?.title">{{ currentTrack.title }}</div>\n		<div class="artist" *ngIf="currentTrack?.artist"> by {{ currentTrack.artist }}</div>\n	</div>\n</div>\n<div [ngClass]="{\'show-now-playing\':!trackLoaded, \'hide-now-playing\':trackLoaded, \'circle-loader now-playing-loading gray\': true}"></div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/now-playing/now-playing.component.html"*/,
+            selector: 'app-now-playing',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/now-playing/now-playing.component.html"*/'<div [ngClass]="{\'show-now-playing\':trackLoaded, \'hide-now-playing\':!trackLoaded}">\n	<div class="cover-art">\n		<img src="{{ currentTrack.cover_art }}">\n	</div>\n\n	<div class="text">\n		<div class="title">{{ currentTrack.title }}</div>\n		<div class="artist" *ngIf="currentTrack.artist"> by {{ currentTrack.artist }}</div>\n	</div>\n</div>\n<div [ngClass]="{\'show-now-playing\':!trackLoaded, \'hide-now-playing\':trackLoaded, \'circle-loader now-playing-loading gray\': true}"></div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/now-playing/now-playing.component.html"*/,
             styles: ['now-playing.component.scss']
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_now_playing_service__["a" /* NowPlayingService */],
-            __WEBPACK_IMPORTED_MODULE_3__services_tritondigital_service__["a" /* TritonDigitalService */],
-            __WEBPACK_IMPORTED_MODULE_2__services_notifications_service__["a" /* NotificationsService */]])
+        __metadata("design:paramtypes", [])
     ], NowPlayingComponent);
     return NowPlayingComponent;
 }());
 
 //# sourceMappingURL=now-playing.component.js.map
-
-/***/ }),
-
-/***/ 596:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Track; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__environments_environment__ = __webpack_require__(199);
-
-var Track = /** @class */ (function () {
-    /**
-     *
-        <?xml version="1.0" encoding="UTF-8"?>
-        <nowplaying-info-list>
-            <nowplaying-info mountName="WQHTAAC" timestamp="1543777744" type="track">
-                <property name="cue_time_duration">
-                    <![CDATA[00:04:02]]>
-                </property>
-                <property name="cue_time_start">
-                    <![CDATA[1543777699424]]>
-                </property>
-                <property name="cue_title">
-                    <![CDATA[Walk It Talk It (feat. Drake)]]>
-                </property>
-                <property name="program_id">
-                    <![CDATA[{cartNumber}]]>
-                </property>
-                <property name="track_album_name">
-                    <![CDATA[Finessed Flow]]>
-                </property>
-                <property name="track_artist_name">
-                    <![CDATA[Migos]]>
-                </property>
-                <property name="track_nowplaying_url">
-                    <![CDATA[https://metadata.listenlive.co/metadata/song/d3/1a98fa04cdbf5e706007df5505d686f1.json]]>
-                </property>
-            </nowplaying-info>
-        </nowplaying-info-list>
-
-
-        track['property'].map((prop) => {
-            if(prop['$']['name'] == "cue_title"){
-                trackData['title'] = prop['_'];
-            }else if(prop['$']['name'] == "track_artist_name"){
-                trackData['artist'] = prop['_'];
-            }else if(prop['$']['name'] == "track_album_name"){
-                trackData['album'] = prop['_'];
-            }else if(prop['$']['name'] == "cue_time_start"){
-                trackData['played_at'] = prop['_'];
-            }else if(prop['$']['name'] == "cue_time_duration"){
-                trackData['duration'] = prop['_'];
-            }
-        });
-     */
-    function Track(data) {
-        // console.log(data);
-        this.title = (data['title']) ? data['title'].trim() : '';
-        this.artist = (data['artist']) ? data['artist'].trim() : '';
-        this.album = (data['album']) ? data['album'].trim() : '';
-        this.cover_art = (data['cover_art']) ? data['cover_art'].trim() : '';
-        this.purchase_link = (data['purchase_link']) ? data['purchase_link'].trim() : '';
-        this.duration = (data['duration']) ? data['duration'].trim() : '';
-        this.played_at = (data['played_at']) ? data['played_at'].trim() : '';
-        var date = new Date();
-        // console.log('now', date, this.played_at);
-        var played_at = new Date((this.played_at / 1000) * 1000);
-        // console.log('played at', played_at);
-        if (this.played_at && this.duration) {
-            var duration = this.formatDurationTime(this.duration);
-            this.ends_at = ((this.played_at / 1000) + (duration / 1000)) * 1000;
-            // console.log('ends_at', this.ends_at);
-        }
-        var ends_in = this.ends_at - date.getTime();
-        // console.log('timeUntilEnds ends_in', ends_in);
-        if (!this.cover_art && __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].now_playing.generic_cover) {
-            this.cover_art = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].now_playing.generic_cover;
-        }
-        if (this.played_at && this.duration) {
-            this.duration = this.formatDurationTime(this.duration);
-            this.ends_at = ((this.played_at / 1000) + (this.duration / 1000)) * 1000;
-        }
-        else {
-            this.ends_at = (new Date).getTime() + 30000;
-        }
-    }
-    /**
-     * Turns 00:03:12
-     * Into 192000
-     * @param time string
-     */
-    Track.prototype.formatDurationTime = function (time) {
-        // console.log('formatDurationTime time', time)
-        return (Number(time.split(':')[0]) * 3600 + Number(time.split(':')[1]) * 60 + Number(time.split(':')[2])) * 1000;
-    };
-    /**
-     * Determines if track has ended.
-     *
-     * @return     boolean  True if has ended, False otherwise.
-     */
-    Track.prototype.hasEnded = function () {
-        var date = new Date();
-        return date.getTime() >= this.ends_at;
-    };
-    /**
-     * Returns time until track ends
-     *
-     * @return     number  Milliseconds until track ends
-     */
-    Track.prototype.timeUntilEnds = function () {
-        var date = new Date();
-        var ends_in = this.ends_at - date.getTime();
-        return (ends_in < 0) ? 10000 : ends_in;
-    };
-    /**
-     * Returns played_at Date object
-     *
-     * @return     Date  Played_at date object
-     */
-    Track.prototype.playedAtDate = function () {
-        return new Date(this.played_at);
-    };
-    return Track;
-}());
-
-//# sourceMappingURL=track.model.js.map
 
 /***/ }),
 
@@ -6360,7 +6423,6 @@ var Track = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlaylistComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_now_playing_service__ = __webpack_require__(355);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6371,44 +6433,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
 var PlaylistComponent = /** @class */ (function () {
-    function PlaylistComponent(npService) {
-        this.npService = npService;
-        this.tracks = [];
-        this.tracksLoading = false;
+    function PlaylistComponent() {
     }
-    /**
-     * Sets the tracks.
-     *
-     * @return     void
-     */
-    PlaylistComponent.prototype.setTracks = function () {
-        //Clone npService's recentlyPlayed array and then reverse newly created one
-        this.tracks = Object.assign([], this.npService.recentlyPlayed).reverse();
-    };
-    PlaylistComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        //Set tracksLoading variable
-        this.tracksLoading = true;
-        //If iTunes formatting enabled, format all tracks
-        if (this.npService.shouldFormatTracks() && this.npService.recentlyPlayed.length) {
-            //Set tracks
-            this.setTracks();
-        }
-        //Watch npService npUpdate event
-        this.npService.npUpdate.subscribe(function (updated) {
-            _this.setTracks();
-        });
-        //Set tracksLoading to false
-        this.tracksLoading = false;
-    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Array)
+    ], PlaylistComponent.prototype, "tracks", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], PlaylistComponent.prototype, "tracksLoading", void 0);
     PlaylistComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-playlist',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/playlist/playlist.component.html"*/'<div class="playlist">\n	<div class="circle-loader playlist-loader gray" *ngIf="tracksLoading"></div>\n	<ul *ngIf="tracks.length && !tracksLoading">\n		<li *ngFor="let track of tracks">\n			<div class="cover-art">\n				<img src="{{ track.cover_art }}" *ngIf="track?.cover_art">\n			</div>\n			<div class="data">\n				<div class="title">\n					{{ track?.title }}\n				</div>\n				<div class="artist">\n					by {{ track?.artist }}\n				</div>\n				<div class="played-at">\n					played at {{ track?.played_at | date:\'h:mma\' }}\n				</div>\n			</div>\n		</li>\n	</ul>\n	<div class="msg warning" *ngIf="!tracks.length && !tracksLoading">You haven\'t listened long enough!</div>\n</div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/playlist/playlist.component.html"*/,
+            selector: 'app-playlist',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/playlist/playlist.component.html"*/'<div class="playlist">\n	<div class="circle-loader playlist-loader gray" *ngIf="tracksLoading"></div>\n	<ul *ngIf="tracks?.length && !tracksLoading">\n		<li *ngFor="let track of tracks">\n			<div class="cover-art">\n				<img src="{{ track.cover_art }}" *ngIf="track?.cover_art">\n			</div>\n			<div class="data">\n				<div class="title">\n					{{ track?.title }}\n				</div>\n				<div class="artist">\n					by {{ track?.artist }}\n				</div>\n				<div class="played-at">\n					played at {{ track?.played_at | date:\'h:mma\' }}\n				</div>\n			</div>\n		</li>\n	</ul>\n	<div class="msg warning" *ngIf="!tracks?.length && !tracksLoading">You haven\'t listened long enough!</div>\n</div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/playlist/playlist.component.html"*/,
             styles: ['playlist.component.scss']
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_now_playing_service__["a" /* NowPlayingService */]])
+        __metadata("design:paramtypes", [])
     ], PlaylistComponent);
     return PlaylistComponent;
 }());
@@ -6423,7 +6464,7 @@ var PlaylistComponent = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalVars; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -6489,7 +6530,7 @@ var GlobalVars = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBConnectAppSettings; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__globalvars_globalvars__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_facebook__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__logins_login_service__ = __webpack_require__(57);

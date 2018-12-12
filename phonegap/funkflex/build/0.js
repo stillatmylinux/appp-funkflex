@@ -20528,7 +20528,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var rxjs_1 = __webpack_require__(16);
+var rxjs_1 = __webpack_require__(18);
 var TimerObservable = /** @class */ (function (_super) {
     __extends(TimerObservable, _super);
     function TimerObservable() {
@@ -20551,7 +20551,7 @@ exports.TimerObservable = TimerObservable;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var rxjs_1 = __webpack_require__(16);
+var rxjs_1 = __webpack_require__(18);
 rxjs_1.Observable.fromEvent = rxjs_1.fromEvent;
 //# sourceMappingURL=fromEvent.js.map
 
@@ -20574,7 +20574,7 @@ __webpack_require__(677);
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var rxjs_1 = __webpack_require__(16);
+var rxjs_1 = __webpack_require__(18);
 rxjs_1.Observable.combineLatest = rxjs_1.combineLatest;
 //# sourceMappingURL=combineLatest.js.map
 

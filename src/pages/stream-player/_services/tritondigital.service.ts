@@ -33,6 +33,7 @@ export class TritonDigitalService {
 
 	constructor(private notifications: NotificationsService, private http: HttpClient, private media: Media) {
 		this.play();
+		this.status = 'loading';
     }
     
     /**
@@ -113,7 +114,7 @@ export class TritonDigitalService {
 			// console.log('running locally skip initPlayer');
 			// fake the rest
 			this.is_playing = true;
-			this.status = 'playing';
+			this.status = 'loading';
 			this.played.emit();
 			return;
 		}

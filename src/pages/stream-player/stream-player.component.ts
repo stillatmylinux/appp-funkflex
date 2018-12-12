@@ -75,6 +75,12 @@ export class StreamPlayerComponent implements OnInit {
 	 */
 	toggleStreamingPlayer(): void {
 
+		console.log('streaming.status', this.streaming.status);
+
+		if(this.streaming.status == 'loading') {
+			return;
+		}
+
 		this.isLoading = false;
 
 		if(this.streaming.playing()){

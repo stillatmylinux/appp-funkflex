@@ -64,7 +64,7 @@ var CustomPageModule = /** @class */ (function () {
 
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(53);
-var http_1 = __webpack_require__(17);
+var http_1 = __webpack_require__(16);
 var index_1 = __webpack_require__(659);
 var Utils_1 = __webpack_require__(662);
 var DYNAMIC_SELECTOR = 'DynamicComponent';
