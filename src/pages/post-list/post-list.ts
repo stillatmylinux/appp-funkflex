@@ -134,6 +134,10 @@ export class PostList implements OnInit {
 
   loadPosts( route ) {
 
+    if(!route) {
+      return;
+    }
+
     let loading = this.loadingController.create({
         showBackdrop: false,
         //dismissOnPageChange: true
