@@ -5,7 +5,6 @@
 export const environment = {
 	production: false,
 	now_playing: {
-		provider: 1,
 		data_url: 'https://np.tritondigital.com/public/nowplaying?mountName=WQHT&numberToFetch={{limit}}&eventType=track',
 		data_aac_url: 'https://np.tritondigital.com/public/nowplaying?mountName=WQHTAAC&numberToFetch={{limit}}&eventType=track',
 		generic_cover: './assets/img/Hot-97-NYC-Logo-1.jpg',
