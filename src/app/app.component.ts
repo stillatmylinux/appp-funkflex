@@ -39,6 +39,11 @@ import {Iframe} from "../pages/iframe/iframe";
 import { StreamPlayerComponent } from "../pages/stream-player/stream-player.component";
 import { Language } from '../models/language.model';
 import { DocumentDirection } from "ionic-angular/platform/platform";
+import { NowPlayingService } from '../pages/stream-player/_services/now-playing.service';
+import { TritonDigitalService } from '../pages/stream-player/_services/tritondigital.service';
+// import { StreamingService } from "../pages/stream-player/_services/streaming.service";
+import { Track } from '../pages/stream-player/_models/track.model';
+import { NotificationsService } from '../pages/stream-player/_services/notifications.service';
 
 
 /**
@@ -84,6 +89,13 @@ export class MyApp {
   showingIntro: boolean = false;
   stopTabReset: boolean = false;
 
+  // Player
+  public currentTrack: Track;
+  public trackLoaded: boolean;
+  public isPlaying: boolean = false;
+  public isLoading: boolean = true;
+  public testClass: string = 'test-class-off';
+
   constructor(
     private platform: Platform,
     public appCamera: AppCamera,
@@ -119,6 +131,10 @@ export class MyApp {
     private config: Config,
     private menuservice: MenuService,
     private analyticsservice: AnalyticsService,
+    private npService: NowPlayingService,
+    // public streaming: StreamingService,
+    private streaming: TritonDigitalService,
+    private notifications: NotificationsService,
     private download: Download
   ) {
 
@@ -151,6 +167,32 @@ export class MyApp {
     events.subscribe('openpage', page => {
       this.openPage( page );
     });
+
+    this.npService.getCurrentTrackObs().subscribe(track => {
+			// this.ngZone.run(() => {
+				this.currentTrack = track;
+				this.trackLoaded = true;
+			// });
+		});
+
+		// // 97
+		// this.streaming.isPlaying().subscribe(isPlaying => {
+		// 	let msg = 'StreamPlayerComponent stream-player is ' + ((isPlaying) ? 'playing' : 'stopped');
+		// 	console.log(msg);
+		// 	// this.ngZone.run(() => {
+		// 		this.isPlaying = isPlaying;
+		// 	// });
+		// });
+
+		// this.streaming97.isLoading().subscribe(isLoading => {
+		// 	let msg = 'StreamPlayerComponent stream-player is ' + ((isLoading) ? 'loading' : 'loaded');
+		// 	console.log(msg);
+		// 	// this.ngZone.run(() => {
+		// 		this.isLoading = isLoading;
+		// 	// });
+		// });
+
+		// this.initTrackList();
 
   }
 

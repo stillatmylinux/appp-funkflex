@@ -8,8 +8,11 @@ export const environment = {
 		default_artist: 'Unknown Artist'
 	},
 	streaming: {
-		url: 'https://playerservices.streamtheworld.com/pls/WQHTAAC.pls',
-		format: ['aac', 'mp3'],
+		url: {
+			'97': 'https://playerservices.streamtheworld.com/pls/WQHT.pls',
+			'107.5': 'https://playerservices.streamtheworld.com/pls/WBLSFM.pls',
+		},
+		format: ['mp3'],
 		html5: true,
 		autoplay: true
 	}

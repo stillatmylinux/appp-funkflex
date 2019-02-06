@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "761759172875",
+    "firebase_url": "https://funk-flex.firebaseio.com",
+    "project_id": "funk-flex",
+    "storage_bucket": "funk-flex.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761759172875:android:c1e9f84774c5c48a",
+        "android_client_info": {
+          "package_name": "com.mobileroadie.app_18504"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761759172875-jk2l6dr2pdv5dugtg66l0kv9e5rqjr07.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlpJyP5hj1RK9K3sU4U2d5dB1XSB5NXA4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

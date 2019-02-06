@@ -36,7 +36,7 @@ export class NowPlayingService {
 
 	constructor(
 		private http: HttpClient,
-		private streaming: TritonDigitalService,
+		private streaming97: TritonDigitalService,
 		private notifications: NotificationsService
 	) {
 		this.trackLoaded = false;
@@ -54,11 +54,12 @@ export class NowPlayingService {
 		});
 		
 		//Watch when streaming is played to keep now playing up-to-date
-		this.streaming.played.subscribe(() => {
+		this.streaming97.played.subscribe(() => {
 			//Set current track
 			// console.log('streaming.played');
 			// console.log('Set current track');
 			// this.getCurrentTrack();
+			this.notifications.create('warn', 'Set current track for 97');
 		});
 	}
 

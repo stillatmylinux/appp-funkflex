@@ -5,6 +5,8 @@ import { NotificationsService } from '../_services/notifications.service';
 import { Media, MediaObject } from "@ionic-native/media";
 import { Observable } from "rxjs/Observable";
 import { Subject } from "rxjs/Subject";
+import { timeoutWith } from 'rxjs/operators';
+import { RadioStation } from "../_models/radioStation.model";
 
 // declare var Mediaac;
 
@@ -12,15 +14,22 @@ import { Subject } from "rxjs/Subject";
 	providedIn: 'root'
 })
 export class TritonDigitalService {
+	private isInit = false;
 	player: MediaObject;
 	is_playing: boolean = true;
 	currentSourceIndex = 0;
+	selectedStation = '';
+	stationName = '97';
+	currentStation: RadioStation;
+	stations: Array<RadioStation> = [];
 
 	isPlayingObs = new Subject<boolean>();
 	isLoadingObs = new Subject<boolean>();
+	// public classTestObs = new Subject<string>();
 
 	status: string;
 	
+	streamingUrl: string;
 	sources: string[] = [];
     
 	reconnectionDelay: number; // seconds
@@ -32,50 +41,14 @@ export class TritonDigitalService {
 	@Output() error: EventEmitter<any> = new EventEmitter();
 
 	constructor(private notifications: NotificationsService, private http: HttpClient, private media: Media) {
+		this.streamingUrl = environment.streaming.url['97'];
+		console.log('streamingUrl', this.streamingUrl);
 		this.play();
 		this.status = 'loading';
-    }
-    
-    /**
-	 * Generates sources array from PLS playlist file.
-	 *
-	 * @param      string  playlistURL  The playlist url
-	 * @return     Array  Array of source urls
-	 */
-	private sourceFromPLS(playlistURL) {
-
-		let promise = new Promise((resolve, reject) => {
-    		let sources: string[] = [];
-
-    		this.http.get(playlistURL, { responseType: 'text' }).subscribe((res) => {
-
-    			//Loop through each line
-    			for(let line of res.split('\n')){
-
-    				//If line is playlist "File" line, add the url from it to sources
-    				if(line.match(/File[0-9]=/g)){
-    					sources.push(line.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g).toString());
-    				}
-
-				}
-				
-				this.resetDelay();
-
-    			resolve(sources);
-    		}, (err) => {
-				this.notifications.create('error', 'Error loading PLS file: ' + err.statusText);
-				this.notifications.create('error', 'Trying again in ' + this.reconnectionDelay * 2 + ' seconds');
-
-				setTimeout(() => {
-					// try again in a few seconds
-					this.sourceFromPLS(playlistURL);
-				}, this.nextDelay() * 1000);
-    		});
-
-		});
-
-  		return promise;
-    }
+		// environment.streaming.stations.forEach((station, index) => {
+		// 	this.stations.push(new RadioStation(station))
+		// });
+	}
 
     resetDelay() {
 
@@ -106,6 +79,11 @@ export class TritonDigitalService {
 	 */
 	initPlayer() {
 
+		if(this.isInit)
+			return;
+		
+		this.isInit = true;
+
 		// local dev only because cordova is missing
 		if(window.location.href.indexOf('localhost') > 0 || window.location.href.indexOf('myapppresser') > 0) {
 
@@ -115,7 +93,13 @@ export class TritonDigitalService {
 			// fake the rest
 			this.is_playing = true;
 			this.status = 'loading';
-			this.played.emit();
+			if( this.selectedStation == this.stationName ) {
+				this.notifications.create('warn', 'run locally (97): this.player.play();');
+				this.played.emit();
+			} else {
+				this.notifications.create('warn', 'run locally (97): this.player.pause();');
+			}
+			
 			return;
 		}
 
@@ -162,11 +146,16 @@ export class TritonDigitalService {
 			this.is_playing = false;
 			this.status = null;
 			setTimeout(() => {
+				this.isInit = false;
 				this.initPlayer();
 			}, this.nextDelay());
 		});
 
-		this.player.play();
+		if( this.selectedStation == this.stationName ) {
+			this.player.play();
+		} else {
+			this.player.pause();
+		}
 		
 	}
 
@@ -179,12 +168,7 @@ export class TritonDigitalService {
 	}
 
 	resume() {
-		if(this.player) {
-			this.is_playing = true;
-			this.player.play();
-		} else {
-			this.play();
-		}
+		this.play();
 	}
 
 	/**
@@ -193,6 +177,13 @@ export class TritonDigitalService {
 	 * @return     void
 	 */
 	play(): void{
+
+		if(this.player && this.selectedStation == this.stationName) {
+			if(!this.is_playing && this.status != 'loading')
+				this.player.play();
+			return;
+		}
+
 		//Reset status
 		this.status = undefined;
 		
@@ -213,6 +204,7 @@ export class TritonDigitalService {
 		//Get player sources array, then init player
 		this.getPlaySource().then( (sources: string[]) => {
 			this.sources = sources;
+			console.log(sources);
 			this.initPlayer();
 		});
     }
@@ -224,7 +216,10 @@ export class TritonDigitalService {
 	 */
 	pause(): void{
 		this.is_playing = false;
-		this.player.pause();
+
+		if(this.player) {
+			this.player.pause();
+		}
     }
     
     /**
@@ -244,16 +239,16 @@ export class TritonDigitalService {
 	isLoading(): Observable<boolean> {
 		return this.isLoadingObs;
 	}
-
-	/**
-	 * Generates sources array from M3U playlist file.
+    
+    /**
+	 * Generates sources array from PLS playlist file.
 	 *
 	 * @param      string  playlistURL  The playlist url
 	 * @return     Array  Array of source urls
 	 */
-	private sourceFromM3U(playlistURL){
+	private sourceFromPLS(playlistURL) {
 
-		return new Promise((resolve, reject) => {
+		let promise = new Promise((resolve, reject) => {
     		let sources: string[] = [];
 
     		this.http.get(playlistURL, { responseType: 'text' }).subscribe((res) => {
@@ -261,21 +256,29 @@ export class TritonDigitalService {
     			//Loop through each line
     			for(let line of res.split('\n')){
 
-    				//if line is url, add it to sources
-    				if(line.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g)){
-    					sources.push(line);
+    				//If line is playlist "File" line, add the url from it to sources
+    				if(line.match(/File[0-9]=/g)){
+    					sources.push(line.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g).toString());
     				}
-
-    			}
+				}
+				
+				this.resetDelay();
 
     			resolve(sources);
     		}, (err) => {
-    			this.notifications.create('error', 'Error loading M3U file: ' + err.statusText);
+				this.notifications.create('error', 'Error loading PLS file: ' + err.statusText);
+				this.notifications.create('error', 'Trying again in ' + this.reconnectionDelay * 2 + ' seconds');
+
+				setTimeout(() => {
+					// try again in a few seconds
+					this.sourceFromPLS(playlistURL);
+				}, this.nextDelay() * 1000);
     		});
 
 		});
 
-	}
+  		return promise;
+    }
     
     /**
 	 * Gets the player source based on environment streaming url
@@ -287,15 +290,15 @@ export class TritonDigitalService {
 		return new Promise((resolve, reject) => {
     		let sources: any = [];
 
-    		let envSource = environment.streaming.url;
+    		let envSource = this.streamingUrl;
 
-    		if(envSource.split('.').pop() == "pls"){
+    		if(envSource.split('.').pop() == "pls") {
     			//Parse PLS files
     			this.sourceFromPLS(envSource).then( sources => resolve(sources));
-    		}else if(envSource.split('.').pop() == "m3u"){
+    		} else if(envSource.split('.').pop() == "m3u") {
     			//Parse M3U files
-    			this.sourceFromM3U(envSource).then(sources => resolve(sources))
-    		}else{
+    			// this.sourceFromM3U(envSource).then(sources => resolve(sources))
+    		} else {
     			//Standard source url
     			sources.push(envSource);
 				resolve(sources);

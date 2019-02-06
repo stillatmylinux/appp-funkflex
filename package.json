@@ -4,11 +4,13 @@
   "homepage": "https://apppresser.com/",
   "private": true,
   "scripts": {
-    "build": "ionic-app-scripts build",
+    "build": "ionic-app-scripts build && npm run move",
     "quick": "ionic-app-scripts build --webpack ./config/webpack.dev.config.js --sourceMapType eval --enableLint false",
     "serve": "ionic-app-scripts serve",
     "pages": "cd mkpages && node app",
-    "ios": "ionic-app-scripts build && cordova build ios"
+    "move": "./move-build-files.sh",
+    "ios": "ionic-app-scripts build && cordova build ios",
+    "android": "ionic-app-scripts build && cordova build android"
   },
   "dependencies": {
     "@angular/animations": "^6.1.10",
