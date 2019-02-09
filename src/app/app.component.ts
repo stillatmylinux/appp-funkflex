@@ -40,8 +40,8 @@ import { StreamPlayerComponent } from "../pages/stream-player/stream-player.comp
 import { Language } from '../models/language.model';
 import { DocumentDirection } from "ionic-angular/platform/platform";
 import { NowPlayingService } from '../pages/stream-player/_services/now-playing.service';
-import { TritonDigitalService } from '../pages/stream-player/_services/tritondigital.service';
-// import { StreamingService } from "../pages/stream-player/_services/streaming.service";
+// import { TritonDigitalService } from '../pages/stream-player/_services/tritondigital.service';
+import { StreamingService } from "../pages/stream-player/_services/streaming.service";
 import { Track } from '../pages/stream-player/_models/track.model';
 import { NotificationsService } from '../pages/stream-player/_services/notifications.service';
 
@@ -132,8 +132,8 @@ export class MyApp {
     private menuservice: MenuService,
     private analyticsservice: AnalyticsService,
     private npService: NowPlayingService,
-    // public streaming: StreamingService,
-    private streaming: TritonDigitalService,
+    public streaming: StreamingService,
+    // private streaming: TritonDigitalService,
     private notifications: NotificationsService,
     private download: Download
   ) {
