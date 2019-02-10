@@ -59,6 +59,11 @@ export class RadioStation {
 		return this.streamingSources[this.currentSourceIndex++];
 	}
 
+	startLoading() {
+		console.log('RadioStation startLoading', true)
+		this.isLoadingObs.next(true);
+	}
+
 	/**
 	 * Determines if player playing
 	 *

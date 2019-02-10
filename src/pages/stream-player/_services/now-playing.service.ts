@@ -296,7 +296,7 @@ export class NowPlayingService {
 					// Push new Track to tracksList
 					this.tracksList.push(new Track(trackData));
 					
-					console.log('NowPlayingService fetch Track', this.tracksList[0]);
+					// console.log('NowPlayingService fetch Track', this.tracksList[0]);
 				}
 			}
 		});

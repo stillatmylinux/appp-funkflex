@@ -68,7 +68,7 @@ var NotificationsService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(173);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_keyboard__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_social_sharing__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_social_sharing__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_header_logo_header_logo__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_language_language_service__ = __webpack_require__(127);
@@ -603,7 +603,7 @@ var Iframe = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_language_model__ = __webpack_require__(206);
@@ -927,6 +927,8 @@ var StreamingService = /** @class */ (function () {
         this.selectedStationIndex = 0;
         this.isPlayingObs = new __WEBPACK_IMPORTED_MODULE_6_rxjs__["Subject"]();
         this.isLoadingObs = new __WEBPACK_IMPORTED_MODULE_6_rxjs__["Subject"]();
+        this.is_playing = false;
+        this.is_loading = true;
         this.platform.ready().then(function () {
             _this.getStations();
             _this.initFirstStation();
@@ -936,18 +938,15 @@ var StreamingService = /** @class */ (function () {
         var _this = this;
         __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].streaming.stations.forEach(function (station, index) {
             _this.stations.push(new __WEBPACK_IMPORTED_MODULE_5__models_radioStation_model__["a" /* RadioStation */](station));
-            _this.getStreamingSources(_this.stations[index], index);
-            /**
-             * WHY DO WE NEED TO DO THIS????
-             */
             _this.stations[index].isLoading().subscribe(function (is_loading) {
-                // @TODO we need to pass with station is loading too
+                console.log('station index ' + index + ' is_loading', is_loading);
                 _this.isLoadingObs.next(is_loading);
             });
             _this.stations[index].isPlaying().subscribe(function (is_playing) {
-                // @TODO we need to pass with station is play too
+                console.log('station index ' + index + ' is_playing', is_playing);
                 _this.isPlayingObs.next(is_playing);
             });
+            _this.getStreamingSources(_this.stations[index], index);
         });
     };
     StreamingService.prototype.play = function (new_station) {
@@ -971,15 +970,8 @@ var StreamingService = /** @class */ (function () {
     StreamingService.prototype.initPlayer = function (station, index) {
         var _this = this;
         console.log('initPlayer', station);
-        // // local dev only because cordova is missing
-        // if(window.location.href.indexOf('localhost') > 0 || window.location.href.indexOf('myapppresser') > 0) {
-        // 	// local dev only
-        // 	// console.log('running locally skip initPlayer');
-        // 	// fake the rest
-        // 	this.is_playing = true;
-        // 	this.status = 'loading';
-        // 	return;
-        // }
+        this.is_loading = true;
+        station.startLoading();
         station.resetDelay();
         var source = station.nextSource();
         console.log('what is this?????', source);
@@ -991,11 +983,14 @@ var StreamingService = /** @class */ (function () {
             switch (status) {
                 case _this.media.MEDIA_STARTING: // 1
                     console.log('media is starting');
+                    _this.is_loading = true;
                     _this.stations[_this.selectedStationIndex].isPlayingObs.next(false);
                     _this.stations[_this.selectedStationIndex].isLoadingObs.next(true);
                     break;
                 case _this.media.MEDIA_RUNNING: // 2
                     console.log('media is running');
+                    _this.is_loading = false;
+                    _this.is_playing = true;
                     _this.stations[_this.selectedStationIndex].is_playing = true;
                     _this.stations[_this.selectedStationIndex].status = 'playing';
                     _this.stations[_this.selectedStationIndex].isPlayingObs.next(true);
@@ -1003,12 +998,14 @@ var StreamingService = /** @class */ (function () {
                     break;
                 case _this.media.MEDIA_PAUSED: // 3
                     console.log('media is paused');
+                    _this.is_playing = false;
                     _this.stations[_this.selectedStationIndex].isPlayingObs.next(false);
                     _this.stations[_this.selectedStationIndex].is_playing = false;
                     _this.stations[_this.selectedStationIndex].status = 'paused';
                     break;
                 case _this.media.MEDIA_STOPPED: // 4
                     console.log('media is stopped');
+                    _this.is_playing = false;
                     _this.stations[_this.selectedStationIndex].is_playing = false;
                     _this.stations[_this.selectedStationIndex].status = 'stopped';
                     _this.stations[_this.selectedStationIndex].isPlayingObs.next(false);
@@ -1115,7 +1112,7 @@ var StreamingService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderLogo; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1418,11 +1415,11 @@ var Logins = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Download; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer__ = __webpack_require__(302);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1495,7 +1492,7 @@ var Download = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PushService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__globalvars_globalvars__ = __webpack_require__(64);
@@ -1623,15 +1620,15 @@ webpackEmptyAsyncContext.id = 242;
 
 var map = {
 	"../pages/bp-details/bp-details.module": [
-		599,
+		600,
 		1
 	],
 	"../pages/bp-group/bp-group.module": [
-		600,
+		601,
 		8
 	],
 	"../pages/bp-list/bp-list.module": [
-		601,
+		599,
 		3
 	],
 	"../pages/bp-messages/bp-messages.module": [
@@ -1643,11 +1640,11 @@ var map = {
 		16
 	],
 	"../pages/bp-notifications/bp-notifications.module": [
-		605,
+		604,
 		15
 	],
 	"../pages/bp-profile/bp-profile.module": [
-		604,
+		605,
 		7
 	],
 	"../pages/custom-pages/custom-page.module": [
@@ -1659,19 +1656,19 @@ var map = {
 		14
 	],
 	"../pages/language-settings/language-settings.module": [
-		608,
+		609,
 		13
 	],
 	"../pages/login-modal/login-modal.module": [
-		609,
+		608,
 		12
 	],
 	"../pages/media-list/media-list.module": [
-		610,
+		611,
 		11
 	],
 	"../pages/media-player/media-player.module": [
-		611,
+		610,
 		0
 	],
 	"../pages/post-details/post-details.module": [
@@ -1679,11 +1676,11 @@ var map = {
 		5
 	],
 	"../pages/post-list/post-list.module": [
-		614,
+		613,
 		6
 	],
 	"../pages/push-settings/push-settings.module": [
-		613,
+		614,
 		10
 	],
 	"../pages/tabs/tabs.module": [
@@ -1713,9 +1710,9 @@ module.exports = webpackAsyncContext;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppCamera; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_camera__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_transfer__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_file__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_camera__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_transfer__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_file__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_action_sheet__ = __webpack_require__(128);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2035,7 +2032,7 @@ var AppCamera = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FbConnectIframe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
@@ -2304,7 +2301,7 @@ var AppWoo = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppData; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_device__ = __webpack_require__(45);
@@ -2468,7 +2465,7 @@ var AppData = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppGeo; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_geolocation__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2624,14 +2621,13 @@ var AppGeo = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StreamPlayerComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_notifications_service__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_facebook_messenger_fb_messenger_service__ = __webpack_require__(353);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_now_playing_service__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_streaming_service__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_notifications_service__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_facebook_messenger_fb_messenger_service__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_now_playing_service__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_streaming_service__ = __webpack_require__(203);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2644,16 +2640,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import { TritonDigitalService } from "./_services/tritondigital.service";
-// import { TritonDigitalService1075 } from "./_services/station1075.service";
-
 
 
 
 
 var StreamPlayerComponent = /** @class */ (function () {
-    function StreamPlayerComponent(http, ngZone, fbMsg, npService, navParams, streaming, notifications) {
-        this.http = http;
+    function StreamPlayerComponent(ngZone, fbMsg, npService, navParams, streaming, notifications) {
         this.ngZone = ngZone;
         this.fbMsg = fbMsg;
         this.npService = npService;
@@ -2674,59 +2666,27 @@ var StreamPlayerComponent = /** @class */ (function () {
         this.notifications.create('warn', 'StreamPlayerComponent constructor');
     }
     StreamPlayerComponent.prototype.ngOnInit = function () {
-        // 107.5
-        // this.streaming1075.isPlaying().subscribe(isPlaying => {
-        // 	let msg = 'StreamPlayerComponent stream-player is ' + ((isPlaying) ? 'playing' : 'stopped');
-        // 	console.log(msg);
-        // 	this.ngZone.run(() => {
-        // 		this.isPlaying = isPlaying;
-        // 	});
-        // });
-        // this.streaming1075.isLoading().subscribe(isLoading => {
-        // 	let msg = 'StreamPlayerComponent stream-player is ' + ((isLoading) ? 'loading' : 'loaded');
-        // 	console.log(msg);
-        // 	this.ngZone.run(() => {
-        // 		this.isLoading = isLoading;
-        // 	});
-        // });
+        var _this = this;
+        this.streaming.isPlaying().subscribe(function (isPlaying) {
+            var msg = 'StreamPlayerComponent stream-player is ' + ((isPlaying) ? 'playing' : 'stopped');
+            console.log(msg);
+            _this.ngZone.run(function () {
+                _this.isPlaying = isPlaying;
+            });
+        });
+        this.streaming.isLoading().subscribe(function (isLoading) {
+            var msg = 'StreamPlayerComponent stream-player is ' + ((isLoading) ? 'loading' : 'loaded');
+            console.log(msg);
+            _this.ngZone.run(function () {
+                _this.isLoading = isLoading;
+            });
+        });
     };
     StreamPlayerComponent.prototype.playStation = function (station) {
         console.log('StreamPlayerComponent playStation station', station);
+        this.streaming.is_loading;
         this.selectedStation = station;
-        // this.notifications.create('warn', 'playStation station ' + station);
         this.streaming.play(station);
-        // if(station == '97') {
-        // 	this.streaming97.selectedStation = '97';
-        // 	this.streaming1075.selectedStation = '97';
-        // 	if(this.streaming1075.player) {
-        // 		this.streaming1075.pause();
-        // 	}
-        // 	if(this.streaming97.player) {
-        // 		this.isPlaying = true;
-        // 		this.streaming97.play();
-        // 	} else {
-        // 		this.isPlaying = false;
-        // 		this.isLoading = true;
-        // 		this.streaming97.play();
-        // 	}
-        // }
-        // if(station == '107.5') {
-        // 	this.streaming97.selectedStation = '107.5';
-        // 	this.streaming1075.selectedStation = '107.5';
-        // 	if(this.streaming97.player) {
-        // 		this.streaming97.pause();
-        // 	}
-        // 	if(this.streaming1075.player) {
-        // 		this.notifications.create('warn', '107.5 has player');
-        // 		this.isPlaying = true;
-        // 		this.streaming1075.play();
-        // 	} else {
-        // 		this.notifications.create('warn', '107.5 no player');
-        // 		this.isPlaying = false;
-        // 		this.isLoading = true;
-        // 		this.streaming1075.play();
-        // 	}
-        // }
     };
     /**
      * Plays/pauses audio streaming97
@@ -2736,19 +2696,18 @@ var StreamPlayerComponent = /** @class */ (function () {
     StreamPlayerComponent.prototype.toggleStreamingPlayer = function () {
         // this.notifications.create('warn', 'toggleStreamingPlayer 97 status: ' + this.streaming97.status);
         // this.notifications.create('warn', 'toggleStreamingPlayer 197.5 status: ' + this.streaming1075.status);
-        // if(this.streaming97.status == 'loading' || this.streaming1075.status == 'loading') {
-        // 	return;
-        // }
-        // this.isLoading = false;
-        // if(this.streaming97.is_playing) {
-        // 	this.streaming97.pause();
-        // } else if (this.selectedStation == '97') {
-        // 	this.streaming97.play();
-        // } else if(this.streaming1075.is_playing) {
-        // 	this.streaming1075.pause();
-        // } else if (this.selectedStation == '107.5') {
-        // 	this.streaming1075.play();
-        // }
+        if (this.streaming.stations[this.streaming.selectedStationIndex].status == 'loading') {
+            return;
+        }
+        this.isLoading = false;
+        if (this.streaming.is_playing) {
+            this.streaming.player.pause();
+            this.streaming.is_playing = false;
+        }
+        else {
+            this.streaming.player.play();
+            this.streaming.is_playing = true;
+        }
     };
     /**
      * Removes a notification.
@@ -2807,15 +2766,14 @@ var StreamPlayerComponent = /** @class */ (function () {
     };
     StreamPlayerComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-stream-player',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/'<ion-header>\n\n	<ion-navbar>\n		\n		<ion-buttons start>\n		<button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n		    <ion-icon name="arrow-back"></ion-icon>\n		    {{ \'Back\' | translate }}\n		</button>\n\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n		</ion-buttons>\n\n	    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    	<ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n	    <ion-buttons end>\n            <button ion-button (click)="openFBMessenger()">\n                <ion-icon name="fa-comments"></ion-icon>\n            </button>\n		</ion-buttons>\n    </ion-navbar>\n    \n    <ion-toolbar id="stations-toolbar">\n\n        <button ion-button clear (click)="playStation(\'97\')">\n            97\n            <ion-icon *ngIf="selectedStation == \'97\'" name="fa-volume-up"></ion-icon>\n            <ion-icon *ngIf="selectedStation != \'97\'" name="fa-volume-off"></ion-icon>\n        </button>\n\n        <button ion-button clear (click)="playStation(\'107.5\')">\n            107.5\n            <ion-icon *ngIf="selectedStation == \'107.5\'" name="fa-volume-up"></ion-icon>\n            <ion-icon *ngIf="selectedStation != \'107.5\'" name="fa-volume-off"></ion-icon>\n        </button>\n\n    </ion-toolbar>\n</ion-header>\n\n<ion-content>\n    <div class="streaming-logo">\n        <img src="assets/stream-logo.png" />\n    </div>\n    \n    <div class="main-player">\n        <app-now-playing [currentTrack]="currentTrack" [trackLoaded]="trackLoaded" [class]="playeractive?\'show-now-player\':\'hide-now-player\'"></app-now-playing>\n        <app-playlist [class]="playlistactive?\'show-play-list\':\'hide-play-list\'" [tracks]="tracks" [tracksLoading]="tracksLoading"></app-playlist>\n    </div>\n</ion-content>\n\n\n<div>\n  \n  <div class="notifications" *ngIf="notifications.stack">\n      <div *ngFor="let notification of notifications.stack" class="msg {{ notification.type }}">\n          {{ notification.message }}\n      </div>\n  </div>\n\n  <footer class="main-footer">\n      <div class="inner">\n          <ul class="footer-nav">\n              <li>\n                  <a href="#" (click)="showPlayer($event)">\n                      <i class="fas fa-volume-up"></i> Player\n                  </a>\n              </li>\n              <li class="play-btn" (click)="toggleStreamingPlayer($event)">\n                  <a href="#">\n                      <i class="fas fa-play" *ngIf="!isPlaying && !isLoading"></i>\n                      <i class="fas fa-pause" *ngIf="isPlaying && !isLoading"></i>\n                      <i class="fas fa-spinner fa-pulse" *ngIf="isLoading"></i>\n                  </a>\n              </li>\n              <li>\n                  <a href="#" (click)="showPlaylist($event)">  \n                      <i class="fas fa-clock"></i> Playlist\n                  </a>\n              </li>\n          </ul>\n      </div>\n  </footer>\n</div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/
+            selector: 'app-stream-player',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/'<ion-header>\n\n	<ion-navbar>\n		\n		<ion-buttons start>\n		<button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n		    <ion-icon name="arrow-back"></ion-icon>\n		    {{ \'Back\' | translate }}\n		</button>\n\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n\n		</ion-buttons>\n\n	    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    	<ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n	    <ion-buttons end>\n            <button ion-button (click)="openFBMessenger()">\n                <ion-icon name="fa-comments"></ion-icon>\n            </button>\n		</ion-buttons>\n    </ion-navbar>\n    \n    <ion-toolbar id="stations-toolbar">\n\n        <button ion-button clear (click)="playStation(\'97\')">\n            97\n            <ion-icon *ngIf="selectedStation == \'97\'" name="fa-volume-up"></ion-icon>\n            <ion-icon *ngIf="selectedStation != \'97\'" name="fa-volume-off"></ion-icon>\n        </button>\n\n        <button ion-button clear (click)="playStation(\'107.5\')">\n            107.5\n            <ion-icon *ngIf="selectedStation == \'107.5\'" name="fa-volume-up"></ion-icon>\n            <ion-icon *ngIf="selectedStation != \'107.5\'" name="fa-volume-off"></ion-icon>\n        </button>\n\n    </ion-toolbar>\n</ion-header>\n\n<ion-content>\n    <div class="streaming-logo">\n        <img src="assets/stream-logo.png" />\n    </div>\n    \n    <div class="main-player">\n        <app-now-playing [currentTrack]="currentTrack" [trackLoaded]="trackLoaded" [class]="playeractive?\'show-now-player\':\'hide-now-player\'"></app-now-playing>\n        <app-playlist [class]="playlistactive?\'show-play-list\':\'hide-play-list\'" [tracks]="tracks" [tracksLoading]="tracksLoading"></app-playlist>\n    </div>\n</ion-content>\n\n\n<div>\n  \n  <div class="notifications" *ngIf="notifications.stack">\n      <div *ngFor="let notification of notifications.stack" class="msg {{ notification.type }}">\n          {{ notification.message }}\n      </div>\n  </div>\n\n  <footer class="main-footer">\n      <div class="inner">\n          <ul class="footer-nav">\n              <li>\n                  <a href="#" (click)="showPlayer($event)">\n                      <i class="fas fa-volume-up"></i> Player\n                  </a>\n              </li>\n              <li class="play-btn" (click)="toggleStreamingPlayer($event)">\n                  <a href="#">\n                      <i class="fas fa-play" *ngIf="!streaming.is_playing && !streaming.is_loading"></i>\n                      <i class="fas fa-pause" *ngIf="streaming.is_playing && !streaming.is_loading"></i>\n                      <i class="fas fa-spinner fa-pulse" *ngIf="streaming.is_loading"></i>\n                  </a>\n              </li>\n              <li>\n                  <a href="#" (click)="showPlaylist($event)">  \n                      <i class="fas fa-clock"></i> Playlist\n                  </a>\n              </li>\n          </ul>\n      </div>\n  </footer>\n</div>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/stream-player/stream-player.component.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"],
-            __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"],
-            __WEBPACK_IMPORTED_MODULE_4__providers_facebook_messenger_fb_messenger_service__["a" /* FBMessengerService */],
-            __WEBPACK_IMPORTED_MODULE_5__services_now_playing_service__["a" /* NowPlayingService */],
-            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["m" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_7__services_streaming_service__["a" /* StreamingService */],
-            __WEBPACK_IMPORTED_MODULE_3__services_notifications_service__["a" /* NotificationsService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"],
+            __WEBPACK_IMPORTED_MODULE_3__providers_facebook_messenger_fb_messenger_service__["a" /* FBMessengerService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_now_playing_service__["a" /* NowPlayingService */],
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["m" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_6__services_streaming_service__["a" /* StreamingService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_notifications_service__["a" /* NotificationsService */]])
     ], StreamPlayerComponent);
     return StreamPlayerComponent;
 }());
@@ -3119,7 +3077,7 @@ var NowPlayingService = /** @class */ (function () {
                     }
                     // Push new Track to tracksList
                     _this.tracksList.push(new __WEBPACK_IMPORTED_MODULE_5__models_track_model__["a" /* Track */](trackData));
-                    console.log('NowPlayingService fetch Track', _this.tracksList[0]);
+                    // console.log('NowPlayingService fetch Track', this.tracksList[0]);
                 };
                 //Loop through track properties and populate trackData
                 for (var _i = 0, _a = parsed['nowplaying-info-list']['nowplaying-info']; _i < _a.length; _i++) {
@@ -3405,12 +3363,12 @@ var Track = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BpProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_transfer__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_transfer__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_action_sheet__ = __webpack_require__(128);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3790,7 +3748,7 @@ var BpProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Posts; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
@@ -4190,13 +4148,13 @@ var NetworkStatusService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 367:
+/***/ 366:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WPlogin; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__logins_login_service__ = __webpack_require__(57);
@@ -4372,13 +4330,13 @@ var WPlogin = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 368:
+/***/ 367:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FbConnectApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
@@ -4574,18 +4532,18 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(582);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_http_loader__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_http_loader__ = __webpack_require__(368);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_action_sheet__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_device__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_transfer__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_transfer__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_admob_free__ = __webpack_require__(295);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_facebook__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_in_app_browser__ = __webpack_require__(345);
@@ -4593,7 +4551,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_splash_screen__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_network__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_social_sharing__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_social_sharing__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_push__ = __webpack_require__(350);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_dialogs__ = __webpack_require__(351);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_geolocation__ = __webpack_require__(173);
@@ -4606,12 +4564,12 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_appads_appads__ = __webpack_require__(175);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_logins_logins__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_facebook_login_iframe__ = __webpack_require__(343);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_facebook_login_app__ = __webpack_require__(368);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_facebook_login_app__ = __webpack_require__(367);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__providers_facebook_fbconnect_settings__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__providers_push_push__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__providers_appwoo_appwoo__ = __webpack_require__(344);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__providers_appdata_appdata__ = __webpack_require__(346);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_wplogin_wplogin__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_wplogin_wplogin__ = __webpack_require__(366);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__providers_logins_login_service__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__providers_language_language_service__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__providers_header_logo_header_logo__ = __webpack_require__(204);
@@ -4735,22 +4693,22 @@ var AppModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
+                        { loadChildren: '../pages/bp-list/bp-list.module#BpListModule', name: 'BpList', segment: 'bp-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-details/bp-details.module#BpDetailsPageModule', name: 'BpDetailsPage', segment: 'bp-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-group/bp-group.module#BpGroupPageModule', name: 'BpGroupPage', segment: 'bp-group', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/bp-list/bp-list.module#BpListModule', name: 'BpList', segment: 'bp-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-messages/bp-messages.module#BpMessagesModule', name: 'BpMessages', segment: 'bp-messages', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-modal/bp-modal.module#BpModalModule', name: 'BpModal', segment: 'bp-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/bp-profile/bp-profile.module#BpProfilePageModule', name: 'BpProfilePage', segment: 'bp-profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-notifications/bp-notifications.module#BpNotificationsModule', name: 'BpNotifications', segment: 'bp-notifications', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/bp-profile/bp-profile.module#BpProfilePageModule', name: 'BpProfilePage', segment: 'bp-profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/download-list/download-list.module#DownloadListModule', name: 'DownloadList', segment: 'download-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/custom-pages/custom-page.module#CustomPageModule', name: 'CustomPage', segment: 'custom-page', priority: 'high', defaultHistory: [] },
-                        { loadChildren: '../pages/language-settings/language-settings.module#LanguageSettingsModule', name: 'LanguageSettings', segment: 'language-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login-modal/login-modal.module#LoginModalModule', name: 'LoginModal', segment: 'login-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/media-list/media-list.module#MediaListModule', name: 'MediaList', segment: 'media-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/language-settings/language-settings.module#LanguageSettingsModule', name: 'LanguageSettings', segment: 'language-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/media-player/media-player.module#MediaPlayerModule', name: 'MediaPlayer', segment: 'media-player', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/media-list/media-list.module#MediaListModule', name: 'MediaList', segment: 'media-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post-details/post-details.module#PostDetailsPageModule', name: 'PostDetailsPage', segment: 'post-details', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/push-settings/push-settings.module#PushSettingsModule', name: 'PushSettings', segment: 'push-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post-list/post-list.module#PostListModule', name: 'PostList', segment: 'post-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/push-settings/push-settings.module#PushSettingsModule', name: 'PushSettings', segment: 'push-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -4957,7 +4915,7 @@ var LoginService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_app_camera__ = __webpack_require__(342);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_globalvars_globalvars__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_appads_appads__ = __webpack_require__(175);
@@ -4971,7 +4929,7 @@ var LoginService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_download_download__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_analytics_analytics_service__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_status_bar__ = __webpack_require__(348);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_social_sharing__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_social_sharing__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_push__ = __webpack_require__(350);
@@ -6443,6 +6401,10 @@ var RadioStation = /** @class */ (function () {
         }
         return this.streamingSources[this.currentSourceIndex++];
     };
+    RadioStation.prototype.startLoading = function () {
+        console.log('RadioStation startLoading', true);
+        this.isLoadingObs.next(true);
+    };
     /**
      * Determines if player playing
      *
@@ -6595,7 +6557,7 @@ var PlaylistComponent = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalVars; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -6661,7 +6623,7 @@ var GlobalVars = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBConnectAppSettings; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__globalvars_globalvars__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_facebook__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__logins_login_service__ = __webpack_require__(57);
@@ -6871,7 +6833,7 @@ var FBConnectAppSettings = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnalyticsService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angulartics2_ga__ = __webpack_require__(293);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angulartics2__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angulartics2__ = __webpack_require__(172);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

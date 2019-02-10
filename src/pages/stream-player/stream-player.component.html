@@ -72,9 +72,9 @@
               </li>
               <li class="play-btn" (click)="toggleStreamingPlayer($event)">
                   <a href="#">
-                      <i class="fas fa-play" *ngIf="!isPlaying && !isLoading"></i>
-                      <i class="fas fa-pause" *ngIf="isPlaying && !isLoading"></i>
-                      <i class="fas fa-spinner fa-pulse" *ngIf="isLoading"></i>
+                      <i class="fas fa-play" *ngIf="!streaming.is_playing && !streaming.is_loading"></i>
+                      <i class="fas fa-pause" *ngIf="streaming.is_playing && !streaming.is_loading"></i>
+                      <i class="fas fa-spinner fa-pulse" *ngIf="streaming.is_loading"></i>
                   </a>
               </li>
               <li>

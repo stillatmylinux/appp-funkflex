@@ -18,6 +18,8 @@ export class StreamingService {
 
 	public isPlayingObs = new Subject<boolean>();
 	public isLoadingObs = new Subject<boolean>();
+	public is_playing = false;
+	public is_loading = true;
 	public player: MediaObject;
 
 	constructor(
@@ -36,30 +38,22 @@ export class StreamingService {
 		environment.streaming.stations.forEach((station, index) => {
 
 			this.stations.push(new RadioStation(station));
-			this.getStreamingSources(this.stations[index], index);
-
-			/**
-			 * WHY DO WE NEED TO DO THIS????
-			 */
-
 			this.stations[index].isLoading().subscribe(is_loading => {
 
-				// @TODO we need to pass with station is loading too
+				console.log('station index ' + index + ' is_loading', is_loading);
 
 				this.isLoadingObs.next(is_loading);
 			});
 
 			this.stations[index].isPlaying().subscribe(is_playing => {
 
-				// @TODO we need to pass with station is play too
+				console.log('station index ' + index + ' is_playing', is_playing);
 
 				this.isPlayingObs.next(is_playing);
 			});
+
+			this.getStreamingSources(this.stations[index], index);
 		});
-
-		
-
-		
 	}
 
 	play(new_station: string) {
@@ -86,21 +80,9 @@ export class StreamingService {
 	public initPlayer(station: RadioStation, index) {
 
 		console.log('initPlayer', station);
-		
 
-		// // local dev only because cordova is missing
-		// if(window.location.href.indexOf('localhost') > 0 || window.location.href.indexOf('myapppresser') > 0) {
-
-		// 	// local dev only
-
-		// 	// console.log('running locally skip initPlayer');
-		// 	// fake the rest
-		// 	this.is_playing = true;
-		// 	this.status = 'loading';
-			
-		// 	return;
-		// }
-
+		this.is_loading = true;
+		station.startLoading();
 		station.resetDelay();
 
 		let source = station.nextSource();
@@ -117,11 +99,14 @@ export class StreamingService {
 			switch(status) {
 				case this.media.MEDIA_STARTING: // 1
 					console.log('media is starting');
+					this.is_loading = true;
 					this.stations[this.selectedStationIndex].isPlayingObs.next(false);
 					this.stations[this.selectedStationIndex].isLoadingObs.next(true);
 					break;
 				case this.media.MEDIA_RUNNING: // 2
 					console.log('media is running');
+					this.is_loading = false;
+					this.is_playing = true;
 					this.stations[this.selectedStationIndex].is_playing = true;
 					this.stations[this.selectedStationIndex].status = 'playing';
 					this.stations[this.selectedStationIndex].isPlayingObs.next(true);
@@ -129,12 +114,14 @@ export class StreamingService {
 					break;
 				case this.media.MEDIA_PAUSED: // 3
 					console.log('media is paused');
+					this.is_playing = false;
 					this.stations[this.selectedStationIndex].isPlayingObs.next(false);
 					this.stations[this.selectedStationIndex].is_playing = false;
 					this.stations[this.selectedStationIndex].status = 'paused';
 					break;
 				case this.media.MEDIA_STOPPED: // 4
 					console.log('media is stopped');
+					this.is_playing = false;
 					this.stations[this.selectedStationIndex].is_playing = false;
 					this.stations[this.selectedStationIndex].status = 'stopped';
 					this.stations[this.selectedStationIndex].isPlayingObs.next(false);
