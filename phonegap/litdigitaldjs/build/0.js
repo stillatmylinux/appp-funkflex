@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MediaPlayerModule", function() { return MediaPlayerModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__media_player__ = __webpack_require__(628);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_videogular2_core__ = __webpack_require__(672);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_videogular2_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_videogular2_core__);
@@ -394,7 +394,7 @@ exports.VgStates = VgStates;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Subject_1 = __webpack_require__(54);
+var Subject_1 = __webpack_require__(58);
 var core_1 = __webpack_require__(0);
 var VgControlsHidden = (function () {
     function VgControlsHidden() {
@@ -424,7 +424,7 @@ exports.VgControlsHidden = VgControlsHidden;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MediaPlayer; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_analytics_analytics_service__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_analytics_analytics_service__ = __webpack_require__(83);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -859,7 +859,7 @@ var TimerObservable_1 = __webpack_require__(674);
 var vg_states_1 = __webpack_require__(626);
 var vg_api_1 = __webpack_require__(616);
 var vg_events_1 = __webpack_require__(639);
-var Subject_1 = __webpack_require__(54);
+var Subject_1 = __webpack_require__(58);
 __webpack_require__(640);
 __webpack_require__(677);
 var VgMedia = (function () {
@@ -19180,7 +19180,7 @@ exports.NetworkManager = NetworkManager;
 /******/ ]);
 });
 //# sourceMappingURL=pdf.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(124).Buffer, __webpack_require__(41), __webpack_require__(85)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(123).Buffer, __webpack_require__(41), __webpack_require__(84)))
 
 /***/ }),
 
@@ -20255,7 +20255,7 @@ exports.log = function() {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-exports.inherits = __webpack_require__(60);
+exports.inherits = __webpack_require__(59);
 
 exports._extend = function(origin, add) {
   // Don't do anything if add isn't an object
@@ -20273,7 +20273,7 @@ function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(41), __webpack_require__(85)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(41), __webpack_require__(84)))
 
 /***/ }),
 
@@ -20528,7 +20528,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var rxjs_1 = __webpack_require__(18);
+var rxjs_1 = __webpack_require__(16);
 var TimerObservable = /** @class */ (function (_super) {
     __extends(TimerObservable, _super);
     function TimerObservable() {
@@ -20551,7 +20551,7 @@ exports.TimerObservable = TimerObservable;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var rxjs_1 = __webpack_require__(18);
+var rxjs_1 = __webpack_require__(16);
 rxjs_1.Observable.fromEvent = rxjs_1.fromEvent;
 //# sourceMappingURL=fromEvent.js.map
 
@@ -20574,7 +20574,7 @@ __webpack_require__(678);
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var rxjs_1 = __webpack_require__(18);
+var rxjs_1 = __webpack_require__(16);
 rxjs_1.Observable.combineLatest = rxjs_1.combineLatest;
 //# sourceMappingURL=combineLatest.js.map
 
@@ -22824,12 +22824,12 @@ PdfViewerModule.ctorParameters = function () { return []; };
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var Buffer = __webpack_require__(124).Buffer;
+var Buffer = __webpack_require__(123).Buffer;
 var Transform = __webpack_require__(369).Transform;
 var binding = __webpack_require__(701);
 var util = __webpack_require__(649);
 var assert = __webpack_require__(648).ok;
-var kMaxLength = __webpack_require__(124).kMaxLength;
+var kMaxLength = __webpack_require__(123).kMaxLength;
 var kRangeErrorMessage = 'Cannot create final Buffer. It would be larger ' + 'than 0x' + kMaxLength.toString(16) + ' bytes';
 
 // zlib doesn't provide these, so kludge them in following the same
@@ -23431,7 +23431,7 @@ util.inherits(Gunzip, Zlib);
 util.inherits(DeflateRaw, Zlib);
 util.inherits(InflateRaw, Zlib);
 util.inherits(Unzip, Zlib);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(85)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(84)))
 
 /***/ }),
 
@@ -23848,7 +23848,7 @@ Zlib.prototype._reset = function () {
 };
 
 exports.Zlib = Zlib;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(124).Buffer, __webpack_require__(85)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(123).Buffer, __webpack_require__(84)))
 
 /***/ }),
 

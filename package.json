@@ -150,9 +150,11 @@
       },
       "cordova-plugin-actionsheet": {},
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-media": {},
       "cordova-plugin-mediaac": {},
-      "cordova-plugin-streaming-media": {}
+      "cordova-plugin-streaming-media": {},
+      "cordova-plugin-media": {
+        "KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE": "NO"
+      }
     },
     "platforms": [
       "ios",

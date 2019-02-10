@@ -2,13 +2,14 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-import { TritonDigitalService } from "./_services/tritondigital.service";
-import { TritonDigitalService1075 } from "./_services/station1075.service";
+// import { TritonDigitalService } from "./_services/tritondigital.service";
+// import { TritonDigitalService1075 } from "./_services/station1075.service";
 import { NotificationsService } from './_services/notifications.service';
 import { FBMessengerService } from "../../providers/facebook/messenger/fb-messenger.service";
 import { Track } from './_models/track.model';
 import { NowPlayingService } from './_services/now-playing.service';
 import { NavParams } from 'ionic-angular';
+import { StreamingService } from './_services/streaming.service';
 
 @Component({
   selector: 'app-stream-player',
@@ -34,10 +35,9 @@ export class StreamPlayerComponent implements OnInit {
 		private http: Http,
 		private ngZone: NgZone,
 		private fbMsg: FBMessengerService,
-		public streaming97: TritonDigitalService,
-		public streaming1075: TritonDigitalService1075,
 		private npService: NowPlayingService,
 		public navParams: NavParams,
+		private streaming: StreamingService,
     	private notifications: NotificationsService
 	) {
 		this.playlistactive = false;
@@ -70,50 +70,55 @@ export class StreamPlayerComponent implements OnInit {
 
 	playStation(station: string) {
 
+
+		console.log('StreamPlayerComponent playStation station', station)
+
 		this.selectedStation = station;
 
 		// this.notifications.create('warn', 'playStation station ' + station);
 
-		if(station == '97') {
+		this.streaming.play(station);
 
-			this.streaming97.selectedStation = '97';
-			this.streaming1075.selectedStation = '97';
+		// if(station == '97') {
+
+		// 	this.streaming97.selectedStation = '97';
+		// 	this.streaming1075.selectedStation = '97';
 			
 			
-			if(this.streaming1075.player) {
-				this.streaming1075.pause();
-			}
+		// 	if(this.streaming1075.player) {
+		// 		this.streaming1075.pause();
+		// 	}
 			
-			if(this.streaming97.player) {
-				this.isPlaying = true;
-				this.streaming97.play();
-			} else {
-				this.isPlaying = false;
-				this.isLoading = true;
-				this.streaming97.play();
-			}
-		}
+		// 	if(this.streaming97.player) {
+		// 		this.isPlaying = true;
+		// 		this.streaming97.play();
+		// 	} else {
+		// 		this.isPlaying = false;
+		// 		this.isLoading = true;
+		// 		this.streaming97.play();
+		// 	}
+		// }
 
-		if(station == '107.5') {
+		// if(station == '107.5') {
 
-			this.streaming97.selectedStation = '107.5';
-			this.streaming1075.selectedStation = '107.5';
+		// 	this.streaming97.selectedStation = '107.5';
+		// 	this.streaming1075.selectedStation = '107.5';
 			
-			if(this.streaming97.player) {
-				this.streaming97.pause();
-			}
+		// 	if(this.streaming97.player) {
+		// 		this.streaming97.pause();
+		// 	}
 
-			if(this.streaming1075.player) {
-				this.notifications.create('warn', '107.5 has player');
-				this.isPlaying = true;
-				this.streaming1075.play();
-			} else {
-				this.notifications.create('warn', '107.5 no player');
-				this.isPlaying = false;
-				this.isLoading = true;
-				this.streaming1075.play();
-			}
-		}
+		// 	if(this.streaming1075.player) {
+		// 		this.notifications.create('warn', '107.5 has player');
+		// 		this.isPlaying = true;
+		// 		this.streaming1075.play();
+		// 	} else {
+		// 		this.notifications.create('warn', '107.5 no player');
+		// 		this.isPlaying = false;
+		// 		this.isLoading = true;
+		// 		this.streaming1075.play();
+		// 	}
+		// }
 	}
 	
 	/**
@@ -123,24 +128,24 @@ export class StreamPlayerComponent implements OnInit {
 	 */
 	toggleStreamingPlayer(): void {
 
-		this.notifications.create('warn', 'toggleStreamingPlayer 97 status: ' + this.streaming97.status);
-		this.notifications.create('warn', 'toggleStreamingPlayer 197.5 status: ' + this.streaming1075.status);
+		// this.notifications.create('warn', 'toggleStreamingPlayer 97 status: ' + this.streaming97.status);
+		// this.notifications.create('warn', 'toggleStreamingPlayer 197.5 status: ' + this.streaming1075.status);
 
-		if(this.streaming97.status == 'loading' || this.streaming1075.status == 'loading') {
-			return;
-		}
+		// if(this.streaming97.status == 'loading' || this.streaming1075.status == 'loading') {
+		// 	return;
+		// }
 
-		this.isLoading = false;
+		// this.isLoading = false;
 
-		if(this.streaming97.is_playing) {
-			this.streaming97.pause();
-		} else if (this.selectedStation == '97') {
-			this.streaming97.play();
-		} else if(this.streaming1075.is_playing) {
-			this.streaming1075.pause();
-		} else if (this.selectedStation == '107.5') {
-			this.streaming1075.play();
-		}
+		// if(this.streaming97.is_playing) {
+		// 	this.streaming97.pause();
+		// } else if (this.selectedStation == '97') {
+		// 	this.streaming97.play();
+		// } else if(this.streaming1075.is_playing) {
+		// 	this.streaming1075.pause();
+		// } else if (this.selectedStation == '107.5') {
+		// 	this.streaming1075.play();
+		// }
 	}
 	
 	/**

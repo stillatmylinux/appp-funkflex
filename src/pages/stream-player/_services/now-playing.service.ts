@@ -10,7 +10,8 @@ import { Observable, Subject, pipe } from 'rxjs';
 import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 
 import { Track } from '../_models/track.model';
-import { TritonDigitalService } from './tritondigital.service';
+// import { TritonDigitalService } from './tritondigital.service';
+import { StreamingService } from "./streaming.service";
 import { NotificationsService } from './notifications.service';
 
 @Injectable({
@@ -36,7 +37,7 @@ export class NowPlayingService {
 
 	constructor(
 		private http: HttpClient,
-		private streaming97: TritonDigitalService,
+		private streaming: StreamingService,
 		private notifications: NotificationsService
 	) {
 		this.trackLoaded = false;
@@ -54,13 +55,13 @@ export class NowPlayingService {
 		});
 		
 		//Watch when streaming is played to keep now playing up-to-date
-		this.streaming97.played.subscribe(() => {
+		// this.streaming.played.subscribe(() => {
 			//Set current track
 			// console.log('streaming.played');
 			// console.log('Set current track');
 			// this.getCurrentTrack();
-			this.notifications.create('warn', 'Set current track for 97');
-		});
+			// this.notifications.create('warn', 'Set current track for 97');
+		// });
 	}
 
 	/**
