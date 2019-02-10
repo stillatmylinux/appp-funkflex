@@ -1,16 +1,13 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 
 import * as xml2js from 'xml2js';
 
 // creation and utility methods
-import { Observable, Subject, pipe } from 'rxjs';
-// operators all come from `rxjs/operators`
-import { map, filter, catchError, mergeMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 import { Track } from '../_models/track.model';
-// import { TritonDigitalService } from './tritondigital.service';
 import { StreamingService } from "./streaming.service";
 import { NotificationsService } from './notifications.service';
 

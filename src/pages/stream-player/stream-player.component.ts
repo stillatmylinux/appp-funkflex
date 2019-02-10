@@ -78,9 +78,6 @@ export class StreamPlayerComponent implements OnInit {
 	 */
 	toggleStreamingPlayer(): void {
 
-		// this.notifications.create('warn', 'toggleStreamingPlayer 97 status: ' + this.streaming97.status);
-		// this.notifications.create('warn', 'toggleStreamingPlayer 197.5 status: ' + this.streaming1075.status);
-
 		if(this.streaming.stations[this.streaming.selectedStationIndex].status == 'loading') {
 			return;
 		}
