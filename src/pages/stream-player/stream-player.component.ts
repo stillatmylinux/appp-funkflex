@@ -40,7 +40,6 @@ export class StreamPlayerComponent implements OnInit {
 		this.currentTrack = this.npService.dummyTrack();
 		this.trackLoaded = true;
 		this.tracksLoading = false;
-		this.notifications.create('warn', 'StreamPlayerComponent constructor');
 	}
 
 	ngOnInit() {
