@@ -1424,7 +1424,7 @@ var Logins = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer__ = __webpack_require__(302);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1629,27 +1629,27 @@ var map = {
 		1
 	],
 	"../pages/bp-group/bp-group.module": [
-		600,
+		601,
 		8
 	],
 	"../pages/bp-list/bp-list.module": [
-		601,
+		602,
 		3
 	],
 	"../pages/bp-messages/bp-messages.module": [
-		602,
+		600,
 		2
 	],
 	"../pages/bp-modal/bp-modal.module": [
-		604,
+		603,
 		16
 	],
 	"../pages/bp-notifications/bp-notifications.module": [
-		607,
+		605,
 		15
 	],
 	"../pages/bp-profile/bp-profile.module": [
-		603,
+		604,
 		7
 	],
 	"../pages/custom-pages/custom-page.module": [
@@ -1657,7 +1657,7 @@ var map = {
 		4
 	],
 	"../pages/download-list/download-list.module": [
-		605,
+		607,
 		14
 	],
 	"../pages/language-settings/language-settings.module": [
@@ -1669,23 +1669,23 @@ var map = {
 		12
 	],
 	"../pages/media-list/media-list.module": [
-		610,
+		612,
 		11
 	],
 	"../pages/media-player/media-player.module": [
-		612,
+		610,
 		0
 	],
 	"../pages/post-details/post-details.module": [
-		613,
+		611,
 		5
 	],
 	"../pages/post-list/post-list.module": [
-		614,
+		613,
 		6
 	],
 	"../pages/push-settings/push-settings.module": [
-		611,
+		614,
 		10
 	],
 	"../pages/tabs/tabs.module": [
@@ -3043,16 +3043,11 @@ var NowPlayingService = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             var dataUrl = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.data_url.replace('{{limit}}', limit);
             if (_this.streaming.stations.length == 0) {
-                console.log('fetchTrack in 1 second');
+                // console.log('fetchTrack in 1 second');
                 setTimeout(function () { return _this.fetchTrack(limit); }, 1000);
                 return;
             }
-            else {
-                console.log('fetchTrack currentStation', _this.streaming.currentStation);
-            }
-            console.log('fetchTrack currentStation', _this.streaming.currentStation);
             dataUrl = dataUrl.replace('{{station}}', _this.streaming.currentStation.callsign);
-            console.log('dataUrl', dataUrl);
             if (_this.stopRepeatFetch()) {
                 // console.log('stopRepeatFetch yes');
                 resolve(_this.tracksList);
@@ -3180,16 +3175,20 @@ var NowPlayingService = /** @class */ (function () {
             }
         }
         if (!hasCoverArt) {
-            // console.log('get iTunes cover art', _track);
+            console.log('get iTunes cover art', _track);
             this.getItunesCoverArt(_track).then(function (track) {
-                // console.log('got cover art', track);
+                console.log('got cover art', track);
                 _this.trackLoaded = true;
                 _this.observer.next(track);
                 //Push current track to recentlyPlayed if is different that latest
                 if (track && !_this.hasTrackHasBeenRecentlyPlayed(track)) {
                     _this.addRecentlyPlayed(track);
                     //Emit npUpdate event
+                    console.log('Emit npUpdate event');
                     _this.npUpdate.next(true);
+                }
+                else {
+                    console.log('skipping emit npUpdate event');
                 }
                 if (_this.lastTrackCount > 30) {
                     // the feed hasn't updated in a while, check every 30 seconds instead
@@ -4571,7 +4570,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__ = __webpack_require__(171);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_transfer__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__ = __webpack_require__(302);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_admob_free__ = __webpack_require__(295);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_facebook__ = __webpack_require__(100);
@@ -4723,21 +4722,21 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/bp-details/bp-details.module#BpDetailsPageModule', name: 'BpDetailsPage', segment: 'bp-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/bp-messages/bp-messages.module#BpMessagesModule', name: 'BpMessages', segment: 'bp-messages', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-group/bp-group.module#BpGroupPageModule', name: 'BpGroupPage', segment: 'bp-group', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-list/bp-list.module#BpListModule', name: 'BpList', segment: 'bp-list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/bp-messages/bp-messages.module#BpMessagesModule', name: 'BpMessages', segment: 'bp-messages', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/bp-profile/bp-profile.module#BpProfilePageModule', name: 'BpProfilePage', segment: 'bp-profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-modal/bp-modal.module#BpModalModule', name: 'BpModal', segment: 'bp-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/download-list/download-list.module#DownloadListModule', name: 'DownloadList', segment: 'download-list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/custom-pages/custom-page.module#CustomPageModule', name: 'CustomPage', segment: 'custom-page', priority: 'high', defaultHistory: [] },
+                        { loadChildren: '../pages/bp-profile/bp-profile.module#BpProfilePageModule', name: 'BpProfilePage', segment: 'bp-profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-notifications/bp-notifications.module#BpNotificationsModule', name: 'BpNotifications', segment: 'bp-notifications', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/custom-pages/custom-page.module#CustomPageModule', name: 'CustomPage', segment: 'custom-page', priority: 'high', defaultHistory: [] },
+                        { loadChildren: '../pages/download-list/download-list.module#DownloadListModule', name: 'DownloadList', segment: 'download-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/language-settings/language-settings.module#LanguageSettingsModule', name: 'LanguageSettings', segment: 'language-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login-modal/login-modal.module#LoginModalModule', name: 'LoginModal', segment: 'login-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/media-list/media-list.module#MediaListModule', name: 'MediaList', segment: 'media-list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/push-settings/push-settings.module#PushSettingsModule', name: 'PushSettings', segment: 'push-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/media-player/media-player.module#MediaPlayerModule', name: 'MediaPlayer', segment: 'media-player', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post-details/post-details.module#PostDetailsPageModule', name: 'PostDetailsPage', segment: 'post-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/media-list/media-list.module#MediaListModule', name: 'MediaList', segment: 'media-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post-list/post-list.module#PostListModule', name: 'PostList', segment: 'post-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/push-settings/push-settings.module#PushSettingsModule', name: 'PushSettings', segment: 'push-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
                     ]
                 }),

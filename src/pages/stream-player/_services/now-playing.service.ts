@@ -400,21 +400,24 @@ export class NowPlayingService {
 
 		if(!hasCoverArt) {
 
-			// console.log('get iTunes cover art', _track);
+			console.log('get iTunes cover art', _track);
 
 			this.getItunesCoverArt(_track).then(track => {
 
-				// console.log('got cover art', track);
+				console.log('got cover art', track);
 
 				this.trackLoaded = true;
 				this.observer.next(track);
 
 				//Push current track to recentlyPlayed if is different that latest
-				if(track && !this.hasTrackHasBeenRecentlyPlayed(track)){
+				if(track && !this.hasTrackHasBeenRecentlyPlayed(track)) {
 					this.addRecentlyPlayed(track);
 
 					//Emit npUpdate event
+					console.log('Emit npUpdate event');
 					this.npUpdate.next(true);
+				} else {
+					console.log('skipping emit npUpdate event');
 				}
 
 				
