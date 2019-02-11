@@ -1629,11 +1629,11 @@ var map = {
 		1
 	],
 	"../pages/bp-group/bp-group.module": [
-		601,
+		600,
 		8
 	],
 	"../pages/bp-list/bp-list.module": [
-		600,
+		601,
 		3
 	],
 	"../pages/bp-messages/bp-messages.module": [
@@ -1641,15 +1641,15 @@ var map = {
 		2
 	],
 	"../pages/bp-modal/bp-modal.module": [
-		603,
+		604,
 		16
 	],
 	"../pages/bp-notifications/bp-notifications.module": [
-		604,
+		607,
 		15
 	],
 	"../pages/bp-profile/bp-profile.module": [
-		605,
+		603,
 		7
 	],
 	"../pages/custom-pages/custom-page.module": [
@@ -1657,7 +1657,7 @@ var map = {
 		4
 	],
 	"../pages/download-list/download-list.module": [
-		607,
+		605,
 		14
 	],
 	"../pages/language-settings/language-settings.module": [
@@ -1673,19 +1673,19 @@ var map = {
 		11
 	],
 	"../pages/media-player/media-player.module": [
-		611,
+		612,
 		0
 	],
 	"../pages/post-details/post-details.module": [
-		612,
+		613,
 		5
 	],
 	"../pages/post-list/post-list.module": [
-		613,
+		614,
 		6
 	],
 	"../pages/push-settings/push-settings.module": [
-		614,
+		611,
 		10
 	],
 	"../pages/tabs/tabs.module": [
@@ -2692,6 +2692,8 @@ var StreamPlayerComponent = /** @class */ (function () {
     };
     StreamPlayerComponent.prototype.playStation = function (station) {
         console.log('StreamPlayerComponent playStation station', station);
+        if (this.selectedStation == station)
+            return;
         this.streaming.is_loading = true;
         this.selectedStation = station;
         this.streaming.play(station);
@@ -3048,7 +3050,8 @@ var NowPlayingService = /** @class */ (function () {
             else {
                 console.log('fetchTrack currentStation', _this.streaming.currentStation);
             }
-            dataUrl.replace('{{station}}', _this.streaming.currentStation.callsign);
+            console.log('fetchTrack currentStation', _this.streaming.currentStation);
+            dataUrl = dataUrl.replace('{{station}}', _this.streaming.currentStation.callsign);
             console.log('dataUrl', dataUrl);
             if (_this.stopRepeatFetch()) {
                 // console.log('stopRepeatFetch yes');
@@ -4720,21 +4723,21 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/bp-details/bp-details.module#BpDetailsPageModule', name: 'BpDetailsPage', segment: 'bp-details', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/bp-list/bp-list.module#BpListModule', name: 'BpList', segment: 'bp-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-group/bp-group.module#BpGroupPageModule', name: 'BpGroupPage', segment: 'bp-group', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/bp-list/bp-list.module#BpListModule', name: 'BpList', segment: 'bp-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-messages/bp-messages.module#BpMessagesModule', name: 'BpMessages', segment: 'bp-messages', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/bp-modal/bp-modal.module#BpModalModule', name: 'BpModal', segment: 'bp-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/bp-notifications/bp-notifications.module#BpNotificationsModule', name: 'BpNotifications', segment: 'bp-notifications', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-profile/bp-profile.module#BpProfilePageModule', name: 'BpProfilePage', segment: 'bp-profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/custom-pages/custom-page.module#CustomPageModule', name: 'CustomPage', segment: 'custom-page', priority: 'high', defaultHistory: [] },
+                        { loadChildren: '../pages/bp-modal/bp-modal.module#BpModalModule', name: 'BpModal', segment: 'bp-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/download-list/download-list.module#DownloadListModule', name: 'DownloadList', segment: 'download-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/custom-pages/custom-page.module#CustomPageModule', name: 'CustomPage', segment: 'custom-page', priority: 'high', defaultHistory: [] },
+                        { loadChildren: '../pages/bp-notifications/bp-notifications.module#BpNotificationsModule', name: 'BpNotifications', segment: 'bp-notifications', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/language-settings/language-settings.module#LanguageSettingsModule', name: 'LanguageSettings', segment: 'language-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login-modal/login-modal.module#LoginModalModule', name: 'LoginModal', segment: 'login-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/media-list/media-list.module#MediaListModule', name: 'MediaList', segment: 'media-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/push-settings/push-settings.module#PushSettingsModule', name: 'PushSettings', segment: 'push-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/media-player/media-player.module#MediaPlayerModule', name: 'MediaPlayer', segment: 'media-player', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post-details/post-details.module#PostDetailsPageModule', name: 'PostDetailsPage', segment: 'post-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post-list/post-list.module#PostListModule', name: 'PostList', segment: 'post-list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/push-settings/push-settings.module#PushSettingsModule', name: 'PushSettings', segment: 'push-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
                     ]
                 }),

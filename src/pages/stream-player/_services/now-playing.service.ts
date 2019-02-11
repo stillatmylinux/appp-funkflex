@@ -240,16 +240,12 @@ export class NowPlayingService {
 			let dataUrl = environment.now_playing.data_url.replace('{{limit}}', limit);
 
 			if(this.streaming.stations.length == 0) {
-				console.log('fetchTrack in 1 second');
+				// console.log('fetchTrack in 1 second');
 				setTimeout(() => this.fetchTrack(limit), 1000);
 				return;
-			} else {
-				console.log('fetchTrack currentStation', this.streaming.currentStation);
 			}
 
-			dataUrl.replace('{{station}}', this.streaming.currentStation.callsign);
-
-			console.log('dataUrl', dataUrl);
+			dataUrl = dataUrl.replace('{{station}}', this.streaming.currentStation.callsign);
 
 			if(this.stopRepeatFetch()) {
 				// console.log('stopRepeatFetch yes');

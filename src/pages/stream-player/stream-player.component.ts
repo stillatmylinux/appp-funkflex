@@ -70,6 +70,9 @@ export class StreamPlayerComponent implements OnInit {
 
 		console.log('StreamPlayerComponent playStation station', station)
 
+		if(this.selectedStation == station)
+			return;
+
 		this.streaming.is_loading = true;
 		this.selectedStation = station;
 		this.streaming.play(station);
