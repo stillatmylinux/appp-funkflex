@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- config.xml reference: https://cordova.apache.org/docs/en/latest/config_ref/index.html -->
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.funkflex.app" version="557.0.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.funkflex.app" version="1.0.0">
    <name>LitDigitalJS</name>
    <description><![CDATA[LitDigitalJS]]></description>
    <author href="" email="brian+fmf@apppresser.com">LitDigitalJS</author>
@@ -9,20 +9,18 @@
     <platform name="android" />
 
     <edit-config target="CFBundleShortVersionString" file="*-Info.plist"  mode="merge">
-        <string>55700</string>
+        <string>100</string>
     </edit-config>
 
     <preference name="phonegap-version" value="cli-8.1.1" />
     <preference name="targetSdkVersion" value="26" />
     <preference name="android-minSdkVersion" value="19" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="BackgroundColor" value="0xff000000"/>
 
     <plugin name="cordova-plugin-statusbar" source="npm" version="2.4.1" />
     <plugin name="cordova-plugin-x-socialsharing" source="npm" spec="5.2.1" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="1.3.3" />
-    <plugin name="cordova-plugin-camera" source="npm" spec="2.3.1">
-        <param name="CAMERA_USAGE_DESCRIPTION" value="This app allows you to upload photos." />
-        <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="This app allows you to upload photos." />
-    </plugin>
     <plugin name="cordova-plugin-device" source="npm" spec="2.0.1" />
     <plugin name="cordova-plugin-dialogs" source="npm" spec="2.0.1" />
     <plugin name="cordova-plugin-file" source="npm" spec="6.0.1" />
@@ -41,11 +39,6 @@
     <platform name="ios">
         <plugin name="cordova-plugin-ionic-keyboard" source="npm" spec="2.1.3" />
     </platform>
-
-    <plugin name="cordova-plugin-geolocation" source="npm" spec="4.0.1">
-		<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge"><string>We use your location to enhance the app's experience.</string></edit-config>
-		<edit-config target="NSLocationAlwaysUsageDescription" file="*-Info.plist" mode="merge"><string>We use your location to enhance the app's experience.</string></edit-config>
-	</plugin>
 
     <plugin name="phonegap-plugin-push" spec="2.2.3" source="npm">
         <param name="SENDER_ID" value="761759172875" />
