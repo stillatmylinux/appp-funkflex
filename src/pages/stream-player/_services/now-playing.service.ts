@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { Track } from '../_models/track.model';
 import { StreamingService } from "./streaming.service";
 import { NotificationsService } from './notifications.service';
+import { RadioStation } from '../_models/radioStation.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -29,6 +30,7 @@ export class NowPlayingService {
 	public trackObs: Observable<Track>;
 	public lastTrack: Track;
 	public currentTrack: Track;
+	public currentStation: RadioStation;
 	public reconnectionDelay: number; // seconds
 	public errorConnectCount: number; // seconds
 
@@ -68,13 +70,24 @@ export class NowPlayingService {
 	 */
 	dummyTrack(): Track{
 		let dateObj = new Date();
-		return new Track({
+
+		let data: any = {
 			title: environment.now_playing.default_title,
 			artist: environment.now_playing.default_artist,
 			// string otherwise you'll "trim is not a function"
 			played_at: dateObj.getTime().toString(),
 			duration: '00:00:10'
-		});
+		};
+
+		console.log('dummyTrack this.streaming.currentStation', this.streaming.currentStation)
+
+		if(this.streaming.currentStation) {
+			console.log('dummyTrack currentStation cover_art', this.streaming.currentStation.cover_art)
+			data.cover_art = this.streaming.currentStation.cover_art;
+		} else {
+			console.log('dummyTrack currentStation is empty');
+		}
+		return new Track(data);
 	}
 
 	resetDelay() {
@@ -225,6 +238,18 @@ export class NowPlayingService {
 	fetchTrack(limit): Promise<Track[]> {
 		return new Promise( (resolve, reject) => {
 			let dataUrl = environment.now_playing.data_url.replace('{{limit}}', limit);
+
+			if(this.streaming.stations.length == 0) {
+				console.log('fetchTrack in 1 second');
+				setTimeout(() => this.fetchTrack(limit), 1000);
+				return;
+			} else {
+				console.log('fetchTrack currentStation', this.streaming.currentStation);
+			}
+
+			dataUrl.replace('{{station}}', this.streaming.currentStation.callsign);
+
+			console.log('dataUrl', dataUrl);
 
 			if(this.stopRepeatFetch()) {
 				// console.log('stopRepeatFetch yes');

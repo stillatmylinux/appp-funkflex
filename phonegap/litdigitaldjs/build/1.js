@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 600:
+/***/ 599:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,9 +9,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_details__ = __webpack_require__(653);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_details__ = __webpack_require__(652);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_sanitize_html_sanitize_html_module__ = __webpack_require__(619);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pipes_do_links_do_links_module__ = __webpack_require__(628);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pipes_do_links_do_links_module__ = __webpack_require__(629);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -306,7 +306,7 @@ exports.default = default_1;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var fix_1 = __webpack_require__(632);
+var fix_1 = __webpack_require__(633);
 /**
  *
  * Split the string with word separators
@@ -364,331 +364,6 @@ exports.default = default_1;
 /***/ }),
 
 /***/ 628:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinksModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__do_links__ = __webpack_require__(629);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-var DoLinksModule = /** @class */ (function () {
-    function DoLinksModule() {
-    }
-    DoLinksModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-            declarations: [__WEBPACK_IMPORTED_MODULE_1__do_links__["a" /* DoLinks */]],
-            exports: [__WEBPACK_IMPORTED_MODULE_1__do_links__["a" /* DoLinks */]]
-        })
-    ], DoLinksModule);
-    return DoLinksModule;
-}());
-
-//# sourceMappingURL=do-links.module.js.map
-
-/***/ }),
-
-/***/ 629:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinks; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme__ = __webpack_require__(630);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_anchorme__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/*
- * This converts text links to HTML links with target blank
- * It also bypasses security to display videos
- * http://alexcorvi.github.io/anchorme.js/
- */
-var DoLinks = /** @class */ (function () {
-    function DoLinks(sanitizer) {
-        this.sanitizer = sanitizer;
-    }
-    DoLinks.prototype.transform = function (str) {
-        str = __WEBPACK_IMPORTED_MODULE_2_anchorme___default()(str, { attributes: [{
-                    name: "target",
-                    value: "_blank"
-                }] });
-        return this.sanitizer.bypassSecurityTrustHtml(str);
-    };
-    DoLinks = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: 'doLinks' }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */]])
-    ], DoLinks);
-    return DoLinks;
-}());
-
-//# sourceMappingURL=do-links.js.map
-
-/***/ }),
-
-/***/ 630:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(617);
-var email_1 = __webpack_require__(621);
-var ip_1 = __webpack_require__(622);
-var url_1 = __webpack_require__(623);
-var transform_1 = __webpack_require__(631);
-var hasprotocol_1 = __webpack_require__(625);
-var anchorme = function (str, options) {
-    options = util_1.defaultOptions(options);
-    var result = transform_1.default(str, options);
-    return result;
-};
-// exposing few functions for extra uses
-anchorme.validate = {
-    ip: ip_1.default,
-    url: function (input) {
-        // simple wrapper that does what "identify.ts" does initially
-        // remove the protocal
-        var protocol = hasprotocol_1.default(input) || "";
-        input = input.substr(protocol.length);
-        input = encodeURI(input);
-        return url_1.default(input);
-    },
-    email: email_1.default
-};
-exports.default = anchorme;
-
-
-/***/ }),
-
-/***/ 631:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var separate_1 = __webpack_require__(624);
-var identify_1 = __webpack_require__(633);
-var separate_2 = __webpack_require__(624);
-function default_1(str, options) {
-    var arr = separate_2.separate(str);
-    var identified = identify_1.default(arr, options);
-    // custom filtering-out function
-    if (options.exclude) {
-        for (var index = 0; index < identified.length; index++) {
-            var element = identified[index];
-            if (typeof element === "object" && options.exclude(element))
-                identified[index] = element.raw;
-        }
-    }
-    // return the current list (with words being filtered out)
-    if (options.list) {
-        var listed = [];
-        for (var i = 0; i < identified.length; i++) {
-            var fragment = identified[i];
-            if (typeof fragment !== "string")
-                listed.push(fragment);
-        }
-        return listed;
-    }
-    // transform objects to HTML tags
-    identified = identified.map(function (fragment) {
-        if (typeof fragment === "string")
-            return fragment;
-        return url2tag(fragment, options);
-    });
-    // join and return
-    return separate_1.deSeparate(identified);
-}
-exports.default = default_1;
-function url2tag(fragment, options) {
-    var href = fragment.protocol + fragment.encoded;
-    var original = fragment.raw;
-    if (typeof options.truncate === "number") {
-        if (original.length > options.truncate)
-            original = original.substring(0, options.truncate) + "...";
-    }
-    if (typeof options.truncate === "object") {
-        if (original.length > (options.truncate[0] + options.truncate[1]))
-            original = original.substr(0, options.truncate[0]) + "..." + original.substr(original.length - options.truncate[1]);
-    }
-    if (options.attributes === undefined)
-        options.attributes = [];
-    return "<a href=\"" + href + "\" " + options.attributes.map(function (attribute) {
-        if (typeof attribute === 'function') {
-            var name = (attribute(fragment) || {}).name;
-            var value = (attribute(fragment) || {}).value;
-            if (name && !value)
-                return " name ";
-            if (name && value)
-                return " " + name + "=\"" + value + "\" ";
-        }
-        else
-            return " " + attribute.name + "=\"" + attribute.value + "\" ";
-    }).join("") + ">" + original + "</a>";
-}
-
-
-/***/ }),
-
-/***/ 632:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- *
- * @hack
- *
- * This is a dirty hack to fix URLs that have parenthesis and quotation marks in them
- * For example take this paragraph:
- *
- * """"
- * I visited this url: "http://www.wikipedia.com/some_article(with_paranthesis)"
- * and this URL: (http://www.wikipedia.com/some_article(with_paranthesis))
- * """"
- *
- * The quotation marks `'` `"` and parenthesis `(` `)` `[` `]`
- * can be considered to be part of the URL, and as a
- * punctuation marks surrounding the URL.
- * While this hack works for the most part, it's quite dirty and
- * I may replace it with something better in the future.
- *
- *
- * Another fix is removing punctuation marks that may appear at the end of URL
- * Example:
- *
- * """"
- * I've visited google.com, facebook.com, and yahoo.com.
- * """"
- *
- * @todo: replace the following function with something cleaner.
- *
- *
-**/
-
-Object.defineProperty(exports, "__esModule", { value: true });
-function fixSeparators(arr, sep1, sep2) {
-    arr.forEach(function (bit, i) {
-        if ((bit.indexOf(".") > -1) &&
-            (!(arr[i - 1] === sep1 && arr[i + 1] === sep2)) &&
-            (arr[i + 1] === sep1 || arr[i + 1] === sep2) // the one after it, is either sep1 or sep2
-        ) {
-            arr[i] = arr[i] + arr[i + 1];
-            if (typeof arr[i + 2] === "string")
-                arr[i] = arr[i] + arr[i + 2];
-            if (typeof arr[i + 3] === "string")
-                arr[i] = arr[i] + arr[i + 3];
-            if (typeof arr[i + 4] === "string")
-                arr[i] = arr[i] + arr[i + 4];
-            arr.splice(i + 1, 4);
-            fixSeparators(arr, sep1, sep2);
-        }
-    });
-    return arr;
-}
-exports.fixSeparators = fixSeparators;
-function default_1(arr) {
-    arr = fixSeparators(arr, "(", ")");
-    arr = fixSeparators(arr, "[", "]");
-    arr = fixSeparators(arr, "\"", "\"");
-    arr = fixSeparators(arr, "'", "'");
-    return arr;
-}
-exports.default = default_1;
-
-
-/***/ }),
-
-/***/ 633:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var email_1 = __webpack_require__(621);
-var hasprotocol_1 = __webpack_require__(625);
-var lists_1 = __webpack_require__(618);
-var ip_1 = __webpack_require__(622);
-var url_1 = __webpack_require__(623);
-function default_1(inputArr, options) {
-    return inputArr.map(function (fragment, index) {
-        var encoded = encodeURI(fragment);
-        // quick validations
-        // 1
-        if (encoded.indexOf(".") < 1 && (!hasprotocol_1.default(encoded)))
-            return fragment;
-        var urlObj = null;
-        var protocol = hasprotocol_1.default(encoded) || "";
-        // remove the protocol before proceeding to any other test
-        if (protocol)
-            encoded = encoded.substr(protocol.length);
-        // test 1: it's a file
-        if (options.files && protocol === "file:///" && encoded.split(/\/|\\/).length - 1) {
-            urlObj = {
-                reason: "file",
-                protocol: protocol,
-                raw: fragment,
-                encoded: encoded,
-            };
-        }
-        // test 2: it's a URL
-        if ((!urlObj) && options.urls && url_1.default(encoded)) {
-            urlObj = {
-                reason: "url",
-                protocol: protocol ? protocol : typeof options.defaultProtocol === "function" ? options.defaultProtocol(fragment) : options.defaultProtocol,
-                raw: fragment,
-                encoded: encoded,
-            };
-        }
-        // test 3: it's an email
-        if ((!urlObj) && options.emails && email_1.default(encoded)) {
-            urlObj = {
-                reason: "email",
-                protocol: "mailto:",
-                raw: fragment,
-                encoded: encoded,
-            };
-        }
-        // test 4: it's an IP
-        if ((!urlObj) && options.ips && ip_1.default(encoded)) {
-            urlObj = {
-                reason: "ip",
-                protocol: protocol ? protocol : typeof options.defaultProtocol === "function" ? options.defaultProtocol(fragment) : options.defaultProtocol,
-                raw: fragment,
-                encoded: encoded,
-            };
-        }
-        if (!urlObj)
-            return fragment;
-        else {
-            if ((inputArr[index - 1] === "'" || inputArr[index - 1] === '"') && ~lists_1.htmlAttrs.indexOf(inputArr[index - 2]))
-                return fragment;
-            return urlObj;
-        }
-    });
-}
-exports.default = default_1;
-
-
-/***/ }),
-
-/***/ 634:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -778,7 +453,332 @@ var MediaPlayer = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 653:
+/***/ 629:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinksModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__do_links__ = __webpack_require__(630);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var DoLinksModule = /** @class */ (function () {
+    function DoLinksModule() {
+    }
+    DoLinksModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__do_links__["a" /* DoLinks */]],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__do_links__["a" /* DoLinks */]]
+        })
+    ], DoLinksModule);
+    return DoLinksModule;
+}());
+
+//# sourceMappingURL=do-links.module.js.map
+
+/***/ }),
+
+/***/ 630:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinks; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme__ = __webpack_require__(631);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_anchorme__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/*
+ * This converts text links to HTML links with target blank
+ * It also bypasses security to display videos
+ * http://alexcorvi.github.io/anchorme.js/
+ */
+var DoLinks = /** @class */ (function () {
+    function DoLinks(sanitizer) {
+        this.sanitizer = sanitizer;
+    }
+    DoLinks.prototype.transform = function (str) {
+        str = __WEBPACK_IMPORTED_MODULE_2_anchorme___default()(str, { attributes: [{
+                    name: "target",
+                    value: "_blank"
+                }] });
+        return this.sanitizer.bypassSecurityTrustHtml(str);
+    };
+    DoLinks = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: 'doLinks' }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */]])
+    ], DoLinks);
+    return DoLinks;
+}());
+
+//# sourceMappingURL=do-links.js.map
+
+/***/ }),
+
+/***/ 631:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var util_1 = __webpack_require__(617);
+var email_1 = __webpack_require__(621);
+var ip_1 = __webpack_require__(622);
+var url_1 = __webpack_require__(623);
+var transform_1 = __webpack_require__(632);
+var hasprotocol_1 = __webpack_require__(625);
+var anchorme = function (str, options) {
+    options = util_1.defaultOptions(options);
+    var result = transform_1.default(str, options);
+    return result;
+};
+// exposing few functions for extra uses
+anchorme.validate = {
+    ip: ip_1.default,
+    url: function (input) {
+        // simple wrapper that does what "identify.ts" does initially
+        // remove the protocal
+        var protocol = hasprotocol_1.default(input) || "";
+        input = input.substr(protocol.length);
+        input = encodeURI(input);
+        return url_1.default(input);
+    },
+    email: email_1.default
+};
+exports.default = anchorme;
+
+
+/***/ }),
+
+/***/ 632:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var separate_1 = __webpack_require__(624);
+var identify_1 = __webpack_require__(634);
+var separate_2 = __webpack_require__(624);
+function default_1(str, options) {
+    var arr = separate_2.separate(str);
+    var identified = identify_1.default(arr, options);
+    // custom filtering-out function
+    if (options.exclude) {
+        for (var index = 0; index < identified.length; index++) {
+            var element = identified[index];
+            if (typeof element === "object" && options.exclude(element))
+                identified[index] = element.raw;
+        }
+    }
+    // return the current list (with words being filtered out)
+    if (options.list) {
+        var listed = [];
+        for (var i = 0; i < identified.length; i++) {
+            var fragment = identified[i];
+            if (typeof fragment !== "string")
+                listed.push(fragment);
+        }
+        return listed;
+    }
+    // transform objects to HTML tags
+    identified = identified.map(function (fragment) {
+        if (typeof fragment === "string")
+            return fragment;
+        return url2tag(fragment, options);
+    });
+    // join and return
+    return separate_1.deSeparate(identified);
+}
+exports.default = default_1;
+function url2tag(fragment, options) {
+    var href = fragment.protocol + fragment.encoded;
+    var original = fragment.raw;
+    if (typeof options.truncate === "number") {
+        if (original.length > options.truncate)
+            original = original.substring(0, options.truncate) + "...";
+    }
+    if (typeof options.truncate === "object") {
+        if (original.length > (options.truncate[0] + options.truncate[1]))
+            original = original.substr(0, options.truncate[0]) + "..." + original.substr(original.length - options.truncate[1]);
+    }
+    if (options.attributes === undefined)
+        options.attributes = [];
+    return "<a href=\"" + href + "\" " + options.attributes.map(function (attribute) {
+        if (typeof attribute === 'function') {
+            var name = (attribute(fragment) || {}).name;
+            var value = (attribute(fragment) || {}).value;
+            if (name && !value)
+                return " name ";
+            if (name && value)
+                return " " + name + "=\"" + value + "\" ";
+        }
+        else
+            return " " + attribute.name + "=\"" + attribute.value + "\" ";
+    }).join("") + ">" + original + "</a>";
+}
+
+
+/***/ }),
+
+/***/ 633:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ *
+ * @hack
+ *
+ * This is a dirty hack to fix URLs that have parenthesis and quotation marks in them
+ * For example take this paragraph:
+ *
+ * """"
+ * I visited this url: "http://www.wikipedia.com/some_article(with_paranthesis)"
+ * and this URL: (http://www.wikipedia.com/some_article(with_paranthesis))
+ * """"
+ *
+ * The quotation marks `'` `"` and parenthesis `(` `)` `[` `]`
+ * can be considered to be part of the URL, and as a
+ * punctuation marks surrounding the URL.
+ * While this hack works for the most part, it's quite dirty and
+ * I may replace it with something better in the future.
+ *
+ *
+ * Another fix is removing punctuation marks that may appear at the end of URL
+ * Example:
+ *
+ * """"
+ * I've visited google.com, facebook.com, and yahoo.com.
+ * """"
+ *
+ * @todo: replace the following function with something cleaner.
+ *
+ *
+**/
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function fixSeparators(arr, sep1, sep2) {
+    arr.forEach(function (bit, i) {
+        if ((bit.indexOf(".") > -1) &&
+            (!(arr[i - 1] === sep1 && arr[i + 1] === sep2)) &&
+            (arr[i + 1] === sep1 || arr[i + 1] === sep2) // the one after it, is either sep1 or sep2
+        ) {
+            arr[i] = arr[i] + arr[i + 1];
+            if (typeof arr[i + 2] === "string")
+                arr[i] = arr[i] + arr[i + 2];
+            if (typeof arr[i + 3] === "string")
+                arr[i] = arr[i] + arr[i + 3];
+            if (typeof arr[i + 4] === "string")
+                arr[i] = arr[i] + arr[i + 4];
+            arr.splice(i + 1, 4);
+            fixSeparators(arr, sep1, sep2);
+        }
+    });
+    return arr;
+}
+exports.fixSeparators = fixSeparators;
+function default_1(arr) {
+    arr = fixSeparators(arr, "(", ")");
+    arr = fixSeparators(arr, "[", "]");
+    arr = fixSeparators(arr, "\"", "\"");
+    arr = fixSeparators(arr, "'", "'");
+    return arr;
+}
+exports.default = default_1;
+
+
+/***/ }),
+
+/***/ 634:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var email_1 = __webpack_require__(621);
+var hasprotocol_1 = __webpack_require__(625);
+var lists_1 = __webpack_require__(618);
+var ip_1 = __webpack_require__(622);
+var url_1 = __webpack_require__(623);
+function default_1(inputArr, options) {
+    return inputArr.map(function (fragment, index) {
+        var encoded = encodeURI(fragment);
+        // quick validations
+        // 1
+        if (encoded.indexOf(".") < 1 && (!hasprotocol_1.default(encoded)))
+            return fragment;
+        var urlObj = null;
+        var protocol = hasprotocol_1.default(encoded) || "";
+        // remove the protocol before proceeding to any other test
+        if (protocol)
+            encoded = encoded.substr(protocol.length);
+        // test 1: it's a file
+        if (options.files && protocol === "file:///" && encoded.split(/\/|\\/).length - 1) {
+            urlObj = {
+                reason: "file",
+                protocol: protocol,
+                raw: fragment,
+                encoded: encoded,
+            };
+        }
+        // test 2: it's a URL
+        if ((!urlObj) && options.urls && url_1.default(encoded)) {
+            urlObj = {
+                reason: "url",
+                protocol: protocol ? protocol : typeof options.defaultProtocol === "function" ? options.defaultProtocol(fragment) : options.defaultProtocol,
+                raw: fragment,
+                encoded: encoded,
+            };
+        }
+        // test 3: it's an email
+        if ((!urlObj) && options.emails && email_1.default(encoded)) {
+            urlObj = {
+                reason: "email",
+                protocol: "mailto:",
+                raw: fragment,
+                encoded: encoded,
+            };
+        }
+        // test 4: it's an IP
+        if ((!urlObj) && options.ips && ip_1.default(encoded)) {
+            urlObj = {
+                reason: "ip",
+                protocol: protocol ? protocol : typeof options.defaultProtocol === "function" ? options.defaultProtocol(fragment) : options.defaultProtocol,
+                raw: fragment,
+                encoded: encoded,
+            };
+        }
+        if (!urlObj)
+            return fragment;
+        else {
+            if ((inputArr[index - 1] === "'" || inputArr[index - 1] === '"') && ~lists_1.htmlAttrs.indexOf(inputArr[index - 2]))
+                return fragment;
+            return urlObj;
+        }
+    });
+}
+exports.default = default_1;
+
+
+/***/ }),
+
+/***/ 652:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -787,11 +787,11 @@ var MediaPlayer = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_social_sharing__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_social_sharing__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__media_player_media_player__ = __webpack_require__(634);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__media_player_media_player__ = __webpack_require__(628);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_video_video_utils__ = __webpack_require__(363);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_buddypress_bp_provider__ = __webpack_require__(361);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_analytics_analytics_service__ = __webpack_require__(83);

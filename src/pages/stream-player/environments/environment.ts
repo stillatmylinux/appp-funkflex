@@ -5,7 +5,7 @@
 export const environment = {
 	production: false,
 	now_playing: {
-		data_url: 'https://np.tritondigital.com/public/nowplaying?mountName=WQHT&numberToFetch={{limit}}&eventType=track',
+		data_url: 'https://np.tritondigital.com/public/nowplaying?mountName={{station}}&numberToFetch={{limit}}&eventType=track',
 		data_aac_url: 'https://np.tritondigital.com/public/nowplaying?mountName=WQHTAAC&numberToFetch={{limit}}&eventType=track',
 		generic_cover: './assets/img/Hot-97-NYC-Logo-1.jpg',
 		format_tracks: true,
@@ -20,12 +20,16 @@ export const environment = {
 		stations: [
 			{
 				name: '97',
+				callsign: 'WQHT',
 				url: 'https://playerservices.streamtheworld.com/pls/WQHT.pls',
+				cover_art: './assets/img/Hot-97-NYC-Logo-1.jpg',
 				autoplay: true
 			},
 			{
 				name: '107.5',
-				url: 'https://playerservices.streamtheworld.com/pls/WBLSFM.pls'
+				callsign: 'WBLSFM',
+				url: 'https://playerservices.streamtheworld.com/pls/WBLSFM.pls',
+				cover_art: './assets/img/wbls.png',
 			},
 		],
 		format: ['mp3'],

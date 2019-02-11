@@ -82,6 +82,7 @@ export class StreamingService {
 		console.log('initPlayer', station);
 
 		this.is_loading = true;
+		this.currentStation = station;
 		station.startLoading();
 		station.resetDelay();
 

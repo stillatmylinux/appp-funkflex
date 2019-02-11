@@ -68,7 +68,7 @@ var NotificationsService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(173);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_keyboard__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_social_sharing__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_social_sharing__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_header_logo_header_logo__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_language_language_service__ = __webpack_require__(127);
@@ -848,7 +848,7 @@ var AppAds = /** @class */ (function () {
 var environment = {
     production: false,
     now_playing: {
-        data_url: 'https://np.tritondigital.com/public/nowplaying?mountName=WQHT&numberToFetch={{limit}}&eventType=track',
+        data_url: 'https://np.tritondigital.com/public/nowplaying?mountName={{station}}&numberToFetch={{limit}}&eventType=track',
         data_aac_url: 'https://np.tritondigital.com/public/nowplaying?mountName=WQHTAAC&numberToFetch={{limit}}&eventType=track',
         generic_cover: './assets/img/Hot-97-NYC-Logo-1.jpg',
         format_tracks: true,
@@ -863,12 +863,16 @@ var environment = {
         stations: [
             {
                 name: '97',
+                callsign: 'WQHT',
                 url: 'https://playerservices.streamtheworld.com/pls/WQHT.pls',
+                cover_art: './assets/img/Hot-97-NYC-Logo-1.jpg',
                 autoplay: true
             },
             {
                 name: '107.5',
-                url: 'https://playerservices.streamtheworld.com/pls/WBLSFM.pls'
+                callsign: 'WBLSFM',
+                url: 'https://playerservices.streamtheworld.com/pls/WBLSFM.pls',
+                cover_art: './assets/img/wbls.png',
             },
         ],
         format: ['mp3'],
@@ -971,6 +975,7 @@ var StreamingService = /** @class */ (function () {
         var _this = this;
         console.log('initPlayer', station);
         this.is_loading = true;
+        this.currentStation = station;
         station.startLoading();
         station.resetDelay();
         var source = station.nextSource();
@@ -1419,7 +1424,7 @@ var Logins = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer__ = __webpack_require__(296);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1620,7 +1625,7 @@ webpackEmptyAsyncContext.id = 242;
 
 var map = {
 	"../pages/bp-details/bp-details.module": [
-		600,
+		599,
 		1
 	],
 	"../pages/bp-group/bp-group.module": [
@@ -1628,7 +1633,7 @@ var map = {
 		8
 	],
 	"../pages/bp-list/bp-list.module": [
-		599,
+		600,
 		3
 	],
 	"../pages/bp-messages/bp-messages.module": [
@@ -1648,27 +1653,27 @@ var map = {
 		7
 	],
 	"../pages/custom-pages/custom-page.module": [
-		607,
+		606,
 		4
 	],
 	"../pages/download-list/download-list.module": [
-		606,
+		607,
 		14
 	],
 	"../pages/language-settings/language-settings.module": [
-		609,
+		608,
 		13
 	],
 	"../pages/login-modal/login-modal.module": [
-		608,
+		609,
 		12
 	],
 	"../pages/media-list/media-list.module": [
-		611,
+		610,
 		11
 	],
 	"../pages/media-player/media-player.module": [
-		610,
+		611,
 		0
 	],
 	"../pages/post-details/post-details.module": [
@@ -1710,9 +1715,9 @@ module.exports = webpackAsyncContext;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppCamera; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_camera__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_transfer__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_file__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_camera__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_transfer__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_file__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_action_sheet__ = __webpack_require__(128);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2681,12 +2686,17 @@ var StreamPlayerComponent = /** @class */ (function () {
                 _this.isLoading = isLoading;
             });
         });
+        this.npService.trackObs.subscribe(function (track) {
+            _this.currentTrack = track;
+        });
     };
     StreamPlayerComponent.prototype.playStation = function (station) {
         console.log('StreamPlayerComponent playStation station', station);
-        this.streaming.is_loading;
+        this.streaming.is_loading = true;
         this.selectedStation = station;
         this.streaming.play(station);
+        this.currentTrack = this.npService.dummyTrack();
+        this.npService.getCurrentTrack();
     };
     /**
      * Plays/pauses audio streaming97
@@ -2694,9 +2704,7 @@ var StreamPlayerComponent = /** @class */ (function () {
      * @return     void
      */
     StreamPlayerComponent.prototype.toggleStreamingPlayer = function () {
-        // this.notifications.create('warn', 'toggleStreamingPlayer 97 status: ' + this.streaming97.status);
-        // this.notifications.create('warn', 'toggleStreamingPlayer 197.5 status: ' + this.streaming1075.status);
-        if (this.streaming.stations[this.streaming.selectedStationIndex].status == 'loading') {
+        if (this.streaming.is_loading) {
             return;
         }
         this.isLoading = false;
@@ -2861,7 +2869,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // creation and utility methods
 
 
-// import { TritonDigitalService } from './tritondigital.service';
 
 
 var NowPlayingService = /** @class */ (function () {
@@ -2902,13 +2909,22 @@ var NowPlayingService = /** @class */ (function () {
      */
     NowPlayingService.prototype.dummyTrack = function () {
         var dateObj = new Date();
-        return new __WEBPACK_IMPORTED_MODULE_5__models_track_model__["a" /* Track */]({
+        var data = {
             title: __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.default_title,
             artist: __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.default_artist,
             // string otherwise you'll "trim is not a function"
             played_at: dateObj.getTime().toString(),
             duration: '00:00:10'
-        });
+        };
+        console.log('dummyTrack this.streaming.currentStation', this.streaming.currentStation);
+        if (this.streaming.currentStation) {
+            console.log('dummyTrack currentStation cover_art', this.streaming.currentStation.cover_art);
+            data.cover_art = this.streaming.currentStation.cover_art;
+        }
+        else {
+            console.log('dummyTrack currentStation is empty');
+        }
+        return new __WEBPACK_IMPORTED_MODULE_5__models_track_model__["a" /* Track */](data);
     };
     NowPlayingService.prototype.resetDelay = function () {
         // console.log('resetDelay');
@@ -3024,6 +3040,16 @@ var NowPlayingService = /** @class */ (function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             var dataUrl = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].now_playing.data_url.replace('{{limit}}', limit);
+            if (_this.streaming.stations.length == 0) {
+                console.log('fetchTrack in 1 second');
+                setTimeout(function () { return _this.fetchTrack(limit); }, 1000);
+                return;
+            }
+            else {
+                console.log('fetchTrack currentStation', _this.streaming.currentStation);
+            }
+            dataUrl.replace('{{station}}', _this.streaming.currentStation.callsign);
+            console.log('dataUrl', dataUrl);
             if (_this.stopRepeatFetch()) {
                 // console.log('stopRepeatFetch yes');
                 resolve(_this.tracksList);
@@ -3366,9 +3392,9 @@ var Track = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_transfer__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_transfer__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_action_sheet__ = __webpack_require__(128);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -4148,7 +4174,7 @@ var NetworkStatusService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 366:
+/***/ 367:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4330,7 +4356,7 @@ var WPlogin = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 367:
+/***/ 368:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4537,13 +4563,13 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(582);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_http_loader__ = __webpack_require__(368);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_http_loader__ = __webpack_require__(366);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_action_sheet__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__ = __webpack_require__(171);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_device__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_transfer__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__ = __webpack_require__(302);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_transfer__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_file_transfer__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_file__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_admob_free__ = __webpack_require__(295);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_facebook__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_in_app_browser__ = __webpack_require__(345);
@@ -4551,7 +4577,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_splash_screen__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_network__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_social_sharing__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_social_sharing__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_push__ = __webpack_require__(350);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_dialogs__ = __webpack_require__(351);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_geolocation__ = __webpack_require__(173);
@@ -4564,12 +4590,12 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_appads_appads__ = __webpack_require__(175);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_logins_logins__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_facebook_login_iframe__ = __webpack_require__(343);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_facebook_login_app__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_facebook_login_app__ = __webpack_require__(368);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__providers_facebook_fbconnect_settings__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__providers_push_push__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__providers_appwoo_appwoo__ = __webpack_require__(344);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__providers_appdata_appdata__ = __webpack_require__(346);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_wplogin_wplogin__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_wplogin_wplogin__ = __webpack_require__(367);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__providers_logins_login_service__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__providers_language_language_service__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__providers_header_logo_header_logo__ = __webpack_require__(204);
@@ -4693,19 +4719,19 @@ var AppModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/bp-list/bp-list.module#BpListModule', name: 'BpList', segment: 'bp-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-details/bp-details.module#BpDetailsPageModule', name: 'BpDetailsPage', segment: 'bp-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/bp-list/bp-list.module#BpListModule', name: 'BpList', segment: 'bp-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-group/bp-group.module#BpGroupPageModule', name: 'BpGroupPage', segment: 'bp-group', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-messages/bp-messages.module#BpMessagesModule', name: 'BpMessages', segment: 'bp-messages', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-modal/bp-modal.module#BpModalModule', name: 'BpModal', segment: 'bp-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-notifications/bp-notifications.module#BpNotificationsModule', name: 'BpNotifications', segment: 'bp-notifications', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bp-profile/bp-profile.module#BpProfilePageModule', name: 'BpProfilePage', segment: 'bp-profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/download-list/download-list.module#DownloadListModule', name: 'DownloadList', segment: 'download-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/custom-pages/custom-page.module#CustomPageModule', name: 'CustomPage', segment: 'custom-page', priority: 'high', defaultHistory: [] },
-                        { loadChildren: '../pages/login-modal/login-modal.module#LoginModalModule', name: 'LoginModal', segment: 'login-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/download-list/download-list.module#DownloadListModule', name: 'DownloadList', segment: 'download-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/language-settings/language-settings.module#LanguageSettingsModule', name: 'LanguageSettings', segment: 'language-settings', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/media-player/media-player.module#MediaPlayerModule', name: 'MediaPlayer', segment: 'media-player', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login-modal/login-modal.module#LoginModalModule', name: 'LoginModal', segment: 'login-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/media-list/media-list.module#MediaListModule', name: 'MediaList', segment: 'media-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/media-player/media-player.module#MediaPlayerModule', name: 'MediaPlayer', segment: 'media-player', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post-details/post-details.module#PostDetailsPageModule', name: 'PostDetailsPage', segment: 'post-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post-list/post-list.module#PostListModule', name: 'PostList', segment: 'post-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/push-settings/push-settings.module#PushSettingsModule', name: 'PushSettings', segment: 'push-settings', priority: 'low', defaultHistory: [] },
@@ -4929,7 +4955,7 @@ var LoginService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_download_download__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_analytics_analytics_service__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_status_bar__ = __webpack_require__(348);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_social_sharing__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_social_sharing__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_device__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_push__ = __webpack_require__(350);
@@ -6371,7 +6397,9 @@ var RadioStation = /** @class */ (function () {
         this.isPlayingObs = new __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__["Subject"]();
         this.isLoadingObs = new __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__["Subject"]();
         this.name = station.name;
+        this.callsign = station.callsign;
         this.streaming_url = station.url;
+        this.cover_art = station.cover_art;
         if (station.autoplay) {
             this.autoplay = station.autoplay;
         }
@@ -6833,7 +6861,7 @@ var FBConnectAppSettings = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnalyticsService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angulartics2_ga__ = __webpack_require__(293);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angulartics2__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angulartics2__ = __webpack_require__(170);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

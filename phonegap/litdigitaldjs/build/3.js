@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 599:
+/***/ 600:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,8 +9,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_list__ = __webpack_require__(652);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_do_links_do_links_module__ = __webpack_require__(628);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_list__ = __webpack_require__(653);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_do_links_do_links_module__ = __webpack_require__(629);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -234,7 +234,7 @@ exports.default = default_1;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var fix_1 = __webpack_require__(632);
+var fix_1 = __webpack_require__(633);
 /**
  *
  * Split the string with word separators
@@ -291,13 +291,13 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 628:
+/***/ 629:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinksModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__do_links__ = __webpack_require__(629);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__do_links__ = __webpack_require__(630);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -322,14 +322,14 @@ var DoLinksModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 629:
+/***/ 630:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinks; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme__ = __webpack_require__(630);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme__ = __webpack_require__(631);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_anchorme__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -370,7 +370,7 @@ var DoLinks = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 630:
+/***/ 631:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -380,7 +380,7 @@ var util_1 = __webpack_require__(617);
 var email_1 = __webpack_require__(621);
 var ip_1 = __webpack_require__(622);
 var url_1 = __webpack_require__(623);
-var transform_1 = __webpack_require__(631);
+var transform_1 = __webpack_require__(632);
 var hasprotocol_1 = __webpack_require__(625);
 var anchorme = function (str, options) {
     options = util_1.defaultOptions(options);
@@ -405,14 +405,14 @@ exports.default = anchorme;
 
 /***/ }),
 
-/***/ 631:
+/***/ 632:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var separate_1 = __webpack_require__(624);
-var identify_1 = __webpack_require__(633);
+var identify_1 = __webpack_require__(634);
 var separate_2 = __webpack_require__(624);
 function default_1(str, options) {
     var arr = separate_2.separate(str);
@@ -475,7 +475,7 @@ function url2tag(fragment, options) {
 
 /***/ }),
 
-/***/ 632:
+/***/ 633:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -543,7 +543,7 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 633:
+/***/ 634:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -616,7 +616,7 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 652:
+/***/ 653:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

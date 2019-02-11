@@ -4,7 +4,9 @@ import { Observable } from "rxjs";
 
 export class RadioStation {
 	public name: string;
+	public callsign: string;
 	public streaming_url: string;
+	public cover_art: string;
 	public is_playing: boolean = false;
 	public currentSourceIndex: number = 0;
 	public autoplay:boolean = false;
@@ -18,10 +20,12 @@ export class RadioStation {
 	public isLoadingObs = new Subject<boolean>();
 
 	public constructor(
-		station: {name, url, autoplay?}
+		station: {name, callsign, url, cover_art, autoplay?}
 	) {
 		this.name = station.name;
+		this.callsign = station.callsign;
 		this.streaming_url = station.url;
+		this.cover_art = station.cover_art;
 	
 		if(station.autoplay) {
 			this.autoplay = station.autoplay;

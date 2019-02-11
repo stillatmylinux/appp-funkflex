@@ -60,15 +60,21 @@ export class StreamPlayerComponent implements OnInit {
 				this.isLoading = isLoading;
 			});
 		});
+
+		this.npService.trackObs.subscribe( track => {
+			this.currentTrack = track;
+		})
 	}
 
 	playStation(station: string) {
 
 		console.log('StreamPlayerComponent playStation station', station)
 
-		this.streaming.is_loading
+		this.streaming.is_loading = true;
 		this.selectedStation = station;
 		this.streaming.play(station);
+		this.currentTrack = this.npService.dummyTrack();
+		this.npService.getCurrentTrack();
 	}
 	
 	/**
@@ -78,7 +84,7 @@ export class StreamPlayerComponent implements OnInit {
 	 */
 	toggleStreamingPlayer(): void {
 
-		if(this.streaming.stations[this.streaming.selectedStationIndex].status == 'loading') {
+		if(this.streaming.is_loading) {
 			return;
 		}
 
