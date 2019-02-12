@@ -22,7 +22,7 @@ export class StreamPlayerComponent implements OnInit {
 	public playlistactive: boolean;
 	public currentTrack: Track;
 	public trackLoaded: boolean;
-	public tracks: Track[] = [];
+	public tracks: Array<Track> = [];
 	public tracksLoading: boolean;
 	public selectedStation = '97';
 	public testClass: string = 'test-class-null';
@@ -43,6 +43,8 @@ export class StreamPlayerComponent implements OnInit {
 	}
 
 	ngOnInit() {
+
+		this.initTrackList();
 
 		this.streaming.isPlaying().subscribe(isPlaying => {
 			let msg = 'StreamPlayerComponent stream-player is ' + ((isPlaying) ? 'playing' : 'stopped');

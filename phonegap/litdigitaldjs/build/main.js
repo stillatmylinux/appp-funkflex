@@ -1677,11 +1677,11 @@ var map = {
 		0
 	],
 	"../pages/post-details/post-details.module": [
-		613,
+		612,
 		5
 	],
 	"../pages/post-list/post-list.module": [
-		612,
+		613,
 		6
 	],
 	"../pages/push-settings/push-settings.module": [
@@ -2671,6 +2671,7 @@ var StreamPlayerComponent = /** @class */ (function () {
     }
     StreamPlayerComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.initTrackList();
         this.streaming.isPlaying().subscribe(function (isPlaying) {
             var msg = 'StreamPlayerComponent stream-player is ' + ((isPlaying) ? 'playing' : 'stopped');
             console.log(msg);
@@ -4733,8 +4734,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/login-modal/login-modal.module#LoginModalModule', name: 'LoginModal', segment: 'login-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/media-list/media-list.module#MediaListModule', name: 'MediaList', segment: 'media-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/media-player/media-player.module#MediaPlayerModule', name: 'MediaPlayer', segment: 'media-player', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/post-list/post-list.module#PostListModule', name: 'PostList', segment: 'post-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post-details/post-details.module#PostDetailsPageModule', name: 'PostDetailsPage', segment: 'post-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/post-list/post-list.module#PostListModule', name: 'PostList', segment: 'post-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/push-settings/push-settings.module#PushSettingsModule', name: 'PushSettings', segment: 'push-settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
                     ]

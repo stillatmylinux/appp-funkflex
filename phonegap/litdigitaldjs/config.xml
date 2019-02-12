@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- config.xml reference: https://cordova.apache.org/docs/en/latest/config_ref/index.html -->
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.funkflex.app" version="1.0.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.mobileroadie.app_18504" version="1.0.0">
    <name>LitDigitalJS</name>
    <description><![CDATA[LitDigitalJS]]></description>
    <author href="" email="brian+fmf@apppresser.com">LitDigitalJS</author>
