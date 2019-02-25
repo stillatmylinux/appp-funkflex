@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:761759172875:android:c1e9f84774c5c48a",
+        "mobilesdk_app_id": "1:761759172875:android:3c2c562618914dbd",
         "android_client_info": {
-          "package_name": "com.mobileroadie.app_18504"
+          "package_name": "com.litdigitaldjs.app"
         }
       },
       "oauth_client": [
