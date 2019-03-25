@@ -124,4 +124,5 @@
     <plugin name="cordova-plugin-media" spec="^5.0.2">
         <variable name="KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE" value="NO" />
     </plugin>
+    <plugin name="cordova-plugin-background-mode" spec="^0.7.2" />
 </widget>

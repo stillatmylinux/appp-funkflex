@@ -6,6 +6,7 @@ import { Media, MediaObject } from '@ionic-native/media';
 import { RadioStation } from "../_models/radioStation.model";
 import { Observable, Subject } from 'rxjs';
 import { Platform } from 'ionic-angular/platform/platform';
+import { BackgroundMode } from '@ionic-native/background-mode';
 
 @Injectable({
 	providedIn: 'root'
@@ -26,9 +27,11 @@ export class StreamingService {
 		private platform: Platform,
 		private notifications: NotificationsService,
 		private http: HttpClient,
+		private backgroundMode: BackgroundMode,
 		public media: Media
 	) {
 		this.platform.ready().then(() => {
+			this.backgroundMode.enable();
 			this.getStations();
 			this.initFirstStation();
 		});

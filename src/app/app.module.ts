@@ -27,6 +27,8 @@ import { Geolocation } from "@ionic-native/geolocation";
 import { InAppPurchase } from '@ionic-native/in-app-purchase';
 import { Media } from "@ionic-native/media";
 import { StreamingMedia } from "@ionic-native/streaming-media";
+// import { BackgroundMode } from '@ionic-native/background-mode';
+import { BackgroundMode } from "@ionic-native/background-mode";
 
 /* Providers */
 import {AppCamera} from '../providers/camera/app-camera';
@@ -114,6 +116,7 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
     Iframe
   ],
   providers: [
+    BackgroundMode,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: MissingTranslationHandler, useClass: MyMissingTranslationHandler},
     AppCamera,
