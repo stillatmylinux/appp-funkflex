@@ -1,6 +1,6 @@
 webpackJsonp([7],{
 
-/***/ 603:
+/***/ 574:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,9 +8,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BpProfilePageModule", function() { return BpProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_profile__ = __webpack_require__(656);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_sanitize_html_sanitize_html_module__ = __webpack_require__(620);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_profile__ = __webpack_require__(622);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_sanitize_html_sanitize_html_module__ = __webpack_require__(591);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -31,7 +31,7 @@ var BpProfilePageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__bp_profile__["a" /* BpProfilePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__bp_profile__["a" /* BpProfilePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__bp_profile__["a" /* BpProfilePage */]),
                 __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */].forChild(),
                 __WEBPACK_IMPORTED_MODULE_4__pipes_sanitize_html_sanitize_html_module__["a" /* SanitizeHtmlModule */]
             ],
@@ -47,13 +47,13 @@ var BpProfilePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 620:
+/***/ 591:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SanitizeHtmlModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sanitize_html__ = __webpack_require__(621);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sanitize_html__ = __webpack_require__(592);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -78,7 +78,7 @@ var SanitizeHtmlModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 621:
+/***/ 592:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -116,15 +116,15 @@ var SanitizeHtml = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 656:
+/***/ 622:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BpProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_buddypress_bp_provider__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_buddypress_bp_provider__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -313,18 +313,18 @@ var BpProfilePage = /** @class */ (function () {
         this.nav.pop(obj);
     };
     BpProfilePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/bp-profile/bp-profile.html"*/'<ion-header>\n	<ion-navbar>\n\n		<ion-buttons start>\n			<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n			    <ion-icon name="arrow-back"></ion-icon>\n			    {{\'Back\' | translate }}\n			</button>\n\n			<button ion-button menuToggle>\n				<ion-icon name="menu"></ion-icon>\n			</button>\n\n		</ion-buttons>\n\n		<ion-title *ngIf="userData">{{ userData.name }}</ion-title>\n\n		<ion-buttons end *ngIf="isMyProfile">\n			<button ion-button (click)="openLoginModal()"><ion-icon name="log-in"></ion-icon> <!-- <span *ngIf="login_data">{{ \'Logout\' | translate }}</span><span *ngIf="!login_data">{{ \'Login\' | translate }}</span> --></button>\n		</ion-buttons>\n		\n	</ion-navbar>\n</ion-header>\n\n<ion-content>\n\n	<div *ngIf="userData && userData.appp && userData.appp.above_content" [innerHTML]="userData.appp.above_content | sanitizeHtml"></div>\n\n	<img class="cover-image" *ngIf="userData && userData.cover_image" [src]="userData.cover_image" />\n\n	<ion-card *ngIf="userData">\n\n		<ion-item>\n			<ion-avatar item-start *ngIf="userData.avatar_urls">\n				<img *ngIf="userData.avatar_urls && userData.avatar_urls.full" [src]="formatUrl( userData.avatar_urls.full )">\n				<img *ngIf="!userData.avatar_urls.full" [src]="formatUrl( userData.avatar_urls.thumb )">\n			</ion-avatar>\n			<p class="user-name" *ngIf="userData.name" [innerHTML]="userData.name"></p>\n			<p class="mention-name" *ngIf="userData.mention_name" [innerHTML]="\'@\' + userData.mention_name"></p>\n			<button ion-button block (click)="iabLink(userData.link )" color="light">{{ \'View Full Profile\' | translate }}</button>\n			\n		</ion-item>\n\n		<ion-row *ngIf="!isMyProfile">\n			<ion-col text-center>\n				<button ion-button icon-start small clear (click)="message( userData )"><ion-icon name="chatbubbles"></ion-icon> {{ \'Message\' | translate }}</button>\n			</ion-col>\n			<ion-col text-center>\n				<button ion-button icon-start small clear (click)="userActivity(userData )"><ion-icon name="list"></ion-icon> {{ \'Activity\' | translate }}</button>\n			</ion-col>\n			<ion-col text-center>\n				<button *ngIf="!userData.check_friendship" ion-button icon-start small clear (click)="doFriend(userData.id, false)"><ion-icon name="add"></ion-icon> {{ \'Friend\' | translate }}</button>\n				<button *ngIf="userData.check_friendship" ion-button icon-start small clear (click)="doFriend(userData.id, true)"><ion-icon name="remove-circle"></ion-icon> {{ \'Unfriend\' | translate }}</button>\n			</ion-col>\n		</ion-row>\n\n		<ion-row *ngIf="isMyProfile">\n    		<ion-col text-center>\n				<button ion-button icon-start small clear *ngIf="isMyProfile" block (click)="showMessages()"><ion-icon name="chatbubbles"></ion-icon> {{ \'Messages\' | translate }}</button>\n			</ion-col>\n			<ion-col text-center>\n\n				<button id="notification-button" ion-button icon-start small clear (click)="notificationsPage()"><ion-icon name="notifications"></ion-icon> {{ \'Notifications\' | translate }} <ion-badge color="danger" *ngIf="notificationCount && notificationCount != 0"> {{ notificationCount }}</ion-badge></button>\n\n			</ion-col>\n		</ion-row>\n\n	</ion-card>\n\n	<ion-card class="last-activity" *ngIf="userData && userData.last_activity" (click)="userActivity( userData )">\n		<span class="last-update-header">{{ \'Last update\' | translate }}</span>\n		<ion-card-content [innerHTML]="userData.last_activity.content"></ion-card-content>\n	</ion-card>\n\n	<div *ngIf="userData && userData.appp && userData.appp.below_content" [innerHTML]="userData.appp.below_content | sanitizeHtml"></div>\n	\n	<div *ngIf="isError" padding>\n		<p>{{ \'There is a problem displaying this profile. You may need to login, or log out then log back in.\' | translate }}</p>\n		<button ion-button icon-start small clear (click)="openLoginModal()"><ion-icon name="log-in"></ion-icon> {{ \'Please login\' | translate }}</button>\n	</div>\n\n</ion-content>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/bp-profile/bp-profile.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/bp-profile/bp-profile.html"*/'<ion-header>\n	<ion-navbar>\n\n		<ion-buttons start>\n			<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n			    <ion-icon name="arrow-back"></ion-icon>\n			    {{\'Back\' | translate }}\n			</button>\n\n			<button ion-button menuToggle>\n				<ion-icon name="menu"></ion-icon>\n			</button>\n\n		</ion-buttons>\n\n		<ion-title *ngIf="userData">{{ userData.name }}</ion-title>\n\n		<ion-buttons end *ngIf="isMyProfile">\n			<button ion-button (click)="openLoginModal()"><ion-icon name="log-in"></ion-icon> <!-- <span *ngIf="login_data">{{ \'Logout\' | translate }}</span><span *ngIf="!login_data">{{ \'Login\' | translate }}</span> --></button>\n		</ion-buttons>\n		\n	</ion-navbar>\n</ion-header>\n\n<ion-content>\n\n	<div *ngIf="userData && userData.appp && userData.appp.above_content" [innerHTML]="userData.appp.above_content | sanitizeHtml"></div>\n\n	<img class="cover-image" *ngIf="userData && userData.cover_image" [src]="userData.cover_image" />\n\n	<ion-card *ngIf="userData">\n\n		<ion-item>\n			<ion-avatar item-start *ngIf="userData.avatar_urls">\n				<img *ngIf="userData.avatar_urls && userData.avatar_urls.full" [src]="formatUrl( userData.avatar_urls.full )">\n				<img *ngIf="!userData.avatar_urls.full" [src]="formatUrl( userData.avatar_urls.thumb )">\n			</ion-avatar>\n			<p class="user-name" *ngIf="userData.name" [innerHTML]="userData.name"></p>\n			<p class="mention-name" *ngIf="userData.mention_name" [innerHTML]="\'@\' + userData.mention_name"></p>\n			<button ion-button block (click)="iabLink(userData.link )" color="light">{{ \'View Full Profile\' | translate }}</button>\n			\n		</ion-item>\n\n		<ion-row *ngIf="!isMyProfile">\n			<ion-col text-center>\n				<button ion-button icon-start small clear (click)="message( userData )"><ion-icon name="chatbubbles"></ion-icon> {{ \'Message\' | translate }}</button>\n			</ion-col>\n			<ion-col text-center>\n				<button ion-button icon-start small clear (click)="userActivity(userData )"><ion-icon name="list"></ion-icon> {{ \'Activity\' | translate }}</button>\n			</ion-col>\n			<ion-col text-center>\n				<button *ngIf="!userData.check_friendship" ion-button icon-start small clear (click)="doFriend(userData.id, false)"><ion-icon name="add"></ion-icon> {{ \'Friend\' | translate }}</button>\n				<button *ngIf="userData.check_friendship" ion-button icon-start small clear (click)="doFriend(userData.id, true)"><ion-icon name="remove-circle"></ion-icon> {{ \'Unfriend\' | translate }}</button>\n			</ion-col>\n		</ion-row>\n\n		<ion-row *ngIf="isMyProfile">\n    		<ion-col text-center>\n				<button ion-button icon-start small clear *ngIf="isMyProfile" block (click)="showMessages()"><ion-icon name="chatbubbles"></ion-icon> {{ \'Messages\' | translate }}</button>\n			</ion-col>\n			<ion-col text-center>\n\n				<button id="notification-button" ion-button icon-start small clear (click)="notificationsPage()"><ion-icon name="notifications"></ion-icon> {{ \'Notifications\' | translate }} <ion-badge color="danger" *ngIf="notificationCount && notificationCount != 0"> {{ notificationCount }}</ion-badge></button>\n\n			</ion-col>\n		</ion-row>\n\n	</ion-card>\n\n	<ion-card class="last-activity" *ngIf="userData && userData.last_activity" (click)="userActivity( userData )">\n		<span class="last-update-header">{{ \'Last update\' | translate }}</span>\n		<ion-card-content [innerHTML]="userData.last_activity.content"></ion-card-content>\n	</ion-card>\n\n	<div *ngIf="userData && userData.appp && userData.appp.below_content" [innerHTML]="userData.appp.below_content | sanitizeHtml"></div>\n	\n	<div *ngIf="isError" padding>\n		<p>{{ \'There is a problem displaying this profile. You may need to login, or log out then log back in.\' | translate }}</p>\n		<button ion-button icon-start small clear (click)="openLoginModal()"><ion-icon name="log-in"></ion-icon> {{ \'Please login\' | translate }}</button>\n	</div>\n\n</ion-content>'/*ion-inline-end:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/bp-profile/bp-profile.html"*/,
             selector: 'bp-profile'
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["n" /* Platform */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["c" /* Events */],
             __WEBPACK_IMPORTED_MODULE_3__providers_buddypress_bp_provider__["a" /* BpProvider */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["g" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */],
             __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["d" /* TranslateService */]])
     ], BpProfilePage);

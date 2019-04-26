@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import {Component, OnInit, NgZone, ChangeDetectorRef} from '@angular/core';
 import 'rxjs/add/operator/map';
 
 import { NotificationsService } from './_services/notifications.service';
@@ -33,7 +33,8 @@ export class StreamPlayerComponent implements OnInit {
 		private npService: NowPlayingService,
 		public navParams: NavParams,
 		public streaming: StreamingService,
-    	private notifications: NotificationsService
+		public notifications: NotificationsService,
+		private cd: ChangeDetectorRef
 	) {
 		this.playlistactive = false;
 		this.playeractive = true;
@@ -75,12 +76,13 @@ export class StreamPlayerComponent implements OnInit {
 			return;
 
 		this.streaming.is_loading = true;
+		this.cd.detectChanges();
 		this.selectedStation = station;
 		this.streaming.play(station);
 		this.currentTrack = this.npService.dummyTrack();
 		this.npService.getCurrentTrack();
 	}
-	
+
 	/**
 	 * Plays/pauses audio streaming97
 	 *
@@ -102,7 +104,7 @@ export class StreamPlayerComponent implements OnInit {
 			this.streaming.is_playing = true;
 		}
 	}
-	
+
 	/**
 	 * Removes a notification.
 	 *
@@ -112,7 +114,7 @@ export class StreamPlayerComponent implements OnInit {
 	removeNotification(id: string): void{
 		this.notifications.remove(id);
 	}
-	  
+
 	showPlayer(event) {
 		console.log('showPlayer');
 		this.ngZone.run(() => {
@@ -121,7 +123,7 @@ export class StreamPlayerComponent implements OnInit {
 			this.isLoading = false;
 		});
 	}
-	
+
 	showPlaylist(event) {
 		console.log('showPlaylist');
 		this.ngZone.run(() => {
@@ -144,7 +146,7 @@ export class StreamPlayerComponent implements OnInit {
 		//Clone npService's recentlyPlayed array and then reverse newly created one
 		this.tracks = Object.assign([], this.npService.recentlyPlayed).reverse();
 	}
-	
+
 	initTrackList() {
 
 		//Set tracksLoading variable

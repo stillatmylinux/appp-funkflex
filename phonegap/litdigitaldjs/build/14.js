@@ -1,6 +1,6 @@
 webpackJsonp([14],{
 
-/***/ 604:
+/***/ 575:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DownloadListModule", function() { return DownloadListModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__download_list__ = __webpack_require__(657);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__download_list__ = __webpack_require__(623);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,7 +29,7 @@ var DownloadListModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__download_list__["a" /* DownloadList */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__download_list__["a" /* DownloadList */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__download_list__["a" /* DownloadList */]),
                 __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */].forChild()
             ],
             exports: [
@@ -44,7 +44,7 @@ var DownloadListModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 657:
+/***/ 623:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52,8 +52,8 @@ var DownloadListModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_file__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_file__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(118);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -138,14 +138,14 @@ var DownloadList = /** @class */ (function () {
         this.viewCtrl.dismiss();
     };
     DownloadList = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/download-list/download-list.html"*/'<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      {{ title | translate }}\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n<ion-list>\n\n  <ion-item-sliding *ngFor="let download of downloads" #slidingItem>\n\n    <button ion-item (click)="mediaModal(download)">\n\n      <h2>{{download.title}}</h2>\n\n    </button>\n\n    <ion-item-options side="right">\n      <button ion-button color="danger" (click)="removeDownload(download)">\n        <ion-icon name="remove-circle"></ion-icon>\n        {{ \'Delete\' | translate }}\n      </button>\n    </ion-item-options>\n\n  </ion-item-sliding>\n\n  <ion-item *ngIf="!downloads">{{ \'No Downloads available.\' | translate }}</ion-item>\n\n</ion-list>\n\n</ion-content>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/download-list/download-list.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/download-list/download-list.html"*/'<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      {{ title | translate }}\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n<ion-list>\n\n  <ion-item-sliding *ngFor="let download of downloads" #slidingItem>\n\n    <button ion-item (click)="mediaModal(download)">\n\n      <h2>{{download.title}}</h2>\n\n    </button>\n\n    <ion-item-options side="right">\n      <button ion-button color="danger" (click)="removeDownload(download)">\n        <ion-icon name="remove-circle"></ion-icon>\n        {{ \'Delete\' | translate }}\n      </button>\n    </ion-item-options>\n\n  </ion-item-sliding>\n\n  <ion-item *ngIf="!downloads">{{ \'No Downloads available.\' | translate }}</ion-item>\n\n</ion-list>\n\n</ion-content>'/*ion-inline-end:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/download-list/download-list.html"*/,
             selector: 'download-list'
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_file__["a" /* File */],
             __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["d" /* TranslateService */]])
     ], DownloadList);

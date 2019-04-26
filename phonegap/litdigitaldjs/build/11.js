@@ -1,6 +1,6 @@
 webpackJsonp([11],{
 
-/***/ 613:
+/***/ 585:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MediaListModule", function() { return MediaListModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__media_list__ = __webpack_require__(716);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__media_list__ = __webpack_require__(673);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,7 +29,7 @@ var MediaListModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__media_list__["a" /* MediaList */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__media_list__["a" /* MediaList */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__media_list__["a" /* MediaList */]),
                 __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */].forChild()
             ],
             exports: [
@@ -44,22 +44,22 @@ var MediaListModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 716:
+/***/ 673:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MediaList; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_posts_posts__ = __webpack_require__(363);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_globalvars_globalvars__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_posts_posts__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_globalvars_globalvars__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_device__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_network__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_download_download__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ngx_translate_core__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_device__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_network__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_download_download__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ngx_translate_core__ = __webpack_require__(118);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -474,23 +474,23 @@ var MediaList = /** @class */ (function () {
         __metadata("design:type", Object)
     ], MediaList.prototype, "progress", void 0);
     MediaList = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/media-list/media-list.html"*/'<ion-header [ngClass]="customHeaderClasses">\n  \n  <ion-navbar no-border-bottom>\n\n    <ion-buttons start>\n      <button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n          <ion-icon name="arrow-back"></ion-icon>\n          {{\'Back\' | translate }}\n      </button>\n\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n\n    </ion-buttons>\n\n    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    <ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n    <ion-buttons end>\n    <button ion-button class="search-button-header" (click)="toggleSearchBar()">\n        <ion-icon name="search"></ion-icon>\n      </button>\n    </ion-buttons>\n\n    </ion-navbar>\n\n    <ion-toolbar *ngIf="showSearch">\n      <ion-searchbar placeholder="{{\'Search\' | translate }}" debounce="1000" (ionInput)="search($event)" (ionClear)="clearSearch()"></ion-searchbar>\n    </ion-toolbar>\n\n    <ion-toolbar *ngIf="doDownloads" id="favorites-toolbar">\n\n      <button ion-button clear (click)="showAll()">\n        {{ \'All\' | translate }}\n      </button>\n\n      <button ion-button clear (click)="showDownloads()">\n        {{ \'Downloaded\' | translate }}\n      </button>\n\n    </ion-toolbar>\n\n</ion-header>\n\n<ion-content [ngClass]="customClasses">\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n  \n  <ion-list class="media-list">\n\n      <ion-item *ngFor="let item of items">\n\n        <ion-avatar item-left *ngIf="showFeaturedImage">\n          <img *ngIf="item.featured_image_urls && item.featured_image_urls.thumbnail" src="{{item.featured_image_urls.thumbnail}}">\n        </ion-avatar>\n        \n        <div (click)="mediaModal(item)" class="media-click-area">\n\n          <ion-icon item-start name="{{selectedItem.download_left_icon}}" *ngIf="!showFeaturedImage"></ion-icon>\n\n          <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.above_title" [innerHTML]="item.appp.post_list.above_title"></div>\n\n          <h2 *ngIf="item.title && item.title.rendered" [innerHTML]="item.title.rendered"></h2>\n\n          <p class="downloaded-text" *ngIf="item.downloaded">Downloaded</p>\n\n          <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_title" [innerHTML]="item.appp.post_list.below_title"></div>\n\n          <p *ngIf="item.excerpt && item.excerpt.rendered" [innerHTML]="item.excerpt.rendered"></p>\n\n          <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_content" [innerHTML]="item.appp.post_list.below_content"></div>\n\n        </div>\n\n        <ion-icon (click)="addDownload(item)" *ngIf="!item.downloaded && doDownloads" item-end name="{{selectedItem.download_right_icon}}"></ion-icon>\n        <ion-icon (click)="addDownload(item)" *ngIf="item.downloaded" item-end name="remove-circle"></ion-icon>\n\n      </ion-item>\n\n  </ion-list>\n\n  <ion-infinite-scroll (ionInfinite)="loadMore($event)">\n   <ion-infinite-scroll-content></ion-infinite-scroll-content>\n </ion-infinite-scroll>\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar color="light" *ngIf="loadProgress > 0">\n    <p align="center">Downloading...</p>\n    <div class="progress-outer">\n        <div class="progress-inner" [style.width]="loadProgress + \'%\'">\n            {{loadProgress}}%\n        </div>\n    </div>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/media-list/media-list.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/media-list/media-list.html"*/'<ion-header [ngClass]="customHeaderClasses">\n  \n  <ion-navbar no-border-bottom>\n\n    <ion-buttons start>\n      <button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n          <ion-icon name="arrow-back"></ion-icon>\n          {{\'Back\' | translate }}\n      </button>\n\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n\n    </ion-buttons>\n\n    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    <ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n    <ion-buttons end>\n    <button ion-button class="search-button-header" (click)="toggleSearchBar()">\n        <ion-icon name="search"></ion-icon>\n      </button>\n    </ion-buttons>\n\n    </ion-navbar>\n\n    <ion-toolbar *ngIf="showSearch">\n      <ion-searchbar placeholder="{{\'Search\' | translate }}" debounce="1000" (ionInput)="search($event)" (ionClear)="clearSearch()"></ion-searchbar>\n    </ion-toolbar>\n\n    <ion-toolbar *ngIf="doDownloads" id="favorites-toolbar">\n\n      <button ion-button clear (click)="showAll()">\n        {{ \'All\' | translate }}\n      </button>\n\n      <button ion-button clear (click)="showDownloads()">\n        {{ \'Downloaded\' | translate }}\n      </button>\n\n    </ion-toolbar>\n\n</ion-header>\n\n<ion-content [ngClass]="customClasses">\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n  \n  <ion-list class="media-list">\n\n      <ion-item *ngFor="let item of items">\n\n        <ion-avatar item-left *ngIf="showFeaturedImage">\n          <img *ngIf="item.featured_image_urls && item.featured_image_urls.thumbnail" src="{{item.featured_image_urls.thumbnail}}">\n        </ion-avatar>\n        \n        <div (click)="mediaModal(item)" class="media-click-area">\n\n          <ion-icon item-start name="{{selectedItem.download_left_icon}}" *ngIf="!showFeaturedImage"></ion-icon>\n\n          <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.above_title" [innerHTML]="item.appp.post_list.above_title"></div>\n\n          <h2 *ngIf="item.title && item.title.rendered" [innerHTML]="item.title.rendered"></h2>\n\n          <p class="downloaded-text" *ngIf="item.downloaded">Downloaded</p>\n\n          <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_title" [innerHTML]="item.appp.post_list.below_title"></div>\n\n          <p *ngIf="item.excerpt && item.excerpt.rendered" [innerHTML]="item.excerpt.rendered"></p>\n\n          <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_content" [innerHTML]="item.appp.post_list.below_content"></div>\n\n        </div>\n\n        <ion-icon (click)="addDownload(item)" *ngIf="!item.downloaded && doDownloads" item-end name="{{selectedItem.download_right_icon}}"></ion-icon>\n        <ion-icon (click)="addDownload(item)" *ngIf="item.downloaded" item-end name="remove-circle"></ion-icon>\n\n      </ion-item>\n\n  </ion-list>\n\n  <ion-infinite-scroll (ionInfinite)="loadMore($event)">\n   <ion-infinite-scroll-content></ion-infinite-scroll-content>\n </ion-infinite-scroll>\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar color="light" *ngIf="loadProgress > 0">\n    <p align="center">Downloading...</p>\n    <div class="progress-outer">\n        <div class="progress-inner" [style.width]="loadProgress + \'%\'">\n            {{loadProgress}}%\n        </div>\n    </div>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/media-list/media-list.html"*/,
             selector: 'media-list'
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__providers_posts_posts__["a" /* Posts */],
             __WEBPACK_IMPORTED_MODULE_3__providers_globalvars_globalvars__["a" /* GlobalVars */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["g" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["n" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__["a" /* HeaderLogo */],
             __WEBPACK_IMPORTED_MODULE_7__ionic_native_network__["a" /* Network */],
             __WEBPACK_IMPORTED_MODULE_6__ionic_native_device__["a" /* Device */],
             __WEBPACK_IMPORTED_MODULE_8__providers_download_download__["a" /* Download */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_9__ionic_native_file__["a" /* File */],
             __WEBPACK_IMPORTED_MODULE_10__ngx_translate_core__["d" /* TranslateService */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["c" /* Events */],

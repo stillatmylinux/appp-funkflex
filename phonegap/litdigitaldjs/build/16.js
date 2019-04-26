@@ -1,6 +1,6 @@
 webpackJsonp([16],{
 
-/***/ 602:
+/***/ 573:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BpModalModule", function() { return BpModalModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_modal__ = __webpack_require__(655);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_modal__ = __webpack_require__(621);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,7 +29,7 @@ var BpModalModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__bp_modal__["a" /* BpModal */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__bp_modal__["a" /* BpModal */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__bp_modal__["a" /* BpModal */]),
                 __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */].forChild()
             ],
             exports: [
@@ -44,7 +44,7 @@ var BpModalModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 655:
+/***/ 621:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52,10 +52,10 @@ var BpModalModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_device__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_buddypress_bp_provider__ = __webpack_require__(362);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_action_sheet__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_device__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_buddypress_bp_provider__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_action_sheet__ = __webpack_require__(124);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -316,20 +316,20 @@ var BpModal = /** @class */ (function () {
     };
     BpModal = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'bp-modal',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/bp-modal/bp-modal.html"*/'<ion-header class="{{customClasses}}">\n\n  <ion-toolbar>\n  \n    <ion-title>{{ title | translate }}</ion-title>\n\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content class="{{customClasses}}">\n\n  <form (ngSubmit)="submitForm()" padding *ngIf="login_data">\n\n    <ion-item *ngIf="isMessage && !navParams.data.recipients" class="message-recipients">\n\n      <ion-label *ngIf="!recipientArr?.length">To:</ion-label>\n\n      <ion-select *ngIf="recipientArr?.length" [(ngModel)]="recipients" (ionChange)="recipientSelected()" name="recipients" placeholder="To:">\n\n        <ion-option *ngFor="let recipient of recipientArr" [value]="recipient.id">{{recipient.mention_name}}</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <ion-item *ngIf="isMessage">\n      <ion-input type="text" [(ngModel)]="activity.subject" name="subject" placeholder="Subject"></ion-input>\n    </ion-item>\n    \n    <ion-item>\n\n      <ion-thumbnail item-start *ngIf="uploadedImage">\n        <img class="uploaded-image" [src]="uploadedImage">\n      </ion-thumbnail>\n\n      <ion-textarea class="activity-texarea" placeholder="{{ \'Your message\' | translate }}" autocorrect="on" name="content" [(ngModel)]="activity.content"></ion-textarea>\n    </ion-item>\n\n    \n\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <button ion-button type="submit" block>{{ isReply ? \'Post comment\' : isMessage ? \'Send message\' : \'Post update\' | translate }}</button>\n        </ion-col>\n\n        <ion-col *ngIf="!isReply && !isMessage">\n\n          <ion-item class="fake-button" icon-start color="light" (tap)="imageSheet()">\n            <ion-icon name="camera"></ion-icon>\n            {{ \'Add Image\' | translate }}\n          </ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </form>\n\n	<div padding *ngIf="!login_data || !login_data.user_id">\n    	{{ \'Login to post a reply.\' | translate }}\n      <button ion-button (click)="loginModal()">{{ \'Login\' | translate }}</button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/bp-modal/bp-modal.html"*/
+            selector: 'bp-modal',template:/*ion-inline-start:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/bp-modal/bp-modal.html"*/'<ion-header class="{{customClasses}}">\n\n  <ion-toolbar>\n  \n    <ion-title>{{ title | translate }}</ion-title>\n\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content class="{{customClasses}}">\n\n  <form (ngSubmit)="submitForm()" padding *ngIf="login_data">\n\n    <ion-item *ngIf="isMessage && !navParams.data.recipients" class="message-recipients">\n\n      <ion-label *ngIf="!recipientArr?.length">To:</ion-label>\n\n      <ion-select *ngIf="recipientArr?.length" [(ngModel)]="recipients" (ionChange)="recipientSelected()" name="recipients" placeholder="To:">\n\n        <ion-option *ngFor="let recipient of recipientArr" [value]="recipient.id">{{recipient.mention_name}}</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <ion-item *ngIf="isMessage">\n      <ion-input type="text" [(ngModel)]="activity.subject" name="subject" placeholder="Subject"></ion-input>\n    </ion-item>\n    \n    <ion-item>\n\n      <ion-thumbnail item-start *ngIf="uploadedImage">\n        <img class="uploaded-image" [src]="uploadedImage">\n      </ion-thumbnail>\n\n      <ion-textarea class="activity-texarea" placeholder="{{ \'Your message\' | translate }}" autocorrect="on" name="content" [(ngModel)]="activity.content"></ion-textarea>\n    </ion-item>\n\n    \n\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <button ion-button type="submit" block>{{ isReply ? \'Post comment\' : isMessage ? \'Send message\' : \'Post update\' | translate }}</button>\n        </ion-col>\n\n        <ion-col *ngIf="!isReply && !isMessage">\n\n          <ion-item class="fake-button" icon-start color="light" (tap)="imageSheet()">\n            <ion-icon name="camera"></ion-icon>\n            {{ \'Add Image\' | translate }}\n          </ion-item>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </form>\n\n	<div padding *ngIf="!login_data || !login_data.user_id">\n    	{{ \'Login to post a reply.\' | translate }}\n      <button ion-button (click)="loginModal()">{{ \'Login\' | translate }}</button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/bp-modal/bp-modal.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
             __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["d" /* TranslateService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_device__["a" /* Device */],
             __WEBPACK_IMPORTED_MODULE_5__providers_buddypress_bp_provider__["a" /* BpProvider */],
             __WEBPACK_IMPORTED_MODULE_6__ionic_native_action_sheet__["a" /* ActionSheet */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */]])
     ], BpModal);
     return BpModal;
 }());

@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 615:
+/***/ 586:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,9 +8,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BpListModule", function() { return BpListModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_list__ = __webpack_require__(718);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_do_links_do_links_module__ = __webpack_require__(630);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_list__ = __webpack_require__(674);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_do_links_do_links_module__ = __webpack_require__(601);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -31,7 +31,7 @@ var BpListModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__bp_list__["a" /* BpList */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__bp_list__["a" /* BpList */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__bp_list__["a" /* BpList */]),
                 __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */].forChild(),
                 __WEBPACK_IMPORTED_MODULE_4__pipes_do_links_do_links_module__["a" /* DoLinksModule */]
             ],
@@ -47,7 +47,7 @@ var BpListModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 618:
+/***/ 589:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109,7 +109,7 @@ exports.isPort = isPort;
 
 /***/ }),
 
-/***/ 619:
+/***/ 590:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -121,13 +121,13 @@ exports.htmlAttrs = ["src=", "data=", "href=", "cite=", "formaction=", "icon=", 
 
 /***/ }),
 
-/***/ 622:
+/***/ 593:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var lists_1 = __webpack_require__(619);
+var lists_1 = __webpack_require__(590);
 // pattern that an emails MUST have
 var pattern = /^[a-z0-9!#$%&'*+\-/=?^_`{|}~.]+@([a-z0-9%\-]+\.){1,}([a-z0-9\-]+)?$/i;
 // patterns that an email can not have
@@ -159,13 +159,13 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 623:
+/***/ 594:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(618);
+var util_1 = __webpack_require__(589);
 // general IP pattern https://regex101.com/r/rzUcJ4/1
 var pattern = /^(\d{1,3}\.){3}\d{1,3}(:\d{1,5})?(\/([a-z0-9\-._~:\/\?#\[\]@!$&'\(\)\*\+,;=%]+)?)?$/i;
 function default_1(str) {
@@ -199,14 +199,14 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 624:
+/***/ 595:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(618);
-var lists_1 = __webpack_require__(619);
+var util_1 = __webpack_require__(589);
+var lists_1 = __webpack_require__(590);
 var pattern = /^(https?:\/\/|ftps?:\/\/)?([a-z0-9%\-]+\.){1,}([a-z0-9\-]+)?(:(\d{1,5}))?(\/([a-z0-9\-._~:\/\?#\[\]@!$&'\(\)\*\+,;=%]+)?)?$/i;
 function default_1(str) {
     // general pattern recognition https://regex101.com/r/RgKTA4/2
@@ -228,13 +228,13 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 625:
+/***/ 596:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var fix_1 = __webpack_require__(634);
+var fix_1 = __webpack_require__(605);
 /**
  *
  * Split the string with word separators
@@ -263,7 +263,7 @@ exports.deSeparate = deSeparate;
 
 /***/ }),
 
-/***/ 626:
+/***/ 597:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -291,13 +291,13 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 630:
+/***/ 601:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinksModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__do_links__ = __webpack_require__(631);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__do_links__ = __webpack_require__(602);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -322,14 +322,14 @@ var DoLinksModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 631:
+/***/ 602:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinks; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme__ = __webpack_require__(632);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme__ = __webpack_require__(603);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_anchorme__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -370,18 +370,18 @@ var DoLinks = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 632:
+/***/ 603:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(618);
-var email_1 = __webpack_require__(622);
-var ip_1 = __webpack_require__(623);
-var url_1 = __webpack_require__(624);
-var transform_1 = __webpack_require__(633);
-var hasprotocol_1 = __webpack_require__(626);
+var util_1 = __webpack_require__(589);
+var email_1 = __webpack_require__(593);
+var ip_1 = __webpack_require__(594);
+var url_1 = __webpack_require__(595);
+var transform_1 = __webpack_require__(604);
+var hasprotocol_1 = __webpack_require__(597);
 var anchorme = function (str, options) {
     options = util_1.defaultOptions(options);
     var result = transform_1.default(str, options);
@@ -405,15 +405,15 @@ exports.default = anchorme;
 
 /***/ }),
 
-/***/ 633:
+/***/ 604:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var separate_1 = __webpack_require__(625);
-var identify_1 = __webpack_require__(635);
-var separate_2 = __webpack_require__(625);
+var separate_1 = __webpack_require__(596);
+var identify_1 = __webpack_require__(606);
+var separate_2 = __webpack_require__(596);
 function default_1(str, options) {
     var arr = separate_2.separate(str);
     var identified = identify_1.default(arr, options);
@@ -475,7 +475,7 @@ function url2tag(fragment, options) {
 
 /***/ }),
 
-/***/ 634:
+/***/ 605:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -543,17 +543,17 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 635:
+/***/ 606:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var email_1 = __webpack_require__(622);
-var hasprotocol_1 = __webpack_require__(626);
-var lists_1 = __webpack_require__(619);
-var ip_1 = __webpack_require__(623);
-var url_1 = __webpack_require__(624);
+var email_1 = __webpack_require__(593);
+var hasprotocol_1 = __webpack_require__(597);
+var lists_1 = __webpack_require__(590);
+var ip_1 = __webpack_require__(594);
+var url_1 = __webpack_require__(595);
 function default_1(inputArr, options) {
     return inputArr.map(function (fragment, index) {
         var encoded = encodeURI(fragment);
@@ -616,22 +616,22 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 718:
+/***/ 674:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BpList; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_posts_posts__ = __webpack_require__(363);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_globalvars_globalvars__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_header_logo_header_logo__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_posts_posts__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_globalvars_globalvars__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_header_logo_header_logo__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_device__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_network__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_buddypress_bp_provider__ = __webpack_require__(362);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_analytics_analytics_service__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_device__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_network__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_buddypress_bp_provider__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_analytics_analytics_service__ = __webpack_require__(84);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1222,22 +1222,22 @@ var BpList = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["b" /* Content */])
     ], BpList.prototype, "content", void 0);
     BpList = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/bp-list/bp-list.html"*/'<ion-header [ngClass]="customHeaderClasses">\n\n  <ion-navbar>\n    \n    <ion-buttons start>\n    <button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n        <ion-icon name="arrow-back"></ion-icon>\n        {{ \'Back\' | translate }}\n    </button>\n\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    </ion-buttons>\n\n    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    <ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n    <ion-buttons end>\n\n      <button id="notification-button" *ngIf="notifications" ion-button (click)="viewNotifications()" clear>\n          <ion-icon name="notifications">\n            <ion-badge color="danger">{{ notifications }}</ion-badge>\n          </ion-icon>              \n      </button>\n\n      <button ion-button *ngIf="activityList && !isUserActivity" (click)="doActivity()">\n        <ion-icon name="ios-create-outline"></ion-icon>\n      </button>\n\n      <button ion-button class="search-button-header" (click)="toggleSearchBar()">\n        <ion-icon name="search"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n  <ion-toolbar *ngIf="showSearch">\n    <ion-searchbar placeholder="{{\'Search\' | translate }}" debounce="1000" (ionInput)="search($event)" (ionClear)="clearSearch()"></ion-searchbar>\n  </ion-toolbar>\n\n  <ion-item *ngIf="bpSegments && !showSearch" id="favorites-toolbar" color="light">\n\n    <ion-select [(ngModel)]="segments" (ionChange)="segmentChanged()" placeholder="Filter">\n\n      <ion-option *ngFor="let segment of bpSegments" [value]="segment.name">{{ segment.name | translate }}</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n</ion-header>\n\n<ion-content [ngClass]="customClasses">\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-list *ngIf="activityList">\n\n  	<ion-card *ngFor="let item of items">\n\n      <ion-item *ngIf="item.display_name">\n        <ion-avatar item-start (tap)="openMember(item)">\n          <img *ngIf="item.user_avatar && item.user_avatar.thumb" [src]="formatUrl( item.user_avatar.thumb )">\n          <img *ngIf="!item.user_avatar || !item.user_avatar.thumb" src="assets/default.png">\n        </ion-avatar>\n        <span class="comment-name" [innerHTML]="item.display_name">\n        </span>\n        <span class="group-name" *ngIf="item.title">{{ getGroupName( item.title ) }}</span>\n      </ion-item>\n\n      <ion-card-content>\n        \n        <div class="item-content" *ngIf="item.content" [innerHTML]="item.content | doLinks"></div>\n\n      </ion-card-content>\n\n      <ion-row>\n        <ion-col>\n          <button ion-button icon-start clear small (click)="loadDetail(item)">\n\n            <div *ngIf="!item.comment_count || item.comment_count === \'0\'"><ion-icon name="text" ></ion-icon> {{ \'Comment\' | translate }}</div>\n\n            <div *ngIf="item.comment_count && item.comment_count === \'1\'"><span>{{item.comment_count}}</span> {{ \'Comment\' | translate }}</div>\n\n            <div *ngIf="item.comment_count && item.comment_count != \'0\' && item.comment_count != \'1\'"><span>{{item.comment_count}}</span> {{ \'Comments\' | translate }}</div>\n\n          </button>\n        </ion-col>\n        <ion-col text-right>\n          <button ion-button icon-start clear small (tap)="favorite(item)">\n            <ion-icon name="thumbs-up"></ion-icon>\n            <ion-badge item-end *ngIf="item.favorites">{{item.favorites}}</ion-badge>\n          </button>\n        </ion-col>\n      </ion-row>\n\n    </ion-card>\n\n    <ion-item *ngIf="noItems">{{ \'No items to show.\' | translate }}</ion-item>\n\n  </ion-list>\n\n  <ion-list *ngIf="groupList">\n\n    <ion-item *ngFor="let item of items">\n\n      <ion-avatar item-start *ngIf="item.avatar_urls" (tap)="openGroup(item)">\n        <img *ngIf="item.avatar_urls && item.avatar_urls.thumb" [src]="formatUrl( item.avatar_urls.thumb )">\n        <img *ngIf="!item.avatar_urls || !item.avatar_urls.thumb" src="assets/default.png">\n      </ion-avatar>\n\n      <span (tap)="openGroup(item)" class="comment-name" [innerHTML]="item.name"></span>\n        \n      <div class="item-content" *ngIf="item.description" (tap)="openGroup(item)" [innerHTML]="item.description"></div>\n\n      <!-- <button *ngIf="!myGroups" ion-button color="light" (tap)="joinGroup(item)" item-end>Join Group</button> -->\n\n    </ion-item>\n\n    <ion-item *ngIf="noItems">{{ \'No items to show.\' | translate }}</ion-item>\n\n  </ion-list>\n\n  <ion-list *ngIf="memberList">\n\n    <ion-item-divider color="light" (tap)="myProfile()" *ngIf="login_data">\n      {{ \'My Profile\' || translate }}\n      <ion-icon item-end name="ios-arrow-forward"></ion-icon>\n    </ion-item-divider>\n\n    <ion-item *ngFor="let item of items" (tap)="openMember(item)">\n\n      <ion-avatar item-start *ngIf="item.avatar">\n        <img [src]="formatUrl( item.avatar )">\n      </ion-avatar>\n\n      <span class="comment-name" [innerHTML]="item.name"></span>\n\n      <!-- <button ion-button color="light" (tap)="AddFriend(item)" item-end>Add Friend</button> -->\n\n    </ion-item>\n\n    <ion-item *ngIf="noItems">{{ \'No items to show.\' | translate }}</ion-item>\n\n  </ion-list>\n\n  <ion-infinite-scroll (ionInfinite)="loadMore($event)">\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n\n\n</ion-content>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/bp-list/bp-list.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/bp-list/bp-list.html"*/'<ion-header [ngClass]="customHeaderClasses">\n\n  <ion-navbar>\n    \n    <ion-buttons start>\n    <button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n        <ion-icon name="arrow-back"></ion-icon>\n        {{ \'Back\' | translate }}\n    </button>\n\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    </ion-buttons>\n\n    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    <ion-title *ngIf="!show_header_logo">{{title | translate}}</ion-title>\n\n    <ion-buttons end>\n\n      <button id="notification-button" *ngIf="notifications" ion-button (click)="viewNotifications()" clear>\n          <ion-icon name="notifications">\n            <ion-badge color="danger">{{ notifications }}</ion-badge>\n          </ion-icon>              \n      </button>\n\n      <button ion-button *ngIf="activityList && !isUserActivity" (click)="doActivity()">\n        <ion-icon name="ios-create-outline"></ion-icon>\n      </button>\n\n      <button ion-button class="search-button-header" (click)="toggleSearchBar()">\n        <ion-icon name="search"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n  <ion-toolbar *ngIf="showSearch">\n    <ion-searchbar placeholder="{{\'Search\' | translate }}" debounce="1000" (ionInput)="search($event)" (ionClear)="clearSearch()"></ion-searchbar>\n  </ion-toolbar>\n\n  <ion-item *ngIf="bpSegments && !showSearch" id="favorites-toolbar" color="light">\n\n    <ion-select [(ngModel)]="segments" (ionChange)="segmentChanged()" placeholder="Filter">\n\n      <ion-option *ngFor="let segment of bpSegments" [value]="segment.name">{{ segment.name | translate }}</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n</ion-header>\n\n<ion-content [ngClass]="customClasses">\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-list *ngIf="activityList">\n\n  	<ion-card *ngFor="let item of items">\n\n      <ion-item *ngIf="item.display_name">\n        <ion-avatar item-start (tap)="openMember(item)">\n          <img *ngIf="item.user_avatar && item.user_avatar.thumb" [src]="formatUrl( item.user_avatar.thumb )">\n          <img *ngIf="!item.user_avatar || !item.user_avatar.thumb" src="assets/default.png">\n        </ion-avatar>\n        <span class="comment-name" [innerHTML]="item.display_name">\n        </span>\n        <span class="group-name" *ngIf="item.title">{{ getGroupName( item.title ) }}</span>\n      </ion-item>\n\n      <ion-card-content>\n        \n        <div class="item-content" *ngIf="item.content" [innerHTML]="item.content | doLinks"></div>\n\n      </ion-card-content>\n\n      <ion-row>\n        <ion-col>\n          <button ion-button icon-start clear small (click)="loadDetail(item)">\n\n            <div *ngIf="!item.comment_count || item.comment_count === \'0\'"><ion-icon name="text" ></ion-icon> {{ \'Comment\' | translate }}</div>\n\n            <div *ngIf="item.comment_count && item.comment_count === \'1\'"><span>{{item.comment_count}}</span> {{ \'Comment\' | translate }}</div>\n\n            <div *ngIf="item.comment_count && item.comment_count != \'0\' && item.comment_count != \'1\'"><span>{{item.comment_count}}</span> {{ \'Comments\' | translate }}</div>\n\n          </button>\n        </ion-col>\n        <ion-col text-right>\n          <button ion-button icon-start clear small (tap)="favorite(item)">\n            <ion-icon name="thumbs-up"></ion-icon>\n            <ion-badge item-end *ngIf="item.favorites">{{item.favorites}}</ion-badge>\n          </button>\n        </ion-col>\n      </ion-row>\n\n    </ion-card>\n\n    <ion-item *ngIf="noItems">{{ \'No items to show.\' | translate }}</ion-item>\n\n  </ion-list>\n\n  <ion-list *ngIf="groupList">\n\n    <ion-item *ngFor="let item of items">\n\n      <ion-avatar item-start *ngIf="item.avatar_urls" (tap)="openGroup(item)">\n        <img *ngIf="item.avatar_urls && item.avatar_urls.thumb" [src]="formatUrl( item.avatar_urls.thumb )">\n        <img *ngIf="!item.avatar_urls || !item.avatar_urls.thumb" src="assets/default.png">\n      </ion-avatar>\n\n      <span (tap)="openGroup(item)" class="comment-name" [innerHTML]="item.name"></span>\n        \n      <div class="item-content" *ngIf="item.description" (tap)="openGroup(item)" [innerHTML]="item.description"></div>\n\n      <!-- <button *ngIf="!myGroups" ion-button color="light" (tap)="joinGroup(item)" item-end>Join Group</button> -->\n\n    </ion-item>\n\n    <ion-item *ngIf="noItems">{{ \'No items to show.\' | translate }}</ion-item>\n\n  </ion-list>\n\n  <ion-list *ngIf="memberList">\n\n    <ion-item-divider color="light" (tap)="myProfile()" *ngIf="login_data">\n      {{ \'My Profile\' || translate }}\n      <ion-icon item-end name="ios-arrow-forward"></ion-icon>\n    </ion-item-divider>\n\n    <ion-item *ngFor="let item of items" (tap)="openMember(item)">\n\n      <ion-avatar item-start *ngIf="item.avatar">\n        <img [src]="formatUrl( item.avatar )">\n      </ion-avatar>\n\n      <span class="comment-name" [innerHTML]="item.name"></span>\n\n      <!-- <button ion-button color="light" (tap)="AddFriend(item)" item-end>Add Friend</button> -->\n\n    </ion-item>\n\n    <ion-item *ngIf="noItems">{{ \'No items to show.\' | translate }}</ion-item>\n\n  </ion-list>\n\n  <ion-infinite-scroll (ionInfinite)="loadMore($event)">\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n\n\n</ion-content>'/*ion-inline-end:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/bp-list/bp-list.html"*/,
             selector: 'bp-list'
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3__providers_posts_posts__["a" /* Posts */],
             __WEBPACK_IMPORTED_MODULE_4__providers_globalvars_globalvars__["a" /* GlobalVars */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["g" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["n" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_5__providers_header_logo_header_logo__["a" /* HeaderLogo */],
             __WEBPACK_IMPORTED_MODULE_8__ionic_native_network__["a" /* Network */],
             __WEBPACK_IMPORTED_MODULE_7__ionic_native_device__["a" /* Device */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["c" /* Events */],
             __WEBPACK_IMPORTED_MODULE_10__providers_analytics_analytics_service__["a" /* AnalyticsService */],
             __WEBPACK_IMPORTED_MODULE_9__providers_buddypress_bp_provider__["a" /* BpProvider */],

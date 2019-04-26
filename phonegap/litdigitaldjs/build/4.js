@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 616:
+/***/ 587:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,12 +8,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomPageModule", function() { return CustomPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index__ = __webpack_require__(719);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index__ = __webpack_require__(675);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__custom_page__ = __webpack_require__(725);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ap_list_ap_list_module__ = __webpack_require__(651);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_ap_slider_ap_slider_module__ = __webpack_require__(652);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__custom_page__ = __webpack_require__(681);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ap_list_ap_list_module__ = __webpack_require__(617);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_ap_slider_ap_slider_module__ = __webpack_require__(618);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -36,7 +36,7 @@ var CustomPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4__custom_page__["a" /* CustomPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_4__custom_page__["a" /* CustomPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_4__custom_page__["a" /* CustomPage */]),
                 __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */].forChild(),
                 __WEBPACK_IMPORTED_MODULE_3_angular2_dynamic_component_index__["DynamicComponentModule"],
                 __WEBPACK_IMPORTED_MODULE_5__components_ap_list_ap_list_module__["a" /* ApListComponentModule */],
@@ -57,16 +57,16 @@ var CustomPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 649:
+/***/ 615:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var core_1 = __webpack_require__(0);
-var common_1 = __webpack_require__(53);
+var common_1 = __webpack_require__(50);
 var http_1 = __webpack_require__(18);
-var index_1 = __webpack_require__(720);
-var Utils_1 = __webpack_require__(723);
+var index_1 = __webpack_require__(676);
+var Utils_1 = __webpack_require__(679);
 var DYNAMIC_SELECTOR = 'DynamicComponent';
 var DynamicComponentMetadata = (function () {
     function DynamicComponentMetadata(selector, template) {
@@ -254,7 +254,7 @@ exports.DynamicComponent = DynamicComponent;
 
 /***/ }),
 
-/***/ 650:
+/***/ 616:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -279,15 +279,15 @@ exports.PropertyAnnotationFactory = PropertyAnnotationFactory;
 
 /***/ }),
 
-/***/ 651:
+/***/ 617:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApListComponentModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ap_list__ = __webpack_require__(726);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ap_list__ = __webpack_require__(682);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -307,7 +307,7 @@ var ApListComponentModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__ap_list__["a" /* ApListComponent */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__ap_list__["a" /* ApListComponent */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__ap_list__["a" /* ApListComponent */]),
                 __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */].forChild()
             ],
             exports: [
@@ -322,15 +322,15 @@ var ApListComponentModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 652:
+/***/ 618:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApSliderComponentModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ap_slider__ = __webpack_require__(727);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ap_slider__ = __webpack_require__(683);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -350,7 +350,7 @@ var ApSliderComponentModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__ap_slider__["a" /* ApSliderComponent */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__ap_slider__["a" /* ApSliderComponent */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__ap_slider__["a" /* ApSliderComponent */]),
                 __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */].forChild()
             ],
             exports: [
@@ -365,40 +365,40 @@ var ApSliderComponentModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 719:
+/***/ 675:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var DynamicComponent_1 = __webpack_require__(649);
+var DynamicComponent_1 = __webpack_require__(615);
 exports.DynamicComponent = DynamicComponent_1.DynamicComponent;
 exports.DynamicComponentMetadata = DynamicComponent_1.DynamicComponentMetadata;
-var DynamicComponentModule_1 = __webpack_require__(724);
+var DynamicComponentModule_1 = __webpack_require__(680);
 exports.DynamicComponentModule = DynamicComponentModule_1.DynamicComponentModule;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 720:
+/***/ 676:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var MetadataHelper_1 = __webpack_require__(721);
+var MetadataHelper_1 = __webpack_require__(677);
 exports.MetadataHelper = MetadataHelper_1.MetadataHelper;
-var MetadataFactory_1 = __webpack_require__(650);
+var MetadataFactory_1 = __webpack_require__(616);
 exports.PropertyAnnotationFactory = MetadataFactory_1.PropertyAnnotationFactory;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 721:
+/***/ 677:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var Utils_1 = __webpack_require__(722);
-var MetadataFactory_1 = __webpack_require__(650);
+var Utils_1 = __webpack_require__(678);
+var MetadataFactory_1 = __webpack_require__(616);
 var MetadataHelper = (function () {
     function MetadataHelper() {
     }
@@ -439,7 +439,7 @@ exports.MetadataHelper = MetadataHelper;
 
 /***/ }),
 
-/***/ 722:
+/***/ 678:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -469,7 +469,7 @@ exports.Utils = Utils;
 
 /***/ }),
 
-/***/ 723:
+/***/ 679:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -499,13 +499,13 @@ exports.Utils = Utils;
 
 /***/ }),
 
-/***/ 724:
+/***/ 680:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var core_1 = __webpack_require__(0);
-var DynamicComponent_1 = __webpack_require__(649);
+var DynamicComponent_1 = __webpack_require__(615);
 var DynamicComponentModule = (function () {
     function DynamicComponentModule() {
     }
@@ -528,27 +528,27 @@ exports.DynamicComponentModule = DynamicComponentModule;
 
 /***/ }),
 
-/***/ 725:
+/***/ 681:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_network__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_header_logo_header_logo__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_posts_posts__ = __webpack_require__(363);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_globalvars_globalvars__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_menus_menu_service__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_inapppurchase_inapppurchase__ = __webpack_require__(369);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_analytics_analytics_service__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__iframe_iframe__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_logins_login_service__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_ap_list_ap_list_module__ = __webpack_require__(651);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_ap_slider_ap_slider_module__ = __webpack_require__(652);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_network_network_status_service__ = __webpack_require__(370);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_network__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_header_logo_header_logo__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_posts_posts__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_globalvars_globalvars__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_menus_menu_service__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_inapppurchase_inapppurchase__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_analytics_analytics_service__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__iframe_iframe__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_logins_login_service__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_ap_list_ap_list_module__ = __webpack_require__(617);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_ap_slider_ap_slider_module__ = __webpack_require__(618);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_network_network_status_service__ = __webpack_require__(356);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -624,7 +624,7 @@ var CustomPage = /** @class */ (function () {
         this.subscriptions = [];
         this.rtlBack = false;
         this.isRTL = false;
-        this.extraModules = [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicModule */], __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */], __WEBPACK_IMPORTED_MODULE_13__components_ap_list_ap_list_module__["a" /* ApListComponentModule */], __WEBPACK_IMPORTED_MODULE_14__components_ap_slider_ap_slider_module__["a" /* ApSliderComponentModule */]];
+        this.extraModules = [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicModule */], __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */], __WEBPACK_IMPORTED_MODULE_13__components_ap_list_ap_list_module__["a" /* ApListComponentModule */], __WEBPACK_IMPORTED_MODULE_14__components_ap_slider_ap_slider_module__["a" /* ApSliderComponentModule */]];
         this.show_segments = false;
         this.login_modal_open = false;
         this.show_header_logo = false;
@@ -1127,23 +1127,23 @@ var CustomPage = /** @class */ (function () {
         }));
     };
     CustomPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/custom-pages/custom-page.html"*/'<ion-header [ngClass]="customHeaderClasses">\n\n	<ion-navbar>\n\n		<ion-buttons start>\n			<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n				<ion-icon name="arrow-back"></ion-icon>\n				{{\'Back\' | translate }}\n			</button>\n			<button ion-button menuToggle>\n				<ion-icon name="menu"></ion-icon>\n			</button>\n\n		</ion-buttons>\n\n		<img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n		<ion-title *ngIf="!show_header_logo">{{pagetitle | translate}}</ion-title>\n\n	</ion-navbar>\n</ion-header>\n\n<ion-content *ngIf="!use_dynamic" [ngClass]="customClasses">\n\n	Content goes here\n	\n</ion-content>\n<ion-content *ngIf="use_dynamic" [ngClass]="customClasses">\n\n	<DynamicComponent *ngIf="templateUrl"\n    [componentTemplateUrl]="templateUrl" \n    [componentModules]="extraModules"\n		[componentInputData]="inputData"></DynamicComponent>\n\n	<div *ngIf="!templateUrl">Missing templateUrl</div>\n\n</ion-content>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/custom-pages/custom-page.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/custom-pages/custom-page.html"*/'<ion-header [ngClass]="customHeaderClasses">\n\n	<ion-navbar>\n\n		<ion-buttons start>\n			<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n				<ion-icon name="arrow-back"></ion-icon>\n				{{\'Back\' | translate }}\n			</button>\n			<button ion-button menuToggle>\n				<ion-icon name="menu"></ion-icon>\n			</button>\n\n		</ion-buttons>\n\n		<img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n		<ion-title *ngIf="!show_header_logo">{{pagetitle | translate}}</ion-title>\n\n	</ion-navbar>\n</ion-header>\n\n<ion-content *ngIf="!use_dynamic" [ngClass]="customClasses">\n\n	Content goes here\n	\n</ion-content>\n<ion-content *ngIf="use_dynamic" [ngClass]="customClasses">\n\n	<DynamicComponent *ngIf="templateUrl"\n    [componentTemplateUrl]="templateUrl" \n    [componentModules]="extraModules"\n		[componentInputData]="inputData"></DynamicComponent>\n\n	<div *ngIf="!templateUrl">Missing templateUrl</div>\n\n</ion-content>'/*ion-inline-end:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/custom-pages/custom-page.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Nav */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["d" /* TranslateService */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */],
             __WEBPACK_IMPORTED_MODULE_5__providers_header_logo_header_logo__["a" /* HeaderLogo */],
             __WEBPACK_IMPORTED_MODULE_12__providers_logins_login_service__["a" /* LoginService */],
             __WEBPACK_IMPORTED_MODULE_9__providers_inapppurchase_inapppurchase__["a" /* IAP */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_6__providers_posts_posts__["a" /* Posts */],
             __WEBPACK_IMPORTED_MODULE_7__providers_globalvars_globalvars__["a" /* GlobalVars */],
             __WEBPACK_IMPORTED_MODULE_8__providers_menus_menu_service__["a" /* MenuService */],
@@ -1159,18 +1159,18 @@ var CustomPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 726:
+/***/ 682:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApListComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_posts_posts__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_posts_posts__ = __webpack_require__(350);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_network__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_iframe_iframe__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_network__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_iframe_iframe__ = __webpack_require__(120);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1414,16 +1414,16 @@ var ApListComponent = /** @class */ (function () {
     ], ApListComponent.prototype, "refresh", void 0);
     ApListComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'ap-list',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/components/ap-list/ap-list.html"*/'<div class="list-loading-spinner" *ngIf="loading"><ion-spinner name="bubbles"></ion-spinner></div>\n\n<div *ngIf="refresh && !loading" class="list-refresher">\n  <ion-icon name="refresh" (tap)="doRefresh()"></ion-icon>\n  <span (tap)="doRefresh()">{{ \'Refresh\' | translate }}</span>\n</div>\n\n<ion-list *ngIf="card">\n\n    <ion-card (click)="loadDetail(item)" *ngFor="let item of items">\n      \n      <div class="card-featured-wrap" *ngIf="item.featured_image_urls">\n        <div class="card-featured-image" [ngStyle]="{\'background-image\': \'url(\'+ getBgImage( item ) +\')\'}"></div>\n      </div>\n\n      <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.above_title" [innerHTML]="item.appp.post_list.above_title"></div>\n\n      <ion-card-content>\n\n        <ion-card-title *ngIf="item.title && item.title.rendered">\n          <h2 [innerHTML]="item.title.rendered"></h2>\n        </ion-card-title>\n\n        <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_title" [innerHTML]="item.appp.post_list.below_title"></div>\n\n        <p *ngIf="item.excerpt && item.excerpt.rendered" [innerHTML]="truncateString( item.excerpt.rendered )"></p>\n\n        <div class="item-content" *ngIf="!item.excerpt && item.content.rendered" [innerHTML]="truncateString( item.content.rendered )"></div>\n\n      </ion-card-content>\n\n      <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_content" [innerHTML]="item.appp.post_list.below_content"></div>\n\n    </ion-card>\n\n</ion-list>\n\n<ion-list *ngIf="!card">\n\n	<ion-item-sliding *ngFor="let item of items" #slidingItem>\n      <button ion-item (click)="loadDetail(item)">\n\n      <ion-avatar item-left *ngIf="item.featured_image_urls">\n        <img *ngIf="item.featured_image_urls && item.featured_image_urls.thumbnail" src="{{item.featured_image_urls.thumbnail}}">\n        <img *ngIf="!item.featured_image_urls || !item.featured_image_urls.thumbnail" src="assets/default.png">\n      </ion-avatar>\n\n      <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.above_title" [innerHTML]="item.appp.post_list.above_title"></div>\n\n      <h2 *ngIf="item.title && item.title.rendered" [innerHTML]="item.title.rendered"></h2>\n\n      <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_title" [innerHTML]="item.appp.post_list.below_title"></div>\n\n      <p *ngIf="item.excerpt && item.excerpt.rendered" [innerHTML]="truncateString( item.excerpt.rendered )"></p>\n\n      <div class="item-content" *ngIf="!item.excerpt && item.content.rendered" [innerHTML]="truncateString( item.content.rendered )"></div>\n\n      <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_content" [innerHTML]="item.appp.post_list.below_content"></div>\n\n      </button>\n\n      <ion-item-options side="right" *ngIf="favorites">\n        <button ion-button color="primary" (click)="addFav(slidingItem, item)">\n          <ion-icon name="star-outline"></ion-icon>\n          {{ \'Favorite\' | translate }}\n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n\n</ion-list>\n\n<ion-infinite-scroll *ngIf="infiniteScroll" (ionInfinite)="loadMore($event)">\n<ion-infinite-scroll-content></ion-infinite-scroll-content>\n</ion-infinite-scroll>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/components/ap-list/ap-list.html"*/
+            selector: 'ap-list',template:/*ion-inline-start:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/components/ap-list/ap-list.html"*/'<div class="list-loading-spinner" *ngIf="loading"><ion-spinner name="bubbles"></ion-spinner></div>\n\n<div *ngIf="refresh && !loading" class="list-refresher">\n  <ion-icon name="refresh" (tap)="doRefresh()"></ion-icon>\n  <span (tap)="doRefresh()">{{ \'Refresh\' | translate }}</span>\n</div>\n\n<ion-list *ngIf="card">\n\n    <ion-card (click)="loadDetail(item)" *ngFor="let item of items">\n      \n      <div class="card-featured-wrap" *ngIf="item.featured_image_urls">\n        <div class="card-featured-image" [ngStyle]="{\'background-image\': \'url(\'+ getBgImage( item ) +\')\'}"></div>\n      </div>\n\n      <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.above_title" [innerHTML]="item.appp.post_list.above_title"></div>\n\n      <ion-card-content>\n\n        <ion-card-title *ngIf="item.title && item.title.rendered">\n          <h2 [innerHTML]="item.title.rendered"></h2>\n        </ion-card-title>\n\n        <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_title" [innerHTML]="item.appp.post_list.below_title"></div>\n\n        <p *ngIf="item.excerpt && item.excerpt.rendered" [innerHTML]="truncateString( item.excerpt.rendered )"></p>\n\n        <div class="item-content" *ngIf="!item.excerpt && item.content.rendered" [innerHTML]="truncateString( item.content.rendered )"></div>\n\n      </ion-card-content>\n\n      <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_content" [innerHTML]="item.appp.post_list.below_content"></div>\n\n    </ion-card>\n\n</ion-list>\n\n<ion-list *ngIf="!card">\n\n	<ion-item-sliding *ngFor="let item of items" #slidingItem>\n      <button ion-item (click)="loadDetail(item)">\n\n      <ion-avatar item-left *ngIf="item.featured_image_urls">\n        <img *ngIf="item.featured_image_urls && item.featured_image_urls.thumbnail" src="{{item.featured_image_urls.thumbnail}}">\n        <img *ngIf="!item.featured_image_urls || !item.featured_image_urls.thumbnail" src="assets/default.png">\n      </ion-avatar>\n\n      <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.above_title" [innerHTML]="item.appp.post_list.above_title"></div>\n\n      <h2 *ngIf="item.title && item.title.rendered" [innerHTML]="item.title.rendered"></h2>\n\n      <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_title" [innerHTML]="item.appp.post_list.below_title"></div>\n\n      <p *ngIf="item.excerpt && item.excerpt.rendered" [innerHTML]="truncateString( item.excerpt.rendered )"></p>\n\n      <div class="item-content" *ngIf="!item.excerpt && item.content.rendered" [innerHTML]="truncateString( item.content.rendered )"></div>\n\n      <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_content" [innerHTML]="item.appp.post_list.below_content"></div>\n\n      </button>\n\n      <ion-item-options side="right" *ngIf="favorites">\n        <button ion-button color="primary" (click)="addFav(slidingItem, item)">\n          <ion-icon name="star-outline"></ion-icon>\n          {{ \'Favorite\' | translate }}\n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n\n</ion-list>\n\n<ion-infinite-scroll *ngIf="infiniteScroll" (ionInfinite)="loadMore($event)">\n<ion-infinite-scroll-content></ion-infinite-scroll-content>\n</ion-infinite-scroll>'/*ion-inline-end:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/components/ap-list/ap-list.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1__providers_posts_posts__["a" /* Posts */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["p" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["p" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_network__["a" /* Network */],
             __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__["d" /* TranslateService */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* Events */]])
@@ -1435,18 +1435,18 @@ var ApListComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 727:
+/***/ 683:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApSliderComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_posts_posts__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_posts_posts__ = __webpack_require__(350);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_network__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_iframe_iframe__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_network__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_iframe_iframe__ = __webpack_require__(120);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1584,8 +1584,8 @@ var ApSliderComponent = /** @class */ (function () {
         toast.present();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* Slides */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* Slides */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* Slides */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* Slides */])
     ], ApSliderComponent.prototype, "slides", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
@@ -1633,15 +1633,15 @@ var ApSliderComponent = /** @class */ (function () {
     ], ApSliderComponent.prototype, "card", void 0);
     ApSliderComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'ap-slider',template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/components/ap-slider/ap-slider.html"*/'<ion-slides *ngIf="!card" pager>\n\n	<ion-slide *ngFor="let item of items" [ngStyle]="{\'background-image\': \'url(\' + ( item.featured_image_urls.large ? item.featured_image_urls.large : item.featured_image_urls.medium ) + \')\'}" (click)="loadDetail(item)">\n\n		<h3 class="item-title" *ngIf="item.title && item.title.rendered" [innerHTML]="item.title.rendered"></h3>\n\n		<div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.item_content" [innerHTML]="item.appp.post_list.item_content"></div>\n\n	</ion-slide>\n\n</ion-slides>\n\n<ion-slides *ngIf="card" pager>\n\n	<ion-slide *ngFor="let item of items" (click)="loadDetail(item)">\n\n		<ion-card>\n		  \n		  <div class="card-featured-wrap" *ngIf="item.featured_image_urls">\n		    <img *ngIf="item.featured_image_urls.large" src="{{item.featured_image_urls.large}}">\n		    <img *ngIf="!item.featured_image_urls.large && item.featured_image_urls.medium" src="{{item.featured_image_urls.medium}}">\n		  </div>\n\n		  <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.above_title" [innerHTML]="item.appp.post_list.above_title"></div>\n\n		  <ion-card-content>\n\n		    <ion-card-title *ngIf="item.title && item.title.rendered">\n		      <h2 [innerHTML]="item.title.rendered"></h2>\n		    </ion-card-title>\n\n		    <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_title" [innerHTML]="item.appp.post_list.below_title"></div>\n\n		    <p *ngIf="item.excerpt && item.excerpt.rendered" [innerHTML]="item.excerpt.rendered"></p>\n\n		    <div class="item-content" *ngIf="!item.excerpt && item.content.rendered" [innerHTML]="truncateString( item.content.rendered )"></div>\n\n		  </ion-card-content>\n\n		</ion-card>\n\n	</ion-slide>\n\n</ion-slides>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/components/ap-slider/ap-slider.html"*/
+            selector: 'ap-slider',template:/*ion-inline-start:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/components/ap-slider/ap-slider.html"*/'<ion-slides *ngIf="!card" pager>\n\n	<ion-slide *ngFor="let item of items" [ngStyle]="{\'background-image\': \'url(\' + ( item.featured_image_urls.large ? item.featured_image_urls.large : item.featured_image_urls.medium ) + \')\'}" (click)="loadDetail(item)">\n\n		<h3 class="item-title" *ngIf="item.title && item.title.rendered" [innerHTML]="item.title.rendered"></h3>\n\n		<div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.item_content" [innerHTML]="item.appp.post_list.item_content"></div>\n\n	</ion-slide>\n\n</ion-slides>\n\n<ion-slides *ngIf="card" pager>\n\n	<ion-slide *ngFor="let item of items" (click)="loadDetail(item)">\n\n		<ion-card>\n		  \n		  <div class="card-featured-wrap" *ngIf="item.featured_image_urls">\n		    <img *ngIf="item.featured_image_urls.large" src="{{item.featured_image_urls.large}}">\n		    <img *ngIf="!item.featured_image_urls.large && item.featured_image_urls.medium" src="{{item.featured_image_urls.medium}}">\n		  </div>\n\n		  <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.above_title" [innerHTML]="item.appp.post_list.above_title"></div>\n\n		  <ion-card-content>\n\n		    <ion-card-title *ngIf="item.title && item.title.rendered">\n		      <h2 [innerHTML]="item.title.rendered"></h2>\n		    </ion-card-title>\n\n		    <div *ngIf="item.appp && item.appp.post_list && item.appp.post_list.below_title" [innerHTML]="item.appp.post_list.below_title"></div>\n\n		    <p *ngIf="item.excerpt && item.excerpt.rendered" [innerHTML]="item.excerpt.rendered"></p>\n\n		    <div class="item-content" *ngIf="!item.excerpt && item.content.rendered" [innerHTML]="truncateString( item.content.rendered )"></div>\n\n		  </ion-card-content>\n\n		</ion-card>\n\n	</ion-slide>\n\n</ion-slides>'/*ion-inline-end:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/components/ap-slider/ap-slider.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1__providers_posts_posts__["a" /* Posts */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["p" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["p" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_network__["a" /* Network */],
             __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__["d" /* TranslateService */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* Events */]])

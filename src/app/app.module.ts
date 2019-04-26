@@ -67,6 +67,7 @@ import {Iframe} from "../pages/iframe/iframe";
 /* Other */
 import { IonicStorageModule } from '@ionic/storage';
 import { StreamPlayerComponent } from '../pages/stream-player/stream-player.component';
+import {ScreenLoggerComponent} from "../components/screen-logger.component";
 
 // required for ng translate, tells it to look in assets folder for trans files
 export function HttpLoaderFactory(http: HttpClient) {
@@ -117,8 +118,9 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
   ],
   providers: [
     BackgroundMode,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    // {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: MissingTranslationHandler, useClass: MyMissingTranslationHandler},
+    // {provide: ErrorHandler, useClass: ScreenLoggerComponent},
     AppCamera,
     Posts,
     GlobalVars,

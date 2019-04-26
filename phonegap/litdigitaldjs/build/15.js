@@ -1,6 +1,6 @@
 webpackJsonp([15],{
 
-/***/ 611:
+/***/ 581:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BpNotificationsModule", function() { return BpNotificationsModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_notifications__ = __webpack_require__(714);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_notifications__ = __webpack_require__(669);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,7 +29,7 @@ var BpNotificationsModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__bp_notifications__["a" /* BpNotifications */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__bp_notifications__["a" /* BpNotifications */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__bp_notifications__["a" /* BpNotifications */]),
                 __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */].forChild()
             ],
             exports: [
@@ -44,20 +44,20 @@ var BpNotificationsModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 714:
+/***/ 669:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BpNotifications; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_globalvars_globalvars__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_globalvars_globalvars__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_device__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_network__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_buddypress_bp_provider__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_device__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_network__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_buddypress_bp_provider__ = __webpack_require__(349);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -334,21 +334,21 @@ var BpNotifications = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["b" /* Content */])
     ], BpNotifications.prototype, "content", void 0);
     BpNotifications = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/bp-notifications/bp-notifications.html"*/'<ion-header>\n\n  <ion-navbar>\n    \n    <ion-buttons start>\n    <button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n        <ion-icon name="arrow-back"></ion-icon>\n        {{ \'Back\' | translate }}\n    </button>\n\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    </ion-buttons>\n\n    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    <ion-title *ngIf="!show_header_logo">{{ title | translate }}</ion-title>\n\n  </ion-navbar>\n\n  <ion-item *ngIf="notificationSegments" id="favorites-toolbar" color="light">\n\n    <ion-select [(ngModel)]="segment" (ionChange)="segmentChanged()" placeholder="Requests">\n\n      <ion-option *ngFor="let segment of notificationSegments" [value]="segment.name">{{ segment.name | translate }}</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n</ion-header>\n\n<ion-content [ngClass]="customClasses">\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <div *ngIf="!isRequests && items">\n\n    <ion-list no-lines>\n\n        <ion-item *ngFor="let notification of items">\n\n          <p *ngIf="notification.content" (tap)="viewNotification( notification )">{{ notification.content }}</p>\n          \n          <button ion-button item-end clear (tap)="viewNotification( notification )">{{ \'View\' | translate }}</button> <button ion-button item-end color="light" (tap)="clearNotification( notification )">{{ \'Clear\' | translate }}</button>\n          \n        </ion-item>\n\n    </ion-list>\n\n  </div>\n\n  <div *ngIf="isRequests && items">\n\n    <ion-list no-lines>\n\n        <ion-item *ngFor="let request of items">\n          <ion-avatar item-start (tap)="viewMember( request )">\n            <img *ngIf="request.avatar" [src]="formatUrl( request.avatar )">\n            <img *ngIf="!request.avatar" src="assets/default.png">\n          </ion-avatar>\n          <p *ngIf="request.name" (tap)="viewMember( request )"><strong>{{ request.name }}</strong></p>\n          \n          <button ion-button (tap)="acceptFriendship( request, false )">{{ \'Accept\' | translate }}</button>\n          \n        </ion-item>\n\n    </ion-list>\n\n  </div>\n\n  <ion-item *ngIf="!items">{{ \'No items to show.\' | translate }}</ion-item>\n\n  <ion-infinite-scroll (ionInfinite)="loadMore($event)">\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n\n</ion-content>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/bp-notifications/bp-notifications.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/bp-notifications/bp-notifications.html"*/'<ion-header>\n\n  <ion-navbar>\n    \n    <ion-buttons start>\n    <button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n        <ion-icon name="arrow-back"></ion-icon>\n        {{ \'Back\' | translate }}\n    </button>\n\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    </ion-buttons>\n\n    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    <ion-title *ngIf="!show_header_logo">{{ title | translate }}</ion-title>\n\n  </ion-navbar>\n\n  <ion-item *ngIf="notificationSegments" id="favorites-toolbar" color="light">\n\n    <ion-select [(ngModel)]="segment" (ionChange)="segmentChanged()" placeholder="Requests">\n\n      <ion-option *ngFor="let segment of notificationSegments" [value]="segment.name">{{ segment.name | translate }}</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n</ion-header>\n\n<ion-content [ngClass]="customClasses">\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <div *ngIf="!isRequests && items">\n\n    <ion-list no-lines>\n\n        <ion-item *ngFor="let notification of items">\n\n          <p *ngIf="notification.content" (tap)="viewNotification( notification )">{{ notification.content }}</p>\n          \n          <button ion-button item-end clear (tap)="viewNotification( notification )">{{ \'View\' | translate }}</button> <button ion-button item-end color="light" (tap)="clearNotification( notification )">{{ \'Clear\' | translate }}</button>\n          \n        </ion-item>\n\n    </ion-list>\n\n  </div>\n\n  <div *ngIf="isRequests && items">\n\n    <ion-list no-lines>\n\n        <ion-item *ngFor="let request of items">\n          <ion-avatar item-start (tap)="viewMember( request )">\n            <img *ngIf="request.avatar" [src]="formatUrl( request.avatar )">\n            <img *ngIf="!request.avatar" src="assets/default.png">\n          </ion-avatar>\n          <p *ngIf="request.name" (tap)="viewMember( request )"><strong>{{ request.name }}</strong></p>\n          \n          <button ion-button (tap)="acceptFriendship( request, false )">{{ \'Accept\' | translate }}</button>\n          \n        </ion-item>\n\n    </ion-list>\n\n  </div>\n\n  <ion-item *ngIf="!items">{{ \'No items to show.\' | translate }}</ion-item>\n\n  <ion-infinite-scroll (ionInfinite)="loadMore($event)">\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n\n</ion-content>'/*ion-inline-end:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/bp-notifications/bp-notifications.html"*/,
             selector: 'bp-notifications'
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3__providers_globalvars_globalvars__["a" /* GlobalVars */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["g" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["n" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__["a" /* HeaderLogo */],
             __WEBPACK_IMPORTED_MODULE_7__ionic_native_network__["a" /* Network */],
             __WEBPACK_IMPORTED_MODULE_6__ionic_native_device__["a" /* Device */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_8__providers_buddypress_bp_provider__["a" /* BpProvider */],
             __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["d" /* TranslateService */]])
     ], BpNotifications);

@@ -19988,7 +19988,7 @@ ion-content {
   display: block;
   width: 100%;
   height: 100%;
-  contain: layout size style;
+  contain: size style;
 }
 
 .ion-page > ion-content {
@@ -30577,7 +30577,7 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-pagination-bullet-active {
-  background: #007aff;
+  background: #387ef5;
   opacity: 1;
 }
 
@@ -30618,7 +30618,7 @@ button.swiper-pagination-bullet {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #007aff;
+  background: #387ef5;
   -webkit-transform: scale(0);
   transform: scale(0);
 }
@@ -32430,6 +32430,7 @@ ion-toast {
 
 .toggle-ios {
   position: relative;
+  display: block;
   width: 51px;
   height: 32px;
   -webkit-box-sizing: content-box;
@@ -32554,6 +32555,7 @@ ion-toast {
 
 .toggle-md {
   position: relative;
+  display: block;
   width: 36px;
   height: 14px;
   -webkit-box-sizing: content-box;
@@ -32679,6 +32681,7 @@ ion-toast {
 
 .toggle-wp {
   position: relative;
+  display: block;
   width: 40px;
   height: 18px;
   -webkit-box-sizing: content-box;
@@ -38841,6 +38844,11 @@ ion-navbar.toolbar {
   min-height: calc(44px + env(safe-area-inset-bottom));
 }
 
+.ios .tabs:not(.tabs-ios[tabsPlacement='top']) ion-footer .toolbar:last-child {
+  padding-bottom: 4px;
+  min-height: 44px;
+}
+
 .md ion-nav > .ion-page > .toolbar.statusbar-padding:first-child,
 .md ion-nav > .ion-page > ion-header > .toolbar.statusbar-padding:first-child,
 .md ion-tab > .ion-page > .toolbar.statusbar-padding:first-child,
@@ -38921,6 +38929,11 @@ ion-navbar.toolbar {
   min-height: calc(56px + env(safe-area-inset-bottom));
 }
 
+.md .tabs:not(.tabs-ios[tabsPlacement='top']) ion-footer .toolbar:last-child {
+  padding-bottom: 4px;
+  min-height: 56px;
+}
+
 .wp ion-nav > .ion-page > .toolbar.statusbar-padding:first-child,
 .wp ion-nav > .ion-page > ion-header > .toolbar.statusbar-padding:first-child,
 .wp ion-tab > .ion-page > .toolbar.statusbar-padding:first-child,
@@ -38999,6 +39012,11 @@ ion-navbar.toolbar {
   padding-bottom: calc(env(safe-area-inset-bottom) + 4px);
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
+}
+
+.wp .tabs:not(.tabs-ios[tabsPlacement='top']) ion-footer .toolbar:last-child {
+  padding-bottom: 4px;
+  min-height: 46px;
 }
 
 ion-content iframe, ion-content custom-iframe {
@@ -39112,7 +39130,7 @@ a:hover {
   left: 0;
   width: 100%;
   z-index: 10;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 .notifications .msg {
@@ -39545,33 +39563,30 @@ main {
 
 #stations-toolbar {
   padding: 0;
-  max-height: 40px;
   min-height: 0;
-}
-
-#stations-toolbar ion-icon {
-  margin-left: 7px;
-}
-
-#stations-toolbar .toolbar-content {
+  background-color: #444;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
-#stations-toolbar .toolbar-content .button-clear {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  color: #fff;
+.station-button {
   margin: 0;
-  font-size: 1.2rem;
-}
-
-#stations-toolbar .toolbar-background {
-  background-color: #444;
+  width: 50%;
+  color: white;
+  padding: 0;
+  z-index: 1000;
+  height: 45px;
+  background: transparent;
+  font-size: 16px;
+  display: block;
+  line-height: 45px;
 }
 
 .card-background-page ion-card {
@@ -40948,7 +40963,7 @@ a:hover {
   left: 0;
   width: 100%;
   z-index: 10;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 .notifications .msg {
@@ -41381,33 +41396,30 @@ main {
 
 #stations-toolbar {
   padding: 0;
-  max-height: 40px;
   min-height: 0;
-}
-
-#stations-toolbar ion-icon {
-  margin-left: 7px;
-}
-
-#stations-toolbar .toolbar-content {
+  background-color: #444;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
-#stations-toolbar .toolbar-content .button-clear {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  color: #fff;
+.station-button {
   margin: 0;
-  font-size: 1.2rem;
-}
-
-#stations-toolbar .toolbar-background {
-  background-color: #444;
+  width: 50%;
+  color: white;
+  padding: 0;
+  z-index: 1000;
+  height: 45px;
+  background: transparent;
+  font-size: 16px;
+  display: block;
+  line-height: 45px;
 }
 
 .hide-now-playing {

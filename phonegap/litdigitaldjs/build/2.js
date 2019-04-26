@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 610:
+/***/ 582:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,9 +8,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BpMessagesModule", function() { return BpMessagesModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_messages__ = __webpack_require__(713);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_do_links_do_links_module__ = __webpack_require__(630);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_messages__ = __webpack_require__(670);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_do_links_do_links_module__ = __webpack_require__(601);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -31,7 +31,7 @@ var BpMessagesModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__bp_messages__["a" /* BpMessages */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__bp_messages__["a" /* BpMessages */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__bp_messages__["a" /* BpMessages */]),
                 __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */].forChild(),
                 __WEBPACK_IMPORTED_MODULE_4__pipes_do_links_do_links_module__["a" /* DoLinksModule */]
             ],
@@ -47,7 +47,7 @@ var BpMessagesModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 618:
+/***/ 589:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109,7 +109,7 @@ exports.isPort = isPort;
 
 /***/ }),
 
-/***/ 619:
+/***/ 590:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -121,13 +121,13 @@ exports.htmlAttrs = ["src=", "data=", "href=", "cite=", "formaction=", "icon=", 
 
 /***/ }),
 
-/***/ 622:
+/***/ 593:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var lists_1 = __webpack_require__(619);
+var lists_1 = __webpack_require__(590);
 // pattern that an emails MUST have
 var pattern = /^[a-z0-9!#$%&'*+\-/=?^_`{|}~.]+@([a-z0-9%\-]+\.){1,}([a-z0-9\-]+)?$/i;
 // patterns that an email can not have
@@ -159,13 +159,13 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 623:
+/***/ 594:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(618);
+var util_1 = __webpack_require__(589);
 // general IP pattern https://regex101.com/r/rzUcJ4/1
 var pattern = /^(\d{1,3}\.){3}\d{1,3}(:\d{1,5})?(\/([a-z0-9\-._~:\/\?#\[\]@!$&'\(\)\*\+,;=%]+)?)?$/i;
 function default_1(str) {
@@ -199,14 +199,14 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 624:
+/***/ 595:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(618);
-var lists_1 = __webpack_require__(619);
+var util_1 = __webpack_require__(589);
+var lists_1 = __webpack_require__(590);
 var pattern = /^(https?:\/\/|ftps?:\/\/)?([a-z0-9%\-]+\.){1,}([a-z0-9\-]+)?(:(\d{1,5}))?(\/([a-z0-9\-._~:\/\?#\[\]@!$&'\(\)\*\+,;=%]+)?)?$/i;
 function default_1(str) {
     // general pattern recognition https://regex101.com/r/RgKTA4/2
@@ -228,13 +228,13 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 625:
+/***/ 596:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var fix_1 = __webpack_require__(634);
+var fix_1 = __webpack_require__(605);
 /**
  *
  * Split the string with word separators
@@ -263,7 +263,7 @@ exports.deSeparate = deSeparate;
 
 /***/ }),
 
-/***/ 626:
+/***/ 597:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -291,13 +291,13 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 630:
+/***/ 601:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinksModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__do_links__ = __webpack_require__(631);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__do_links__ = __webpack_require__(602);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -322,14 +322,14 @@ var DoLinksModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 631:
+/***/ 602:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinks; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme__ = __webpack_require__(632);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme__ = __webpack_require__(603);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_anchorme__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -370,18 +370,18 @@ var DoLinks = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 632:
+/***/ 603:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(618);
-var email_1 = __webpack_require__(622);
-var ip_1 = __webpack_require__(623);
-var url_1 = __webpack_require__(624);
-var transform_1 = __webpack_require__(633);
-var hasprotocol_1 = __webpack_require__(626);
+var util_1 = __webpack_require__(589);
+var email_1 = __webpack_require__(593);
+var ip_1 = __webpack_require__(594);
+var url_1 = __webpack_require__(595);
+var transform_1 = __webpack_require__(604);
+var hasprotocol_1 = __webpack_require__(597);
 var anchorme = function (str, options) {
     options = util_1.defaultOptions(options);
     var result = transform_1.default(str, options);
@@ -405,15 +405,15 @@ exports.default = anchorme;
 
 /***/ }),
 
-/***/ 633:
+/***/ 604:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var separate_1 = __webpack_require__(625);
-var identify_1 = __webpack_require__(635);
-var separate_2 = __webpack_require__(625);
+var separate_1 = __webpack_require__(596);
+var identify_1 = __webpack_require__(606);
+var separate_2 = __webpack_require__(596);
 function default_1(str, options) {
     var arr = separate_2.separate(str);
     var identified = identify_1.default(arr, options);
@@ -475,7 +475,7 @@ function url2tag(fragment, options) {
 
 /***/ }),
 
-/***/ 634:
+/***/ 605:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -543,17 +543,17 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 635:
+/***/ 606:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var email_1 = __webpack_require__(622);
-var hasprotocol_1 = __webpack_require__(626);
-var lists_1 = __webpack_require__(619);
-var ip_1 = __webpack_require__(623);
-var url_1 = __webpack_require__(624);
+var email_1 = __webpack_require__(593);
+var hasprotocol_1 = __webpack_require__(597);
+var lists_1 = __webpack_require__(590);
+var ip_1 = __webpack_require__(594);
+var url_1 = __webpack_require__(595);
 function default_1(inputArr, options) {
     return inputArr.map(function (fragment, index) {
         var encoded = encodeURI(fragment);
@@ -616,21 +616,21 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 713:
+/***/ 670:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BpMessages; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_device__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_network__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_buddypress_bp_provider__ = __webpack_require__(362);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_analytics_analytics_service__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_device__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_network__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_buddypress_bp_provider__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_analytics_analytics_service__ = __webpack_require__(84);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1016,21 +1016,21 @@ var BpMessages = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["b" /* Content */])
     ], BpMessages.prototype, "content", void 0);
     BpMessages = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/bp-messages/bp-messages.html"*/'<ion-header>\n\n  <ion-navbar>\n    \n    <ion-buttons start>\n    <button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n        <ion-icon name="arrow-back"></ion-icon>\n        {{ \'Back\' | translate }}\n    </button>\n\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    </ion-buttons>\n\n    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    <ion-title *ngIf="!show_header_logo && !singleThread">{{ title | translate }}</ion-title>\n\n    <div *ngIf="singleThread" class="message-header-sender">\n\n      <img *ngIf="navParams.data.senderAvatar" [src]="navParams.data.senderAvatar" class="message-header-avatar">\n\n      <!-- <span class="message-header-name" *ngIf="navParams.data.senderName">{{ navParams.data.senderName }}</span> -->\n\n    </div>\n\n    <ion-buttons end>\n\n      <button ion-button *ngIf="!singleThread" (tap)="newMessage()">\n        <ion-icon name="ios-send"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n  <ion-item *ngIf="messageSegments" id="favorites-toolbar" color="light">\n\n    <ion-select [(ngModel)]="segment" (ionChange)="segmentChanged()" placeholder="Inbox">\n\n      <ion-option *ngFor="let segment of messageSegments" [value]="segment.name">{{ segment.name | translate }}</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n</ion-header>\n\n<ion-content #content [ngClass]="customClasses">\n\n  <!-- <ion-infinite-scroll *ngIf="singleThread" (ionInfinite)="loadMore($event)" position="top">\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n  </ion-infinite-scroll> -->\n\n  <div *ngIf="threads && !singleThread">\n\n    <ion-list no-lines>\n\n        <ion-item *ngFor="let thread of threads" (tap)="loadThread(thread)">\n          <ion-avatar item-start>\n            <img *ngIf="thread.sender_data && thread.sender_data.avatar" [src]="formatUrl( thread.sender_data.avatar )">\n            <img *ngIf="!thread.sender_data || !thread.sender_data.avatar" src="assets/default.png">\n          </ion-avatar>\n          <p *ngIf="thread.sender_data && thread.sender_data.name"><strong>{{ thread.sender_data.name }}</strong></p>\n          <p class="message-preview"><strong *ngIf="thread.subject && thread.subject != \'undefined\'" [innerHTML]="getSubject( thread.subject )"></strong> <span [innerHTML]=" thread.message"></span></p>\n          <p *ngIf="thread.date" class="message-date">{{ thread.date }}</p>\n          \n        </ion-item>\n\n    </ion-list>\n\n  </div>\n\n  <div *ngIf="threads && singleThread">\n\n    <ion-list no-lines class="single-message-thread">\n\n        <ion-item *ngFor="let message of threads.messages.reverse()" [ngClass]="{ \'my-reply\' : message.sender_id == login_data.user_id }" text-wrap>\n          <ion-avatar item-start>\n            <img *ngIf="message.sender_data && message.sender_data.avatar" [src]="formatUrl( message.sender_data.avatar )">\n            <img *ngIf="!message.sender_data || !message.sender_data.avatar" src="assets/default.png">\n            <p *ngIf="message.sender_data && message.sender_data.name" class="sender-name">{{ message.sender_data.name }}</p>\n          </ion-avatar>\n            \n            <p class="message-preview"><strong>{{ getSubject( message.subject ) }}</strong> <span [innerHTML]=" message.message | doLinks"></span></p>\n\n        </ion-item>\n\n    </ion-list>\n\n  </div>\n\n  <ion-item *ngIf="!threads">{{ \'No items to show.\' | translate }}</ion-item>\n\n</ion-content>\n\n<ion-footer no-border>\n  <ion-toolbar *ngIf="threads && singleThread">\n    <ion-grid>\n      <ion-row>\n        <ion-col col-10>\n          <ion-input [(ngModel)]="threadReply" name="threadReply" type="text" (keyup.enter)="replyToThread()"></ion-input>\n        </ion-col>\n        <ion-col col-2 text-center>\n          <button block ion-button icon-only (tap)="replyToThread()">\n            <ion-icon name="ios-send"></ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/bp-messages/bp-messages.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/bp-messages/bp-messages.html"*/'<ion-header>\n\n  <ion-navbar>\n    \n    <ion-buttons start>\n    <button *ngIf="rtlBack||is_registration_page" (click)="backRtlTransition()" ion-button class="custom-back-button">\n        <ion-icon name="arrow-back"></ion-icon>\n        {{ \'Back\' | translate }}\n    </button>\n\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    </ion-buttons>\n\n    <img class="header-logo" *ngIf="show_header_logo" [src]="header_logo_url" />\n\n    <ion-title *ngIf="!show_header_logo && !singleThread">{{ title | translate }}</ion-title>\n\n    <div *ngIf="singleThread" class="message-header-sender">\n\n      <img *ngIf="navParams.data.senderAvatar" [src]="navParams.data.senderAvatar" class="message-header-avatar">\n\n      <!-- <span class="message-header-name" *ngIf="navParams.data.senderName">{{ navParams.data.senderName }}</span> -->\n\n    </div>\n\n    <ion-buttons end>\n\n      <button ion-button *ngIf="!singleThread" (tap)="newMessage()">\n        <ion-icon name="ios-send"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n  <ion-item *ngIf="messageSegments" id="favorites-toolbar" color="light">\n\n    <ion-select [(ngModel)]="segment" (ionChange)="segmentChanged()" placeholder="Inbox">\n\n      <ion-option *ngFor="let segment of messageSegments" [value]="segment.name">{{ segment.name | translate }}</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n</ion-header>\n\n<ion-content #content [ngClass]="customClasses">\n\n  <!-- <ion-infinite-scroll *ngIf="singleThread" (ionInfinite)="loadMore($event)" position="top">\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n  </ion-infinite-scroll> -->\n\n  <div *ngIf="threads && !singleThread">\n\n    <ion-list no-lines>\n\n        <ion-item *ngFor="let thread of threads" (tap)="loadThread(thread)">\n          <ion-avatar item-start>\n            <img *ngIf="thread.sender_data && thread.sender_data.avatar" [src]="formatUrl( thread.sender_data.avatar )">\n            <img *ngIf="!thread.sender_data || !thread.sender_data.avatar" src="assets/default.png">\n          </ion-avatar>\n          <p *ngIf="thread.sender_data && thread.sender_data.name"><strong>{{ thread.sender_data.name }}</strong></p>\n          <p class="message-preview"><strong *ngIf="thread.subject && thread.subject != \'undefined\'" [innerHTML]="getSubject( thread.subject )"></strong> <span [innerHTML]=" thread.message"></span></p>\n          <p *ngIf="thread.date" class="message-date">{{ thread.date }}</p>\n          \n        </ion-item>\n\n    </ion-list>\n\n  </div>\n\n  <div *ngIf="threads && singleThread">\n\n    <ion-list no-lines class="single-message-thread">\n\n        <ion-item *ngFor="let message of threads.messages.reverse()" [ngClass]="{ \'my-reply\' : message.sender_id == login_data.user_id }" text-wrap>\n          <ion-avatar item-start>\n            <img *ngIf="message.sender_data && message.sender_data.avatar" [src]="formatUrl( message.sender_data.avatar )">\n            <img *ngIf="!message.sender_data || !message.sender_data.avatar" src="assets/default.png">\n            <p *ngIf="message.sender_data && message.sender_data.name" class="sender-name">{{ message.sender_data.name }}</p>\n          </ion-avatar>\n            \n            <p class="message-preview"><strong>{{ getSubject( message.subject ) }}</strong> <span [innerHTML]=" message.message | doLinks"></span></p>\n\n        </ion-item>\n\n    </ion-list>\n\n  </div>\n\n  <ion-item *ngIf="!threads">{{ \'No items to show.\' | translate }}</ion-item>\n\n</ion-content>\n\n<ion-footer no-border>\n  <ion-toolbar *ngIf="threads && singleThread">\n    <ion-grid>\n      <ion-row>\n        <ion-col col-10>\n          <ion-input [(ngModel)]="threadReply" name="threadReply" type="text" (keyup.enter)="replyToThread()"></ion-input>\n        </ion-col>\n        <ion-col col-2 text-center>\n          <button block ion-button icon-only (tap)="replyToThread()">\n            <ion-icon name="ios-send"></ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/bp-messages/bp-messages.html"*/,
             selector: 'bp-messages'
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__providers_globalvars_globalvars__["a" /* GlobalVars */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["g" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["n" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_4__providers_header_logo_header_logo__["a" /* HeaderLogo */],
             __WEBPACK_IMPORTED_MODULE_7__ionic_native_network__["a" /* Network */],
             __WEBPACK_IMPORTED_MODULE_6__ionic_native_device__["a" /* Device */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["c" /* Events */],
             __WEBPACK_IMPORTED_MODULE_9__providers_analytics_analytics_service__["a" /* AnalyticsService */],
             __WEBPACK_IMPORTED_MODULE_8__providers_buddypress_bp_provider__["a" /* BpProvider */],

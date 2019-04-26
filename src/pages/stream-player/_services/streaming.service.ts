@@ -70,7 +70,7 @@ export class StreamingService {
 			if(new_station == station.name) {
 				this.selectedStationIndex = index;
 				if(!station.isCurrentPlayingStation) {
-					this.player.pause();
+					this.player.release();
 					this.initPlayer(station, index);
 				}
 				station.isCurrentPlayingStation = true;
@@ -90,11 +90,11 @@ export class StreamingService {
 		station.resetDelay();
 
 		let source = station.nextSource();
+		// source = 'http://cbc_r1_mtl.akacast.akamaistream.net/7/35/451661/v1/rc.akacast.akamaistream.net/cbc_r1_mtl';
 
 		console.log('what is this?????', source);
-		console.log('index', index)
+		console.log('index', index);
 
-		
 		this.player = this.media.create(source);
 		
 		this.player.onStatusUpdate.subscribe(status => {

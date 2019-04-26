@@ -1,6 +1,6 @@
 webpackJsonp([8],{
 
-/***/ 601:
+/***/ 572:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,9 +8,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BpGroupPageModule", function() { return BpGroupPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_group__ = __webpack_require__(654);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_sanitize_html_sanitize_html_module__ = __webpack_require__(620);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_group__ = __webpack_require__(620);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_sanitize_html_sanitize_html_module__ = __webpack_require__(591);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -31,7 +31,7 @@ var BpGroupPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__bp_group__["a" /* BpGroupPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__bp_group__["a" /* BpGroupPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__bp_group__["a" /* BpGroupPage */]),
                 __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateModule */].forChild(),
                 __WEBPACK_IMPORTED_MODULE_4__pipes_sanitize_html_sanitize_html_module__["a" /* SanitizeHtmlModule */]
             ],
@@ -47,13 +47,13 @@ var BpGroupPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 620:
+/***/ 591:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SanitizeHtmlModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sanitize_html__ = __webpack_require__(621);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sanitize_html__ = __webpack_require__(592);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -78,7 +78,7 @@ var SanitizeHtmlModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 621:
+/***/ 592:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -116,15 +116,15 @@ var SanitizeHtml = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 654:
+/***/ 620:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BpGroupPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_buddypress_bp_provider__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_buddypress_bp_provider__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -258,18 +258,18 @@ var BpGroupPage = /** @class */ (function () {
         this.nav.pop(obj);
     };
     BpGroupPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/bp-group/bp-group.html"*/'<ion-header>\n	<ion-navbar>\n\n		<ion-buttons start>\n			<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n			    <ion-icon name="arrow-back"></ion-icon>\n			    {{\'Back\' | translate }}\n			</button>\n\n			<button ion-button menuToggle>\n			  <ion-icon name="menu"></ion-icon>\n			</button>\n\n		</ion-buttons>\n\n		<ion-title *ngIf="groupData">{{ groupData.name }}</ion-title>\n		\n	</ion-navbar>\n</ion-header>\n\n<ion-content>\n\n	<div *ngIf="groupData">\n\n		<div *ngIf="groupData && groupData.appp && groupData.appp.above_content" [innerHTML]="groupData.appp.above_content | sanitizeHtml"></div>\n\n		<img class="group-cover-image" *ngIf="groupData.cover_image" [src]="groupData.cover_image" />\n\n		<ion-item>\n			<ion-avatar item-start *ngIf="groupData.avatar_urls">\n				<img *ngIf="groupData.avatar_urls && groupData.avatar_urls.full" src="{{groupData.avatar_urls.full}}">\n				<img *ngIf="!groupData.avatar_urls.full" src="{{groupData.avatar_urls.thumb}}">\n			</ion-avatar>\n			<h2 class="group-name" *ngIf="groupData.name" [innerHTML]="groupData.name"></h2>\n			<p style="white-space:normal" *ngIf="groupData.description" [innerHTML]="groupData.description"></p>\n			<p class="member-count">{{ groupData.total_member_count }} {{ \'members\' | translate }}</p>\n		</ion-item>\n\n		<ion-row>\n			<ion-col *ngIf="!groupData.is_user_member" text-center>\n				<button ion-button icon-start small clear (click)="joinGroup()"><span *ngIf="!join_pending"><ion-icon name="add"></ion-icon> {{ \'Join Group\' | translate }}</span> <ion-badge *ngIf="join_pending">{{ \'Pending\' | translate }}</ion-badge></button>\n			</ion-col>\n			<ion-col text-center *ngIf="groupData.is_user_member">\n				<button ion-button icon-start small clear (click)="groupActivity()"><ion-icon name="list"></ion-icon> {{ \'Group Activity\' | translate }}</button>\n			</ion-col>\n			<ion-col text-center>\n				<button ion-button icon-start small clear (click)="iabLink(groupData.link)"><ion-icon name="cog"></ion-icon> {{ \'Group Details\' | translate }}</button>\n			</ion-col>\n		</ion-row>\n\n		<div *ngIf="groupData && groupData.appp && groupData.appp.below_content" [innerHTML]="groupData.appp.below_content | sanitizeHtml"></div>\n\n	</div>\n\n</ion-content>'/*ion-inline-end:"/Users/matt/projects/alphaweb/appp-funkflex/src/pages/bp-group/bp-group.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/bp-group/bp-group.html"*/'<ion-header>\n	<ion-navbar>\n\n		<ion-buttons start>\n			<button *ngIf="rtlBack" (click)="backRtlTransition()" ion-button class="custom-back-button">\n			    <ion-icon name="arrow-back"></ion-icon>\n			    {{\'Back\' | translate }}\n			</button>\n\n			<button ion-button menuToggle>\n			  <ion-icon name="menu"></ion-icon>\n			</button>\n\n		</ion-buttons>\n\n		<ion-title *ngIf="groupData">{{ groupData.name }}</ion-title>\n		\n	</ion-navbar>\n</ion-header>\n\n<ion-content>\n\n	<div *ngIf="groupData">\n\n		<div *ngIf="groupData && groupData.appp && groupData.appp.above_content" [innerHTML]="groupData.appp.above_content | sanitizeHtml"></div>\n\n		<img class="group-cover-image" *ngIf="groupData.cover_image" [src]="groupData.cover_image" />\n\n		<ion-item>\n			<ion-avatar item-start *ngIf="groupData.avatar_urls">\n				<img *ngIf="groupData.avatar_urls && groupData.avatar_urls.full" src="{{groupData.avatar_urls.full}}">\n				<img *ngIf="!groupData.avatar_urls.full" src="{{groupData.avatar_urls.thumb}}">\n			</ion-avatar>\n			<h2 class="group-name" *ngIf="groupData.name" [innerHTML]="groupData.name"></h2>\n			<p style="white-space:normal" *ngIf="groupData.description" [innerHTML]="groupData.description"></p>\n			<p class="member-count">{{ groupData.total_member_count }} {{ \'members\' | translate }}</p>\n		</ion-item>\n\n		<ion-row>\n			<ion-col *ngIf="!groupData.is_user_member" text-center>\n				<button ion-button icon-start small clear (click)="joinGroup()"><span *ngIf="!join_pending"><ion-icon name="add"></ion-icon> {{ \'Join Group\' | translate }}</span> <ion-badge *ngIf="join_pending">{{ \'Pending\' | translate }}</ion-badge></button>\n			</ion-col>\n			<ion-col text-center *ngIf="groupData.is_user_member">\n				<button ion-button icon-start small clear (click)="groupActivity()"><ion-icon name="list"></ion-icon> {{ \'Group Activity\' | translate }}</button>\n			</ion-col>\n			<ion-col text-center>\n				<button ion-button icon-start small clear (click)="iabLink(groupData.link)"><ion-icon name="cog"></ion-icon> {{ \'Group Details\' | translate }}</button>\n			</ion-col>\n		</ion-row>\n\n		<div *ngIf="groupData && groupData.appp && groupData.appp.below_content" [innerHTML]="groupData.appp.below_content | sanitizeHtml"></div>\n\n	</div>\n\n</ion-content>'/*ion-inline-end:"/Users/jonahelbaz/Desktop/Toptal Contract/app-presser/appp-funkflex/src/pages/bp-group/bp-group.html"*/,
             selector: 'bp-group'
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["n" /* Platform */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["c" /* Events */],
             __WEBPACK_IMPORTED_MODULE_3__providers_buddypress_bp_provider__["a" /* BpProvider */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["g" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */],
             __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["d" /* TranslateService */]])
     ], BpGroupPage);

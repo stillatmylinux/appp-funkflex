@@ -24,25 +24,23 @@
             </button>
 		</ion-buttons>
     </ion-navbar>
-    
-    <ion-toolbar id="stations-toolbar">
-
-        <button ion-button clear (click)="playStation('97')">
-            97
-            <ion-icon *ngIf="selectedStation == '97'" name="fa-volume-up"></ion-icon>
-            <ion-icon *ngIf="selectedStation != '97'" name="fa-volume-off"></ion-icon>
-        </button>
-
-        <button ion-button clear (click)="playStation('107.5')">
-            107.5
-            <ion-icon *ngIf="selectedStation == '107.5'" name="fa-volume-up"></ion-icon>
-            <ion-icon *ngIf="selectedStation != '107.5'" name="fa-volume-off"></ion-icon>
-        </button>
-
-    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <div id="stations-toolbar">
+
+        <button ion-button icon-end clear (click)="playStation('97')"  class="station-button" [disabled]="streaming.is_loading">
+            97
+            <ion-icon [name]="selectedStation !== '97' ? 'fa-volume-off' : 'fa-volume-up'"></ion-icon>
+
+        </button>
+
+        <button  ion-button icon-end clear (click)="playStation('107.5')" class="station-button" [disabled]="streaming.is_loading">
+            107.5
+            <ion-icon [name]="selectedStation !== '107.5' ? 'fa-volume-off' : 'fa-volume-up'"></ion-icon>
+        </button>
+
+    </div>
     <div class="streaming-logo">
         <img src="assets/stream-logo.png" />
     </div>
