@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 586:
+/***/ 615:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,9 +8,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BpListModule", function() { return BpListModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_list__ = __webpack_require__(674);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_do_links_do_links_module__ = __webpack_require__(601);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bp_list__ = __webpack_require__(718);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pipes_do_links_do_links_module__ = __webpack_require__(630);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -47,7 +47,7 @@ var BpListModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 589:
+/***/ 618:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109,7 +109,7 @@ exports.isPort = isPort;
 
 /***/ }),
 
-/***/ 590:
+/***/ 619:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -121,13 +121,13 @@ exports.htmlAttrs = ["src=", "data=", "href=", "cite=", "formaction=", "icon=", 
 
 /***/ }),
 
-/***/ 593:
+/***/ 622:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var lists_1 = __webpack_require__(590);
+var lists_1 = __webpack_require__(619);
 // pattern that an emails MUST have
 var pattern = /^[a-z0-9!#$%&'*+\-/=?^_`{|}~.]+@([a-z0-9%\-]+\.){1,}([a-z0-9\-]+)?$/i;
 // patterns that an email can not have
@@ -159,13 +159,13 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 594:
+/***/ 623:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(589);
+var util_1 = __webpack_require__(618);
 // general IP pattern https://regex101.com/r/rzUcJ4/1
 var pattern = /^(\d{1,3}\.){3}\d{1,3}(:\d{1,5})?(\/([a-z0-9\-._~:\/\?#\[\]@!$&'\(\)\*\+,;=%]+)?)?$/i;
 function default_1(str) {
@@ -199,14 +199,14 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 595:
+/***/ 624:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(589);
-var lists_1 = __webpack_require__(590);
+var util_1 = __webpack_require__(618);
+var lists_1 = __webpack_require__(619);
 var pattern = /^(https?:\/\/|ftps?:\/\/)?([a-z0-9%\-]+\.){1,}([a-z0-9\-]+)?(:(\d{1,5}))?(\/([a-z0-9\-._~:\/\?#\[\]@!$&'\(\)\*\+,;=%]+)?)?$/i;
 function default_1(str) {
     // general pattern recognition https://regex101.com/r/RgKTA4/2
@@ -228,13 +228,13 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 596:
+/***/ 625:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var fix_1 = __webpack_require__(605);
+var fix_1 = __webpack_require__(634);
 /**
  *
  * Split the string with word separators
@@ -263,7 +263,7 @@ exports.deSeparate = deSeparate;
 
 /***/ }),
 
-/***/ 597:
+/***/ 626:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -291,13 +291,13 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 601:
+/***/ 630:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinksModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__do_links__ = __webpack_require__(602);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__do_links__ = __webpack_require__(631);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -322,14 +322,14 @@ var DoLinksModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 602:
+/***/ 631:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DoLinks; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme__ = __webpack_require__(603);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme__ = __webpack_require__(632);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_anchorme___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_anchorme__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -370,18 +370,18 @@ var DoLinks = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 603:
+/***/ 632:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(589);
-var email_1 = __webpack_require__(593);
-var ip_1 = __webpack_require__(594);
-var url_1 = __webpack_require__(595);
-var transform_1 = __webpack_require__(604);
-var hasprotocol_1 = __webpack_require__(597);
+var util_1 = __webpack_require__(618);
+var email_1 = __webpack_require__(622);
+var ip_1 = __webpack_require__(623);
+var url_1 = __webpack_require__(624);
+var transform_1 = __webpack_require__(633);
+var hasprotocol_1 = __webpack_require__(626);
 var anchorme = function (str, options) {
     options = util_1.defaultOptions(options);
     var result = transform_1.default(str, options);
@@ -405,15 +405,15 @@ exports.default = anchorme;
 
 /***/ }),
 
-/***/ 604:
+/***/ 633:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var separate_1 = __webpack_require__(596);
-var identify_1 = __webpack_require__(606);
-var separate_2 = __webpack_require__(596);
+var separate_1 = __webpack_require__(625);
+var identify_1 = __webpack_require__(635);
+var separate_2 = __webpack_require__(625);
 function default_1(str, options) {
     var arr = separate_2.separate(str);
     var identified = identify_1.default(arr, options);
@@ -475,7 +475,7 @@ function url2tag(fragment, options) {
 
 /***/ }),
 
-/***/ 605:
+/***/ 634:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -543,17 +543,17 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 606:
+/***/ 635:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var email_1 = __webpack_require__(593);
-var hasprotocol_1 = __webpack_require__(597);
-var lists_1 = __webpack_require__(590);
-var ip_1 = __webpack_require__(594);
-var url_1 = __webpack_require__(595);
+var email_1 = __webpack_require__(622);
+var hasprotocol_1 = __webpack_require__(626);
+var lists_1 = __webpack_require__(619);
+var ip_1 = __webpack_require__(623);
+var url_1 = __webpack_require__(624);
 function default_1(inputArr, options) {
     return inputArr.map(function (fragment, index) {
         var encoded = encodeURI(fragment);
@@ -616,22 +616,22 @@ exports.default = default_1;
 
 /***/ }),
 
-/***/ 674:
+/***/ 718:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BpList; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_posts_posts__ = __webpack_require__(350);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_globalvars_globalvars__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_header_logo_header_logo__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_posts_posts__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_globalvars_globalvars__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_header_logo_header_logo__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_device__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_network__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_buddypress_bp_provider__ = __webpack_require__(349);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_analytics_analytics_service__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_device__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_network__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_buddypress_bp_provider__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_analytics_analytics_service__ = __webpack_require__(83);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

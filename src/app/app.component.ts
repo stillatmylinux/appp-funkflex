@@ -1008,9 +1008,7 @@ export class MyApp {
   }
 
   openIab( link, target, options = null ) {
-
     window.open(link, target, options );
-
   }
 
   maybeDoAds(data) {

@@ -9,9 +9,11 @@
     <platform name="android" />
 
     <edit-config target="CFBundleShortVersionString" file="*-Info.plist"  mode="merge">
-        <string>100</string>
+        <string>557</string>
     </edit-config>
-
+    <edit-config target="CFBundleVersion" file="*-Info.plist"  mode="merge">
+        <string>1.0.1</string>
+    </edit-config>
     <preference name="phonegap-version" value="cli-8.1.1" />
     <preference name="targetSdkVersion" value="26" />
     <preference name="android-minSdkVersion" value="19" />
